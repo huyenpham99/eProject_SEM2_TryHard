@@ -1,3 +1,4 @@
+
 @extends("layout")
 @section("content")
     <section class="wrapper">
@@ -373,3 +374,4 @@
         </div>
     </section>
 @endsection
+
