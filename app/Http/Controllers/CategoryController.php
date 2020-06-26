@@ -44,7 +44,7 @@ class CategoryController extends Controller
                     $categoryImage = "media/".$fileName; // lấy nguồn file
                 }
             }
-//tự động cập nhật thời gian cho category
+            //tự động cập nhật thời gian cho category
             Category::create([
                 "category_name" => $request->get("category_name"),
                 "category_image" =>$categoryImage
@@ -52,9 +52,9 @@ class CategoryController extends Controller
 
             // "updated_at"=>Carbon::now(),
             //            DB::table("categories") ->insert([
-//                "category_name" =>$request->get("category_name"),
-//                "created_at"=>Carbon::now(),
-//
+            //                "category_name" =>$request->get("category_name"),
+            //                "created_at"=>Carbon::now(),
+            //
         } catch (\Exception $exception) {
             return redirect()->back();
         }
