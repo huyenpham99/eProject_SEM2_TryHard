@@ -18,10 +18,10 @@ class CreateTableAdvertisement extends Migration
             $table->string("ad_name");
             $table->string("ad_image");
             $table->string("ad_content");
-            $table->string("ad_image1");
+            $table->string("ad_image1")->nullable();
             $table->date("ad_time");
-            $table->string("ad_image2");
-            $table->string("ad_image3");
+            $table->string("ad_image2")->nullable();
+            $table->string("ad_image3")->nullable();
             $table->unsignedBigInteger("user_id");
             $table->unsignedBigInteger("banner_id");
             $table->foreign("user_id")->references("id")->on("user");
