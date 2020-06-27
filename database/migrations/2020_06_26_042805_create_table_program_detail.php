@@ -20,7 +20,7 @@ class CreateTableProgramDetail extends Migration
             $table->string("program_detail_desc");
             $table->string("program_detail_content");
             $table->unsignedBigInteger("program_id");
-            $table->foreign("program_id")->references("id")->on("program");
+            $table->foreign("program_id")->references("id")->on("program")->onDelete("cascade");
             $table->timestamps();
         });
     }

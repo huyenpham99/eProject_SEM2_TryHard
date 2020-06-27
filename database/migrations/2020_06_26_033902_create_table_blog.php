@@ -19,7 +19,7 @@ class CreateTableBlog extends Migration
             $table->string("blog_title");
             $table->string("blog_desc");
             $table->integer("view_count");
-            $table->foreign("user_id")->references("id")->on("user");
+            $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
             $table->timestamps();
         });
     }

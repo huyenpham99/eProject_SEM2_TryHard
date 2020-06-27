@@ -17,7 +17,7 @@ class CreateTableProgram extends Migration
             $table->id();
             $table->string("program_name");
             $table->unsignedBigInteger("user_id");
-            $table->foreign("user_id")->references("id")->on("user");
+            $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
             $table->timestamps();
         });
     }

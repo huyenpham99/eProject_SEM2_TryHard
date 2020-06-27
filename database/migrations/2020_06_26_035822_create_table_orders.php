@@ -22,7 +22,7 @@ class CreateTableOrders extends Migration
             $table->string("status");
             $table->decimal("grand_total",12,4);
             $table->unsignedBigInteger("user_id");
-            $table->foreign("user_id")->references("id")->on("user");
+            $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
             $table->timestamps();
         });
     }
