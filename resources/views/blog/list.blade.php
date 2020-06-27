@@ -27,6 +27,7 @@
                         </tr>
                         </thead>
                         <tbody>
+{{--                        //--}}
                         @foreach($blogs as $blog)
                         <tr>
                             <th scope="row">{{$blog->__get("id")}}</th>
