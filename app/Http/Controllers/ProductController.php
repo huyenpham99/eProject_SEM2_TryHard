@@ -96,3 +96,4 @@ class ProductController extends Controller
         return redirect()->to("/list-product");
     }
 }
+
