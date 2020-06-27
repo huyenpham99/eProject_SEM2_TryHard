@@ -1,216 +1,104 @@
-<!--header start-->
-<header class="header fixed-top clearfix">
-    <!--logo start-->
-    <div class="brand">
-        <a href="index.html" class="logo">
-            VISITORS
-        </a>
-        <div class="sidebar-toggle-box">
-            <div class="fa fa-bars"></div>
+<div class="app-header header-shadow">
+    <div class="app-header__logo">
+        <div class="logo-src"></div>
+        <div class="header__pane ml-auto">
+            <div>
+                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
+                        data-class="closed-sidebar">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                </button>
+            </div>
         </div>
     </div>
-    <!--logo end-->
-    <div class="nav notify-row" id="top_menu">
-        <!--  notification start -->
-        <ul class="nav top-menu">
-            <!-- settings start -->
-            <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <i class="fa fa-tasks"></i>
-                    <span class="badge bg-success">8</span>
-                </a>
-                <ul class="dropdown-menu extended tasks-bar">
-                    <li>
-                        <p class="">You have 8 pending tasks</p>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="task-info clearfix">
-                                <div class="desc pull-left">
-                                    <h5>Target Sell</h5>
-                                    <p>25% , Deadline  12 June’13</p>
-                                </div>
-                                <span class="notification-pie-chart pull-right" data-percent="45">
-                            <span class="percent"></span>
-                            </span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="task-info clearfix">
-                                <div class="desc pull-left">
-                                    <h5>Product Delivery</h5>
-                                    <p>45% , Deadline  12 June’13</p>
-                                </div>
-                                <span class="notification-pie-chart pull-right" data-percent="78">
-                            <span class="percent"></span>
-                            </span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="task-info clearfix">
-                                <div class="desc pull-left">
-                                    <h5>Payment collection</h5>
-                                    <p>87% , Deadline  12 June’13</p>
-                                </div>
-                                <span class="notification-pie-chart pull-right" data-percent="60">
-                            <span class="percent"></span>
-                            </span>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <div class="task-info clearfix">
-                                <div class="desc pull-left">
-                                    <h5>Target Sell</h5>
-                                    <p>33% , Deadline  12 June’13</p>
-                                </div>
-                                <span class="notification-pie-chart pull-right" data-percent="90">
-                            <span class="percent"></span>
-                            </span>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li class="external">
-                        <a href="#">See All Tasks</a>
-                    </li>
-                </ul>
-            </li>
-            <!-- settings end -->
-            <!-- inbox dropdown start-->
-            <li id="header_inbox_bar" class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-important">4</span>
-                </a>
-                <ul class="dropdown-menu extended inbox">
-                    <li>
-                        <p class="red">You have 4 Mails</p>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="photo"><img alt="avatar" src="images/3.png"></span>
-                            <span class="subject">
-                                <span class="from">Jonathan Smith</span>
-                                <span class="time">Just now</span>
-                                </span>
-                            <span class="message">
-                                    Hello, this is an example msg.
-                                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="photo"><img alt="avatar" src="images/1.png"></span>
-                            <span class="subject">
-                                <span class="from">Jane Doe</span>
-                                <span class="time">2 min ago</span>
-                                </span>
-                            <span class="message">
-                                    Nice admin template
-                                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="photo"><img alt="avatar" src="images/3.png"></span>
-                            <span class="subject">
-                                <span class="from">Tasi sam</span>
-                                <span class="time">2 days ago</span>
-                                </span>
-                            <span class="message">
-                                    This is an example msg.
-                                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span class="photo"><img alt="avatar" src="images/2.png"></span>
-                            <span class="subject">
-                                <span class="from">Mr. Perfect</span>
-                                <span class="time">2 hour ago</span>
-                                </span>
-                            <span class="message">
-                                    Hi there, its a test
-                                </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">See all messages</a>
-                    </li>
-                </ul>
-            </li>
-            <!-- inbox dropdown end -->
-            <!-- notification dropdown start-->
-            <li id="header_notification_bar" class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-
-                    <i class="fa fa-bell-o"></i>
-                    <span class="badge bg-warning">3</span>
-                </a>
-                <ul class="dropdown-menu extended notification">
-                    <li>
-                        <p>Notifications</p>
-                    </li>
-                    <li>
-                        <div class="alert alert-info clearfix">
-                            <span class="alert-icon"><i class="fa fa-bolt"></i></span>
-                            <div class="noti-info">
-                                <a href="#"> Server #1 overloaded.</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="alert alert-danger clearfix">
-                            <span class="alert-icon"><i class="fa fa-bolt"></i></span>
-                            <div class="noti-info">
-                                <a href="#"> Server #2 overloaded.</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="alert alert-success clearfix">
-                            <span class="alert-icon"><i class="fa fa-bolt"></i></span>
-                            <div class="noti-info">
-                                <a href="#"> Server #3 overloaded.</a>
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
-            </li>
-            <!-- notification dropdown end -->
-        </ul>
-        <!--  notification end -->
+    <div class="app-header__mobile-menu">
+        <div>
+            <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+            </button>
+        </div>
     </div>
-    <div class="top-nav clearfix">
-        <!--search & user info start-->
-        <ul class="nav pull-right top-menu">
-            <li>
-                <input type="text" class="form-control search" placeholder=" Search">
-            </li>
-            <!-- user login dropdown start-->
-            <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                    <img alt="" src="images/2.png">
-                    <span class="username">John Doe</span>
-                    <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu extended logout">
-                    <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                    <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                    <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
-                </ul>
-            </li>
-            <!-- user login dropdown end -->
-
-        </ul>
-        <!--search & user info end-->
+    <div class="app-header__menu">
+                <span>
+                    <button type="button"
+                            class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                        <span class="btn-icon-wrapper">
+                            <i class="fa fa-ellipsis-v fa-w-6"></i>
+                        </span>
+                    </button>
+                </span>
     </div>
-</header>
-<!--header end-->
+    <div class="app-header__content">
+        <div class="app-header-left">
+            <div class="search-wrapper">
+                <div class="input-holder">
+                    <input type="text" class="search-input" placeholder="Type to search">
+                    <button class="search-icon"><span></span></button>
+                </div>
+                <button class="close"></button>
+            </div>
+            <ul class="header-menu nav">
+                <li class="nav-item">
+                    <a href="javascript:void(0);" class="nav-link">
+                        <i class="nav-link-icon fa fa-database"> </i>
+                        Statistics
+                    </a>
+                </li>
+                <li class="btn-group nav-item">
+                    <a href="javascript:void(0);" class="nav-link">
+                        <i class="nav-link-icon fa fa-edit"></i>
+                        Projects
+                    </a>
+                </li>
+                <li class="dropdown nav-item">
+                    <a href="javascript:void(0);" class="nav-link">
+                        <i class="nav-link-icon fa fa-cog"></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="app-header-right">
+            <div class="header-btn-lg pr-0">
+                <div class="widget-content p-0">
+                    <div class="widget-content-wrapper">
+                        <div class="widget-content-left">
+                            <div class="btn-group">
+                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                   class="p-0 btn">
+                                    <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                    <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                </a>
+                                <div tabindex="-1" role="menu" aria-hidden="true"
+                                     class="dropdown-menu dropdown-menu-right">
+                                    <button type="button" tabindex="0" class="dropdown-item">User Account</button>
+                                    <button type="button" tabindex="0" class="dropdown-item">Settings</button>
+                                    <h6 tabindex="-1" class="dropdown-header">Header</h6>
+                                    <button type="button" tabindex="0" class="dropdown-item">Actions</button>
+                                    <div tabindex="-1" class="dropdown-divider"></div>
+                                    <button type="button" tabindex="0" class="dropdown-item">Dividers</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget-content-left  ml-3 header-user-info">
+                            <div class="widget-heading">
+                                Alina Mclourd
+                            </div>
+                            <div class="widget-subheading">
+                                VP People Manager
+                            </div>
+                        </div>
+                        <div class="widget-content-right header-user-info ml-3">
+                            <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
+                                <i class="fa text-white fa-calendar pr-1 pl-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
