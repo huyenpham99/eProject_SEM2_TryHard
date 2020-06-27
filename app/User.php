@@ -23,12 +23,12 @@ class User extends Authenticatable
 //    protected $attributes = [
 //        'role' => 2,
 //        'account_status' => "Please give account access",
-//        // them de push thoi
 //    ];
 
     public const ADMIN_ROLE = 1;
     public const USER_ROLE = 0;
-
+    public const MANAGER_ROLE1 = 2;
+    public const MANAGER_ROLE2 = 3;
     /**
      * The attributes that should be hidden for arrays.
      *

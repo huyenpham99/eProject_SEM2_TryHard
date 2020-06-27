@@ -15,7 +15,8 @@ class UpdateUserTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string("password")->after("image");
-            $table->string("address")->nullable()->after("email");
+            $table->string("address")->after("email")->nullable();
+            $table->string("account_status")->after("address")->nullable();
         });
     }
 

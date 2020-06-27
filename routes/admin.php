@@ -28,3 +28,9 @@ Route::get("/edit-blog/{id}","BlogController@editBlog");
 Route::put("/update-blog/{id}","BlogController@updateBlog");
 Route::delete("/delete-blog/{id}","BlogController@deleteBlog");
 
+
+
+//User Router
+Route::get("/list-user", "UserController@listUser");
+Route::get("/new-manager", "UserController@newManager");
+Route::get("/save-manager", "UserController@saveManager");
