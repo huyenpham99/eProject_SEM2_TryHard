@@ -1,19 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-   <x-head/>
+    <x-head/>
 </head>
 <body>
-<x-header/>
-<x-aside/>
+<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+    <x-header/>
+    <x-theme-ui-setting/>
+    <div class="app-main">
 
-<section id="main-content">
-    @yield("content")
+        <x-aside/>
+        <div class="app-main__outer">
+            <div class="app-main__inner">
+                <x-title/>
+                @yield("content")
+            </div>
+        </div>
+    </div>
     <x-footer/>
-</section>
-
-
-
+</div>
 </body>
-<x-scripts/>
+<script type="text/javascript" src="{{asset("./assets/scripts/main.js")}}"></script>
 </html>
+
