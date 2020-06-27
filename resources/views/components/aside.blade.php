@@ -45,6 +45,84 @@
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
+                        User
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{url("/new-manager")}}">
+                                <i class="metismenu-icon"></i>
+                                New User
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url("/list-user")}}">
+                                <i class="metismenu-icon"></i>
+                                List User
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-diamond"></i>
+                        Product
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="elements-buttons-standard.html">
+                                <i class="metismenu-icon"></i>
+                                New Product
+                            </a>
+                        </li>
+                        <li>
+                            <a href="elements-dropdowns.html">
+                                <i class="metismenu-icon"></i>
+                                List Product
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-diamond"></i>
+                        Blog
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="elements-buttons-standard.html">
+                                <i class="metismenu-icon"></i>
+                                New Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="elements-dropdowns.html">
+                                <i class="metismenu-icon"></i>
+                                List Blog
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-diamond"></i>
+                        Event
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="elements-buttons-standard.html">
+                                <i class="metismenu-icon"></i>
+                                New Event
+                            </a>
+                        </li>
+                        <li>
+                            <a href="elements-dropdowns.html">
+                                <i class="metismenu-icon"></i>
+                                List Event
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-diamond"></i>
                         Category
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
