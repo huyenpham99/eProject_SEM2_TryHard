@@ -24,8 +24,8 @@ class CreateTableEvent extends Migration
             $table->string("event_desc");
             $table->unsignedBigInteger("user_id");
             $table->unsignedBigInteger("banner_id");
-            $table->foreign("user_id")->references("id")->on("user");
-            $table->foreign("banner_id")->references("id")->on("banner");
+            $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
+            $table->foreign("banner_id")->references("id")->on("banner")->onDelete("cascade");
             $table->timestamps();
         });
     }

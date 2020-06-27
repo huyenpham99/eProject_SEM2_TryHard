@@ -16,15 +16,15 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'image','email','telephone','address','account_status','password','role',
+        'name', 'image','email','telephone','address','password','role',
     ];
 
 
-    protected $attributes = [
-        'role' => 2,
-        'account_status' => "Please give account access",
-        // them de push thoi
-    ];
+//    protected $attributes = [
+//        'role' => 2,
+//        'account_status' => "Please give account access",
+//        // them de push thoi
+//    ];
 
     public const ADMIN_ROLE = 1;
     public const USER_ROLE = 0;
@@ -34,12 +34,12 @@ class User extends Authenticatable
      *
      * @var array
      */
-    public function getImage(){
-        if(is_null($this->__get("image"))){
-            return asset("media/default.jpg");
-        }
-        return asset($this->__get("image"));
-    }
+//    public function getImage(){
+//        if(is_null($this->__get("image"))){
+//            return asset("media/default.jpg");
+//        }
+//        return asset($this->__get("image"));
+//    }
     protected $hidden = [
         'password', 'remember_token',
     ];
