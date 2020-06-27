@@ -12,7 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Router index login..
 
-\Illuminate\Support\Facades\Auth::routes();
-Route::get("/","WebController@dashboard");
+Auth::routes();
 
+require_once "user.php";
+//
+//Route::group(["middleware"=>["admin","auth"],"prefix"=>"admin"],function(){
+//    require_once "admin.php";
+//});
+
+require_once "admin.php";
+Route::get('/home', 'HomeController@index')->name('home');
