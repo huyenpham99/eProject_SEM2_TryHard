@@ -18,3 +18,13 @@ Route::post("/save-product","ProductController@saveProduct");
 Route::get("/edit-product/{id}","ProductController@editProduct");
 Route::put("/update-product/{id}","ProductController@updateProduct");
 Route::delete("/delete-product/{id}","ProductController@deleteProduct");
+
+//Blog Router
+
+Route::get("/list-blog","BlogController@listBlog");
+Route::get("/new-blog","BlogController@newBlog");
+Route::post("/save-blog","BlogController@saveBlog");
+Route::get("/edit-blog/{id}","BlogController@editBlog");
+Route::put("/update-blog/{id}","BlogController@updateBlog");
+Route::delete("/delete-blog/{id}","BlogController@deleteBlog");
+
