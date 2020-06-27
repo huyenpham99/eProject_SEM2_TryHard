@@ -18,6 +18,7 @@ class BlogController extends Controller
         return view("blog.edit",[
             "blog" => $blog
         ]);
+        //
     }
     public function newBlog(){
         return view("blog.new");
