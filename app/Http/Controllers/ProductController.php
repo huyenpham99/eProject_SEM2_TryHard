@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -38,16 +39,15 @@ class ProductController extends Controller
 //                "product_image2"=>$request->get("product_image2"),
 //                "product_image3"=>$request->get("product_image3"),
 //                "product_image4"=>$request->get("product_image4"),
-
                 "product_desc"=>$request->get("product_desc"),
-                "product_price"=>$request->get("price"),
+                "product_price"=>$request->get("product_price"),
                 "qty"=>$request->get("qty"),
                 "category_id"=>$request->get("category_id"),
             ]);
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("admin/list-product");
+        return redirect()->to("/list-product");
     }
 
     public function editProduct($id){
@@ -84,7 +84,7 @@ class ProductController extends Controller
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("admin/list-product");
+        return redirect()->to("/list-product");
     }
     public function deleteProduct($id){
         $products = Product::findorFail($id);
@@ -93,6 +93,6 @@ class ProductController extends Controller
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("admin/list-product");
+        return redirect()->to("/list-product");
     }
 }
