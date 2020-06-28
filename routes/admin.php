@@ -66,3 +66,4 @@ Route::post("/save-banner","BannerController@saveBanner");
 Route::get("/edit-banner/{id}","BannerController@editBanner");
 Route::put("/update-banner/{id}","BannerController@updateBanner");
 Route::delete("/delete-banner/{id}","BannerController@deleteBanner");
+//

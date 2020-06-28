@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class BannerController extends Controller
 {
+<<<<<<< HEAD
     public function listBanner(){
         $banner = Banner::all();//nạp sẵn phần cần nạp trong collection
         return view("banner.list",
@@ -75,4 +76,9 @@ class BannerController extends Controller
         }
         return redirect()->to("/list-banner");
     }
+=======
+/////
+/// ////////
+/// ////
+>>>>>>> e004fb5321fd854399494a506318f30d9e987256
 }
