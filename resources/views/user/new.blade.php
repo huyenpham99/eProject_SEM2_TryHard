@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" name="user_name" class="form-control" required>
+                            <input type="text" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
@@ -30,9 +30,9 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Role</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option value="1">Quản trị bài viết</option>
-                                <option value="2">Quản trị người dùng</option>
+                            <select name="role" class="form-control" id="exampleFormControlSelect1">
+                                <option value="2">Quản trị bài viết</option>
+                                <option value="3">Quản trị người dùng</option>
                             </select>
                         </div>
                     </div>
