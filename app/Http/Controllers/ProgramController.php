@@ -46,7 +46,7 @@ class ProgramController extends Controller
         } catch (\Exception $exception) {
             return redirect()->back();
         }
-        return redirect()->to("/list-program");
+        return redirect()->to("/admin/list-program");
     }
 
     public function editProgram($id)
@@ -77,7 +77,7 @@ class ProgramController extends Controller
             dd($exception->getMessage());
             return redirect()->back();
         }
-        return redirect()->to("/list-program");
+        return redirect()->to("/admin/list-program");
     }
 
     public function deleteProgram($id)
@@ -88,6 +88,6 @@ class ProgramController extends Controller
         } catch (\Exception $exception) {
             return redirect()->back();
         }
-        return redirect()->to("/list-program");
+        return redirect()->to("/admin/list-program");
     }
 }
