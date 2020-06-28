@@ -47,7 +47,7 @@ class HomeController extends Controller
 //            $p->slug = $slug.$p->__get("id");// luu lai vao DB
 //            $p->save();
 ////            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
-                return view("home");
+                return view("frontend.home");
         }
 
 
