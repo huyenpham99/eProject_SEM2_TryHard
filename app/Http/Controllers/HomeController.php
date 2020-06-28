@@ -40,6 +40,7 @@ class HomeController extends Controller
 //        $u->role =User::ADMIN_ROLE;
 //        $u->save();
 //        die("done");
+        //
 
         //Tạo slug product
 //        $products = Product::all();
