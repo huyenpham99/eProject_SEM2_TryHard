@@ -80,12 +80,15 @@
                     <ul>
                         <li>
                             <a href="{{url("/admin/new-product")}}">
+
                                 <i class="metismenu-icon"></i>
                                 New Product
                             </a>
                         </li>
                         <li>
+
                             <a href="{{url("/admin/list-product")}}">
+
                                 <i class="metismenu-icon"></i>
                                 List Product
                             </a>
@@ -100,13 +103,17 @@
                     </a>
                     <ul>
                         <li>
+
                             <a href="{{url("/admin/new-category")}}">
+
                                 <i class="metismenu-icon"></i>
                                 New Category
                             </a>
                         </li>
                         <li>
+
                             <a href="{{url("/admin/list-category")}}">
+
                                 <i class="metismenu-icon"></i>
                                 List Category
                             </a>
@@ -121,13 +128,17 @@
                     </a>
                     <ul>
                         <li>
+
                             <a href="{{url("/admin/new-blog")}}">
+
                                 <i class="metismenu-icon"></i>
                                 New Blog
                             </a>
                         </li>
                         <li>
+
                             <a href="{{url("/admin/list-blog")}}">
+
                                 <i class="metismenu-icon"></i>
                                 List Blog
                             </a>

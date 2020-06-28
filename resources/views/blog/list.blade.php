@@ -9,7 +9,7 @@
                 <div class="card-header border-0">
                     <h2 class="mb-0 col-lg-9 float-left text-capitalize">Blog List</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("/new-blog")}}" class="btn btn-sm btn-neutral">Create</a>
+                        <a href="{{url("admin/new-blog")}}" class="btn btn-sm btn-neutral">Create</a>
                     </div>
                 </div>
                 <!-- Light table -->
@@ -39,9 +39,9 @@
                                     echo $doc->saveHTML();
                                 @endphp</td>
                             <td>{{$blog->__get("view_count")}}</td>
-                            <td> <a href="{{url("/edit-blog/{$blog->__get("id")}")}}" class="btn btn-outline-warning">Edit</a></td>
+                            <td> <a href="{{url("admin/edit-blog/{$blog->__get("id")}")}}" class="btn btn-outline-warning">Edit</a></td>
                             <td>
-                                <form action="{{url("/delete-blog/{$blog->__get("id")}")}}" method="post">
+                                <form action="{{url("admin/delete-blog/{$blog->__get("id")}")}}" method="post">
                                     @method("DELETE")
                                     @csrf
                                     <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-outline-dark">Delete</button>

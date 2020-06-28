@@ -32,7 +32,7 @@ class UserController extends Controller
         }catch(\Exception $exception){
             dd($exception->getMessage());
         }
-        return redirect()->to("/list-user");
+        return redirect()->to("admin/list-user");
     }
     public function editUser($id)
     {
