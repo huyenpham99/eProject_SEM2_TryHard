@@ -8,6 +8,8 @@
                         <span class="hamburger-box">
                             <span class="hamburger-inner"></span>
                         </span>
+{{--                    --}}
+{{--                    --}}
                 </button>
             </div>
         </div>
@@ -43,35 +45,29 @@
                 </li>
                 <li class="app-sidebar__heading">WEB</li>
                 @if(Auth::user()->role === 1)
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon pe-7s-diamond"></i>
+                            Admin
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="{{url("/admin/new-manager")}}">
+                                    <i class="metismenu-icon"></i>
+                                    New Manager
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url("/admin/list-user")}}">
+                                    <i class="metismenu-icon"></i>
+                                    List Manager
+                                </a>
+                            </li>
+                        </ul>
+                @else
+                @endif
                 <li>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-diamond"></i>
-                        Category
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-
-                    <ul>
-                        <li>
-
-                            <a href="{{url("/admin/new-manager")}}">
-
-                                <i class="metismenu-icon"></i>
-                                New Manager
-                            </a>
-                        </li>
-                        <li>
-
-                            <a href="{{url("/admin/list-user")}}">
-
-
-                                <i class="metismenu-icon"></i>
-                                List Manager
-                            </a>
-                        </li>
-                    </ul>
-                    @else
-                        @endif
-
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
                         Product
@@ -103,7 +99,6 @@
                     </a>
                     <ul>
                         <li>
-
                             <a href="{{url("/admin/new-category")}}">
 
                                 <i class="metismenu-icon"></i>
@@ -111,7 +106,6 @@
                             </a>
                         </li>
                         <li>
-
                             <a href="{{url("/admin/list-category")}}">
 
                                 <i class="metismenu-icon"></i>
