@@ -34,3 +34,13 @@ Route::delete("/delete-blog/{id}","BlogController@deleteBlog");
 Route::get("/list-user", "UserController@listUser");
 Route::get("/new-manager", "UserController@newManager");
 Route::get("/save-manager", "UserController@saveManager");
+
+
+
+//Event Router
+Route::get("/list-event","EventController@listEvent");
+Route::get("/new-event","EventController@newEvent");
+Route::post("/save-event","EventController@saveEvent");
+Route::get("/edit-event/{id}","EventController@editEvent");
+Route::put("/update-event/{id}","EventController@updateEvent");
+Route::delete("/delete-event/{id}","EventController@deleteEvent");
