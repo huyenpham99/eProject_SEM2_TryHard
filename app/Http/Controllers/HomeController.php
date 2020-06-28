@@ -31,8 +31,15 @@ class HomeController extends Controller
         return view("frontend.about");
     }
 
-    public function blog(Request $request)
+
+
+    public function shop(Request $request)
     {
-        return view("frontend.blog");
+        return view("frontend.shop");
+    }
+
+    public function programs(Request $request)
+    {
+        return view("frontend.programs");
     }
 }
