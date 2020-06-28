@@ -56,7 +56,7 @@ class BlogController extends Controller
         } catch (\Exception $exception) {
             dd($exception->getMessage());
         }
-        return redirect()->to("/list-blog");
+        return redirect()->to("/admin/list-blog");
     }
     public function deleteBlog($id){
         $blog = Blog::findOrFail($id);
@@ -65,6 +65,6 @@ class BlogController extends Controller
         } catch (\Exception $exception) {
             return redirect()->back();
         }
-        return redirect()->to("/list-blog");
+        return redirect()->to("/admin/list-blog");
     }
 }
