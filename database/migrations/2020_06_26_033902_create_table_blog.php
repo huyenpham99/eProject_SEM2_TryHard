@@ -15,11 +15,9 @@ class CreateTableBlog extends Migration
     {
         Schema::create('blog', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger("user_id");
             $table->string("blog_title");
             $table->string("blog_desc");
-            $table->integer("view_count");
-            $table->foreign("user_id")->references("id")->on("users")->onDelete("cascade");
+            $table->integer("view_count")->default(0);
             $table->timestamps();
         });
     }
