@@ -23,6 +23,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view("frontend.home");
+    }
+
+    public function about(Request $request)
+    {
+        return view("frontend.about");
+    }
+
+    public function blog(Request $request)
+    {
+        return view("frontend.blog");
     }
 }
