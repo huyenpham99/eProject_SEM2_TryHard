@@ -42,6 +42,7 @@
                     </a>
                 </li>
                 <li class="app-sidebar__heading">WEB</li>
+                @if(Auth::user()->role === 1)
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
@@ -50,20 +51,32 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{url("/new-category")}}">
+
+                            <a href="{{url("/admin/new-manager")}}">
+
                                 <i class="metismenu-icon"></i>
                                 New Category
                             </a>
                         </li>
                         <li>
-                            <a href="{{url("/list-category")}}">
+
+                            <a href="{{url("/admin/list-user")}}">
+
+
                                 <i class="metismenu-icon"></i>
                                 List Category
                             </a>
                         </li>
                     </ul>
-                </li>
-                <li>
+
+                    <li/>
+                    @else
+
+                        @endif
+
+
+                
+
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
                         Product
