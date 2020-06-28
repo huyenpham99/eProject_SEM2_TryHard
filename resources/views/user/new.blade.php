@@ -8,13 +8,13 @@
                 <div class="card-header border-0">
                     <h2 class="mb-0 col-lg-9 float-left">Create New Manager</h2>
                 </div>
-                <form role="form" action="{{url("/save-manager")}}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{url("admin/save-manager")}}" method="post" enctype="multipart/form-data">
                     @method("POST")
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" name="user_name" class="form-control" required>
+                            <input type="text" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
@@ -30,9 +30,9 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Role</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option value="1">Quản trị bài viết</option>
-                                <option value="2">Quản trị người dùng</option>
+                            <select name="role" class="form-control" id="exampleFormControlSelect1">
+                                <option value="2">Quản trị bài viết</option>
+                                <option value="3">Quản trị người dùng</option>
                             </select>
                         </div>
                     </div>
