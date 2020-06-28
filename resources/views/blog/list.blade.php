@@ -36,8 +36,9 @@
                             <td>@php
                                     $doc = new DOMDocument();
                                     $doc->loadHTML($blog->__get("blog_content"));
-                                    echo $doc->saveHTML();
+                                 echo $doc->saveHTML();
                                 @endphp</td>
+{{--                            <td>{{$blog->__get("blog_content")}}</td>--}}
                             <td>{{$blog->__get("view_count")}}</td>
                             <td> <a href="{{url("admin/edit-blog/{$blog->__get("id")}")}}" class="btn btn-outline-warning">Edit</a></td>
                             <td>
