@@ -1,6 +1,5 @@
 <?php
-Route::get("/","WebController@dashboard");
-
+Route::get("/admin","WebController@dashboard");
 
 //CategoryRepository Router
 Route::get("/list-category","CategoryController@listCategory");
@@ -9,7 +8,6 @@ Route::post("/save-category","CategoryController@saveCategory");
 Route::get("/edit-category/{id}","CategoryController@editCategory");
 Route::put("/update-category/{id}","CategoryController@updateCategory");
 Route::delete("/delete-category/{id}","CategoryController@deleteCategory");
-
 
 //Products Router
 Route::get("/list-product","ProductController@listProduct");
@@ -20,15 +18,12 @@ Route::put("/update-product/{id}","ProductController@updateProduct");
 Route::delete("/delete-product/{id}","ProductController@deleteProduct");
 
 //Blog Router
-
 Route::get("/list-blog","BlogController@listBlog");
 Route::get("/new-blog","BlogController@newBlog");
 Route::post("/save-blog","BlogController@saveBlog");
 Route::get("/edit-blog/{id}","BlogController@editBlog");
 Route::put("/update-blog/{id}","BlogController@updateBlog");
 Route::delete("/delete-blog/{id}","BlogController@deleteBlog");
-
-
 
 //User Router
 Route::get("/list-user", "UserController@listUser")->middleware('admin1');

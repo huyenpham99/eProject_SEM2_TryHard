@@ -62,10 +62,18 @@ class HomeController extends Controller
 //    }
     public function blog(Blog $blog)
     {
+
         if (!session()->has("view_count_{$blog->__get("id")}")) {// kiểm tra xem sesion  nếu chưa có sẽ đăng lên
             $blog->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
             session(["view_count{$blog->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
         }
+        return view("frontend.blog");
     }
+
+    public function about(Request $request)
+    {
+        return view("frontend.about");
+    }
+
 
 }
