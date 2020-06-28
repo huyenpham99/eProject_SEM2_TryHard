@@ -24,3 +24,10 @@ Route::delete("/delete-product/{id}","ProductController@deleteProduct");
 Route::get("/list-user", "UserController@listUser");
 Route::get("/new-manager", "UserController@newManager");
 Route::get("/save-manager", "UserController@saveManager");
+//Program Router
+Route::get("/list-program","ProgramController@listProgram");
+Route::get("/new-program","ProgramController@newProgram");
+Route::post("/save-program","ProgramController@saveProgram");
+Route::get("/edit-program/{id}","ProgramController@editProgram");
+Route::put("/update-program/{id}","ProgramController@updateProgram");
+Route::delete("/delete-program/{id}","ProgramController@deleteProgram");

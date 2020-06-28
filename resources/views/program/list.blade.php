@@ -1,15 +1,16 @@
+
 @extends("layout")
-@section("title", "CategoryRepository List")
-@section("contentHeader", "CategoryRepository List")
+@section("title", "ProgramRepository List")
+@section("contentHeader", "ProgramRepository List")
 @section("content")
     <div class="row mt-4">
         <div class="col">
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left">Category List</h2>
+                    <h2 class="mb-0 col-lg-9 float-left">Program List</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("/new-category")}}" class="btn btn-sm btn-neutral">Create</a>
+                        <a href="{{url("/new-program")}}" class="btn btn-sm btn-neutral">Create</a>
                         {{--                        @foreach($categories as $category)--}}
                         {{--                            <a href="{{url("/admin/edit-category/{$category->__get("id")}")}}" class="btn btn-sm btn-neutral">Update</a>--}}
                         {{--                        @endforeach--}}
@@ -25,7 +26,10 @@
                                 data-sort="name">ID
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Category Name
+                                data-sort="name">Program Name
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">User Name
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Created At
@@ -42,18 +46,20 @@
                         </tr>
                         </thead>
                         <tbody class="list">
-                        @foreach($categories as $category)
+                        @foreach($program as $program)
                             <tr>
-                                <td>{{$category->__get("id")}}</td>
-                                <td>{{$category->__get("category_name")}}</td>
-                                <td>{{$category->__get("created_at")}}</td>
-                                <td>{{$category->__get("updated_at")}}</td>
+                                <td>{{$program->__get("id")}}</td>
+                                <td>{{$program->__get("program_name")}}</td>
+                                <td>{{$program->User->__get("name")}}</td>
+{{--                                <td>{{$product->Category->__get("category_name")}}</td>--}}
+                                <td>{{$program->__get("created_at")}}</td>
+                                <td>{{$program->__get("updated_at")}}</td>
                                 <td>
-                                    <a href="{{url("/edit-category/{$category->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
+                                    <a href="{{url("/edit-program/{$program->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
 
                                 </td>
                                 <td>
-                                    <form action="{{url("/delete-category/{$category->__get("id")}")}}" method="post">
+                                    <form action="{{url("/delete-program/{$program->__get("id")}")}}" method="post">
                                         @method("DELETE")
                                         @csrf
                                         <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-outline-dark">Delete</button>
