@@ -46,27 +46,36 @@
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
-                        User
+                        Category
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
+
                             <a href="{{url("/admin/new-manager")}}">
+
                                 <i class="metismenu-icon"></i>
-                                New User
+                                New Category
                             </a>
                         </li>
                         <li>
+
                             <a href="{{url("/admin/list-user")}}">
+
+
                                 <i class="metismenu-icon"></i>
-                                List User
+                                List Category
                             </a>
                         </li>
                     </ul>
+
                     <li/>
                     @else
 
                         @endif
+
+
+                
 
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
@@ -75,53 +84,15 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="elements-buttons-standard.html">
+                            <a href="{{url("/new-product")}}">
                                 <i class="metismenu-icon"></i>
                                 New Product
                             </a>
                         </li>
                         <li>
-                            <a href="elements-dropdowns.html">
+                            <a href="{{url("/list-product")}}">
                                 <i class="metismenu-icon"></i>
                                 List Product
-                            </a>
-                        </li>
-                    </ul>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-diamond"></i>
-                        Blog
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="elements-buttons-standard.html">
-                                <i class="metismenu-icon"></i>
-                                New Blog
-                            </a>
-                        </li>
-                        <li>
-                            <a href="elements-dropdowns.html">
-                                <i class="metismenu-icon"></i>
-                                List Blog
-                            </a>
-                        </li>
-                    </ul>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-diamond"></i>
-                        Event
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="elements-buttons-standard.html">
-                                <i class="metismenu-icon"></i>
-                                New Event
-                            </a>
-                        </li>
-                        <li>
-                            <a href="elements-dropdowns.html">
-                                <i class="metismenu-icon"></i>
-                                List Event
                             </a>
                         </li>
                     </ul>
@@ -129,42 +100,25 @@
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
-                        Category
+                        User
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="{{url("/new-category")}}">
+                            <a href="{{url("/new-manager")}}">
                                 <i class="metismenu-icon"></i>
-                                New Category
+                                New User
                             </a>
                         </li>
                         <li>
-                            <a href="{{url("/list-category")}}">
+                            <a href="{{url("/list-user")}}">
                                 <i class="metismenu-icon"></i>
-                                List Category
+                                List User
                             </a>
                         </li>
                     </ul>
-                    <a href="#">
-                        <i class="metismenu-icon pe-7s-diamond"></i>
-                        Product
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="elements-buttons-standard.html">
-                                <i class="metismenu-icon"></i>
-                                New Product
-                            </a>
-                        </li>
-                        <li>
-                            <a href="elements-dropdowns.html">
-                                <i class="metismenu-icon"></i>
-                                List Product
-                            </a>
-                        </li>
-                    </ul>
+                </li>
+                <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
                         Blog
@@ -172,18 +126,20 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="elements-buttons-standard.html">
+                            <a href="{{url("/new-blog")}}">
                                 <i class="metismenu-icon"></i>
                                 New Blog
                             </a>
                         </li>
                         <li>
-                            <a href="elements-dropdowns.html">
+                            <a href="{{url("/list-blog")}}">
                                 <i class="metismenu-icon"></i>
                                 List Blog
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
                         Event
@@ -204,7 +160,6 @@
                         </li>
                     </ul>
                 </li>
-
                 <li class="app-sidebar__heading">Charts</li>
                 <li>
                     <a href="charts-chartjs.html">
@@ -225,3 +180,5 @@
         </div>
     </div>
 </div>
+
+{{--hello--}}
