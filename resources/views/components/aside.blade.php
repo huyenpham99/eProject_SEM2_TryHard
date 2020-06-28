@@ -75,7 +75,7 @@
                         @endif
 
 
-                
+
 
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
@@ -84,13 +84,13 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{url("/new-product")}}">
+                            <a href="{{url("admin/new-product")}}">
                                 <i class="metismenu-icon"></i>
                                 New Product
                             </a>
                         </li>
                         <li>
-                            <a href="{{url("/list-product")}}">
+                            <a href="{{url("admin/list-product")}}">
                                 <i class="metismenu-icon"></i>
                                 List Product
                             </a>
@@ -105,13 +105,13 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{url("/new-manager")}}">
+                            <a href="{{url("admin/new-manager")}}">
                                 <i class="metismenu-icon"></i>
                                 New User
                             </a>
                         </li>
                         <li>
-                            <a href="{{url("/list-user")}}">
+                            <a href="{{url("admin/list-user")}}">
                                 <i class="metismenu-icon"></i>
                                 List User
                             </a>
@@ -126,13 +126,13 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{url("/new-blog")}}">
+                            <a href="{{url("admin/new-blog")}}">
                                 <i class="metismenu-icon"></i>
                                 New Blog
                             </a>
                         </li>
                         <li>
-                            <a href="{{url("/list-blog")}}">
+                            <a href="{{url("admin/list-blog")}}">
                                 <i class="metismenu-icon"></i>
                                 List Blog
                             </a>

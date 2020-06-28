@@ -9,7 +9,7 @@
                 <div class="card-header border-0">
                     <h2 class="mb-0 col-lg-9 float-left">User Listing</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("/new-user")}}" class="btn btn-success btn-sm text-white">Create</a>
+                        <a href="{{url("admin/new-user")}}" class="btn btn-success btn-sm text-white">Create</a>
                     </div>
                 </div>
                 <!-- Light table -->
@@ -49,7 +49,7 @@
                                         <a class="pr-2" href="{{url("admin/edit-user/{$user->__get("id")}")}}">
                                             <button type="button" class="btn btn-warning btn-sm">Set Access</button>
                                         </a>
-{{--                                        <form action="{{url("admin/delete-user/{$user->__get("id")}")}}" method="post">--}}
+{{--                                        <form action="{{url("adminadmin/delete-user/{$user->__get("id")}")}}" method="post">--}}
 {{--                                            @method("DELETE")--}}
 {{--                                            @csrf--}}
 {{--                                            <button type="submit" onclick="return confirm('Are you sure!');"--}}
