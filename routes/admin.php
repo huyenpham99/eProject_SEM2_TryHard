@@ -1,5 +1,6 @@
 <?php
 Route::get("/","WebController@dashboard");
+//
 
 //CategoryRepository Router
 Route::get("/list-category","CategoryController@listCategory");
