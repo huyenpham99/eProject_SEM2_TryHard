@@ -74,3 +74,4 @@ class BannerController extends Controller
         return redirect()->to("/admin/list-banner");
     }
 }
+//v
