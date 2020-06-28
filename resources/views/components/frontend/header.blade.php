@@ -38,6 +38,7 @@
                 @guest
                     <li class="float-right" style="list-style: none;"><a href="{{url("/login")}}"
                                                                          style="border-radius: 20px; width: 100px; height: 40px"
+                                                                         style="border-radius: 20px; width: 100px; height: 40px;margin-left: 10px"
                                                                          type="button"
                                                                          class="btn btn-secondary">Login</a>
                     </li>
@@ -53,9 +54,12 @@
                         </li>
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-{{--                        //--}}
-{{--                        //--}}
-{{--                        //--}}
+                        {{--                        //--}}
+                        {{--                        //--}}
+                        {{--                        //--}}
+                        {{--                        //--}}
+                        {{--                        //--}}
+                        {{--                        //--}}
                         @csrf
                     </form>
                 @endguest
