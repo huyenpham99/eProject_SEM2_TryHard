@@ -9,7 +9,7 @@
                 <div class="card-header border-0">
                     <h2 class="mb-0 col-lg-9 float-left">Banner Listing</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("/new-banner")}}" class="btn btn-sm btn-neutral">Create</a>
+                        <a href="{{url("/admin/new-banner")}}" class="btn btn-sm btn-neutral">Create</a>
                     </div>
                 </div>
                 <!-- Light table -->
@@ -49,10 +49,10 @@
                                 <td>{{$banner->__get("created_at")}}</td>
                                 <td>{{$banner->__get("updated_at")}}</td>
                                 <td>
-                                    <a href="{{url("/edit-banner/{$banner->__get("id")}")}}" class="btn btn-outline-dark">Edit</a>
+                                    <a href="{{url("/admin/edit-banner/{$banner->__get("id")}")}}" class="btn btn-outline-dark">Edit</a>
                                 </td>
                                 <td>
-                                    <form action="{{url("/delete-banner/{$banner->__get("id")}")}}" method="post">
+                                    <form action="{{url("/admin/delete-banner/{$banner->__get("id")}")}}" method="post">
                                         @method("DELETE")
                                         @csrf
                                         <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-outline-dark">Delete</button>

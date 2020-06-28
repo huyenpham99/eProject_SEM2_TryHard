@@ -8,7 +8,7 @@
                 <div class="card-header border-0">
                     <h2 class="mb-0 col-lg-9 float-left">Create New Banner</h2>
                 </div>
-                <form role="form" action="{{url("/save-banner")}}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{url("/admin/save-banner")}}" method="post" enctype="multipart/form-data">
                     @method("POST")
                     @csrf
                     <div class="card-body">

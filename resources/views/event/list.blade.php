@@ -9,7 +9,7 @@
                 <div class="card-header border-0">
                     <h2 class="mb-0 col-lg-9 float-left text-capitalize">Event List</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("/new-event")}}" class="btn btn-sm btn-neutral">Create</a>
+                        <a href="{{url("/admin/new-event")}}" class="btn btn-sm btn-neutral">Create</a>
                     </div>
                 </div>
                 <!-- Light table -->
@@ -48,9 +48,9 @@
                                         $doc->loadHTML($event->__get("event_content"));
                                         echo $doc->saveHTML();
                                     @endphp</td>
-                                <td> <a href="{{url("/edit-event/{$event->__get("id")}")}}" class="btn btn-outline-warning">Edit</a></td>
+                                <td> <a href="{{url("/admin/edit-event/{$event->__get("id")}")}}" class="btn btn-outline-warning">Edit</a></td>
                                 <td>
-                                    <form action="{{url("/delete-event/{$event->__get("id")}")}}" method="post">
+                                    <form action="{{url("/admin/delete-event/{$event->__get("id")}")}}" method="post">
                                         @method("DELETE")
                                         @csrf
                                         <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-outline-dark">Delete</button>

@@ -70,6 +70,37 @@
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
+<<<<<<< HEAD
+                        Manager
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+
+                    <ul>
+                        <li>
+
+                            <a href="{{url("/admin/new-manager")}}">
+
+                                <i class="metismenu-icon"></i>
+                                New Manager
+                            </a>
+                        </li>
+                        <li>
+
+                            <a href="{{url("/admin/list-user")}}">
+
+
+                                <i class="metismenu-icon"></i>
+                                List Manager
+                            </a>
+                        </li>
+                    </ul>
+                    @else
+                        @endif
+
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-diamond"></i>
+=======
+>>>>>>> 2256519e7744db37f24bdfa6a0db9808de5eb0bd
                         Product
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
@@ -117,20 +148,20 @@
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
-                        Program
+                        Banner
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="{{url("/new-program")}}">
+                            <a href="{{url("/admin/new-banner")}}">
                                 <i class="metismenu-icon"></i>
-                                New Program
+                                New Banner
                             </a>
                         </li>
                         <li>
-                            <a href="{{url("/list-program")}}">
+                            <a href="{{url("/admin/list-banner")}}">
                                 <i class="metismenu-icon"></i>
-                                List Program
+                                List Banner
                             </a>
                         </li>
                     </ul>
@@ -166,19 +197,63 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="elements-buttons-standard.html">
+                            <a href="{{url("/admin/new-event")}}">
                                 <i class="metismenu-icon"></i>
                                 New Event
                             </a>
                         </li>
                         <li>
-                            <a href="elements-dropdowns.html">
+                            <a href="{{url("/admin/list-event")}}">
                                 <i class="metismenu-icon"></i>
                                 List Event
                             </a>
                         </li>
                     </ul>
                 </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon pe-7s-diamond"></i>
+                            Program
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="{{url("/admin/new-program")}}">
+                                    <i class="metismenu-icon"></i>
+                                    New Program
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url("/admin/list-program")}}">
+                                    <i class="metismenu-icon"></i>
+                                    List Program
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#">
+                            <i class="metismenu-icon pe-7s-diamond"></i>
+                            Blog
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                            <li>
+
+                                <a href="{{url("/admin/new-blog")}}">
+
+                                    <i class="metismenu-icon"></i>
+                                    New Blog
+                                </a>
+                            </li>
+                            <li>
+
+                                <a href="{{url("/admin/list-blog")}}">
+
+                                    <i class="metismenu-icon"></i>
+                                    List Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 <li class="app-sidebar__heading">Charts</li>
                 <li>
                     <a href="charts-chartjs.html">
@@ -200,4 +275,4 @@
     </div>
 </div>
 
-{{--hello--}}
+
