@@ -26,8 +26,6 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index(){
-        //
-        //
         // tao slug cho cac truong
 //        $category = Category::all();
 //        foreach ($category as $p){
@@ -40,7 +38,6 @@ class HomeController extends Controller
 //        $u->role =User::ADMIN_ROLE;
 //        $u->save();
 //        die("done");
-        //
 
         //Tạo slug product
 //        $products = Product::all();
