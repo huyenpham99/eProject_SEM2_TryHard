@@ -1,6 +1,5 @@
 <?php
-Route::get("/","WebController@dashboard");
-
+Route::get("/admin","WebController@dashboard");
 
 //CategoryRepository Router
 Route::get("/list-category","CategoryController@listCategory");
@@ -9,7 +8,6 @@ Route::post("/save-category","CategoryController@saveCategory");
 Route::get("/edit-category/{id}","CategoryController@editCategory");
 Route::put("/update-category/{id}","CategoryController@updateCategory");
 Route::delete("/delete-category/{id}","CategoryController@deleteCategory");
-
 
 //Products Router
 Route::get("/list-product","ProductController@listProduct");
@@ -20,15 +18,12 @@ Route::put("/update-product/{id}","ProductController@updateProduct");
 Route::delete("/delete-product/{id}","ProductController@deleteProduct");
 
 //Blog Router
-
 Route::get("/list-blog","BlogController@listBlog");
 Route::get("/new-blog","BlogController@newBlog");
 Route::post("/save-blog","BlogController@saveBlog");
 Route::get("/edit-blog/{id}","BlogController@editBlog");
 Route::put("/update-blog/{id}","BlogController@updateBlog");
 Route::delete("/delete-blog/{id}","BlogController@deleteBlog");
-
-
 
 //User Router
 Route::get("/list-user", "UserController@listUser");
@@ -44,3 +39,13 @@ Route::post("/save-event","EventController@saveEvent");
 Route::get("/edit-event/{id}","EventController@editEvent");
 Route::put("/update-event/{id}","EventController@updateEvent");
 Route::delete("/delete-event/{id}","EventController@deleteEvent");
+
+Route::get("/list-user", "UserController@listUser")->middleware('admin1');
+Route::get("/new-manager", "UserController@newManager")->middleware('admin1');
+Route::post("/save-manager", "UserController@saveManager")->middleware('admin1');
+
+Route::put("/update-access/{id}","UserController@updateAccess")->middleware('admin1');
+Route::get("/edit-user/{id}", "UserController@editUser")->middleware('admin1');
+Route::put("/update-user/{id}", "UserController@updateUser")->middleware('admin1');
+Route::get("/view-user/{id}","UserController@viewUser")->middleware('admin1');
+
