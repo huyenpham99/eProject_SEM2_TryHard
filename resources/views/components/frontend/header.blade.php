@@ -26,16 +26,39 @@
                             <ul class="nav navbar-nav text-right pull-right">
                                 <li><a href="{{asset("/")}}">Home</a></li>
                                 <li class="active"><a href="{{asset("/about")}}">About Us</a></li>
-                                <li><a href="">Shop</a></li>
-                                <li><a href="">Programs</a></li>
+                                <li><a href="{{asset("/shop")}}">Shop</a></li>
+                                <li><a href="{{asset("/programs")}}">Programs</a></li>
                                 <li><a href="{{asset("/blog")}}">Blog</a></li>
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
                 </nav>
             </div>
-            <div class="col-xs-12 col-sm-2 nav-right-btn">
-                <a class="btn border-btn-small" href="choose-plan-select-program.html">choose plan</a>
+            <div class="logout" style="position: relative;margin-top: 15px">
+                @guest
+                    <li class="float-right" style="list-style: none;"><a href="{{url("/login")}}"
+                                                                         style="border-radius: 20px; width: 100px; height: 40px;margin-left: 10px"
+                                                                         type="button"
+                                                                         class="btn btn-secondary">Login</a>
+                    </li>
+                @else
+                    <a class="dropdown-item" style="margin-left: 20px!important;position: absolute;top: -5px"
+                       href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                        <li class="float-right" style="list-style: none;">
+                            <button style="border-radius: 20px; width: 100px; height: 40px" type="button"
+                                    class="btn btn-secondary">Logout
+                            </button>
+                        </li>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{--                        //--}}
+                        {{--                        //--}}
+                        {{--                        //--}}
+                        @csrf
+                    </form>
+                @endguest
             </div>
             <!-- ============== Main navigation ends ============== -->
         </div>
