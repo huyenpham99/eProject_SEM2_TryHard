@@ -30,17 +30,17 @@
                                 <td>{{$user->__get("name")}}</td>
                                 <td>
                                     @if($user->__get("role") == 1)
-                                        <a class="btn btn-danger btn-sm text-white">{{$user->__get("account_status")}}Admin</a>
+                                        <a class="btn btn-danger btn-sm text-white">Admin</a>
                                     @elseif($user->__get("role") == 0)
-                                        <a class="btn btn-success btn-sm text-white">{{$user->__get("account_status")}}User</a>
+                                        <a class="btn btn-success btn-sm text-white">Người dùng</a>
                                     @elseif($user->__get("role") == 2)
-                                        <a class="btn btn-success btn-sm text-white">{{$user->__get("account_status")}}Manager 1</a>
+                                        <a class="btn btn-success btn-sm text-white">Quản trị bài viết</a>
                                     @elseif($user->__get("role") == 3)
-                                        <a class="btn btn-success btn-sm text-white">{{$user->__get("account_status")}}Manager 2</a>
+                                        <a class="btn btn-success btn-sm text-white">Quản trị người dùng</a>
                                     @endif
                                 </td>
                                 <td class="d-flex">
-                                    @if(strcmp($user->__get("name"),"admin") == 0)
+                                    @if($user->__get("role") == 1)
                                         <a class="btn btn-danger btn-sm text-white" onclick="alert('This user is protected')">Protected User</a>
                                     @else
                                         <a class="pr-2" href="{{url("admin/view-user/{$user->__get("id")}")}}">
@@ -49,13 +49,13 @@
                                         <a class="pr-2" href="{{url("admin/edit-user/{$user->__get("id")}")}}">
                                             <button type="button" class="btn btn-warning btn-sm">Set Access</button>
                                         </a>
-                                        <form action="{{url("admin/delete-user/{$user->__get("id")}")}}" method="post">
-                                            @method("DELETE")
-                                            @csrf
-                                            <button type="submit" onclick="return confirm('Are you sure!');"
-                                                    class="btn btn-danger btn-sm">Delete
-                                            </button>
-                                        </form>
+{{--                                        <form action="{{url("admin/delete-user/{$user->__get("id")}")}}" method="post">--}}
+{{--                                            @method("DELETE")--}}
+{{--                                            @csrf--}}
+{{--                                            <button type="submit" onclick="return confirm('Are you sure!');"--}}
+{{--                                                    class="btn btn-danger btn-sm">Delete--}}
+{{--                                            </button>--}}
+{{--                                        </form>--}}
                                     @endif
                                 </td>
                             </tr>
