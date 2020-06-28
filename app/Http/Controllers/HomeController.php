@@ -27,6 +27,7 @@ class HomeController extends Controller
      */
     public function index(){
         //
+        //
         // tao slug cho cac truong
 //        $category = Category::all();
 //        foreach ($category as $p){
