@@ -66,7 +66,7 @@ class EventController extends Controller
         }catch (\Exception $exception){
             return $exception->getMessage();
         }
-        return redirect()->to("/list-event");
+        return redirect()->to("/admin/list-event");
     }
     public function updateEvent(Request $request, $id){
         $event = Event::findOrFail($id);
@@ -99,7 +99,7 @@ class EventController extends Controller
         } catch (\Exception $exception) {
             dd($exception->getMessage());
         }
-        return redirect()->to("/list-event");
+        return redirect()->to("/admin/list-event");
     }
     public function deleteEvent($id){
         $event = Event::findOrFail($id);
@@ -108,6 +108,6 @@ class EventController extends Controller
         } catch (\Exception $exception) {
             return redirect()->back();
         }
-        return redirect()->to("/list-event");
+        return redirect()->to("/admin/list-event");
     }
 }

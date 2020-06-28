@@ -10,7 +10,7 @@
                     <h2 class="mb-0 col-lg-9 float-left">Update Event</h2>
                 </div>
                 <!-- Light table -->
-                <form role="form" action="{{url("/update-event/{$event->__get("id")}")}}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{url("/admin/update-event/{$event->__get("id")}")}}" method="post" enctype="multipart/form-data">
                     @method("PUT")
                     {{--                    // method"POST" dùng để báo route--}}
                     @csrf
