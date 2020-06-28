@@ -38,7 +38,7 @@ class CategoryController extends Controller
         } catch (\Exception $exception) {
             return redirect()->back();
         }
-        return redirect()->to("/list-category");
+        return redirect()->to("/admin/list-category");
     }
 
     public function editCategory($id)
@@ -63,7 +63,7 @@ class CategoryController extends Controller
             dd($exception->getMessage());
             return redirect()->back();
         }
-        return redirect()->to("/list-category");
+        return redirect()->to("/admin/list-category");
     }
 
     public function deleteCategory($id)
@@ -74,6 +74,6 @@ class CategoryController extends Controller
         } catch (\Exception $exception) {
             return redirect()->back();
         }
-        return redirect()->to("/list-category");
+        return redirect()->to("/admin/list-category");
     }
 }

@@ -1,5 +1,6 @@
 <?php
-Route::get("/admin","WebController@dashboard");
+Route::get("/","WebController@dashboard");
+//
 
 //CategoryRepository Router
 Route::get("/list-category","CategoryController@listCategory");
@@ -58,3 +59,12 @@ Route::get("/edit-user/{id}", "UserController@editUser")->middleware('admin1');
 Route::put("/update-user/{id}", "UserController@updateUser")->middleware('admin1');
 Route::get("/view-user/{id}","UserController@viewUser")->middleware('admin1');
 
+
+//Banner
+Route::get("/list-banner","BannerController@listBanner");
+Route::get("/new-banner","BannerController@newBanner");
+Route::post("/save-banner","BannerController@saveBanner");
+Route::get("/edit-banner/{id}","BannerController@editBanner");
+Route::put("/update-banner/{id}","BannerController@updateBanner");
+Route::delete("/delete-banner/{id}","BannerController@deleteBanner");
+//

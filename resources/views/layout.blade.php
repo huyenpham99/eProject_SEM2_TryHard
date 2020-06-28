@@ -21,14 +21,13 @@
 </div>
 </body>
 <script type="text/javascript" src="{{asset("./assets/scripts/main.js")}}"></script>
-<script src="{{asset('ckeditor/ckeditor.js') }}"></script>
-<script> CKEDITOR.replace( 'editor1', {
-        filebrowserBrowseUrl: '{{ asset('ckfinder/ckfinder.html') }}',
-        filebrowserImageBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Images') }}',
-        filebrowserFlashBrowseUrl: '{{ asset('ckfinder/ckfinder.html?type=Flash') }}',
-        filebrowserUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files') }}',
-        filebrowserImageUploadUrl: '{{ asset('ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images') }}',
-        filebrowserFlashUploadUrl: '{{ asset('ckfind    er/core/connector/php/connector.php?command=QuickUpload&type=Flash') }}'
-    } ); </script>
+<script src={{ url('ckeditor/ckeditor.js') }}></script>
+<script>
+    CKEDITOR.replace( 'editor1', {
+        filebrowserBrowseUrl: '{{ route('ckfinder_browser') }}',
+
+    } );
+</script>
+@include('ckfinder::setup')
 </html>
 
