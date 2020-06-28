@@ -36,7 +36,7 @@
             <ul class="vertical-nav-menu">
                 <li class="app-sidebar__heading">Dashboards</li>
                 <li>
-                    <a href="index.html" class="mm-active">
+                    <a href="{{url("/admin")}}" class="mm-active">
                         <i class="metismenu-icon pe-7s-rocket"></i>
                         Dashboard
                     </a>
@@ -49,13 +49,14 @@
                         Category
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
+
                     <ul>
                         <li>
 
                             <a href="{{url("/admin/new-manager")}}">
 
                                 <i class="metismenu-icon"></i>
-                                New Category
+                                New Manager
                             </a>
                         </li>
                         <li>
@@ -64,18 +65,12 @@
 
 
                                 <i class="metismenu-icon"></i>
-                                List Category
+                                List Manager
                             </a>
                         </li>
                     </ul>
-
-                    <li/>
                     @else
-
                         @endif
-
-
-
 
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
@@ -84,13 +79,16 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{url("admin/new-product")}}">
+                            <a href="{{url("/admin/new-product")}}">
+
                                 <i class="metismenu-icon"></i>
                                 New Product
                             </a>
                         </li>
                         <li>
-                            <a href="{{url("admin/list-product")}}">
+
+                            <a href="{{url("/admin/list-product")}}">
+
                                 <i class="metismenu-icon"></i>
                                 List Product
                             </a>
@@ -100,20 +98,24 @@
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
-                        User
+                        Category
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="{{url("admin/new-manager")}}">
+
+                            <a href="{{url("/admin/new-category")}}">
+
                                 <i class="metismenu-icon"></i>
-                                New User
+                                New Category
                             </a>
                         </li>
                         <li>
-                            <a href="{{url("admin/list-user")}}">
+
+                            <a href="{{url("/admin/list-category")}}">
+
                                 <i class="metismenu-icon"></i>
-                                List User
+                                List Category
                             </a>
                         </li>
                     </ul>
@@ -126,13 +128,17 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{url("admin/new-blog")}}">
+
+                            <a href="{{url("/admin/new-blog")}}">
+
                                 <i class="metismenu-icon"></i>
                                 New Blog
                             </a>
                         </li>
                         <li>
-                            <a href="{{url("admin/list-blog")}}">
+
+                            <a href="{{url("/admin/list-blog")}}">
+
                                 <i class="metismenu-icon"></i>
                                 List Blog
                             </a>
