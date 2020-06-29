@@ -25,6 +25,8 @@ Route::group(["middleware"=>["admin","auth"], "prefix"=>"admin"],function(){
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('reset-password', 'ResetPasswordController@sendMail');
 Route::put('reset-password/{token}', 'ResetPasswordController@reset');
+Route::get("/change-password","ChangePasswordController@change");
+Route::post("/change-password","ChangePasswordController@postCredentials");
 
 
 
