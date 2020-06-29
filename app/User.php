@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Validator;
 
 class User extends Authenticatable
 {
@@ -62,6 +63,21 @@ class User extends Authenticatable
     }
     public function Ticket(){
         return $this->hasMany("App\Ticket"); // tra ve 1 collection
+    }
+    public function admin_credential_rules(array $data)
+    {
+        $messages = [
+            'current-password.required' => 'Please enter current password',
+            'password.required' => 'Please enter password',
+        ];
+
+        $validator = Validator::make($data, [
+            'current-password' => 'required',
+            'password' => 'required|same:password',
+            'password_confirmation' => 'required|same:password',
+        ], $messages);
+
+        return $validator;
     }
 
 
