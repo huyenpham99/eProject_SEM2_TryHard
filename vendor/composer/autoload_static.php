@@ -576,6 +576,7 @@ class ComposerStaticInit9d4bdc2bd183f0fa372ae1be5ac0d13e
         'App\\Http\\Middleware\\Admin1' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin1.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',
+        'App\\Http\\Middleware\\CustomCKFinderAuth' => __DIR__ . '/../..' . '/app/Http/Middleware/CustomCKFinderAuth.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
