@@ -60,6 +60,9 @@ class User extends Authenticatable
     public function Event(){
         return $this->hasMany("App\Event"); // tra ve 1 collection
     }
+    public function Ticket(){
+        return $this->hasMany("App\Ticket"); // tra ve 1 collection
+    }
 
 
 }

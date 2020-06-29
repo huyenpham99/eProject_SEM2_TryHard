@@ -30,7 +30,7 @@ $config['authentication'] = '\App\Http\Middleware\CustomCKFinderAuth';
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_licenseKey
 
 $config['licenseName'] = 'thang';
-$config['licenseKey']  = 'VU7U3N6JP9MP6QSC2SXLXQ9KUWBBM';
+$config['licenseKey']  = 'B6269XPXYEWV5ZVTCV3BX9VSHR4L6';
 
 /*============================ CKFinder Internal Directory ============================*/
 // http://docs.cksource.com/ckfinder3-php/configuration.html#configuration_options_privateDir
@@ -83,7 +83,7 @@ $config['backends']['default'] = array(
     'name'         => 'default',
     'adapter'      => 'local',
     'baseUrl'      => '/userfiles/',
-//    'root'         => public_path('/userfiles/'),
+    'root'         => public_path('/userfiles/'),
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
     'filesystemEncoding' => 'UTF-8'

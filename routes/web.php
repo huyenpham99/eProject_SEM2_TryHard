@@ -23,5 +23,9 @@ Route::group(["middleware"=>["admin","auth"], "prefix"=>"admin"],function(){
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 48af0b697faba3128250b21039327ad257d47549
 
 

@@ -1,335 +1,425 @@
 @extends("frontend.layout")
 @section("content")
-    <!-- ============== Sample menu banner starts ============== -->
-    <section class="banner sample-menu-banner">
-        <div class="bannerwrap">
-            <figure><img src="images/sample-menu-banner.jpg" alt="Sample menu banner" /></figure>
-            <div class="banner-text text-center">
-                <h1 class="text-uppercase">your food<br><strong>YOUR delicious</strong></h1>
+    <div id="main">
+        <div class="section section-bg-10 pt-11 pb-17">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="page-title text-center">Shop</h2>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    <!-- ============== Sample menu banner starts ============== -->
-
-    <main> <!-- main content starts -->
-        <!-- ============== Sample menu block starts ============== -->
-        <section class="block sample-menu-block">
+        <div class="section border-bottom pt-2 pb-2">
             <div class="container">
-                <div class="text-center top-description wow fadeInUp">
-                    <h3 class="text-uppercase text-center">SAMPLE MENUS</h3>
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim.</p>
-                </div>
-
-                <!-- == menu listing starts == -->
-                <div class="row menu-listing">
-                    <div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
-                        <div class="text-center menu-item-wrap">
-                            <figure><a href="#"><img class="img-responsive" src="images/menu-img1.jpg" alt="Menu image" /></a></figure>
-                            <h4><a href="#">PORRIDGE</a></h4>
-                            <span>With Fresh Fruit and Cranberries</span>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
-                        <div class="text-center menu-item-wrap">
-                            <figure><a href="#"><img class="img-responsive" src="images/menu-img2.jpg" alt="Menu image" /></a></figure>
-                            <h4><a href="#">BAKED SALMON</a></h4>
-                            <span>With Brokoli and Vegetables</span>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
-                        <div class="text-center menu-item-wrap">
-                            <figure><a href="#"><img class="img-responsive" src="images/menu-img3.jpg" alt="Menu image" /></a></figure>
-                            <h4><a href="#">VEGETABLE SALAD</a></h4>
-                            <span>With Cheese Feta</span>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-3 menu-item wow fadeInUp">
-                        <div class="text-center menu-item-wrap">
-                            <figure><a href="#"><img class="img-responsive" src="images/menu-img4.jpg" alt="Menu image" /></a></figure>
-                            <h4><a href="#">TOMATOES OMELET</a></h4>
-                            <span>With Parsley and Feta Cheese</span>
-                        </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="breadcrumbs">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="shortcodes.html">Shop</a></li>
+                            <li>Product Grid</li>
+                        </ul>
                     </div>
                 </div>
-                <!-- == menu listing ends == -->
             </div>
-        </section>
-        <!-- ============== Sample menu block ends ============== -->
-
-        <!-- ============== select menu block starts ============== -->
-        <section class="block select-menu-block">
+        </div>
+        <div class="section pt-7 pb-7">
             <div class="container">
-                <h3 class="wow fadeInUp text-center">SELECT PROGRAM</h3>
-                <div class="text-center  wow flipInX">
-                    <select>
-                        <option value="">Accelerated Weight Loss</option>
-                        <option value="">Accelerated Weight Gain</option>
-                        <option value="">Accelerated Protein Free</option>
-                        <option value="">Accelerated Weight Loss</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- == menu tab part starts == -->
-            <div class='food-tab wow fadeInUp'>
-                <div class='container'>
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#day1" role="tab" data-toggle="tab">Day 01</a></li>
-                        <li role="presentation"><a href="#day2" role="tab" data-toggle="tab">Day 02</a></li>
-                        <li role="presentation"><a href="#day3" role="tab" data-toggle="tab">Day 03</a></li>
-                        <li role="presentation"><a href="#day4" role="tab" data-toggle="tab">Day 04</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!-- == menu tab part ends == -->
-
-            <!-- == Tab description starts == -->
-            <div class='tab-description'>
-                <div class="container">
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active" id="day1">
-                            <!-- == food listing group starts == -->
-                            <div class="food-listing-group">
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food1.jpg" alt="Food image" /></figure></a>
+                <div class="row">
+                    <div class="col-md-9 col-md-push-3">
+                        <div class="shop-filter">
+                            <div class="col-md-6">
+                                <p class="result-count"> Showing 1–12 of 23 results</p>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="shop-filter-right">
+                                    <div class="switch-view">
+                                        <a href="shop-list.html" class="switcher" data-toggle="tooltip" data-placement="top" title="" data-original-title="List"><i class="ion-navicon"></i></a>
+                                        <a href="shop.html" class="switcher active" data-toggle="tooltip" data-placement="top" title="" data-original-title="Grid"><i class="ion-grid"></i></a>
                                     </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">Breakfast</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Tomatoes Omelet with Parsley and Feta Cheese
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">vegan</a>
-                                    </div>
-                                </div>
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food2.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">lunch</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Chinese Noodle Bowl Mix Vegetables with Shrimp
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">vegan</a>
-                                    </div>
-                                </div>
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food3.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">dinner</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Roasted Hot and Spicy Chicken Wings
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">vegan</a>
-                                    </div>
-                                </div>
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food4.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">snack</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Cheddar Chees Grilled and Bacon Sandwich
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">gluten-free</a>
-                                    </div>
+                                    <form class="commerce-ordering">
+                                        <select name="orderby" class="orderby">
+                                            <option value="">Sort by popularity</option>
+                                            <option value="">Sort by average rating</option>
+                                            <option value="" selected="selected">Sort by newness</option>
+                                            <option value="">Sort by price: low to high</option>
+                                            <option value="">Sort by price: high to low</option>
+                                        </select>
+                                    </form>
                                 </div>
                             </div>
-                            <!-- == food listing group ends == -->
-
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="day2">
-                            <!-- == food listing group starts == -->
-                            <div class="food-listing-group">
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food2.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">lunch</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Chinese Noodle Bowl Mix Vegetables with Shrimp
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">vegan</a>
-                                    </div>
-                                </div>
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food3.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">dinner</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Roasted Hot and Spicy Chicken Wings
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">vegan</a>
-                                    </div>
-                                </div>
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food4.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">snack</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Cheddar Chees Grilled and Bacon Sandwich
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">gluten-free</a>
-                                    </div>
+                        <div class="category-carousel-2 mb-3" data-auto-play="true" data-desktop="3" data-laptop="3" data-tablet="2" data-mobile="1">
+                            <div class="cat-item">
+                                <div class="cats-wrap" data-bg-color="#f8c9c2">
+                                    <a href="#">
+                                        <img src="frontend/images/category/cate_7.png" alt="" />
+                                        <h2 class="category-title">
+                                            Dried <mark class="count">(6)</mark>
+                                        </h2>
+                                    </a>
                                 </div>
                             </div>
-                            <!-- == food listing group ends == -->
+                            <div class="cat-item">
+                                <div class="cats-wrap" data-bg-color="#ebd3c3">
+                                    <a href="#">
+                                        <img src="frontend/images/category/cate_5.png" alt="" />
+                                        <h2 class="category-title">
+                                            Fruiy <mark class="count">(5)</mark>
+                                        </h2>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cat-item">
+                                <div class="cats-wrap" data-bg-color="#c6e6f6">
+                                    <a href="#">
+                                        <img src="frontend/images/category/cate_9.png" alt="" />
+                                        <h2 class="category-title">
+                                            Juice <mark class="count">(6)</mark>
+                                        </h2>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="cat-item">
+                                <div class="cats-wrap" data-bg-color="#e0d1a1">
+                                    <a href="#">
+                                        <img src="frontend/images/category/cate_6.png" alt="" />
+                                        <h2 class="category-title">
+                                            Vegetables <mark class="count">(6)</mark>
+                                        </h2>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="day3">
-                            <!-- == food listing group starts == -->
-                            <div class="food-listing-group">
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food1.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">Breakfast</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Tomatoes Omelet with Parsley and Feta Cheese
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">vegan</a>
-                                    </div>
-                                </div>
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food2.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">lunch</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Chinese Noodle Bowl Mix Vegetables with Shrimp
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">vegan</a>
+                        <div class="product-grid">
+                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
+                                <div class="product-thumb">
+                                    <a href="{{asset("/product-detail")}}">
+                                        <div class="badges">
+                                            <span class="hot">Hot</span>
+                                            <span class="onsale">Sale!</span>
+                                        </div>
+                                        <img src="frontend/images/shop/shop_1.jpg" alt="" />
+                                    </a>
+                                    <div class="product-action">
+												<span class="add-to-cart">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+												</span>
+                                        <span class="wishlist">
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
+                                        </span>
+                                        <span class="quickview">
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
+                                        </span>
+                                        <span class="compare">
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
+                                        </span>
                                     </div>
                                 </div>
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food3.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">dinner</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Roasted Hot and Spicy Chicken Wings
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">vegan</a>
-                                    </div>
-                                </div>
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food4.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">snack</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Cheddar Chees Grilled and Bacon Sandwich
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">gluten-free</a>
-                                    </div>
+                                <div class="product-info">
+                                    <a href="{{asset("/product-detail")}}">
+                                        <h2 class="title">Orange Juice</h2>
+                                        <span class="price">
+                                            <del>$15.00</del>
+                                            <ins>$12.00</ins>
+                                        </span>
+                                    </a>
                                 </div>
                             </div>
-                            <!-- == food listing group ends == -->
+                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
+                                <div class="product-thumb">
+                                    <a href="{{asset("/product-detail")}}">
+                                        <div class="badges">
+                                            <span class="hot">Hot</span>
+                                        </div>
+                                        <img src="frontend/images/shop/shop_2.jpg" alt="" />
+                                    </a>
+                                    <div class="product-action">
+												<span class="add-to-cart">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+												</span>
+                                        <span class="wishlist">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
+												</span>
+                                        <span class="quickview">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
+												</span>
+                                        <span class="compare">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
+												</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <a href="{{asset("/product-detail")}}">
+                                        <h2 class="title">Aurore Grape</h2>
+                                        <span class="price">$9.00</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
+                                <div class="product-thumb">
+                                    <a href="{{asset("/product-detail")}}">
+                                        <div class="badges">
+                                            <span class="hot">Hot</span>
+                                        </div>
+                                        <img src="frontend/images/shop/shop_3.jpg" alt="" />
+                                    </a>
+                                    <div class="product-action">
+												<span class="add-to-cart">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+												</span>
+                                        <span class="wishlist">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
+												</span>
+                                        <span class="quickview">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
+												</span>
+                                        <span class="compare">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
+												</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <a href="{{asset("/product-detail")}}">
+                                        <h2 class="title">Blueberry Jam</h2>
+                                        <span class="price">$15.00</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
+                                <div class="product-thumb">
+                                    <a href="{{asset("/product-detail")}}">
+                                        <img src="frontend/images/shop/shop_4.jpg" alt="" />
+                                    </a>
+                                    <div class="product-action">
+												<span class="add-to-cart">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+												</span>
+                                        <span class="wishlist">
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
+                                        </span>
+                                        <span class="quickview">
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
+                                        </span>
+                                        <span class="compare">
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <a href="{{asset("/product-detail")}}l">
+                                        <h2 class="title">Passionfruit</h2>
+                                        <span class="price">$35.00</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
+                                <div class="product-thumb">
+                                    <a href="{{asset("/product-detail")}}">
+                                        <div class="badges">
+                                            <span class="hot">Hot</span>
+                                        </div>
+                                        <img src="frontend/images/shop/shop_5.jpg" alt="" />
+                                    </a>
+                                    <div class="product-action">
+												<span class="add-to-cart">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+												</span>
+                                        <span class="wishlist">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
+												</span>
+                                        <span class="quickview">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
+												</span>
+                                        <span class="compare">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
+												</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <a href="{{asset("/product-detail")}}">
+                                        <h2 class="title">Carrot</h2>
+                                        <span class="price">$12.00</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
+                                <div class="product-thumb">
+                                    <a href="{{asset("/product-detail")}}">
+                                        <span class="outofstock"><span>Out</span>of stock</span>
+                                        <img src="frontend/images/shop/shop_6.jpg" alt="" />
+                                    </a>
+                                    <div class="product-action">
+												<span class="add-to-cart">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+												</span>
+                                        <span class="wishlist">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
+												</span>
+                                        <span class="quickview">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
+												</span>
+                                        <span class="compare">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
+												</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <a href="{{asset("/product-detail")}}">
+                                        <h2 class="title">Sprouting Broccoli</h2>
+                                        <span class="price">$6.00</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
+                                <div class="product-thumb">
+                                    <a href="shop-detail.html">
+                                        <img src="frontend/images/shop/shop_7.jpg" alt="" />
+                                    </a>
+                                    <div class="product-action">
+												<span class="add-to-cart">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+												</span>
+                                        <span class="wishlist">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
+												</span>
+                                        <span class="quickview">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
+												</span>
+                                        <span class="compare">
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <a href="shop-detail.html">
+                                        <h2 class="title">Chinese Cabbage</h2>
+                                        <span class="price">$9.00</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
+                                <div class="product-thumb">
+                                    <a href="shop-detail.html">
+                                        <div class="badges">
+                                            <span class="hot">Hot</span>
+                                        </div>
+                                        <img src="frontend/images/shop/shop_8.jpg" alt="" />
+                                    </a>
+                                    <div class="product-action">
+												<span class="add-to-cart">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+												</span>
+                                        <span class="wishlist">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
+												</span>
+                                        <span class="quickview">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
+												</span>
+                                        <span class="compare">
+													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
+												</span>
+                                    </div>
+                                </div>
+                                <div class="product-info">
+                                    <a href="shop-detail.html">
+                                        <h2 class="title">Tieton Cherry</h2>
+                                        <span class="price">$9.00</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="day4">
-                            <!-- == food listing group starts == -->
-                            <div class="food-listing-group">
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food2.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">lunch</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Chinese Noodle Bowl Mix Vegetables with Shrimp
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">vegan</a>
-                                    </div>
-                                </div>
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food3.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">dinner</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Roasted Hot and Spicy Chicken Wings
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">vegan</a>
-                                    </div>
-                                </div>
-                                <div class="food-listing-row wow fadeInLeft">
-                                    <div class="food-image">
-                                        <a href='#'><figure><img class="img-responsive" src="images/food4.jpg" alt="Food image" /></figure></a>
-                                    </div>
-                                    <div class="food-type">
-                                        <h5><a href="#">snack</a></h5>
-                                    </div>
-                                    <div class="food-ingredients">
-                                        Cheddar Chees Grilled and Bacon Sandwich
-                                    </div>
-                                    <div class="food-category">
-                                        <a href="#" class="btn border-btn-small">organic</a>
-                                        <a href="#" class="btn border-btn-small">gluten-free</a>
+                        <div class="pagination">
+                            <a class="prev page-numbers" href="#">Prev</a>
+                            <a class="page-numbers" href="#">1</a>
+                            <span class="page-numbers current">2</span>
+                            <a class="page-numbers" href="#">3</a>
+                            <a class="next page-numbers" href="#">Next</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-md-pull-9">
+                        <div class="sidebar">
+                            <div class="widget widget-product-search">
+                                <form class="form-search">
+                                    <input type="text" class="search-field" placeholder="Search products…" value="" name="s" />
+                                    <input type="submit" value="Search" />
+                                </form>
+                            </div>
+                            <div class="widget widget-product-categories">
+                                <h3 class="widget-title">Product Categories</h3>
+                                <ul class="product-categories">
+                                    <li><a href="#">Dried</a> <span class="count">6</span></li>
+                                    <li><a href="#">Fruits</a> <span class="count">5</span></li>
+                                    <li><a href="#">Juice</a> <span class="count">6</span></li>
+                                    <li><a href="#">Vegetables</a> <span class="count">6</span></li>
+                                </ul>
+                            </div>
+                            <div class="widget widget_price_filter">
+                                <h3 class="widget-title">Filter by price</h3>
+                                <div class="price_slider_wrapper">
+                                    <div class="price_slider" style="display:none;"></div>
+                                    <div class="price_slider_amount">
+                                        <input type="text" id="min_price" name="min_price" value="" data-min="0" placeholder="Min price"/>
+                                        <input type="text" id="max_price" name="max_price" value="" data-max="150" placeholder="Max price"/>
+                                        <button type="submit" class="button">Filter</button>
+                                        <div class="price_label" style="display:none;">
+                                            Price: <span class="from"></span> &mdash; <span class="to"></span>
+                                        </div>
+                                        <div class="clear"></div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- == food listing group ends == -->
+                            <div class="widget widget-products">
+                                <h3 class="widget-title">Products</h3>
+                                <ul class="product-list-widget">
+                                    <li>
+                                        <a href="shop-detail.html">
+                                            <img src="frontend/images/shop/thumb/shop_1.jpg" alt="" />
+                                            <span class="product-title">Orange Juice</span>
+                                        </a>
+                                        <del>$15.00</del>
+                                        <ins>$12.00</ins>
+                                    </li>
+                                    <li>
+                                        <a href="shop-detail.html">
+                                            <img src="frontend/images/shop/thumb/shop_2.jpg" alt="" />
+                                            <span class="product-title">Aurore Grape</span>
+                                        </a>
+                                        <ins>$9.00</ins>
+                                    </li>
+                                    <li>
+                                        <a href="shop-detail.html">
+                                            <img src="frontend/images/shop/thumb/shop_3.jpg" alt="" />
+                                            <span class="product-title">Blueberry Jam</span>
+                                        </a>
+                                        <ins>$15.00</ins>
+                                    </li>
+                                    <li>
+                                        <a href="shop-detail.html">
+                                            <img src="frontend/images/shop/thumb/shop_4.jpg" alt="" />
+                                            <span class="product-title">Passionfruit</span>
+                                        </a>
+                                        <ins>$35.00</ins>
+                                    </li>
+                                    <li>
+                                        <a href="shop-detail.html">
+                                            <img src="frontend/images/shop/thumb/shop_5.jpg" alt="" />
+                                            <span class="product-title">Carrot</span>
+                                        </a>
+                                        <ins>$12.00</ins>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="widget widget-tags">
+                                <h3 class="widget-title">Product Tags</h3>
+                                <div class="tagcloud">
+                                    <a href="#">bread</a> <a href="#">food</a> <a href="#">fruits</a> <a href="#">green</a> <a href="#">healthy</a> <a href="#">natural</a> <a href="#">organic store</a> <a href="#">vegatable</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- == Tab description ends == -->
-
-        </section>
-        <!-- ============== select menu block starts ============== -->
-
-    </main> <!-- main content ends -->
+        </div>
+    </div>
 @endsection
