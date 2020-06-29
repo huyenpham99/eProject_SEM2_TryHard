@@ -43,6 +43,8 @@ return array(
     'App\\Http\\Middleware\\TrustHosts' => $baseDir . '/app/Http/Middleware/TrustHosts.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Notifications\\ResetPasswordRequest' => $baseDir . '/app/Notifications/ResetPasswordRequest.php',
+    'App\\PasswordReset' => $baseDir . '/app/PasswordReset.php',
     'App\\Product' => $baseDir . '/app/Product.php',
     'App\\Program' => $baseDir . '/app/Program.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
