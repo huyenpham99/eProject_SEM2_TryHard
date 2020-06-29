@@ -108,18 +108,20 @@
                             <span class="sep-holder"><span class="sep-line"></span></span>
                         </div>
                         <div class="contact-form-wrapper">
-                            <form class="contact-form">
+                            <form class="contact-form" action="{{url("/sendform")}}" method="post">
+                                @method("POST")
+                                @csrf
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>your name <span class="required">*</span></label>
                                         <div class="form-wrap">
-                                            <input type="text" name="your-name" value="" size="40" />
+                                            <input type="text" name="name" value="" size="40" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <label>your email <span class="required">*</span></label>
                                         <div class="form-wrap">
-                                            <input type="email" name="your-email" value="" size="40" />
+                                            <input type="email" name="email" value="" size="40" />
                                         </div>
                                     </div>
                                 </div>
@@ -127,7 +129,7 @@
                                     <div class="col-md-12">
                                         <label>subject</label>
                                         <div class="form-wrap">
-                                            <input type="text" name="your-subject" value="" size="40" />
+                                            <input type="text" name="subject" value="" size="40" />
                                         </div>
                                     </div>
                                 </div>
