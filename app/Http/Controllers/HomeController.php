@@ -6,6 +6,7 @@ use App\Blog;
 use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use MicrosoftAzure\Storage\Blob\Models\Blob;
 
 class HomeController extends Controller
@@ -103,4 +104,11 @@ class HomeController extends Controller
     {
         return view("frontend.programs");
     }
+//    public function sendMail(){
+//        // function mail tạo sẵn sẽ làm sau khi render xong giao diện front-end blog và event
+////        $currentUser = Auth::user(); // lấy user đăng nhập hiện tại
+////        Mail::send('view mail chứa thông tin event',[array chứa dữ liệu render lấy dữ liệu event],function ($message){
+////            $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Thông báo về sự kiện ...  '.Auth::user()->__get("name"));
+////        });
+//    }
 }
