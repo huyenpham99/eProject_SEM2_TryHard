@@ -22,10 +22,9 @@ Route::group(["middleware"=>["admin","auth"], "prefix"=>"admin"],function(){
     require_once "admin.php";
 });
 
-<<<<<<< HEAD
 Route::get('/home', 'HomeController@index')->name('home');
-=======
+
 //Route::get('/home', 'HomeController@index')->name('home');
->>>>>>> 586eccd1198760d56ff3f144ae4da1ed5cfbf3aa
+
 
 
