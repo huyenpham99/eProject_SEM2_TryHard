@@ -19,3 +19,20 @@
 <script type="text/javascript" src="frontend/js/extensions/revolution.extension.navigation.min.js"></script>
 <script type="text/javascript" src="frontend/js/extensions/revolution.extension.migration.min.js"></script>
 <script type="text/javascript" src="frontend/js/extensions/revolution.extension.parallax.min.js"></script>
+
+<script type='text/javascript' src='frontend/js/jquery.prettyPhoto.js'></script>
+<script type='text/javascript' src='frontend/js/jquery.prettyPhoto.init.min.js'></script>
+<script type='text/javascript' src='frontend/js/slick.min.js'></script>
+
+<script>
+    var map;
+    function initMap() {
+        var address = {lat:21.0288772, lng: 105.7795577};
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: address,
+            zoom: 16
+        });
+        var maker = new google.maps.Marker({position: address, map: map, label: "FPT University"});
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?&callback=initMap" async defer></script>

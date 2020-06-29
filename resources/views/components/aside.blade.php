@@ -130,6 +130,8 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
                         Blog
@@ -137,17 +139,13 @@
                     </a>
                     <ul>
                         <li>
-
                             <a href="{{url("/admin/new-blog")}}">
-
                                 <i class="metismenu-icon"></i>
                                 New Blog
                             </a>
                         </li>
                         <li>
-
                             <a href="{{url("/admin/list-blog")}}">
-
                                 <i class="metismenu-icon"></i>
                                 List Blog
                             </a>
@@ -187,4 +185,3 @@
     </div>
 </div>
 
-{{--hello--}}

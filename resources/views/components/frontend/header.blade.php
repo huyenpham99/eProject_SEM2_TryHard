@@ -63,10 +63,10 @@
                                 <a href="#">Pages</a>
                                 <ul class="sub-menu">
                                     <li class="menu-item-has-children">
-                                        <a href="#">About Us</a>
+                                        <a href="{{url("/about")}}">About Us</a>
                                         <ul class="sub-menu">
-                                            <li><a href="about-us.html">About us 01</a></li>
-                                            <li><a href="about-us-2.html">About us 02</a></li>
+                                            <li><a href="{{url("/about")}}">About us 01</a></li>
+                                            <li><a href="{{url("/about2")}}">About us 02</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="gallery-freestyle.html">Gallery Freestyle</a></li>
@@ -75,65 +75,26 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="shortcodes.html">Shortcodes</a>
+                                <a href="shortcodes.html">Programs</a>
                             </li>
                             <li class="dropdown mega-menu">
                                 <a href="{{url("/shop")}}">Shop</a>
                                 <ul class="sub-menu">
                                     <li>
-                                        <div class="mega-menu-content">
+                                        <div class="mega-menu-content col-sm-12">
                                             <div class="row">
                                                 <div class="col-sm-3">
+                                                    @foreach(\App\Category::orderBy("category_name","ASC")->limit(4)->get() as $category)
                                                     <div class="pt-4 pb-4">
-                                                        <h3>Shop Pages</h3>
+                                                        <h3 href="">{{$category->__get("category_name")}}</h3>
                                                         <ul>
-                                                            <li><a href="my-account.html">My Account</a></li>
-                                                            <li><a href="cart-empty.html">Empty Cart</a></li>
-                                                            <li><a href="cart.html">Cart</a></li>
-                                                            <li><a href="checkout.html">Check Out</a></li>
-                                                            <li><a href="wishlist.html">Wishlist</a></li>
-                                                            <li><a href="shop.html">Shop</a></li>
-                                                            <li><a href="shop-list.html">Shop List</a></li>
-                                                            <li><a href="shop-detail.html">Single Product</a></li>
+                                                            @foreach(\App\Product::with("Category")->where("category_id","like",$category->__get("id"))->get() as $pro )
+                                                                <li><a href="{{$pro->getProductUrl()}}">{{$pro->__get("product_name")}}</a>
+                                                                </li>
+                                                            @endforeach
                                                         </ul>
                                                     </div>
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <div class="pt-4 pb-4">
-                                                        <h3>Fruits</h3>
-                                                        <ul>
-                                                            <li><a href="#">Seville Orange</a></li>
-                                                            <li><a href="#">Aurore Grape</a></li>
-                                                            <li><a href="#">Tieton Cherry</a></li>
-                                                            <li class="new"><a href="#">Tomato Juice</a></li>
-                                                            <li><a href="#">Cauliflower</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <div class="pt-4 pb-4">
-                                                        <h3>Featured</h3>
-                                                        <ul>
-                                                            <li><a href="#">Sprouting Broccoli</a></li>
-                                                            <li class="sale"><a href="#">Chinese Cabbage</a></li>
-                                                            <li><a href="#">Cara Orange</a></li>
-                                                            <li><a href="#">Cauliflower</a></li>
-                                                            <li><a href="#">Tomato Juice</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-2">
-                                                    <div class="pt-4 pb-4">
-                                                        <h3>Best Seller</h3>
-                                                        <ul>
-                                                            <li><a href="#">Uvina Grape</a></li>
-                                                            <li><a href="#">Seville Orange</a></li>
-                                                            <li><a href="#">Aurore Grape</a></li>
-                                                            <li><a href="#">Tieton Cherry</a></li>
-                                                            <li class="new"><a href="#">Tomato Juice</a></li>
-                                                            <li><a href="#">Sprouting Broccoli</a></li>
-                                                        </ul>
-                                                    </div>
+                                                    @endforeach
                                                 </div>
                                                 <div class="col-sm-3">
                                                     <div class="pt-4 pb-4">
@@ -145,17 +106,11 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="">Blog</a>
-                                <ul class="sub-menu">
-                                    <li><a href="blog.html">Blog List</a></li>
-                                    <li><a href="blog-classic.html">Blog Classic</a></li>
-                                    <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                    <li><a href="blog-detail.html">Blog Single</a></li>
-                                </ul>
+                            <li >
+                                <a href="{{url("/blog")}}">Blog</a>
                             </li>
                             <li>
-                                <a href="contact-us.html">Contact</a>
+                                <a href="{{url("/contact")}}">Contact</a>
                             </li>
                         </ul>
                     </nav>
