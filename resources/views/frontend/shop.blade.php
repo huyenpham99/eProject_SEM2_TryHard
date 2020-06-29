@@ -1,4 +1,4 @@
-@extends("frontend.shop")
+@extends("frontend.layout")
 @section("content")
     <div id="main">
         <div class="section section-bg-10 pt-11 pb-17">
@@ -53,7 +53,7 @@
                             <div class="cat-item">
                                 <div class="cats-wrap" data-bg-color="#f8c9c2">
                                     <a href="#">
-                                        <img src="images/category/cate_7.png" alt="" />
+                                        <img src="frontend/images/category/cate_7.png" alt="" />
                                         <h2 class="category-title">
                                             Dried <mark class="count">(6)</mark>
                                         </h2>
@@ -63,7 +63,7 @@
                             <div class="cat-item">
                                 <div class="cats-wrap" data-bg-color="#ebd3c3">
                                     <a href="#">
-                                        <img src="images/category/cate_5.png" alt="" />
+                                        <img src="frontend/images/category/cate_5.png" alt="" />
                                         <h2 class="category-title">
                                             Fruiy <mark class="count">(5)</mark>
                                         </h2>
@@ -73,7 +73,7 @@
                             <div class="cat-item">
                                 <div class="cats-wrap" data-bg-color="#c6e6f6">
                                     <a href="#">
-                                        <img src="images/category/cate_9.png" alt="" />
+                                        <img src="frontend/images/category/cate_9.png" alt="" />
                                         <h2 class="category-title">
                                             Juice <mark class="count">(6)</mark>
                                         </h2>
@@ -83,7 +83,7 @@
                             <div class="cat-item">
                                 <div class="cats-wrap" data-bg-color="#e0d1a1">
                                     <a href="#">
-                                        <img src="images/category/cate_6.png" alt="" />
+                                        <img src="frontend/images/category/cate_6.png" alt="" />
                                         <h2 class="category-title">
                                             Vegetables <mark class="count">(6)</mark>
                                         </h2>
@@ -94,45 +94,45 @@
                         <div class="product-grid">
                             <div class="col-md-4 col-sm-6 product-item text-center mb-3">
                                 <div class="product-thumb">
-                                    <a href="shop-detail.html">
+                                    <a href="{{asset("/product-detail")}}">
                                         <div class="badges">
                                             <span class="hot">Hot</span>
                                             <span class="onsale">Sale!</span>
                                         </div>
-                                        <img src="images/shop/shop_1.jpg" alt="" />
+                                        <img src="frontend/images/shop/shop_1.jpg" alt="" />
                                     </a>
                                     <div class="product-action">
 												<span class="add-to-cart">
 													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
 												</span>
                                         <span class="wishlist">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
-												</span>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
+                                        </span>
                                         <span class="quickview">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
-												</span>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
+                                        </span>
                                         <span class="compare">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
-												</span>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="shop-detail.html">
+                                    <a href="{{asset("/product-detail")}}">
                                         <h2 class="title">Orange Juice</h2>
                                         <span class="price">
-													<del>$15.00</del>
-													<ins>$12.00</ins>
-												</span>
+                                            <del>$15.00</del>
+                                            <ins>$12.00</ins>
+                                        </span>
                                     </a>
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 product-item text-center mb-3">
                                 <div class="product-thumb">
-                                    <a href="shop-detail.html">
+                                    <a href="{{asset("/product-detail")}}">
                                         <div class="badges">
                                             <span class="hot">Hot</span>
                                         </div>
-                                        <img src="images/shop/shop_2.jpg" alt="" />
+                                        <img src="frontend/images/shop/shop_2.jpg" alt="" />
                                     </a>
                                     <div class="product-action">
 												<span class="add-to-cart">
@@ -150,7 +150,7 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="shop-detail.html">
+                                    <a href="{{asset("/product-detail")}}">
                                         <h2 class="title">Aurore Grape</h2>
                                         <span class="price">$9.00</span>
                                     </a>
@@ -158,11 +158,11 @@
                             </div>
                             <div class="col-md-4 col-sm-6 product-item text-center mb-3">
                                 <div class="product-thumb">
-                                    <a href="shop-detail.html">
+                                    <a href="{{asset("/product-detail")}}">
                                         <div class="badges">
                                             <span class="hot">Hot</span>
                                         </div>
-                                        <img src="images/shop/shop_3.jpg" alt="" />
+                                        <img src="frontend/images/shop/shop_3.jpg" alt="" />
                                     </a>
                                     <div class="product-action">
 												<span class="add-to-cart">
@@ -180,7 +180,7 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="shop-detail.html">
+                                    <a href="{{asset("/product-detail")}}">
                                         <h2 class="title">Blueberry Jam</h2>
                                         <span class="price">$15.00</span>
                                     </a>
@@ -188,26 +188,26 @@
                             </div>
                             <div class="col-md-4 col-sm-6 product-item text-center mb-3">
                                 <div class="product-thumb">
-                                    <a href="shop-detail.html">
-                                        <img src="images/shop/shop_4.jpg" alt="" />
+                                    <a href="{{asset("/product-detail")}}">
+                                        <img src="frontend/images/shop/shop_4.jpg" alt="" />
                                     </a>
                                     <div class="product-action">
 												<span class="add-to-cart">
 													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
 												</span>
                                         <span class="wishlist">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
-												</span>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
+                                        </span>
                                         <span class="quickview">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
-												</span>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
+                                        </span>
                                         <span class="compare">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
-												</span>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="shop-detail.html">
+                                    <a href="{{asset("/product-detail")}}l">
                                         <h2 class="title">Passionfruit</h2>
                                         <span class="price">$35.00</span>
                                     </a>
@@ -215,11 +215,11 @@
                             </div>
                             <div class="col-md-4 col-sm-6 product-item text-center mb-3">
                                 <div class="product-thumb">
-                                    <a href="shop-detail.html">
+                                    <a href="{{asset("/product-detail")}}">
                                         <div class="badges">
                                             <span class="hot">Hot</span>
                                         </div>
-                                        <img src="images/shop/shop_5.jpg" alt="" />
+                                        <img src="frontend/images/shop/shop_5.jpg" alt="" />
                                     </a>
                                     <div class="product-action">
 												<span class="add-to-cart">
@@ -237,7 +237,7 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="shop-detail.html">
+                                    <a href="{{asset("/product-detail")}}">
                                         <h2 class="title">Carrot</h2>
                                         <span class="price">$12.00</span>
                                     </a>
@@ -245,9 +245,9 @@
                             </div>
                             <div class="col-md-4 col-sm-6 product-item text-center mb-3">
                                 <div class="product-thumb">
-                                    <a href="shop-detail.html">
+                                    <a href="{{asset("/product-detail")}}">
                                         <span class="outofstock"><span>Out</span>of stock</span>
-                                        <img src="images/shop/shop_6.jpg" alt="" />
+                                        <img src="frontend/images/shop/shop_6.jpg" alt="" />
                                     </a>
                                     <div class="product-action">
 												<span class="add-to-cart">
@@ -265,7 +265,7 @@
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="shop-detail.html">
+                                    <a href="{{asset("/product-detail")}}">
                                         <h2 class="title">Sprouting Broccoli</h2>
                                         <span class="price">$6.00</span>
                                     </a>
@@ -274,7 +274,7 @@
                             <div class="col-md-4 col-sm-6 product-item text-center mb-3">
                                 <div class="product-thumb">
                                     <a href="shop-detail.html">
-                                        <img src="images/shop/shop_7.jpg" alt="" />
+                                        <img src="frontend/images/shop/shop_7.jpg" alt="" />
                                     </a>
                                     <div class="product-action">
 												<span class="add-to-cart">
@@ -287,8 +287,8 @@
 													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
 												</span>
                                         <span class="compare">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
-												</span>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="product-info">
@@ -304,7 +304,7 @@
                                         <div class="badges">
                                             <span class="hot">Hot</span>
                                         </div>
-                                        <img src="images/shop/shop_8.jpg" alt="" />
+                                        <img src="frontend/images/shop/shop_8.jpg" alt="" />
                                     </a>
                                     <div class="product-action">
 												<span class="add-to-cart">
@@ -374,7 +374,7 @@
                                 <ul class="product-list-widget">
                                     <li>
                                         <a href="shop-detail.html">
-                                            <img src="images/shop/thumb/shop_1.jpg" alt="" />
+                                            <img src="frontend/images/shop/thumb/shop_1.jpg" alt="" />
                                             <span class="product-title">Orange Juice</span>
                                         </a>
                                         <del>$15.00</del>
@@ -382,28 +382,28 @@
                                     </li>
                                     <li>
                                         <a href="shop-detail.html">
-                                            <img src="images/shop/thumb/shop_2.jpg" alt="" />
+                                            <img src="frontend/images/shop/thumb/shop_2.jpg" alt="" />
                                             <span class="product-title">Aurore Grape</span>
                                         </a>
                                         <ins>$9.00</ins>
                                     </li>
                                     <li>
                                         <a href="shop-detail.html">
-                                            <img src="images/shop/thumb/shop_3.jpg" alt="" />
+                                            <img src="frontend/images/shop/thumb/shop_3.jpg" alt="" />
                                             <span class="product-title">Blueberry Jam</span>
                                         </a>
                                         <ins>$15.00</ins>
                                     </li>
                                     <li>
                                         <a href="shop-detail.html">
-                                            <img src="images/shop/thumb/shop_4.jpg" alt="" />
+                                            <img src="frontend/images/shop/thumb/shop_4.jpg" alt="" />
                                             <span class="product-title">Passionfruit</span>
                                         </a>
                                         <ins>$35.00</ins>
                                     </li>
                                     <li>
                                         <a href="shop-detail.html">
-                                            <img src="images/shop/thumb/shop_5.jpg" alt="" />
+                                            <img src="frontend/images/shop/thumb/shop_5.jpg" alt="" />
                                             <span class="product-title">Carrot</span>
                                         </a>
                                         <ins>$12.00</ins>

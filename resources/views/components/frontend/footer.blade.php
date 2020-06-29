@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <img src="images/footer_logo.png" class="footer-logo" alt="" />
+                <img src="frontend/images/footer_logo.png" class="footer-logo" alt="" />
                 <p>
                     Welcome to Organik. Our products are freshly harvested, washed ready for box and finally delivered from our family farm right to your doorstep.
                 </p>
@@ -57,7 +57,7 @@
                 Copyright © 2017 <a href="#">Organic Store</a> - All Rights Reserved.
             </div>
             <div class="col-md-4">
-                <img src="images/footer_payment.png" alt="" />
+                <img src="frontend/images/footer_payment.png" alt="" />
             </div>
         </div>
     </div>
