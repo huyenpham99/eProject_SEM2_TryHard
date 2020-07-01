@@ -23,8 +23,7 @@
                                    onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                                     <li class="float-right" style="list-style: none;">
-                                        <button style="border-radius: 20px; width: 100px; height: 40px" type="button"
-                                                class="btn btn-secondary">Logout
+                                        <button class="btn btn-outline-danger"  style="border-radius: 20px; width: 100px; height: 40px" type="button" >Logout
                                         </button>
                                     </li>
                                 </a>
@@ -130,7 +129,6 @@
                     </nav>
                     <div class="btn-wrap">
                         <div class="mini-cart-wrap">
-                            dasdsadsa
                             <div class="mini-cart">
                                 <div class="mini-cart-icon" data-count="2">
                                     <i class="ion-bag"></i>
