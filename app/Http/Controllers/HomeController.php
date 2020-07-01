@@ -80,11 +80,6 @@ class HomeController extends Controller
         return view("frontend.about");
     }
 
-    public function about2(Request $request)
-    {
-        return view("frontend.about2");
-    }
-
     public function shop(Request $request)
     {
        return view("frontend.shop");

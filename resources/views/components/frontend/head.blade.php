@@ -3,14 +3,14 @@
 <link rel="shortcut icon" href="frontend/images/favicon.ico"/>
 <title>Organik Shop &#8211; Homepage Main | Organik HTML Template</title>
 
-<link rel="stylesheet" href="frontend/css/bootstrap.min.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="frontend/css/font-awesome.min.css" type="text/css" media="all" />
-<link rel="stylesheet" href="frontend/css/ionicons.min.css" type="text/css" media="all" />
-<link rel="stylesheet" href="frontend/css/owl.carousel.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="frontend/css/owl.theme.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="frontend/css/settings.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="frontend/css/style.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="frontend/css/custom.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{asset("frontend/css/bootstrap.min.css")}}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{asset("frontend/css/font-awesome.min.css")}}" type="text/css" media="all" />
+<link rel="stylesheet" href="{{asset("frontend/css/ionicons.min.css")}}" type="text/css" media="all" />
+<link rel="stylesheet" href="{{asset("frontend/css/owl.carousel.css")}}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{asset("frontend/css/owl.theme.css")}}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{asset("frontend/css/settings.css")}}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{asset("frontend/css/style.css")}}" type="text/css" media="all"/>
+<link rel="stylesheet" href="{{asset("frontend/css/custom.css")}}" type="text/css" media="all"/>
 <link href="http://fonts.googleapis.com/css?family=Great+Vibes%7CLato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet"/>
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
