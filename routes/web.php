@@ -28,5 +28,8 @@ Route::put('reset-password/{token}', 'ResetPasswordController@reset');
 Route::get("/change-password","ChangePasswordController@change");
 Route::post("/change-password","ChangePasswordController@postCredentials");
 
+Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+Route::get('/callback/{provider}', 'SocialController@callback');
+
 
 

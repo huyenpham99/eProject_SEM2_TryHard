@@ -68,9 +68,8 @@
                                             <a href="{{url("/")}}" class="btn btn-google btn-user btn-block">
                                                 <i class="fab fa-google fa-fw"></i> Login with Google
                                             </a>
-                                            <a href="{{url("/")}}" class="btn btn-facebook btn-user btn-block">
-                                                <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                            </a>
+                                            <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</a>
+
                                         </form>
                                         <hr>
                                     </div>
