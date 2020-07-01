@@ -10,15 +10,6 @@
             <div class="col-md-6">
                 <div class="topbar-menu">
                     <ul class="topbar-menu">
-                        <li class="dropdown">
-                            <a href="#">Languages</a>
-                            <ul class="sub-menu">
-                                <li><a href="#">English</a></li>
-                                <li><a href="#">Français</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="{{url("/login")}}">Login</a></li>
-                        <li><a href="{{url("/register")}}">Register</a></li>
                         <div class="logout" style="position: relative">
                             @guest
                                 <li class="float-right" style="list-style: none;"><a href="{{url("/login")}}"
@@ -41,7 +32,7 @@
                                 </form>
                             @endguest
                         </div>
-=                    </ul>
+                    </ul>
                 </div>
             </div>
         </div>
