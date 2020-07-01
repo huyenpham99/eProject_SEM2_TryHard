@@ -1,28 +1,28 @@
-<script type="text/javascript" src="frontend/js/jquery.min.js"></script>
-<script type="text/javascript" src="frontend/js/jquery-migrate.min.js"></script>
-<script type="text/javascript" src="frontend/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="frontend/js/modernizr-2.7.1.min.js"></script>
-<script type="text/javascript" src="frontend/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="frontend/js/jquery.countdown.min.js"></script>
-<script type="text/javascript" src="frontend/js/imagesloaded.pkgd.min.js"></script>
-<script type="text/javascript" src="frontend/js/isotope.pkgd.min.js"></script>
-<script type="text/javascript" src="frontend/js/jquery.isotope.init.js"></script>
-<script type="text/javascript" src="frontend/js/script.js"></script>
+<script type="text/javascript" src="{{asset("frontend/js/jquery.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/jquery-migrate.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/bootstrap.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/modernizr-2.7.1.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/owl.carousel.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/jquery.countdown.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/imagesloaded.pkgd.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/isotope.pkgd.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/jquery.isotope.init.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/script.js")}}"></script>
 
-<script type="text/javascript" src="frontend/js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="frontend/js/jquery.themepunch.revolution.min.js"></script>
-<script type="text/javascript" src="frontend/js/extensions/revolution.extension.video.min.js"></script>
-<script type="text/javascript" src="frontend/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script type="text/javascript" src="frontend/js/extensions/revolution.extension.actions.min.js"></script>
-<script type="text/javascript" src="frontend/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script type="text/javascript" src="frontend/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script type="text/javascript" src="frontend/js/extensions/revolution.extension.navigation.min.js"></script>
-<script type="text/javascript" src="frontend/js/extensions/revolution.extension.migration.min.js"></script>
-<script type="text/javascript" src="frontend/js/extensions/revolution.extension.parallax.min.js"></script>
+<script type="text/javascript" src="{{asset("frontend/js/jquery.themepunch.tools.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/jquery.themepunch.revolution.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/extensions/revolution.extension.video.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/extensions/revolution.extension.slideanims.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/extensions/revolution.extension.actions.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/extensions/revolution.extension.layeranimation.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/extensions/revolution.extension.kenburn.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/extensions/revolution.extension.navigation.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/extensions/revolution.extension.migration.min.js")}}"></script>
+<script type="text/javascript" src="{{asset("frontend/js/extensions/revolution.extension.parallax.min.js")}}"></script>
 
-<script type='text/javascript' src='frontend/js/jquery.prettyPhoto.js'></script>
-<script type='text/javascript' src='frontend/js/jquery.prettyPhoto.init.min.js'></script>
-<script type='text/javascript' src='frontend/js/slick.min.js'></script>
+<script type='text/javascript' src='{{asset("frontend/js/jquery.prettyPhoto.js")}}'></script>
+<script type='text/javascript' src='{{asset("frontend/js/jquery.prettyPhoto.init.min.js")}}'></script>
+<script type='text/javascript' src='{{asset("frontend/js/slick.min.js")}}'></script>
 
 <script>
     var map;
