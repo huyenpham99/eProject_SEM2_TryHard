@@ -10,15 +10,29 @@
             <div class="col-md-6">
                 <div class="topbar-menu">
                     <ul class="topbar-menu">
-                        <li class="dropdown">
-                            <a href="#">Languages</a>
-                            <ul class="sub-menu">
-                                <li><a href="#">English</a></li>
-                                <li><a href="#">Français</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Register</a></li>
+                        <div class="logout" style="position: relative">
+                            @guest
+                                <li class="float-right" style="list-style: none;"><a href="{{url("/login")}}"
+                                                                                     style="border-radius: 20px; width: 100px; height: 40px"
+                                                                                     type="button"
+                                                                                     class="btn btn-secondary">Login</a>
+                                </li>
+                            @else
+                                <a class="dropdown-item"
+                                   href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                                    <li class="float-right" style="list-style: none;">
+                                        <button style="border-radius: 20px; width: 100px; height: 40px" type="button"
+                                                class="btn btn-secondary">Logout
+                                        </button>
+                                    </li>
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            @endguest
+                        </div>
                     </ul>
                 </div>
             </div>
