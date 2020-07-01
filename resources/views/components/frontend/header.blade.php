@@ -92,6 +92,7 @@
                     </nav>
                     <div class="btn-wrap">
                         <div class="mini-cart-wrap">
+                            dasdsadsa
                             <div class="mini-cart">
                                 <div class="mini-cart-icon" data-count="2">
                                     <i class="ion-bag"></i>
