@@ -10,6 +10,15 @@
             <div class="col-md-6">
                 <div class="topbar-menu">
                     <ul class="topbar-menu">
+                        <li class="dropdown">
+                            <a href="#">Languages</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">English</a></li>
+                                <li><a href="#">Français</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{url("/login")}}">Login</a></li>
+                        <li><a href="{{url("/register")}}">Register</a></li>
                         <div class="logout" style="position: relative">
                             @guest
                                 <li class="float-right" style="list-style: none;"><a href="{{url("/login")}}"
@@ -23,8 +32,7 @@
                                    onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                                     <li class="float-right" style="list-style: none;">
-                                        <button style="border-radius: 20px; width: 100px; height: 40px" type="button"
-                                                class="btn btn-secondary">Logout
+                                        <button class="btn btn-outline-danger"  style="border-radius: 20px; width: 100px; height: 40px" type="button" >Logout
                                         </button>
                                     </li>
                                 </a>
@@ -33,7 +41,7 @@
                                 </form>
                             @endguest
                         </div>
-                    </ul>
+=                    </ul>
                 </div>
             </div>
         </div>
@@ -62,34 +70,15 @@
                 <div class="header-right">
                     <nav class="menu">
                         <ul class="main-menu">
-                            <li class="active dropdown">
-                                <a href="#">Home</a>
-                                <ul class="sub-menu">
-                                    <li><a href="index.html">Organik Main</a></li>
-                                    <li><a href="index-fresh.html">Organik Fresh</a></li>
-                                    <li><a href="index-shop.html">Organik Shop</a></li>
-                                    <li><a href="index-store.html">Organik Store</a></li>
-                                    <li><a href="index-farm.html">Organik Farm</a></li>
-                                    <li><a href="index-house.html">Organik House</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#">Pages</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item-has-children">
-                                        <a href="{{url("/about")}}">About Us</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{url("/about")}}">About us 01</a></li>
-                                            <li><a href="{{url("/about2")}}">About us 02</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="gallery-freestyle.html">Gallery Freestyle</a></li>
-                                    <li><a href="gallery-grid.html">Gallery Grid</a></li>
-                                    <li><a href="404.html">404</a></li>
-                                </ul>
-                            </li>
                             <li>
-                                <a href="shortcodes.html">Programs</a>
+                                <a href="{{url("/home")}}">Home</a>
+                            </li>
+                              <li>
+                                  <a href="{{url("/about")}}">About Us</a>
+                              </li>
+
+                            <li>
+                                <a href="{{url("/programs")}}">Programs</a>
                             </li>
                             <li class="dropdown mega-menu">
                                 <a href="{{url("/shop")}}">Shop</a>
@@ -109,11 +98,6 @@
                                                         </ul>
                                                     </div>
                                                     @endforeach
-                                                </div>
-                                                <div class="col-sm-3">
-                                                    <div class="pt-4 pb-4">
-                                                        <img src="frontend/images/megamenu_ads.jpg" alt="" />
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

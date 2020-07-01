@@ -160,18 +160,41 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="elements-buttons-standard.html">
+                            <a href="{{url("/admin/new-event")}}">
                                 <i class="metismenu-icon"></i>
                                 New Event
                             </a>
                         </li>
                         <li>
-                            <a href="elements-dropdowns.html">
+                            <a href="{{url("/admin/list-event")}}">
                                 <i class="metismenu-icon"></i>
                                 List Event
                             </a>
                         </li>
                     </ul>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-diamond"></i>
+                        Banner
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{url("/admin/new-banner")}}">
+                                <i class="metismenu-icon"></i>
+                                New Banner
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url("/admin/list-banner")}}">
+                                <i class="metismenu-icon"></i>
+                                List Banner
+                            </a>
+                        </li>
+                    </ul>
+
                 </li>
                 <li class="app-sidebar__heading">Charts</li>
                 <li>

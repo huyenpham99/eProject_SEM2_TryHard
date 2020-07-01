@@ -19,7 +19,6 @@ Route::get("/category/{category:slug}", "HomeController@category")->name("catego
 Route::get("/product/{product:slug}", "HomeController@product");
 
 Route::get("/about", "HomeController@about");
-Route::get("/about2", "HomeController@about2");
 
 Route::get("/blog","HomeController@blog");
 Route::get("/blog-detail","HomeController@blogdetail");
