@@ -17,3 +17,4 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
 <link href="{{asset("assets/css/main.css")}}" rel="stylesheet">
+<link href="{{asset("assets/css/sb-admin-2.min.css")}}" rel="stylesheet">
