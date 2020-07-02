@@ -1,7 +1,9 @@
 <!doctype html>
 <html lang="en">
+<html ... xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     <x-head/>
+    <meta property="fb:app_id" content="{618524112104934}"/>
 </head>
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
