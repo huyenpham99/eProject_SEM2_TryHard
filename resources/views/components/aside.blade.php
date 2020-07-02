@@ -118,13 +118,13 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{url("/new-program")}}">
+                            <a href="{{url("/admin/new-program")}}">
                                 <i class="metismenu-icon"></i>
                                 New Program
                             </a>
                         </li>
                         <li>
-                            <a href="{{url("/list-program")}}">
+                            <a href="{{url("/admin/list-program")}}">
                                 <i class="metismenu-icon"></i>
                                 List Program
                             </a>

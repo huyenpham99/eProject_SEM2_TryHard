@@ -1,8 +1,8 @@
+
 @extends('layouts.app')
 
 @section('content')
-    <body class="bg-gradient-primary register" style="    background: linear-gradient(180deg, #e12f45 20%, #e5c146 80%) !important;
-    background-size: cover;">
+    <body class="bg-gradient-primary register">
 
     <div class="container">
 
@@ -10,12 +10,8 @@
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                    <div class="col-lg-7 d-none d-lg-block bg-register-image" style="background: url({{asset("/frontend/images/oranges.png")}});
-    background-position: center;
-    background-size: cover;">
-
-                    </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+                    <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
