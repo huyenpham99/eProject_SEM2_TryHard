@@ -134,6 +134,27 @@
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
+                        Program Detail
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{url("/admin/new-program-detail")}}">
+                                <i class="metismenu-icon"></i>
+                                New Program Detail
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url("/admin/list-program-detail")}}">
+                                <i class="metismenu-icon"></i>
+                                List Program Detail
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-diamond"></i>
                         Blog
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>

@@ -18,4 +18,7 @@ class Program extends Model
     public function User(){
         return $this->belongsTo("\App\User", "user_id");
     }
+    public function ProgramDetail(){
+        return $this->hasMany("App\ProgramDetail"); // tra ve 1 collection
+    }
 }
