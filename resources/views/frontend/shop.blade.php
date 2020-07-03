@@ -15,8 +15,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="breadcrumbs">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="shortcodes.html">Shop</a></li>
+                            <li><a href="{{url("/home")}}">Home</a></li>
+                            <li><a href="{{url("/shop")}}">Shop</a></li>
                             <li>Product Grid</li>
                         </ul>
                     </div>
@@ -50,284 +50,49 @@
                             </div>
                         </div>
                         <div class="category-carousel-2 mb-3" data-auto-play="true" data-desktop="3" data-laptop="3" data-tablet="2" data-mobile="1">
+                            @foreach(\App\Category::all() as $category)
                             <div class="cat-item">
                                 <div class="cats-wrap" data-bg-color="#f8c9c2">
                                     <a href="#">
-                                        <img src="frontend/images/category/cate_7.png" alt="" />
+                                        <img src="{{$category->__get("category_image")}}" alt="" />
                                         <h2 class="category-title">
-                                            Dried <mark class="count">(6)</mark>
+                                            {{$category->__get("category_name")}}
                                         </h2>
                                     </a>
                                 </div>
                             </div>
-                            <div class="cat-item">
-                                <div class="cats-wrap" data-bg-color="#ebd3c3">
-                                    <a href="#">
-                                        <img src="frontend/images/category/cate_5.png" alt="" />
-                                        <h2 class="category-title">
-                                            Fruiy <mark class="count">(5)</mark>
-                                        </h2>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cat-item">
-                                <div class="cats-wrap" data-bg-color="#c6e6f6">
-                                    <a href="#">
-                                        <img src="frontend/images/category/cate_9.png" alt="" />
-                                        <h2 class="category-title">
-                                            Juice <mark class="count">(6)</mark>
-                                        </h2>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="cat-item">
-                                <div class="cats-wrap" data-bg-color="#e0d1a1">
-                                    <a href="#">
-                                        <img src="frontend/images/category/cate_6.png" alt="" />
-                                        <h2 class="category-title">
-                                            Vegetables <mark class="count">(6)</mark>
-                                        </h2>
-                                    </a>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="product-grid">
+                                @foreach(\App\Product::all() as $product)
                             <div class="col-md-4 col-sm-6 product-item text-center mb-3">
                                 <div class="product-thumb">
-                                    <a href="{{asset("/product-detail")}}">
+                                    <a href="{{$product->getProductUrl()}}">
                                         <div class="badges">
                                             <span class="hot">Hot</span>
-                                            <span class="onsale">Sale!</span>
                                         </div>
-                                        <img src="frontend/images/shop/shop_1.jpg" alt="" />
+                                        <img src="{{$product->__get("product_image")}}" alt="" />
                                     </a>
                                     <div class="product-action">
 												<span class="add-to-cart">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+													<a href="javascript: void(0);"
+                                                       onclick="addToCart({{$product->__get("id")}})" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
 												</span>
-                                        <span class="wishlist">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
-                                        </span>
-                                        <span class="quickview">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
-                                        </span>
                                         <span class="compare">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
+                                            <a href="{{$product->getProductUrl()}}" data-toggle="tooltip" data-placement="top" title="Detail"></a>
                                         </span>
                                     </div>
                                 </div>
                                 <div class="product-info">
-                                    <a href="{{asset("/product-detail")}}">
-                                        <h2 class="title">Orange Juice</h2>
+                                    <a href="{{$product->getProductUrl()}}">
+                                        <h2 class="title">{{$product->__get("product_name")}}</h2>
                                         <span class="price">
-                                            <del>$15.00</del>
-                                            <ins>$12.00</ins>
+                                            <ins>{{$product->__get("product_price")}}</ins>
                                         </span>
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
-                                <div class="product-thumb">
-                                    <a href="{{asset("/product-detail")}}">
-                                        <div class="badges">
-                                            <span class="hot">Hot</span>
-                                        </div>
-                                        <img src="frontend/images/shop/shop_2.jpg" alt="" />
-                                    </a>
-                                    <div class="product-action">
-												<span class="add-to-cart">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
-												</span>
-                                        <span class="wishlist">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
-												</span>
-                                        <span class="quickview">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
-												</span>
-                                        <span class="compare">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
-												</span>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="{{asset("/product-detail")}}">
-                                        <h2 class="title">Aurore Grape</h2>
-                                        <span class="price">$9.00</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
-                                <div class="product-thumb">
-                                    <a href="{{asset("/product-detail")}}">
-                                        <div class="badges">
-                                            <span class="hot">Hot</span>
-                                        </div>
-                                        <img src="frontend/images/shop/shop_3.jpg" alt="" />
-                                    </a>
-                                    <div class="product-action">
-												<span class="add-to-cart">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
-												</span>
-                                        <span class="wishlist">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
-												</span>
-                                        <span class="quickview">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
-												</span>
-                                        <span class="compare">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
-												</span>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="{{asset("/product-detail")}}">
-                                        <h2 class="title">Blueberry Jam</h2>
-                                        <span class="price">$15.00</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
-                                <div class="product-thumb">
-                                    <a href="{{asset("/product-detail")}}">
-                                        <img src="frontend/images/shop/shop_4.jpg" alt="" />
-                                    </a>
-                                    <div class="product-action">
-												<span class="add-to-cart">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
-												</span>
-                                        <span class="wishlist">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
-                                        </span>
-                                        <span class="quickview">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
-                                        </span>
-                                        <span class="compare">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="{{asset("/product-detail")}}l">
-                                        <h2 class="title">Passionfruit</h2>
-                                        <span class="price">$35.00</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
-                                <div class="product-thumb">
-                                    <a href="{{asset("/product-detail")}}">
-                                        <div class="badges">
-                                            <span class="hot">Hot</span>
-                                        </div>
-                                        <img src="frontend/images/shop/shop_5.jpg" alt="" />
-                                    </a>
-                                    <div class="product-action">
-												<span class="add-to-cart">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
-												</span>
-                                        <span class="wishlist">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
-												</span>
-                                        <span class="quickview">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
-												</span>
-                                        <span class="compare">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
-												</span>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="{{asset("/product-detail")}}">
-                                        <h2 class="title">Carrot</h2>
-                                        <span class="price">$12.00</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
-                                <div class="product-thumb">
-                                    <a href="{{asset("/product-detail")}}">
-                                        <span class="outofstock"><span>Out</span>of stock</span>
-                                        <img src="frontend/images/shop/shop_6.jpg" alt="" />
-                                    </a>
-                                    <div class="product-action">
-												<span class="add-to-cart">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
-												</span>
-                                        <span class="wishlist">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
-												</span>
-                                        <span class="quickview">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
-												</span>
-                                        <span class="compare">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
-												</span>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="{{asset("/product-detail")}}">
-                                        <h2 class="title">Sprouting Broccoli</h2>
-                                        <span class="price">$6.00</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
-                                <div class="product-thumb">
-                                    <a href="shop-detail.html">
-                                        <img src="frontend/images/shop/shop_7.jpg" alt="" />
-                                    </a>
-                                    <div class="product-action">
-												<span class="add-to-cart">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
-												</span>
-                                        <span class="wishlist">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
-												</span>
-                                        <span class="quickview">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
-												</span>
-                                        <span class="compare">
-                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="shop-detail.html">
-                                        <h2 class="title">Chinese Cabbage</h2>
-                                        <span class="price">$9.00</span>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 product-item text-center mb-3">
-                                <div class="product-thumb">
-                                    <a href="shop-detail.html">
-                                        <div class="badges">
-                                            <span class="hot">Hot</span>
-                                        </div>
-                                        <img src="frontend/images/shop/shop_8.jpg" alt="" />
-                                    </a>
-                                    <div class="product-action">
-												<span class="add-to-cart">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
-												</span>
-                                        <span class="wishlist">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"></a>
-												</span>
-                                        <span class="quickview">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Quickview"></a>
-												</span>
-                                        <span class="compare">
-													<a href="#" data-toggle="tooltip" data-placement="top" title="Compare"></a>
-												</span>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <a href="shop-detail.html">
-                                        <h2 class="title">Tieton Cherry</h2>
-                                        <span class="price">$9.00</span>
-                                    </a>
-                                </div>
-                            </div>
+                                @endforeach
                         </div>
                         <div class="pagination">
                             <a class="prev page-numbers" href="#">Prev</a>
@@ -346,12 +111,11 @@
                                 </form>
                             </div>
                             <div class="widget widget-product-categories">
-                                <h3 class="widget-title">Product Categories</h3>
+                                <h3 class="widget-title">Categories</h3>
                                 <ul class="product-categories">
-                                    <li><a href="#">Dried</a> <span class="count">6</span></li>
-                                    <li><a href="#">Fruits</a> <span class="count">5</span></li>
-                                    <li><a href="#">Juice</a> <span class="count">6</span></li>
-                                    <li><a href="#">Vegetables</a> <span class="count">6</span></li>
+                                    @foreach(\App\Category::all() as $category)
+                                    <li><a href="#">{{$category->__get("category_name")}}</a></li>
+                                        @endforeach
                                 </ul>
                             </div>
                             <div class="widget widget_price_filter">
@@ -372,49 +136,16 @@
                             <div class="widget widget-products">
                                 <h3 class="widget-title">Products</h3>
                                 <ul class="product-list-widget">
+                                    @foreach(\App\Product::all() as $product)
                                     <li>
-                                        <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_1.jpg" alt="" />
-                                            <span class="product-title">Orange Juice</span>
+                                        <a href="{{$product->getProductUrl()}}">
+                                            <img src="{{$product->__get("product_image")}}" alt="" />
+                                            <span class="product-title">{{$product->__get("product_name")}}</span>
                                         </a>
-                                        <del>$15.00</del>
-                                        <ins>$12.00</ins>
+                                        <ins>{{$product->__get("product_price")}}</ins>
                                     </li>
-                                    <li>
-                                        <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_2.jpg" alt="" />
-                                            <span class="product-title">Aurore Grape</span>
-                                        </a>
-                                        <ins>$9.00</ins>
-                                    </li>
-                                    <li>
-                                        <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_3.jpg" alt="" />
-                                            <span class="product-title">Blueberry Jam</span>
-                                        </a>
-                                        <ins>$15.00</ins>
-                                    </li>
-                                    <li>
-                                        <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_4.jpg" alt="" />
-                                            <span class="product-title">Passionfruit</span>
-                                        </a>
-                                        <ins>$35.00</ins>
-                                    </li>
-                                    <li>
-                                        <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_5.jpg" alt="" />
-                                            <span class="product-title">Carrot</span>
-                                        </a>
-                                        <ins>$12.00</ins>
-                                    </li>
+                                        @endforeach
                                 </ul>
-                            </div>
-                            <div class="widget widget-tags">
-                                <h3 class="widget-title">Product Tags</h3>
-                                <div class="tagcloud">
-                                    <a href="#">bread</a> <a href="#">food</a> <a href="#">fruits</a> <a href="#">green</a> <a href="#">healthy</a> <a href="#">natural</a> <a href="#">organic store</a> <a href="#">vegatable</a>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -15,8 +15,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="breadcrumbs">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="shortcodes.html">Shop</a></li>
+                            <li><a href="{{url("/home")}}">Home</a></li>
+                            <li><a href="{{url("/shop")}}">Shop</a></li>
                             <li>Shop Detail</li>
                         </ul>
                     </div>

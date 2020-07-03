@@ -36,3 +36,18 @@
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?&callback=initMap" async defer></script>
+<script type="text/javascript">
+    function addToCart(productId) {
+        $.ajax({
+            url:"{{url("/cart/add")}}/"+productId,
+            method: "POST",
+            data: {
+                qty:1,
+                _token:"{{@csrf_token()}}"
+            },
+            success: function () {
+                alertify.success("Add product to cart successfully");
+            }
+        });
+    }
+</script>

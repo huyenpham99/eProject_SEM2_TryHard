@@ -27,6 +27,12 @@
                                 data-sort="name">Product Image
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Product Image1
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Product Image2
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Product Description
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
@@ -58,8 +64,8 @@
                                 <td>{{$product->__get("id")}}</td>
                                 <td>{{$product->__get("product_name")}}</td>
                                 <td><img src="{{$product->__get("product_image")}}" style="width: 50px; height: 50px"></td>
-{{--                                <td><img src="{{$product->__get("product_image1")}}" style="width: 50px; height: 50px"></td>--}}
-{{--                                <td><img src="{{$product->__get("product_image2")}}" style="width: 50px; height: 50px"></td>--}}
+                                <td><img src="{{$product->__get("product_image1")}}" style="width: 50px; height: 50px"></td>
+                                <td><img src="{{$product->__get("product_image2")}}" style="width: 50px; height: 50px"></td>
 {{--                                <td><img src="{{$product->__get("product_image3")}}" style="width: 50px; height: 50px"></td>--}}
 {{--                                <td><img src="{{$product->__get("product_image4")}}" style="width: 50px; height: 50px"></td>--}}
                                 <td>{{$product->__get("product_desc")}}</td>

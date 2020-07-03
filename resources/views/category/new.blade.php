@@ -19,6 +19,10 @@
                     <span class="error invalid-feedback">  {{$message}}</span>
                     @enderror
                 </div>
+                <div class="form-group">
+                    <label>Category Image</label>
+                    <input type="text" name="category_image" class="form-control @error("category_image") is-invalid @enderror">
+                </div>
             </div>
 
             <!-- /.card-body -->

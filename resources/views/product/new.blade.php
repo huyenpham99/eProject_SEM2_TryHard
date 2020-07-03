@@ -24,6 +24,14 @@
                             <input type="text" name="product_image" class="form-control @error("product_image") is-invalid @enderror">
                         </div>
                         <div class="form-group">
+                            <label>Product Image1</label>
+                            <input type="text" name="product_image1" class="form-control @error("product_image1") is-invalid @enderror">
+                        </div>
+                        <div class="form-group">
+                            <label>Product Image2</label>
+                            <input type="text" name="product_image2" class="form-control @error("product_image2") is-invalid @enderror">
+                        </div>
+                        <div class="form-group">
                             <label>Product Desc</label>
                             <textarea name="product_desc" class="form-control @error("product_desc") is-invalid @enderror" placeholder="New Product Desc"></textarea>
                             @error("product_desc")
