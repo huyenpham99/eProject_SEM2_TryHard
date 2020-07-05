@@ -18,7 +18,7 @@ class DeadActive
     public function handle($request, Closure $next)
     {
         $currentUser = Auth::user();
-        if($currentUser->__get('role') != User::DEAD_ACTIVE)
+        if($currentUser->__get('role') == User::DEAD_ACTIVE)
             return abort(404);
         return $next($request);
     }
