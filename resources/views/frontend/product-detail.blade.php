@@ -33,20 +33,23 @@
                                     <div class="image-gallery-inner">
                                         <div>
                                             <div class="image-thumb">
-                                                <a href="frontend/images/shop/large/shop_1.jpg" data-rel="prettyPhoto[gallery]">
-                                                    <img src="frontend/images/shop/shop_1.jpg" alt="" />
+                                                <a href="{{$product->getProductUrl()}}" data-rel="prettyPhoto[gallery]">
+                                                    <img src="{{$product->__get("product_image")}}" alt="" />
                                                 </a>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="image-thumb">
-                                                <a href="frontend/images/shop/large/shop_2.jpg" data-rel="prettyPhoto[gallery]">
+                                                <a href="{{$product->__get("product_image1")}}" data-rel="prettyPhoto[gallery]">
+                                                    <img src="{{$product->__get("product_image1")}}" alt="" />
                                                 </a>
                                             </div>
                                         </div>
                                         <div>
                                             <div class="image-thumb">
-                                                <a href="frontend/images/shop/large/shop_3.jpg" data-rel="prettyPhoto[gallery]">
+                                                <a href="{{$product->__get("product_image2")}}" data-rel="prettyPhoto[gallery]">
+                                                    <img src="{{$product->__get("product_image2")}}" alt="" />
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -54,24 +57,24 @@
                                 <div class="image-gallery-nav">
                                     <div class="image-nav-item">
                                         <div class="image-thumb">
-                                            <img src="frontend/images/shop/thumb/shop_1.jpg" alt="" />
+                                            <img src="{{$product->__get("product_image")}}" alt="" />
                                         </div>
                                     </div>
                                     <div class="image-nav-item">
                                         <div class="image-thumb">
-                                            <img src="frontend/images/shop/thumb/shop_3.jpg" alt="" />
+                                            <img src="{{$product->__get("product_image1")}}" alt="" />
                                         </div>
                                     </div>
                                     <div class="image-nav-item">
                                         <div class="image-thumb">
-                                            <img src="frontend/images/shop/thumb/shop_4.jpg" alt="" />
+                                            <img src="{{$product->__get("product_image2")}}" alt="" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="summary">
-                                    <h1 class="product-title">Orange Juice</h1>
+                                    <h1 class="product-title">{{$product->__get("product_name")}}</h1>
                                     <div class="product-rating">
                                         <div class="star-rating">
                                             <span style="width:100%"></span>
@@ -79,8 +82,7 @@
                                         <i>(2 customer reviews)</i>
                                     </div>
                                     <div class="product-price">
-                                        <del>$15.00</del>
-                                        <ins>$12.00</ins>
+                                        <ins>{{$product->__get("product_price")}}</ins>
                                     </div>
                                     <div class="mb-3">
                                         <p>Relish the goodness of hand-picked oranges from the finest orchards. Foster a healthy lifestyle with the benefits of oranges. 100 percent orange juice with no added sugar for a healthy you.</p>
@@ -233,7 +235,7 @@
                                                     <div class="badges">
                                                         <span class="hot">Hot</span>
                                                     </div>
-                                                    <img src="frontend/images/shop/shop_5.jpg" alt="" />
+                                                    <img src="{{$product->__get("product_image")}}" alt="" />
                                                 </a>
                                                 <div class="product-action">
 															<span class="add-to-cart">
@@ -261,7 +263,7 @@
                                             <div class="product-thumb">
                                                 <a href="shop-detail.html">
                                                     <span class="outofstock"><span>Out</span>of stock</span>
-                                                    <img src="frontend/images/shop/shop_6.jpg" alt="" />
+                                                    <img src="{{$product->__get("product_image1")}}" alt="" />
                                                 </a>
                                                 <div class="product-action">
                                                     <span class="add-to-cart">
@@ -288,7 +290,7 @@
                                         <div class="product-item text-center">
                                             <div class="product-thumb">
                                                 <a href="shop-detail.html">
-                                                    <img src="frontend/images/shop/shop_7.jpg" alt="" />
+                                                    <img src="{{$product->__get("product_image2")}}" alt="" />
                                                 </a>
                                                 <div class="product-action">
 															<span class="add-to-cart">
@@ -367,42 +369,15 @@
                             <div class="widget widget-products">
                                 <h3 class="widget-title">Products</h3>
                                 <ul class="product-list-widget">
+                                    @foreach(\App\Product::orderBy("Product_name","ASC")->limit(4)->get() as $product)
                                     <li>
-                                        <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_1.jpg" alt="" />
-                                            <span class="product-title">Orange Juice</span>
-                                        </a>
-                                        <del>$15.00</del>
-                                        <ins>$12.00</ins>
-                                    </li>
-                                    <li>
-                                        <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_2.jpg" alt="" />
-                                            <span class="product-title">Aurore Grape</span>
-                                        </a>
-                                        <ins>$9.00</ins>
-                                    </li>
-                                    <li>
-                                        <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_3.jpg" alt="" />
-                                            <span class="product-title">Blueberry Jam</span>
-                                        </a>
-                                        <ins>$15.00</ins>
-                                    </li>
-                                    <li>
-                                        <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_4.jpg" alt="" />
-                                            <span class="product-title">Passionfruit</span>
-                                        </a>
-                                        <ins>$35.00</ins>
-                                    </li>
-                                    <li>
-                                        <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_5.jpg" alt="" />
-                                            <span class="product-title">Carrot</span>
+                                        <a href="{{$product->getProductUrl()}}">
+                                            <img src="{{$product->__get("product_image")}}" alt="" />
+                                            <span class="product-title">{{$product->__get("product_name")}}</span>
                                         </a>
                                         <ins>$12.00</ins>
                                     </li>
+                                    @endforeach
                                 </ul>
                             </div>
                             <div class="widget widget-tags">
