@@ -15,8 +15,10 @@ use Illuminate\Support\Facades\Route;
 // Router index login..
 
 Auth::routes();
+Route::group(["middleware"=>["deadactive","auth"]],function(){
     require_once "user.php";
-Route::group(["middleware"=>["admin","auth","deadactive"], "prefix"=>"admin"],function(){
+});
+Route::group(["middleware"=>["deadactive","admin","auth"], "prefix"=>"admin"],function(){
     require_once "admin.php";
 });
 
