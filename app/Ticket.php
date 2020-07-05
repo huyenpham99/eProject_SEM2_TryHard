@@ -14,8 +14,12 @@ class Ticket extends Model
         "ticket_code",
         "user_id",
     ];
-    public function User(){
+    public function User()
+    {
         return $this->belongsTo("\App\User", "user_id");
+    }
+    public function getTicketUrl(){
+        return url("/ticket/{$this->__get("slug")}");
     }
 
 }

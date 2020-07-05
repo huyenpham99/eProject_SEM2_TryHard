@@ -54,7 +54,7 @@
         <div class="row">
             <div class="col-md-3">
                 <a href="index.html" id="logo">
-                    <img class="logo-image" src="frontend/images/logo.png" alt="Organik Logo" />
+                    <img class="logo-image" src="/frontend/images/logohealthyfood1.png" style="width: 150px;margin-top: 15px" alt="Organik Logo" />
                 </a>
             </div>
             <div class="col-md-9">
@@ -141,7 +141,7 @@
             <div class="col-xs-8">
                 <div class="header-center">
                     <a href="index.html" id="logo-2">
-                        <img class="logo-image" src="images/logo.png" alt="Organik Logo" />
+                        <img class="logo-image" src="public/frontend/images/logohealthyfood.png" style="width: 85px" alt="healthy food logo" />
                     </a>
                 </div>
             </div>

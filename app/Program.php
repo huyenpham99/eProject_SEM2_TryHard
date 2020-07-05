@@ -12,10 +12,24 @@ class Program extends Model
         "program_name",
         "user_id"
     ];
-    public function getProgramUrl(){
+
+    public function getProgramUrl()
+    {
         return url("/program/{$this->__get("slug")}");
     }
-    public function User(){
+
+    public function User()
+    {
         return $this->belongsTo("\App\User", "user_id");
     }
+
+    public function ProgramDetail()
+    {
+        return $this->hasMany("App\ProgramDetail"); // tra ve 1 collection
+    }
+        public function Program_Detail()
+        {
+            return $this->hasMany("App\Program_Detail"); // tra ve 1 collection
+        }
 }
+

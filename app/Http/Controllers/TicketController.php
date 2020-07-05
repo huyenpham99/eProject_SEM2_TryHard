@@ -16,8 +16,7 @@ class TicketController extends Controller
         $ticket = Ticket::with("User")->paginate(20);
 //        dd($program);
         return view("ticket.list", [
-            "tickets" => $ticket
-        ]);
+            "ticket" => $ticket]);
         //
     }
 
@@ -36,6 +35,10 @@ class TicketController extends Controller
         //validate du lieu
         $request->validate([
             "ticket_name" => "required|string|min:6|unique:tickets",
+            "ticket_type"=>"required",
+            "ticket_price"=>"required",
+            "ticket_code"=>"required",
+            "user_id"=>"required"
         ]);
         try {
             Ticket::create([
@@ -67,6 +70,10 @@ class TicketController extends Controller
         $ticket = Ticket::findOrFail($id);
         $request->validate([
             "ticket_name" => "required|min:6|unique:tickets,ticket_name,{$id}",
+            "ticket_type"=>"required",
+            "ticket_price"=>"required",
+            "ticket_code"=>"required",
+            "user_id"=>"required",
         ]);
         // die("loi");
         //      dd($request->all());

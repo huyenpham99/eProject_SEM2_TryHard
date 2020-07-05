@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="text-center mb-1 section-pretitle">Get in touch</div>
-                        <h2 class="text-center section-title mtn-2">HEALTHY ORGANIC FARM</h2>
+                        <h2 class="text-center section-title mtn-2">HEALTHY FOOD FARM</h2>
                         <div class="organik-seperator mb-6 center">
                             <span class="sep-holder"><span class="sep-line"></span></span>
                             <div class="sep-icon"><i class="organik-flower"></i></div>
@@ -49,9 +49,9 @@
                             <div class="contact-inner">
                                 <h6 class="contact-title"> Address</h6>
                                 <div class="contact-content">
-                                    1800 Abbot Kinney Blvd. Unit D &amp; E
+                                    08 Tôn Thất Thuyết
                                     <br />
-                                    Venice, CA 90291
+                                    Hà Nội
                                 </div>
                             </div>
                         </div>
@@ -64,7 +64,8 @@
                             <div class="contact-inner">
                                 <h6 class="contact-title"> Hotline</h6>
                                 <div class="contact-content">
-                                    0122 333 8888
+                                    0998.888.888</br>
+                                    0968.666.888
                                 </div>
                             </div>
                         </div>
@@ -77,9 +78,9 @@
                             <div class="contact-inner">
                                 <h6 class="contact-title"> Email Contact</h6>
                                 <div class="contact-content">
-                                    organik@gmail.com
+                                    healthyfood@gmail.com
                                     <br />
-                                    contact@organikstore.com
+                                    contact@healthyfoodstore.com
                                 </div>
                             </div>
                         </div>
@@ -92,7 +93,7 @@
                             <div class="contact-inner">
                                 <h6 class="contact-title"> Website</h6>
                                 <div class="contact-content">
-                                    www.organikstore.com
+                                    www.healthyfoodstore.com
                                 </div>
                             </div>
                         </div>
