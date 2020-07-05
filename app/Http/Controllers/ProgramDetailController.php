@@ -12,6 +12,8 @@ class ProgramDetailController extends Controller
     public function listProgramDetail(){
         $program_detail = ProgramDetail::with("Program")->paginate(20);//nạp sẵn phần cần nạp trong collection
         return view("program_detail.list",["program_detail"=>$program_detail]); // string la mang cac product bien duoc gui sang lam bien dau tien cua forech
+//        $program_detail = \App\ProgramDetail::paginate(2);
+//        return view ('program_detail.list', compact('program_detail'));
     }
     public function newProgramDetail(){
         // phai lay du lieu tu cac bang phu

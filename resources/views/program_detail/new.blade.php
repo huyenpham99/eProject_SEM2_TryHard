@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-group">
                     <label> Image</label>
-                    <input type="text" name="program_detail_image" class="form-control @error("program_detail_image")  is-invalid @enderror"">
+                    <input type="text" name="program_detail_image" class="form-control @error("program_detail_image")  is-invalid @enderror" placeholder="Link Image">
                     @error("program_detail_image")
                     <span class="error invalid-feedback">  {{$message}}</span>
                     @enderror

@@ -79,5 +79,5 @@
             </div>
         </div>
     </div>
-    {!! $products->links() !!}
+{{--    {!! $program_detail->links() !!}--}}
 @endsection

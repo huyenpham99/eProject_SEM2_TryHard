@@ -155,6 +155,27 @@
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-diamond"></i>
+                        Ticket
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{url("/admin/new-ticket")}}">
+                                <i class="metismenu-icon"></i>
+                                New Ticket
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url("/admin/list-ticket")}}">
+                                <i class="metismenu-icon"></i>
+                                List Ticket
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-diamond"></i>
                         Blog
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
