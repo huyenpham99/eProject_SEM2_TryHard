@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="{{asset("frontend/css/owl.theme.css")}}" type="text/css" media="all"/>
 <link rel='stylesheet' href='{{asset("frontend/css/prettyPhoto.css")}}'type='text/css' media='all'/>
 <link rel="stylesheet" href="{{asset("frontend/css/settings.css")}}" type="text/css" media="all"/>
+<link rel='stylesheet' href='{{asset("frontend/css/slick.css")}}' type='text/css' media='all'/>
 <link rel="stylesheet" href="{{asset("frontend/css/style.css")}}" type="text/css" media="all"/>
 <link rel="stylesheet" href="{{asset("frontend/css/custom.css")}}" type="text/css" media="all"/>
 <link href="http://fonts.googleapis.com/css?family=Great+Vibes%7CLato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet"/>
