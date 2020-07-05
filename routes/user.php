@@ -21,7 +21,7 @@ Route::get("/product/{product:slug}", "HomeController@product");
 Route::get("/about", "HomeController@about");
 
 Route::get("/blog","HomeController@blog");
-Route::get("/blog-detail","HomeController@blogdetail");
+Route::get("/blog/{blog:slug}","HomeController@blogdetail");
 
 Route::get("/shop","HomeController@shop");
 

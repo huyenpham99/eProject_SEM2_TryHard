@@ -19,6 +19,13 @@ Route::put("/update-product/{id}","ProductController@updateProduct")->middleware
 Route::delete("/delete-product/{id}","ProductController@deleteProduct")->middleware('product');
 
 //Blog Router
+Route::get("/list-blogcategory","BlogCategoryController@listBlogCategory")->middleware('blog');
+Route::get("/new-blogcategory","BlogCategoryController@newBlogCategory")->middleware('blog');
+Route::post("/save-blogcategory","BlogCategoryController@saveBlogCategory")->middleware('blog');
+Route::get("/edit-blogcategory/{id}","BlogCategoryController@editBlogCategory")->middleware('blog');
+Route::put("/update-blogcategory/{id}","BlogCategoryController@updateBlogCategory")->middleware('blog');
+Route::delete("/delete-blogcategory/{id}","BlogCategoryController@deleteBlogCategory")->middleware('blog');
+
 Route::get("/list-blog","BlogController@listBlog")->middleware('blog');
 Route::get("/new-blog","BlogController@newBlog")->middleware('blog');
 Route::post("/save-blog","BlogController@saveBlog")->middleware('blog');

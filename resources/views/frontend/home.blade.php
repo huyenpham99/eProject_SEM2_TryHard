@@ -88,7 +88,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="mb-1 section-pretitle default-left">Welcome to</div>
-                        <h2 class="section-title mtn-2 mb-3">Healthy Food Store</h2>
+                        <h2 class="section-title mtn-2 mb-3">Healthy Food</h2>
                         <p class="mb-4">
                             Healthy Food opened its doors in 1990, it was Renée Elliott's dream to offer the best and
                             widest range of Healthy Food s available, and her mission to promote health in the community
@@ -240,7 +240,7 @@
                                 <li><a href="{{url("/shop")}}">All</a>
 
                                 </li>
-                                    @foreach(\App\Category::all() as $category)
+                                    @foreach($categories as $category)
                                         <li><a href="{{$category->getCategoryUrl()}}">{{$category->__get("category_name")}}</a></li>
                                     @endforeach
                             </ul>
@@ -249,7 +249,7 @@
                 </div>
                 <div class="row">
                     <div class="product-grid masonry-grid-post">
-                        @foreach(\App\Product::all() as $product)
+                        @foreach($products as $product)
                         <div class="col-md-3 col-sm-6 product-item masonry-item text-center">
                             <div class="product-thumb">
                                 <a href="shop-detail.html">

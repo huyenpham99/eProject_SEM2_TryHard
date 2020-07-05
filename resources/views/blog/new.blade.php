@@ -20,6 +20,10 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <label>Blog_Image</label>
+                    <input type="text" name="blog_image" class="form-control" placeholder="New Blog Image">
+                </div>
+                <div class="form-group">
                     <label>Blog_Desc</label>
                     <input type="text" name="blog_desc" class="form-control @error("blog_desc")  is-invalid @enderror" placeholder="New Desc">
                     @error("blog_desc")
@@ -27,8 +31,20 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <label>Blog_Date</label>
+                    <input type="text" name="blog_date" class="form-control" placeholder="New Blog Date">
+                </div>
+                <div class="form-group">
                     <label>Blog_Content</label>
                     <textarea name="blog_content" id="editor1" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Blog Category</label>
+                    <select name="blog_category_id" class="form-control">
+                        @foreach($blogcategory as $category)
+                            <option value="{{$category->__get("id")}}">{{$category->__get("blog_category_name")}}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
 
