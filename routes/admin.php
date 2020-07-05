@@ -67,6 +67,7 @@ Route::post("/save-banner","BannerController@saveBanner");
 Route::get("/edit-banner/{id}","BannerController@editBanner");
 Route::put("/update-banner/{id}","BannerController@updateBanner");
 Route::delete("/delete-banner/{id}","BannerController@deleteBanner");
+<<<<<<< HEAD
 //
 
 
@@ -84,3 +85,16 @@ Route::post("/save-ticket","TicketController@saveTicket");
 Route::get("/edit-ticket/{id}","TicketController@editTicket");
 Route::put("/update-ticket/{id}","TicketController@updateTicket");
 Route::delete("/delete-ticket/{id}","TicketController@deleteTicket");
+=======
+
+
+
+//Program Detail
+Route::get("/list-program-detail","ProgramDetailController@listProgram_Detail");
+Route::get("/new-program-detail","ProgramDetailController@newProgram_Detail");
+Route::post("/save-program-detail","ProgramDetailController@saveProgram_Detail");
+Route::get("/edit-program-detail/{id}","ProgramDetailControllerr@editProgram_Detail");
+Route::put("/update-program-detail/{id}","ProgramDetailController@updateProgram_Detail");
+Route::delete("/delete-program-detail/{id}","ProgramDetailController@deleteProgram_Detail");
+
+>>>>>>> 9e6ffa4fc73c5567294754808c53d90023ee3f21
