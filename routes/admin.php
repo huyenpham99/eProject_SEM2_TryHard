@@ -93,12 +93,3 @@ Route::put("/update-ticket/{id}","TicketController@updateTicket")->middleware('e
 Route::delete("/delete-ticket/{id}","TicketController@deleteTicket")->middleware('event');
 
 
-
-//Program Detail
-Route::get("/list-program-detail","ProgramDetailController@listProgram_Detail")->middleware('program');
-Route::get("/new-program-detail","ProgramDetailController@newProgram_Detail")->middleware('program');
-Route::post("/save-program-detail","ProgramDetailController@saveProgram_Detail")->middleware('program');
-Route::get("/edit-program-detail/{id}","ProgramDetailControllerr@editProgram_Detail")->middleware('program');
-Route::put("/update-program-detail/{id}","ProgramDetailController@updateProgram_Detail")->middleware('program');
-Route::delete("/delete-program-detail/{id}","ProgramDetailController@deleteProgram_Detail")->middleware('program');
-
