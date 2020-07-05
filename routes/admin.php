@@ -68,8 +68,6 @@ Route::get("/edit-banner/{id}","BannerController@editBanner");
 Route::put("/update-banner/{id}","BannerController@updateBanner");
 Route::delete("/delete-banner/{id}","BannerController@deleteBanner");
 
-
-
 // Program Detail
 Route::get("/list-program-detail","ProgramDetailController@listProgramDetail");
 Route::get("/new-program-detail","ProgramDetailController@newProgramDetail");

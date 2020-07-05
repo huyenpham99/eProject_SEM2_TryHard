@@ -30,3 +30,8 @@ Route::get("/product-detail","HomeController@productdetail");
 Route::get("/contact","HomeController@contact");
 
 Route::get("/programs","HomeController@programs");
+
+Route::post("/cart/add/{product}", "HomeController@addToCart");
+Route::get("/shopping-cart","HomeController@shoppingCart");
+Route::get("/checkout","HomeController@checkout")->middleware("auth");
+Route::post("/checkout","HomeController@placeOrder")->middleware("auth");

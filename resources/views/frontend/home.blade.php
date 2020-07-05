@@ -237,285 +237,47 @@
                     <div class="col-sm-12 p-0">
                         <div class="text-center">
                             <ul class="masonry-filter">
-                                <li><a href="#" data-filter="" class="active">All</a></li>
-                                <li><a href="#" data-filter=".dried">Dried</a></li>
-                                <li><a href="#" data-filter=".fruits">Fruits</a></li>
-                                <li><a href="#" data-filter=".vegetables">Vegetables</a></li>
-                                <li><a href="#" data-filter=".juice">Juice</a></li>
+                                <li><a href="{{url("/shop")}}">All</a>
+
+                                </li>
+                                    @foreach(\App\Category::all() as $category)
+                                        <li><a href="{{$category->getCategoryUrl()}}">{{$category->__get("category_name")}}</a></li>
+                                    @endforeach
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="product-grid masonry-grid-post">
-                        <div class="col-md-3 col-sm-6 product-item masonry-item text-center juice">
+                        @foreach(\App\Product::all() as $product)
+                        <div class="col-md-3 col-sm-6 product-item masonry-item text-center">
                             <div class="product-thumb">
                                 <a href="shop-detail.html">
                                     <div class="badges">
-                                        <span class="hot">Hot</span>
-                                        <span class="onsale">Sale!</span>
+                                        <span class="hot">View: </span>
                                     </div>
-                                    <img src="frontend/images/shop/shop_1.jpg" alt=""/>
+                                    <img src="{{$product->__get("product_image")}}" alt=""/>
                                 </a>
                                 <div class="product-action">
-											<span class="add-to-cart">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to cart"></a>
-											</span>
-                                    <span class="wishlist">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to wishlist"></a>
-											</span>
-                                    <span class="quickview">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Quickview"></a>
-											</span>
+												<span class="add-to-cart">
+													<a href="javascript: void(0);"
+                                                       onclick="addToCart({{$product->__get("id")}})" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+												</span>
                                     <span class="compare">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Compare"></a>
-											</span>
+                                            <a href="{{$product->getProductUrl()}}" data-toggle="tooltip" data-placement="top" title="Detail"></a>
+                                        </span>
                                 </div>
                             </div>
                             <div class="product-info">
-                                <a href="shop-detail.html">
-                                    <h2 class="title">Orange Juice</h2>
+                                <a href="{{$product->getProductUrl()}}">
+                                    <h2 class="title">{{$product->__get("product_name")}}</h2>
                                     <span class="price">
-												<del>$15.00</del>
-												<ins>$12.00</ins>
-											</span>
+                                            <ins>{{$product->__get("product_price")}}</ins>
+                                        </span>
                                 </a>
                             </div>
                         </div>
-                        <div class="col-md-3 col-sm-6 product-item masonry-item text-center fruits">
-                            <div class="product-thumb">
-                                <a href="shop-detail.html">
-                                    <div class="badges">
-                                        <span class="hot">Hot</span>
-                                    </div>
-                                    <img src="frontend/images/shop/shop_2.jpg" alt=""/>
-                                </a>
-                                <div class="product-action">
-											<span class="add-to-cart">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to cart"></a>
-											</span>
-                                    <span class="wishlist">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to wishlist"></a>
-											</span>
-                                    <span class="quickview">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Quickview"></a>
-											</span>
-                                    <span class="compare">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Compare"></a>
-											</span>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="shop-detail.html">
-                                    <h2 class="title">Aurore Grape</h2>
-                                    <span class="price">$9.00</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 product-item masonry-item text-center dried">
-                            <div class="product-thumb">
-                                <a href="shop-detail.html">
-                                    <div class="badges">
-                                        <span class="hot">Hot</span>
-                                    </div>
-                                    <img src="frontend/images/shop/shop_3.jpg" alt=""/>
-                                </a>
-                                <div class="product-action">
-											<span class="add-to-cart">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to cart"></a>
-											</span>
-                                    <span class="wishlist">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to wishlist"></a>
-											</span>
-                                    <span class="quickview">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Quickview"></a>
-											</span>
-                                    <span class="compare">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Compare"></a>
-											</span>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="shop-detail.html">
-                                    <h2 class="title">Blueberry Jam</h2>
-                                    <span class="price">$15.00</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 product-item masonry-item text-center fruits">
-                            <div class="product-thumb">
-                                <a href="shop-detail.html">
-                                    <img src="frontend/images/shop/shop_4.jpg" alt=""/>
-                                </a>
-                                <div class="product-action">
-											<span class="add-to-cart">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to cart"></a>
-											</span>
-                                    <span class="wishlist">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to wishlist"></a>
-											</span>
-                                    <span class="quickview">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Quickview"></a>
-											</span>
-                                    <span class="compare">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Compare"></a>
-											</span>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="shop-detail.html">
-                                    <h2 class="title">Passionfruit</h2>
-                                    <span class="price">$35.00</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 product-item masonry-item text-center vegetables">
-                            <div class="product-thumb">
-                                <a href="shop-detail.html">
-                                    <div class="badges">
-                                        <span class="hot">Hot</span>
-                                    </div>
-                                    <img src="frontend/images/shop/shop_5.jpg" alt=""/>
-                                </a>
-                                <div class="product-action">
-											<span class="add-to-cart">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to cart"></a>
-											</span>
-                                    <span class="wishlist">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to wishlist"></a>
-											</span>
-                                    <span class="quickview">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Quickview"></a>
-											</span>
-                                    <span class="compare">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Compare"></a>
-											</span>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="shop-detail.html">
-                                    <h2 class="title">Carrot</h2>
-                                    <span class="price">$12.00</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 product-item masonry-item text-center vegetables">
-                            <div class="product-thumb">
-                                <a href="shop-detail.html">
-                                    <span class="outofstock"><span>Out</span>of stock</span>
-                                    <img src="frontend/images/shop/shop_6.jpg" alt=""/>
-                                </a>
-                                <div class="product-action">
-											<span class="add-to-cart">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to cart"></a>
-											</span>
-                                    <span class="wishlist">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to wishlist"></a>
-											</span>
-                                    <span class="quickview">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Quickview"></a>
-											</span>
-                                    <span class="compare">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Compare"></a>
-											</span>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="shop-detail.html">
-                                    <h2 class="title">Sprouting Broccoli</h2>
-                                    <span class="price">$6.00</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 product-item masonry-item text-center vegetables">
-                            <div class="product-thumb">
-                                <a href="shop-detail.html">
-                                    <img src="frontend/images/shop/shop_7.jpg" alt=""/>
-                                </a>
-                                <div class="product-action">
-											<span class="add-to-cart">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to cart"></a>
-											</span>
-                                    <span class="wishlist">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to wishlist"></a>
-											</span>
-                                    <span class="quickview">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Quickview"></a>
-											</span>
-                                    <span class="compare">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Compare"></a>
-											</span>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="shop-detail.html">
-                                    <h2 class="title">Chinese Cabbage</h2>
-                                    <span class="price">$9.00</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 product-item masonry-item text-center fruits">
-                            <div class="product-thumb">
-                                <a href="shop-detail.html">
-                                    <div class="badges">
-                                        <span class="hot">Hot</span>
-                                    </div>
-                                    <img src="frontend/images/shop/shop_8.jpg" alt=""/>
-                                </a>
-                                <div class="product-action">
-											<span class="add-to-cart">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to cart"></a>
-											</span>
-                                    <span class="wishlist">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Add to wishlist"></a>
-											</span>
-                                    <span class="quickview">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Quickview"></a>
-											</span>
-                                    <span class="compare">
-												<a href="#" data-toggle="tooltip" data-placement="top"
-                                                   title="Compare"></a>
-											</span>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <a href="shop-detail.html">
-                                    <h2 class="title">Tieton Cherry</h2>
-                                    <span class="price">$9.00</span>
-                                </a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="loadmore-contain">
                         <a class="organik-btn small" href="#"> Load more </a>
