@@ -19,9 +19,12 @@
                         <tr>
                             <th>#</th>
                             <th>Blog_Title</th>
+                            <td>Blog Image</td>
                             <th>Blog_Desc</th>
                             <th>Blog_Content</th>
+                            <th>Blog_Date</th>
                             <th>View_Count</th>
+                            <th>Blog Category</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -32,7 +35,9 @@
                         <tr>
                             <th scope="row">{{$blog->__get("id")}}</th>
                             <td>{{$blog->__get("blog_title")}}</td>
+                            <td><img src="{{$blog->__get("blog_image")}}" style="width: 50px; height: 50px"></td>
                             <td>{{$blog->__get("blog_desc")}}</td>
+                            <td>{{$blog->__get("blog_date")}}</td>
                             <td>@php
                                     $doc = new DOMDocument();
                                     $doc->loadHTML($blog->__get("blog_content"));
@@ -40,6 +45,7 @@
                                 @endphp</td>
 {{--                            <td>{{$blog->__get("blog_content")}}</td>--}}
                             <td>{{$blog->__get("view_count")}}</td>
+                            <td>{{$blog->__get("blog_category_id")}}</td>
                             <td> <a href="{{url("admin/edit-blog/{$blog->__get("id")}")}}" class="btn btn-outline-warning">Edit</a></td>
                             <td>
                                 <form action="{{url("admin/delete-blog/{$blog->__get("id")}")}}" method="post">

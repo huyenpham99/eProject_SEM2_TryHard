@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\BlogCategory;
 use App\Cart;
 use App\Category;
 use App\Events\OrderCreated;
@@ -33,74 +34,83 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $category = Category::all();
+        $blog = Blog::all();
+        $products = Product::all();
 //         tao slug cho cac truong
-//        $category = Category::all();
-//        foreach ($category as $p) {
-//            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
-//            $p->slug = $slug . $p->__get("id");// luu lai vao DB
-//            $p->save();
-//            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
-//        }
+        foreach ($category as $p) {
+            $slug    = \Illuminate\Support\Str::slug($p->__get("category_name"));
+            $p->slug = $slug . $p->__get("id");// luu lai vao DB
+            $p->save();
+        }
 //        $u = Auth::user();
 //        $u->role =User::ADMIN_ROLE;
 //        $u->save();
 //        die("done");
-
 //        Tạo slug Blog
-//        $blog = Blog::all();
-//        foreach ($blog as $p) {
-//            $slug = \Illuminate\Support\Str::slug($p->__get("title"));
-//            $p->slug = $slug . $p->__get("id");// luu lai vao DB
-//            $p->save();
-//            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
-//        }
+        foreach ($blog as $p) {
+            $slug    = \Illuminate\Support\Str::slug($p->__get("title"));
+            $p->slug = $slug . $p->__get("id");// luu lai vao DB
+            $p->save();
+        }
         //Tạo slug product
-//        $products = Product::all();
-////        $most_viewer = Product::orderBy("view_count", "DESC")->limit(8)->get();
-//        foreach ($products as $p) {
-//            $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
-//            $p->slug = $slug . $p->__get("id");// luu lai vao DB
-//            $p->save();
-////            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
-            return view("frontend.home");
+//        $most_viewer = Product::orderBy("view_count", "DESC")->limit(8)->get();
+        foreach ($products as $p) {
+            $slug    = \Illuminate\Support\Str::slug($p->__get("product_name"));
+            $p->slug = $slug . $p->__get("id");// luu lai vao DB
+            $p->save();
         }
-
-
-
-
-    public function blog(Blog $blog)
+        return view("frontend.home",[
+            "categories" => $category,
+            "products" => $products,
+            "blogs" => $blog,
+        ]);
+    }
+    public function blog()
     {
-
-        if (!session()->has("view_count_{$blog->__get("id")}")) {// kiểm tra xem sesion  nếu chưa có sẽ đăng lên
-            $blog->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
-            session(["view_count{$blog->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
-        }
-        return view("frontend.blog");
+        $blogs = Blog::all();
+        $blogcategory = BlogCategory::all();
+        return view("frontend.blog",[
+            "blogs" => $blogs,
+            "blogcategory" => $blogcategory,
+        ]);
     }
 
     public function blogdetail(Blog $blog)
     {
-        return view("frontend.blog-detail");
+        if (!session()->has("view_count_{$blog->__get("id")}")) {// kiểm tra xem sesion  nếu chưa có sẽ đăng lên
+            $blog->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
+            session(["view_count{$blog->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
+        }
+        return view("frontend.blog-detail",[
+            "blog" => $blog,
+        ]);
     }
 
-    public function about(Request $request)
+    public function about()
     {
         return view("frontend.about");
     }
 
-    public function shop(Request $request)
+    public function shop()
     {
         return view("frontend.shop");
     }
 
-    public function contact(Request $request)
+    public function contact()
     {
         return view("frontend.contact");
     }
 
-    public function productdetail(Request $request)
+    public function productdetail(Product $product)
     {
-        return view("frontend.product-detail");
+        $products = Product::all();
+        $categories = Category::all();
+        return view("frontend.product-detail",[
+            "categories" => $categories,
+            "product" =>$product,
+            "products" => $products,
+        ]);
     }
 
     public function programs(Request $request)

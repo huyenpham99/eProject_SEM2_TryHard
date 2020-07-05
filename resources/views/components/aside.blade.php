@@ -174,6 +174,29 @@
                     <li>
                         <a href="#">
                             <i class="metismenu-icon pe-7s-diamond"></i>
+                            Blog Category
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="{{url("/admin/new-blogcategory")}}">
+
+                                    <i class="metismenu-icon"></i>
+                                    New Blog Category
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url("/admin/list-blogcategory")}}">
+
+                                    <i class="metismenu-icon"></i>
+                                    List Blog Category
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon pe-7s-diamond"></i>
                             Blog
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
@@ -258,6 +281,29 @@
                                 </li>
                             </ul>
                         </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon pe-7s-diamond"></i>
+                            Blog Category
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="{{url("/admin/new-blogcategory")}}">
+
+                                    <i class="metismenu-icon"></i>
+                                    New Blog Category
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url("/admin/list-blogcategory")}}">
+
+                                    <i class="metismenu-icon"></i>
+                                    List Blog Category
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="#">
                             <i class="metismenu-icon pe-7s-diamond"></i>
