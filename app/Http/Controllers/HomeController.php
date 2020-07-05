@@ -34,39 +34,39 @@ class HomeController extends Controller
     public function index()
     {
 //         tao slug cho cac truong
-        $category = Category::all();
-        foreach ($category as $p) {
-            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
-            $p->slug = $slug . $p->__get("id");// luu lai vao DB
-            $p->save();
-            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
-        }
+//        $category = Category::all();
+//        foreach ($category as $p) {
+//            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
+//            $p->slug = $slug . $p->__get("id");// luu lai vao DB
+//            $p->save();
+//            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
+//        }
 //        $u = Auth::user();
 //        $u->role =User::ADMIN_ROLE;
 //        $u->save();
 //        die("done");
 
+//        Tạo slug Blog
+//        $blog = Blog::all();
+//        foreach ($blog as $p) {
+//            $slug = \Illuminate\Support\Str::slug($p->__get("title"));
+//            $p->slug = $slug . $p->__get("id");// luu lai vao DB
+//            $p->save();
+//            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
+//        }
         //Tạo slug product
-        $products = Product::all();
-//        $most_viewer = Product::orderBy("view_count", "DESC")->limit(8)->get();
-        foreach ($products as $p) {
-            $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
-            $p->slug = $slug . $p->__get("id");// luu lai vao DB
-            $p->save();
+//        $products = Product::all();
+////        $most_viewer = Product::orderBy("view_count", "DESC")->limit(8)->get();
+//        foreach ($products as $p) {
+//            $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
+//            $p->slug = $slug . $p->__get("id");// luu lai vao DB
+//            $p->save();
 ////            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
             return view("frontend.home");
         }
 
 
-//        Tạo slug Blog
-        $blog = Blog::all();
-        foreach ($blog as $p) {
-            $slug = \Illuminate\Support\Str::slug($p->__get("title"));
-            $p->slug = $slug . $p->__get("id");// luu lai vao DB
-            $p->save();
-            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
-        }
-    }
+
 
     public function blog(Blog $blog)
     {

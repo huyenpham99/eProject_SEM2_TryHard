@@ -32,11 +32,15 @@
                                     @if($user->__get("role") == 1)
                                         <a class="btn btn-danger btn-sm text-white">Admin</a>
                                     @elseif($user->__get("role") == 0)
-                                        <a class="btn btn-success btn-sm text-white">Người dùng</a>
+                                        <a class="btn btn-success btn-sm text-white">User Account</a>
                                     @elseif($user->__get("role") == 2)
-                                        <a class="btn btn-success btn-sm text-white">Quản trị bài viết</a>
+                                        <a class="btn btn-success btn-sm text-white">Blog Manager</a>
                                     @elseif($user->__get("role") == 3)
-                                        <a class="btn btn-success btn-sm text-white">Quản trị người dùng</a>
+                                        <a class="btn btn-success btn-sm text-white">Event Manager</a>
+                                    @elseif($user->__get("role") == 4)
+                                        <a class="btn btn-success btn-sm text-white">Product Manager</a>
+                                    @elseif($user->__get("role") == 5)
+                                        <a class="btn btn-success btn-sm text-white">Program Manager</a>
                                     @endif
                                 </td>
                                 <td class="d-flex">

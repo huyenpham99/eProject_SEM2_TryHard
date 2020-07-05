@@ -31,8 +31,10 @@
                         <div class="form-group">
                             <label for="exampleFormControlSelect1">Role</label>
                             <select name="role" class="form-control" id="exampleFormControlSelect1">
-                                <option value="2">Quản trị bài viết</option>
-                                <option value="3">Quản trị người dùng</option>
+                                <option value="2">Blog Manager</option>
+                                <option value="3">Event Manager</option>
+                                <option value="4">Product Manager</option>
+                                <option value="5">Program Manager</option>
                             </select>
                         </div>
                     </div>
