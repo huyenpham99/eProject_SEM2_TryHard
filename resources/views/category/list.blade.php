@@ -28,6 +28,9 @@
                                 data-sort="name">Category Name
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Category Image
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Created At
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
@@ -46,6 +49,7 @@
                             <tr>
                                 <td>{{$category->__get("id")}}</td>
                                 <td>{{$category->__get("category_name")}}</td>
+                                <td><img src="{{$category->__get("category_image")}}" style="width: 50px; height: 50px"></td>
                                 <td>{{$category->__get("created_at")}}</td>
                                 <td>{{$category->__get("updated_at")}}</td>
                                 <td>

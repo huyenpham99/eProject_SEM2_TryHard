@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="topbar-text">
+                <div class="topbar-text" style="margin-top:7px">
                     <span>Work time: Monday - Friday: 08AM-06PM</span>
                     <span>Saturday - Sunday: 10AM-06PM</span>
                 </div>
@@ -54,7 +54,7 @@
         <div class="row">
             <div class="col-md-3">
                 <a href="index.html" id="logo">
-                    <img class="logo-image" src="frontend/images/logo.png" alt="Organik Logo" />
+                    <img class="logo-image" src="/frontend/images/logohealthyfood1.png" style="width: 150px;margin-top: 15px" alt="Organik Logo" />
                 </a>
             </div>
             <div class="col-md-9">
@@ -64,32 +64,32 @@
                             <li>
                                 <a href="{{url("/home")}}">Home</a>
                             </li>
-                              <li>
-                                  <a href="{{url("/about")}}">About Us</a>
-                              </li>
+                            <li>
+                                <a href="{{url("/about")}}">About Us</a>
+                            </li>
 
                             <li>
                                 <a href="{{url("/programs")}}">Programs</a>
                             </li>
                             <li class="dropdown mega-menu">
                                 <a href="{{url("/shop")}}">Shop</a>
-                                <ul class="sub-menu">
+                                <ul class="sub-menu" >
                                     <li>
                                         <div class="mega-menu-content col-sm-12">
                                             <div class="row">
-                                                <div class="col-sm-3">
-                                                    @foreach(\App\Category::orderBy("category_name","ASC")->limit(4)->get() as $category)
-                                                    <div class="pt-4 pb-4">
-                                                        <h3 href="">{{$category->__get("category_name")}}</h3>
-                                                        <ul>
-                                                            @foreach(\App\Product::with("Category")->where("category_id","like",$category->__get("id"))->get() as $pro )
-                                                                <li><a href="{{$pro->getProductUrl()}}">{{$pro->__get("product_name")}}</a>
-                                                                </li>
-                                                            @endforeach
-                                                        </ul>
+                                                @foreach(\App\Category::orderBy("category_name","ASC")->limit(4)->get() as $category)
+                                                    <div class="col-sm-3">
+                                                        <div class="pt-4 pb-4">
+                                                            <h3 href="">{{$category->__get("category_name")}}</h3>
+                                                            <ul>
+                                                                @foreach(\App\Product::with("Category")->where("category_id","like",$category->__get("id"))->get() as $pro )
+                                                                    <li><a href="{{$pro->getProductUrl()}}">{{$pro->__get("product_name")}}</a>
+                                                                    </li>
+                                                                @endforeach
+                                                            </ul>
+                                                        </div>
                                                     </div>
-                                                    @endforeach
-                                                </div>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </li>
@@ -163,7 +163,7 @@
             <div class="col-xs-8">
                 <div class="header-center">
                     <a href="index.html" id="logo-2">
-                        <img class="logo-image" src="images/logo.png" alt="Organik Logo" />
+                        <img class="logo-image" src="public/frontend/images/logohealthyfood.png" style="width: 85px" alt="healthy food logo" />
                     </a>
                 </div>
             </div>
