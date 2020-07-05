@@ -3,28 +3,28 @@ Route::get("/","WebController@dashboard");
 //
 
 //CategoryRepository Router
-Route::get("/list-category","CategoryController@listCategory");
-Route::get("/new-category","CategoryController@newCategory");
-Route::post("/save-category","CategoryController@saveCategory");
-Route::get("/edit-category/{id}","CategoryController@editCategory");
-Route::put("/update-category/{id}","CategoryController@updateCategory");
-Route::delete("/delete-category/{id}","CategoryController@deleteCategory");
+Route::get("/list-category","CategoryController@listCategory")->middleware('product');
+Route::get("/new-category","CategoryController@newCategory")->middleware('product');
+Route::post("/save-category","CategoryController@saveCategory")->middleware('product');
+Route::get("/edit-category/{id}","CategoryController@editCategory")->middleware('product');
+Route::put("/update-category/{id}","CategoryController@updateCategory")->middleware('product');
+Route::delete("/delete-category/{id}","CategoryController@deleteCategory")->middleware('product');
 
 //Products Router
-Route::get("/list-product","ProductController@listProduct");
-Route::get("/new-product","ProductController@newProduct");
-Route::post("/save-product","ProductController@saveProduct");
-Route::get("/edit-product/{id}","ProductController@editProduct");
-Route::put("/update-product/{id}","ProductController@updateProduct");
-Route::delete("/delete-product/{id}","ProductController@deleteProduct");
+Route::get("/list-product","ProductController@listProduct")->middleware('product');
+Route::get("/new-product","ProductController@newProduct")->middleware('product');
+Route::post("/save-product","ProductController@saveProduct")->middleware('product');
+Route::get("/edit-product/{id}","ProductController@editProduct")->middleware('product');
+Route::put("/update-product/{id}","ProductController@updateProduct")->middleware('product');
+Route::delete("/delete-product/{id}","ProductController@deleteProduct")->middleware('product');
 
 //Blog Router
-Route::get("/list-blog","BlogController@listBlog");
-Route::get("/new-blog","BlogController@newBlog");
-Route::post("/save-blog","BlogController@saveBlog");
-Route::get("/edit-blog/{id}","BlogController@editBlog");
-Route::put("/update-blog/{id}","BlogController@updateBlog");
-Route::delete("/delete-blog/{id}","BlogController@deleteBlog");
+Route::get("/list-blog","BlogController@listBlog")->middleware('blog');
+Route::get("/new-blog","BlogController@newBlog")->middleware('blog');
+Route::post("/save-blog","BlogController@saveBlog")->middleware('blog');
+Route::get("/edit-blog/{id}","BlogController@editBlog")->middleware('blog');
+Route::put("/update-blog/{id}","BlogController@updateBlog")->middleware('blog');
+Route::delete("/delete-blog/{id}","BlogController@deleteBlog")->middleware('blog');
 
 //User Router
 Route::get("/list-user", "UserController@listUser");
@@ -43,12 +43,12 @@ Route::delete("/delete-program/{id}","ProgramController@deleteProgram");
 
 
 //Event Router
-Route::get("/list-event","EventController@listEvent");
-Route::get("/new-event","EventController@newEvent");
-Route::post("/save-event","EventController@saveEvent");
-Route::get("/edit-event/{id}","EventController@editEvent");
-Route::put("/update-event/{id}","EventController@updateEvent");
-Route::delete("/delete-event/{id}","EventController@deleteEvent");
+Route::get("/list-event","EventController@listEvent")->middleware('event');
+Route::get("/new-event","EventController@newEvent")->middleware('event');
+Route::post("/save-event","EventController@saveEvent")->middleware('event');
+Route::get("/edit-event/{id}","EventController@editEvent")->middleware('event');
+Route::put("/update-event/{id}","EventController@updateEvent")->middleware('event');
+Route::delete("/delete-event/{id}","EventController@deleteEvent")->middleware('event');
 
 Route::get("/list-user", "UserController@listUser")->middleware('admin1');
 Route::get("/new-manager", "UserController@newManager")->middleware('admin1');
@@ -68,26 +68,30 @@ Route::get("/edit-banner/{id}","BannerController@editBanner");
 Route::put("/update-banner/{id}","BannerController@updateBanner");
 Route::delete("/delete-banner/{id}","BannerController@deleteBanner");
 
+
 // Program Detail
-Route::get("/list-program-detail","ProgramDetailController@listProgramDetail");
-Route::get("/new-program-detail","ProgramDetailController@newProgramDetail");
-Route::post("/save-program-detail","ProgramDetailController@saveProgramDetail");
-Route::get("/edit-program-detail/{id}","ProgramDetailController@editProgramDetail");
-Route::put("/update-program-detail/{id}","ProgramDetailController@updateProgramDetail");
-Route::delete("/delete-program-detail/{id}","ProgramDetailController@deleteProgramDetail");
+Route::get("/list-program-detail","ProgramDetailController@listProgramDetail")->middleware('program');
+Route::get("/new-program-detail","ProgramDetailController@newProgramDetail")->middleware('program');
+Route::post("/save-program-detail","ProgramDetailController@saveProgramDetail")->middleware('program');
+Route::get("/edit-program-detail/{id}","ProgramDetailController@editProgramDetail")->middleware('program');
+Route::put("/update-program-detail/{id}","ProgramDetailController@updateProgramDetail")->middleware('program');
+Route::delete("/delete-program-detail/{id}","ProgramDetailController@deleteProgramDetail")->middleware('program');
+
 // Ticket
-Route::get("/list-ticket","TicketController@listTicket");
-Route::get("/new-ticket","TicketController@newTicket");
-Route::post("/save-ticket","TicketController@saveTicket");
-Route::get("/edit-ticket/{id}","TicketController@editTicket");
-Route::put("/update-ticket/{id}","TicketController@updateTicket");
-Route::delete("/delete-ticket/{id}","TicketController@deleteTicket");
+Route::get("/list-ticket","TicketController@listTicket")->middleware('event');
+Route::get("/new-ticket","TicketController@newTicket")->middleware('event');
+Route::post("/save-ticket","TicketController@saveTicket")->middleware('event');
+Route::get("/edit-ticket/{id}","TicketController@editTicket")->middleware('event');
+Route::put("/update-ticket/{id}","TicketController@updateTicket")->middleware('event');
+Route::delete("/delete-ticket/{id}","TicketController@deleteTicket")->middleware('event');
+
+
 
 //Program Detail
-Route::get("/list-program-detail","ProgramDetailController@listProgram_Detail");
-Route::get("/new-program-detail","ProgramDetailController@newProgram_Detail");
-Route::post("/save-program-detail","ProgramDetailController@saveProgram_Detail");
-Route::get("/edit-program-detail/{id}","ProgramDetailControllerr@editProgram_Detail");
-Route::put("/update-program-detail/{id}","ProgramDetailController@updateProgram_Detail");
-Route::delete("/delete-program-detail/{id}","ProgramDetailController@deleteProgram_Detail");
+Route::get("/list-program-detail","ProgramDetailController@listProgram_Detail")->middleware('program');
+Route::get("/new-program-detail","ProgramDetailController@newProgram_Detail")->middleware('program');
+Route::post("/save-program-detail","ProgramDetailController@saveProgram_Detail")->middleware('program');
+Route::get("/edit-program-detail/{id}","ProgramDetailControllerr@editProgram_Detail")->middleware('program');
+Route::put("/update-program-detail/{id}","ProgramDetailController@updateProgram_Detail")->middleware('program');
+Route::delete("/delete-program-detail/{id}","ProgramDetailController@deleteProgram_Detail")->middleware('program');
 

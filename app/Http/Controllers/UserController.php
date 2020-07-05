@@ -48,19 +48,34 @@ class UserController extends Controller
             $currentUser->update([
                 "account_status" =>  $request->get("status"),
             ]);
-            if($currentUser->__get("account_status") == "Manager1"){
+            if($currentUser->__get("account_status") == "blogmanager"){
                 $currentUser->update([
                     "role" =>  2,
                 ]);
             }
-            elseif ($currentUser->__get("account_status") == "Manager2"){
+            elseif ($currentUser->__get("account_status") == "productmanager"){
+                $currentUser->update([
+                    "role" =>  4,
+                ]);
+            }
+            elseif ($currentUser->__get("account_status") == "eventmanager"){
                 $currentUser->update([
                     "role" =>  3,
                 ]);
             }
-            elseif ($currentUser->__get("account_status") == "User"){
+            elseif ($currentUser->__get("account_status") == "programmanager"){
+                $currentUser->update([
+                    "role" =>  5,
+                ]);
+            }
+            elseif ($currentUser->__get("account_status") == "user"){
                 $currentUser->update([
                     "role" =>  0,
+                ]);
+            }
+            elseif ($currentUser->__get("account_status") == "deadactive"){
+                $currentUser->update([
+                    "role" =>  6,
                 ]);
             }
         }catch (\Exception $exception){

@@ -28,8 +28,12 @@ class User extends Authenticatable
 
     public const ADMIN_ROLE = 1;
     public const USER_ROLE = 0;
-    public const MANAGER_ROLE1 = 2;
-    public const MANAGER_ROLE2 = 3;
+    public const BLOG_ADMIN_ROLE = 2;
+    public const EVENT_ADMIN_ROLE = 3;
+    public const PRODUCT_ADMIN_ROLE = 4;
+    public const PROGRAM_ADMIN_ROLE = 5;
+    public const DEAD_ACTIVE = 6;
+
     /**
      * The attributes that should be hidden for arrays.
      *

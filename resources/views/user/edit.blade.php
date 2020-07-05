@@ -21,27 +21,51 @@
                         <div class="col-lg-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status" id="gridRadios1"
-                                       value="Manager1" checked>
+                                       value="eventmanager" checked>
                                 <label class="form-check-label" for="gridRadios1">
-                                    Quản trị bài viết
+                                    Event Manager
+                                </label>
+                            </div>
+                        </div>   <div class="col-lg-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="gridRadios1"
+                                       value="blogmanager">
+                                <label class="form-check-label" for="gridRadios1">
+                                    Blog Manager
+                                </label>
+                            </div>
+                        </div>   <div class="col-lg-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="gridRadios1"
+                                       value="programmanager">
+                                <label class="form-check-label" for="gridRadios1">
+                                    Program Manager
                                 </label>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status" id="gridRadios2"
-                                       value="Manager2">
+                                       value="productmanager">
                                 <label class="form-check-label" for="gridRadios2">
-                                    Quản trị người dùng
+                                    Product Manager
                                 </label>
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status" id="gridRadios3"
-                                       value="User">
+                                       value="user">
                                 <label class="form-check-label" for="gridRadios3">
-                                    Người dùng
+                                    User
+                                </label>
+                            </div>
+                        </div>       <div class="col-lg-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="status" id="gridRadios3"
+                                       value="deadactive">
+                                <label class="form-check-label" for="gridRadios3">
+                                    Dead Active Account
                                 </label>
                             </div>
                         </div>
