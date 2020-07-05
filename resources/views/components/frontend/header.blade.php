@@ -111,31 +111,9 @@
                                 </div>
                             </div>
                             <div class="widget-shopping-cart-content">
-                                <ul class="cart-list">
-                                    <li>
-                                        <a href="#" class="remove">×</a>
-                                        <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_1.jpg" alt="" />
-                                            Orange Juice&nbsp;
-                                        </a>
-                                        <span class="quantity">1 × $12.00</span>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="remove">×</a>
-                                        <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_2.jpg" alt="" />
-                                            Aurore Grape&nbsp;
-                                        </a>
-                                        <span class="quantity">1 × $9.00</span>
-                                    </li>
-                                </ul>
-                                <p class="total">
-                                    <strong>Subtotal:</strong>
-                                    <span class="amount">$21.00</span>
-                                </p>
                                 <p class="buttons">
-                                    <a href="cart.html" class="view-cart">View cart</a>
-                                    <a href="checkout.html" class="checkout">Checkout</a>
+                                    <a href="{{url("/shopping-cart")}}" class="view-cart">View cart</a>
+                                    <a  href="{{url("/checkout")}}" class="checkout">Checkout</a>
                                 </p>
                             </div>
                         </div>

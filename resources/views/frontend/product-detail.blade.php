@@ -34,7 +34,7 @@
                                         <div>
                                             <div class="image-thumb">
                                                 <a href="frontend/images/shop/large/shop_1.jpg" data-rel="prettyPhoto[gallery]">
-                                                    <img src="frontend/images/shop/shop_1.jpg" alt="" />
+                                                    <img  src="{{$product->__get("product_image")}}" alt="" />
                                                 </a>
                                             </div>
                                         </div>
@@ -47,31 +47,32 @@
                                         <div>
                                             <div class="image-thumb">
                                                 <a href="frontend/images/shop/large/shop_3.jpg" data-rel="prettyPhoto[gallery]">
-                                            </div>
+
+                                                </a></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="image-gallery-nav">
                                     <div class="image-nav-item">
                                         <div class="image-thumb">
-                                            <img src="frontend/images/shop/thumb/shop_1.jpg" alt="" />
+                                            <img src="{{$product->__get("product_image1")}}" alt="" />
                                         </div>
                                     </div>
                                     <div class="image-nav-item">
                                         <div class="image-thumb">
-                                            <img src="frontend/images/shop/thumb/shop_3.jpg" alt="" />
+                                            <img src="{{$product->__get("product_image2")}}" alt="" />
                                         </div>
                                     </div>
                                     <div class="image-nav-item">
                                         <div class="image-thumb">
-                                            <img src="frontend/images/shop/thumb/shop_4.jpg" alt="" />
+                                            <img src="{{$product->__get("product_image")}}" alt="" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="summary">
-                                    <h1 class="product-title">Orange Juice</h1>
+                                    <h1 class="product-title">{{$product->__get("product_name")}}</h1>
                                     <div class="product-rating">
                                         <div class="star-rating">
                                             <span style="width:100%"></span>
@@ -79,13 +80,14 @@
                                         <i>(2 customer reviews)</i>
                                     </div>
                                     <div class="product-price">
-                                        <del>$15.00</del>
-                                        <ins>$12.00</ins>
+                                        <ins> {{$product->getPrice()}}</ins>
                                     </div>
                                     <div class="mb-3">
-                                        <p>Relish the goodness of hand-picked oranges from the finest orchards. Foster a healthy lifestyle with the benefits of oranges. 100 percent orange juice with no added sugar for a healthy you.</p>
+                                        <p>{{$product->__get("product_desc")}}</p>
                                     </div>
-                                    <form class="cart">
+                                    <form class="cart" method="POST" action="{{url("/cart/add/{$product->__get("id")}")}}">
+                                        @method("POST")
+                                        @csrf
                                         <div class="quantity-chooser">
                                             <div class="quantity">
                                                 <span class="qty-minus" data-min="1"><i class="ion-ios-minus-outline"></i></span>
@@ -95,6 +97,7 @@
                                         </div>
                                         <button type="submit" class="single-add-to-cart">ADD TO CART</button>
                                     </form>
+
                                     <div class="product-tool">
                                         <a href="#" data-toggle="tooltip" data-placement="top" title="Add to wishlist"> Browse Wishlist </a>
                                         <a class="compare" href="#" data-toggle="tooltip" data-placement="top" title="Add to compare"> Compare </a>
@@ -356,12 +359,11 @@
                                 </form>
                             </div>
                             <div class="widget widget-product-categories">
-                                <h3 class="widget-title">Product Categories</h3>
+                                <h3 class="widget-title">Categories</h3>
                                 <ul class="product-categories">
-                                    <li><a href="#">Dried</a> <span class="count">6</span></li>
-                                    <li><a href="#">Fruits</a> <span class="count">5</span></li>
-                                    <li><a href="#">Juice</a> <span class="count">6</span></li>
-                                    <li><a href="#">Vegetables</a> <span class="count">6</span></li>
+                                    @foreach(\App\Category::all() as $category)
+                                    <li><a href="#">{{$category->__get("category_name")}}</a></li>
+                                        @endforeach
                                 </ul>
                             </div>
                             <div class="widget widget-products">
@@ -369,22 +371,21 @@
                                 <ul class="product-list-widget">
                                     <li>
                                         <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_1.jpg" alt="" />
-                                            <span class="product-title">Orange Juice</span>
+                                            <img src="{{$product->__get("product_image")}}" alt="" />
+                                            <span class="product-title">{{$product->__get("product_name")}}</span>
                                         </a>
-                                        <del>$15.00</del>
-                                        <ins>$12.00</ins>
+                                        <ins> {{$product->getPrice()}}</ins>
                                     </li>
                                     <li>
                                         <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_2.jpg" alt="" />
+                                            <img src="{{$product->__get("product_image1")}}" alt="" />
                                             <span class="product-title">Aurore Grape</span>
                                         </a>
                                         <ins>$9.00</ins>
                                     </li>
                                     <li>
                                         <a href="shop-detail.html">
-                                            <img src="frontend/images/shop/thumb/shop_3.jpg" alt="" />
+                                            <img src="{{$product->__get("product_image2")}}" alt="" />
                                             <span class="product-title">Blueberry Jam</span>
                                         </a>
                                         <ins>$15.00</ins>

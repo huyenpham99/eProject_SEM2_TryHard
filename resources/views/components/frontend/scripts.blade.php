@@ -35,6 +35,7 @@
         var maker = new google.maps.Marker({position: address, map: map, label: "FPT University"});
     }
 </script>
+
 <script src="https://maps.googleapis.com/maps/api/js?&callback=initMap" async defer></script>
 <script type="text/javascript">
     function addToCart(productId) {

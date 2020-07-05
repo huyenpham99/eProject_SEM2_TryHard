@@ -112,11 +112,7 @@
                             </div>
                             <div class="widget widget-product-categories">
                                 <h3 class="widget-title">Categories</h3>
-                                <ul class="product-categories">
-                                    @foreach(\App\Category::all() as $category)
-                                    <li><a href="#">{{$category->__get("category_name")}}</a></li>
-                                        @endforeach
-                                </ul>
+                                <x-frontend.sidebar_item/>
                             </div>
                             <div class="widget widget_price_filter">
                                 <h3 class="widget-title">Filter by price</h3>

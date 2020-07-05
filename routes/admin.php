@@ -67,4 +67,10 @@ Route::post("/save-banner","BannerController@saveBanner");
 Route::get("/edit-banner/{id}","BannerController@editBanner");
 Route::put("/update-banner/{id}","BannerController@updateBanner");
 Route::delete("/delete-banner/{id}","BannerController@deleteBanner");
-//
+//Ticket
+Route::get("/list-ticket","TicketController@listTicket");
+Route::get("/new-ticket","TicketController@newTicket");
+Route::post("/save-ticket","TicketController@saveTicket");
+Route::get("/edit-ticket/{id}","TicketController@editTicket");
+Route::put("/update-ticket/{id}","TicketController@updateTicket");
+Route::delete("/delete-ticket/{id}","TicketController@deleteTicket");

@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Ticket extends Model
 {
     protected $table = "tickets";
-
     public $fillable = [
         "ticket_name",
         "ticket_type",
@@ -16,7 +15,7 @@ class Ticket extends Model
         "user_id",
     ];
     public function User(){
-        return $this->hasMany("App\User"); // tra ve 1 collection
+        return $this->belongsTo("\App\User", "user_id");
     }
 
 }
