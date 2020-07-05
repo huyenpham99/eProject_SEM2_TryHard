@@ -10,6 +10,7 @@ class Category extends Model
 
     public $fillable = [
         "category_name",
+        "category_image"
     ];
 
     public function Products(){
@@ -23,5 +24,11 @@ class Category extends Model
 
     public function getCategoryUrl(){
         return url("/category/{$this->__get("slug")}");
+    }
+    public function getImage(){
+        if(is_null($this->__get("category_image"))){
+            return asset("media/default.jpg");
+        }
+        return asset($this->__get("category_image"));
     }
 }

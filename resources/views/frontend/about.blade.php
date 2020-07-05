@@ -1,82 +1,252 @@
 @extends("frontend.layout")
 @section("content")
-    <!-- ============== About us Banner starts ============== -->
-    <section class="banner banner-image about-us-banner">
-        <div class="bannerwrap">
-            <figure><img src="images/about-us-banner.jpg" alt="Abut us Banner" /></figure>
-        </div>
-    </section>
-    <!-- ============== About us Baner ends ============== -->
-
-    <main> <!-- main content starts -->
-        <!-- ============== About us starts ============== -->
-        <section class="block about-us-block">
+    <div id="main">
+        <div class="section section-bg-9 pt-11 pb-17">
             <div class="container">
-
-                <!-- == whole about us content wrap starts == -->
-                <div class="about-us-content">
-                    <div class="text-center top-description wow fadeInUp">
-                        <h2 class="text-sp text-lt">WE ARE NOT JUST A TEAM, WE ARE FAMILY</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="page-title text-center">About Us</h2>
                     </div>
-
-                    <!-- About us image grid block starts -->
-                    <div class="row image-grid-row">
-                        <div class="col-xs-12 col-sm-7 small-image-group wow fadeInLeft">
-                            <div class="row">
-                                <div class="col-xs-6 col-sm-6 small-image-wrap wow fadeInUp">
-                                    <figure><a href="#"><img class="img-responsive" src="images/about-image1.jpg" alt="About Image 1" /></a></figure>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 small-image-wrap wow fadeInUp">
-                                    <figure><a href="#"><img class="img-responsive" src="images/about-image2.jpg" alt="About Image 2" /></a></figure>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 small-image-wrap wow fadeInUp">
-                                    <figure><a href="#"><img class="img-responsive" src="images/about-image3.jpg" alt="About Image 3" /></a></figure>
-                                </div>
-                                <div class="col-xs-6 col-sm-6 small-image-wrap wow fadeInUp">
-                                    <figure><a href="#"><img class="img-responsive" src="images/about-image4.jpg" alt="About Image 4" /></a></figure>
-                                </div>
+                </div>
+            </div>
+        </div>
+        <div class="section border-bottom pt-2 pb-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="breadcrumbs">
+                            <li><a href="index.html">Home</a></li>
+                            <li>About Us</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section pt-10 pb-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="text-center mb-1 section-pretitle">Welcome to Healthy Food!</div>
+                        <h2 class="text-center section-title mtn-2">A little story about us</h2>
+                        <div class="organik-seperator mb-9 center">
+                            <span class="sep-holder"><span class="sep-line"></span></span>
+                            <div class="sep-icon"><i class="organik-flower"></i></div>
+                            <span class="sep-holder"><span class="sep-line"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="about-main-img col-lg-6">
+                        <img src="frontend/images/about_1.jpg" alt="" />
+                    </div>
+                    <div class="about-content col-lg-6">
+                        <div class="about-content-title">
+                            <h4>A family owned farm</h4>
+                            <div class="about-content-title-line"></div>
+                        </div>
+                        <div class="about-content-text">
+                            <p>Our farm is a second-generation Healthy Food farm that was our parents, Mark &amp; Renée Elliott’s dream to offer the best and healthiest range of Healthy foods available, promote health in the community and bring a sense of discovery and adventure into food shopping.</p>
+                            <p>Visit our site for a complete list of fresh, Healthy Food fruit and vegetables we are offering.<br></p>
+                        </div>
+                        <div class="about-carousel" data-auto-play="true" data-desktop="4" data-laptop="4" data-tablet="4" data-mobile="2">
+                            <a href="frontend/images/carousel/img_large_1.jpg" data-rel="prettyPhoto[gallery]">
+                                <img src="frontend/images/carousel/img_1.jpg" alt="" />
+                                <span class="ion-plus-round"></span>
+                            </a>
+                            <a href="frontend/images/carousel/img_large_2.jpg" data-rel="prettyPhoto[gallery]">
+                                <img src="frontend/images/carousel/img_2.jpg" alt="" />
+                                <span class="ion-plus-round"></span>
+                            </a>
+                            <a href="frontend/images/carousel/img_large_3.jpg" data-rel="prettyPhoto[gallery]">
+                                <img src="frontend/images/carousel/img_3.jpg" alt="" />
+                                <span class="ion-plus-round"></span>
+                            </a>
+                            <a href="frontend/images/carousel/img_large_4.jpg" data-rel="prettyPhoto[gallery]">
+                                <img src="frontend/images/carousel/img_4.jpg" alt="" />
+                                <span class="ion-plus-round"></span>
+                            </a>
+                            <a href="frontend/images/carousel/img_large_5.jpg" data-rel="prettyPhoto[gallery]">
+                                <img src="frontend/images/carousel/img_5.jpg" alt="" />
+                                <span class="ion-plus-round"></span>
+                            </a>
+                            <a href="frontend/images/carousel/img_large_6.jpg" data-rel="prettyPhoto[gallery]">
+                                <img src="frontend/images/carousel/img_6.jpg" alt="" />
+                                <span class="ion-plus-round"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section bg-light pt-16 pb-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="text-center mb-1 section-pretitle">Why choose our healthy store?</div>
+                        <div class="organik-seperator mb-9 center">
+                            <span class="sep-holder"><span class="sep-line"></span></span>
+                            <div class="sep-icon"><i class="organik-flower"></i></div>
+                            <span class="sep-holder"><span class="sep-line"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="icon-boxes">
+                            <div class="icon-boxes-icon"><i class="ion-android-star-outline"></i></div>
+                            <div class="icon-boxes-inner">
+                                <h6 class="icon-boxes-title"> Eat More Healthfully.</h6>
+                                <p>Obtaining the recommended daily fruits and vegetables.</p>
                             </div>
                         </div>
-                        <div class="col-xs-12 col-sm-5 big-image wow fadeInRight">
-                            <figure><a href="#"><img class="img-responsive" src="images/about-image.jpg" alt="About image" /></a></figure>
+                        <div class="icon-boxes">
+                            <div class="icon-boxes-icon"><i class="organik-lemon"></i></div>
+                            <div class="icon-boxes-inner">
+                                <h6 class="icon-boxes-title"> We Have Reputation.</h6>
+                                <p>We have been growing organic produce for customers since 1976.</p>
+                            </div>
+                        </div>
+                        <div class="icon-boxes">
+                            <div class="icon-boxes-icon"><i class="organik-cucumber"></i></div>
+                            <div class="icon-boxes-inner">
+                                <h6 class="icon-boxes-title"> Fresh &amp; Pesticide Free.</h6>
+                                <p>We deliver organic pesticide-free and sustainably-grown produce.</p>
+                            </div>
                         </div>
                     </div>
-                    <!-- About us image gallery block ends -->
-
-                    <!-- 2 columns paragraph starts -->
-                    <article class="wow fadeInUp">
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                    </article>
-                    <div class="text-center center-btn wow flipInX">
-                        <a class="btn border-btn-x-big hvr-wobble-horizontal">contact us</a>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="text-center">
+                            <img src="frontend/images/about_pic.png" alt="" />
+                        </div>
                     </div>
-                    <!-- 2 columns paragraph ends -->
-
-                </div>
-                <!-- == whole about us content wrap starts == -->
-            </div>
-
-            <!-- == media partner wrap starts == -->
-            <div class="media-partner">
-                <div class="container">
-                    <div class="col-xs-6 col-sm-3 partner-item wow fadeInUp">
-                        <figure><img class="img-responsive" src="images/audiojungle.png" alt="Audio jungle" /></figure>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 partner-item wow fadeInUp">
-                        <figure><img class="img-responsive" src="images/graphicriver.png" alt="Graphic river" /></figure>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 partner-item wow fadeInUp">
-                        <figure><img class="img-responsive" src="images/themeforest.png" alt="Themeforest" /></figure>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 partner-item wow fadeInUp">
-                        <figure><img class="img-responsive" src="images/photodune.png" alt="Photodune" /></figure>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="icon-boxes right">
+                            <div class="icon-boxes-icon"><i class="organik-broccoli"></i></div>
+                            <div class="icon-boxes-inner">
+                                <h6 class="icon-boxes-title"> No Commitment Required.</h6>
+                                <p>We requires no commitment and allows you to cancel or suspend deliveries.</p>
+                            </div>
+                        </div>
+                        <div class="icon-boxes right">
+                            <div class="icon-boxes-icon"><i class="organik-carrot"></i></div>
+                            <div class="icon-boxes-inner">
+                                <h6 class="icon-boxes-title"> Flexibility.</h6>
+                                <p>Choose the delivery frequency that best fits your needs.</p>
+                            </div>
+                        </div>
+                        <div class="icon-boxes right">
+                            <div class="icon-boxes-icon"><i class="organik-tomato"></i></div>
+                            <div class="icon-boxes-inner">
+                                <h6 class="icon-boxes-title"> Customization.</h6>
+                                <p>Customize your standard delivery to exclude items you do not want.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- == media partner wrap ends == -->
-        </section>
-        <!-- ============== About us ends ============== -->
-    </main> <!-- main content ends -->
+        </div>
+        <div class="section border-bottom pt-11 pb-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="text-center mb-1 section-pretitle">Our farmers</div>
+                        <h2 class="text-center section-title mtn-2">We are brilliant farmers</h2>
+                        <div class="organik-seperator center mb-8">
+                            <span class="sep-holder"><span class="sep-line"></span></span>
+                            <div class="sep-icon"><i class="organik-flower"></i></div>
+                            <span class="sep-holder"><span class="sep-line"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="team-member">
+                            <div class="image">
+                                <img src="frontend/images/testimonial/picture_3.jpg" alt="Michael Andrews" />
+                            </div>
+                            <div class="team-info">
+                                <h5 class="name">Michael Andrews</h5>
+                                <p class="bio">Born on the farm in Capay, Michael showed an early proficiency in the machine shop and is responsible for designing tools used on the farm today.</p>
+                                <ul class="social-list">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="team-member">
+                            <div class="image">
+                                <img src="frontend/images/testimonial/picture_4.jpg" alt="Kathleen Barsotti" />
+                            </div>
+                            <div class="team-info">
+                                <h5 class="name">Kathleen Barsotti</h5>
+                                <p class="bio">Born in Belmont, CA, Kathleen attended UC Riverside where she earned her B.S. in Agriculture. She is sole proprietor and manager of the farm.</p>
+                                <ul class="social-list">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="team-member">
+                            <div class="image">
+                                <img src="frontend/images/testimonial/picture_2.jpg" alt="Mark Ronson" />
+                            </div>
+                            <div class="team-info">
+                                <h5 class="name">Mark Ronson</h5>
+                                <p class="bio">He has commitment to build a strong financial model for farmers to connect produce directly to consumers by strategically managing our current programs.</p>
+                                <ul class="social-list">
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="top" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section pt-2 pb-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="client-carousel" data-auto-play="true" data-desktop="5" data-laptop="3" data-tablet="3" data-mobile="2">
+                            <div class="client-item">
+                                <a href="#" target="_blank">
+                                    <img src="frontend/images/client/client_1.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="client-item">
+                                <a href="#" target="_blank">
+                                    <img src="frontend/images/client/client_2.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="client-item">
+                                <a href="#" target="_blank">
+                                    <img src="frontend/images/client/client_3.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="client-item">
+                                <a href="#" target="_blank">
+                                    <img src="frontend/images/client/client_4.png" alt="" />
+                                </a>
+                            </div>
+                            <div class="client-item">
+                                <a href="#" target="_blank">
+                                    <img src="frontend/images/client/client_5.png" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

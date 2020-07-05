@@ -1,69 +1,65 @@
-<!-- ============== footer block starts ============== -->
-<footer>
-    <div class="top-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-4 footer-logo">
-                    <figure><a href="#"><img class="img-responsive" src="images/madang-logo-white.png" alt="Footer logo" /></a></figure>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <img src="/frontend/images/logohealthyfood1.png" style="width: 200px;" class="footer-logo" alt="" />
+                <p>
+                    Welcome to Healthy Food. Our products are freshly harvested, washed ready for box and finally delivered from our family farm right to your doorstep.
+                </p>
+                <div class="footer-social">
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+                    <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
                 </div>
-                <div class="col-xs-12 col-sm-2 footer-social-links pull-right hidden-md hidden-lg hidden-xs">
+            </div>
+            <div class="col-md-2">
+                <div class="widget">
+                    <h3 class="widget-title">Infomation</h3>
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook hvr-wobble-top"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter hvr-wobble-top"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus hvr-wobble-top"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram hvr-wobble-top"></i></a></li>
-                        <li><a href="#"><i class="fa fa-tumblr hvr-wobble-top"></i></a></li>
+                        <li><a href="#">New Products</a></li>
+                        <li><a href="#">Top Sellers</a></li>
+                        <li><a href="#">Our Blog</a></li>
+                        <li><a href="#">About Our Shop</a></li>
                     </ul>
                 </div>
-                <div class="col-xs-12 col-sm-6 footer-menu">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-3 footer-links-col">
-                            <span>about</span>
-                            <ul>
-                                <li><a href="#">about us</a></li>
-                                <li><a href="#">contact us</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 footer-links-col">
-                            <span>press</span>
-                            <ul>
-                                <li><a href="#">press release</a></li>
-                                <li><a href="#">media</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 footer-links-col">
-                            <span>company</span>
-                            <ul>
-                                <li><a href="#">team</a></li>
-                                <li><a href="#">board</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-3 footer-links-col">
-                            <span>term</span>
-                            <ul>
-                                <li><a href="#">privacy</a></li>
-                                <li><a href="#">about cookies</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-2 footer-social-links pull-right hidden-sm">
+            </div>
+            <div class="col-md-2">
+                <div class="widget">
+                    <h3 class="widget-title">Useful Link</h3>
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook hvr-wobble-top"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter hvr-wobble-top"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus hvr-wobble-top"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram hvr-wobble-top"></i></a></li>
-                        <li><a href="#"><i class="fa fa-tumblr hvr-wobble-top"></i></a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Our Blog</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Secure Shopping</a></li>
                     </ul>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="widget">
+                    <h3 class="widget-title">Subscribe</h3>
+                    <p>
+                        Enter your email address for our mailing list to keep yourself updated.
+                    </p>
+                    <form class="newsletter">
+                        <input type="email" name="EMAIL" placeholder="Your email address" required="" />
+                        <button><i class="fa fa-paper-plane"></i></button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="bottom-footer">
-        <div class="container">
-            <div class="copyright-text text-center">&copy; 2014-2016 Madang, Inc. ALL RIGHT RESERVED.</div>
+</footer>
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                Copyright © 2017 <a href="#">Organic Store</a> - All Rights Reserved.
+            </div>
+            <div class="col-md-4">
+                <img src="frontend/images/footer_payment.png" alt="" />
+            </div>
         </div>
     </div>
-</footer>
-<!-- ============== footer block starts ============== -->
+    <div class="backtotop" id="backtotop"></div>
+</div>

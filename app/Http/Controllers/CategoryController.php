@@ -28,11 +28,12 @@ class CategoryController extends Controller
     {
         //validate du lieu
         $request->validate([
-            "category_name" => "required|string|min:6|unique:categories"
+            "category_name" => "required|string|min:3|unique:categories"
         ]);
         try {
             Category::create([
                 "category_name" => $request->get("category_name"),
+                "category_image"=>$request->get("category_image"),
             ]);
 
         } catch (\Exception $exception) {
@@ -51,13 +52,14 @@ class CategoryController extends Controller
     {
         $category = Category::findOrFail($id);
         $request->validate([
-            "category_name" => "required|min:6|unique:categories,category_name,{$id}"
+            "category_name" => "required|min:3|unique:categories,category_name,{$id}"
         ]);
         // die("loi");
         //      dd($request->all());
         try {
             $category->update([
                 "category_name" => $request->get("category_name"),
+                "category_image"=>$request->get("category_image"),
             ]);
         } catch (\Exception $exception) {
             dd($exception->getMessage());

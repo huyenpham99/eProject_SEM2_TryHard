@@ -35,8 +35,8 @@ class ProductController extends Controller
             Product::create([
                 "product_name"=>$request->get("product_name"),
                 "product_image"=>$request->get("product_image"),
-//                "product_image1"=>$request->get("product_image1"),
-//                "product_image2"=>$request->get("product_image2"),
+                "product_image1"=>$request->get("product_image1"),
+                "product_image2"=>$request->get("product_image2"),
 //                "product_image3"=>$request->get("product_image3"),
 //                "product_image4"=>$request->get("product_image4"),
                 "product_desc"=>$request->get("product_desc"),
@@ -72,8 +72,8 @@ class ProductController extends Controller
             $products->update([
                 "product_name"=>$request->get("product_name"),
                 "product_image"=>$request->get("product_image"),
-//                "product_image1"=>$request->get("product_image1"),
-//                "product_image2"=>$request->get("product_image2"),
+                "product_image1"=>$request->get("product_image1"),
+                "product_image2"=>$request->get("product_image2"),
 //                "product_image3"=>$request->get("product_image3"),
 //                "product_image4"=>$request->get("product_image4"),
                 "product_desc"=>$request->get("product_desc"),
