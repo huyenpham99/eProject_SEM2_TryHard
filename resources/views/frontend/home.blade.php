@@ -88,10 +88,10 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="mb-1 section-pretitle default-left">Welcome to</div>
-                        <h2 class="section-title mtn-2 mb-3">Organik Store</h2>
+                        <h2 class="section-title mtn-2 mb-3">Healthy Food Store</h2>
                         <p class="mb-4">
-                            Organic store opened its doors in 1990, it was Renée Elliott's dream to offer the best and
-                            widest range of organic foods available, and her mission to promote health in the community
+                            Healthy Food opened its doors in 1990, it was Renée Elliott's dream to offer the best and
+                            widest range of Healthy Food s available, and her mission to promote health in the community
                             and to bring a sense of discovery and adventure into food shopping.
                         </p>
                         <a class="organik-btn arrow" href="#">Our products</a>
@@ -131,7 +131,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="text-center mb-1 section-pretitle">A friendly</div>
-                        <h2 class="text-center section-title mtn-2">Organic Store</h2>
+                        <h2 class="text-center section-title mtn-2">Healthy Food</h2>
                         <div class="organik-seperator mb-9 center">
                             <span class="sep-holder"><span class="sep-line"></span></span>
                             <div class="sep-icon"><i class="organik-flower"></i></div>
@@ -528,7 +528,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="text-center mb-1 section-pretitle">Why choose</div>
-                        <h2 class="text-center section-title mtn-2">Organic products?</h2>
+                        <h2 class="text-center section-title mtn-2">Healthy Food products?</h2>
                         <div class="organik-seperator center mb-6">
                             <span class="sep-holder"><span class="sep-line"></span></span>
                             <div class="sep-icon"><i class="organik-flower"></i></div>
@@ -550,7 +550,7 @@
                                 <div id="collapse1" class="accordion-body collapse in">
                                     <div class="accordion-inner">
                                         <p>
-                                            Organically grown foods have more nutrients—vitamins, minerals, enzymes, and
+                                            Healthy Food grown foods have more nutrients—vitamins, minerals, enzymes, and
                                             micronutrients—than commercially grown foods because the soil is managed and
                                             nourished with sustainable practices by responsible standards. Organic
                                             farming supports eco-sustenance, or farming in harmony with nature.

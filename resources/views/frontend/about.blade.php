@@ -26,7 +26,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="text-center mb-1 section-pretitle">Welcome to Organik!</div>
+                        <div class="text-center mb-1 section-pretitle">Welcome to Healthy Food!</div>
                         <h2 class="text-center section-title mtn-2">A little story about us</h2>
                         <div class="organik-seperator mb-9 center">
                             <span class="sep-holder"><span class="sep-line"></span></span>
@@ -45,8 +45,8 @@
                             <div class="about-content-title-line"></div>
                         </div>
                         <div class="about-content-text">
-                            <p>Our farm is a second-generation organic farm that was our parents, Mark &amp; Renée Elliott’s dream to offer the best and healthiest range of organic foods available, promote health in the community and bring a sense of discovery and adventure into food shopping.</p>
-                            <p>Visit our site for a complete list of fresh, organic fruit and vegetables we are offering.<br></p>
+                            <p>Our farm is a second-generation Healthy Food farm that was our parents, Mark &amp; Renée Elliott’s dream to offer the best and healthiest range of Healthy foods available, promote health in the community and bring a sense of discovery and adventure into food shopping.</p>
+                            <p>Visit our site for a complete list of fresh, Healthy Food fruit and vegetables we are offering.<br></p>
                         </div>
                         <div class="about-carousel" data-auto-play="true" data-desktop="4" data-laptop="4" data-tablet="4" data-mobile="2">
                             <a href="frontend/images/carousel/img_large_1.jpg" data-rel="prettyPhoto[gallery]">

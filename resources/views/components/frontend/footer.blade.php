@@ -4,7 +4,7 @@
             <div class="col-md-5">
                 <img src="/frontend/images/logohealthyfood1.png" style="width: 200px;" class="footer-logo" alt="" />
                 <p>
-                    Welcome to Organik. Our products are freshly harvested, washed ready for box and finally delivered from our family farm right to your doorstep.
+                    Welcome to Healthy Food. Our products are freshly harvested, washed ready for box and finally delivered from our family farm right to your doorstep.
                 </p>
                 <div class="footer-social">
                     <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
