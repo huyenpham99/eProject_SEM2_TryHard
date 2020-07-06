@@ -89,11 +89,8 @@
                                                 <span class="qty-plus" data-max=""><i class="ion-ios-plus-outline"></i></span>
                                             </div>
                                         </div>
-                                        <form method="POST" action="{{url("/cart/add/{$product->__get("id")}")}}">
-                                            @method("POST")
-                                            @csrf
-                                            <button type="submit" class="single-add-to-cart">ADD TO CART</button>
-                                        </form>
+                                            <a href="javascript: void(0);"
+                                               onclick="addToCart({{$product->__get("id")}})"  class="btn btn-primary single-add-to-cart">ADD TO CART</a>
                                     </form>
                                     <div class="product-meta">
                                         <table>
