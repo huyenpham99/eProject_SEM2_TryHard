@@ -9,6 +9,7 @@ use App\Category;
 use App\Events\OrderCreated;
 use App\Order;
 use App\Product;
+use App\Program;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -119,7 +120,15 @@ class HomeController extends Controller
 
     public function programs()
     {
-        return view("frontend.programs");
+        $program = Program::paginate(5);
+        return view("frontend.programs", [
+            "program" => $program,
+        ]);
+    }
+
+    public function programs_detail()
+    {
+        return view("frontend.programs-detail");
     }
 //    public function sendMail(){
 //        // function mail tạo sẵn sẽ làm sau khi render xong giao diện front-end blog và event
