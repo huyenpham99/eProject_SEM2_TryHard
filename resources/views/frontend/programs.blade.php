@@ -1,11 +1,11 @@
 @extends("frontend.layout")
 @section("content")
     <div id="main">
-        <div class="section section-bg-9 pt-11 pb-17">
+        <div class="section section-bg-10 pt-11 pb-17">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-title text-center">Gallery Freestyle</h2>
+                        <h2 class="page-title text-center">Program</h2>
                     </div>
                 </div>
             </div>
@@ -16,134 +16,100 @@
                     <div class="col-sm-12">
                         <ul class="breadcrumbs">
                             <li><a href="index.html">Home</a></li>
-                            <li>Programs</li>
+                            <li>Program</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="section pt-10 pb-9">
+        <div class="section bg-light pt-6 pb-4">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12 p-0">
-                        <div class="text-center">
-                            <ul class="masonry-filter">
-                                <li><a href="#" data-filter="" class="active">All</a></li>
-                                <li><a href="#" data-filter=".dried">Dried</a></li>
-                                <li><a href="#" data-filter=".fruits">Fruits</a></li>
-                                <li><a href="#" data-filter=".vegetables">Vegetables</a></li>
-                                <li><a href="#" data-filter=".juice">Juice</a></li>
-                            </ul>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="organik-services">
+                            <a href="#">
+                                <div class="icon"><i class="organik-carrot"></i></div>
+                                <div class="title"> Healthy Diet.</div>
+                                <div class="content"> Get produce delivered home on a set frequency is essential to obtaining the recommended daily fruits and daily vegetables.</div>
+                                <div class="more"><i class="ion-plus-round"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="organik-services">
+                            <a href="#">
+                                <div class="icon"><i class="organik-lettuce"></i></div>
+                                <div class="title"> Pesticide Free.</div>
+                                <div class="content"> We deliver organic produce that is pesticide-free and sustainably-grown, ensuring that we maintain healthy communities.</div>
+                                <div class="more"><i class="ion-plus-round"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="organik-services">
+                            <a href="#">
+                                <div class="icon"><i class="organik-broccoli"></i></div>
+                                <div class="title"> Flexibility.</div>
+                                <div class="content"> Choose the delivery frequency that best fits your needs: weekly, every other week, every 3rd or every 4th week delivery.</div>
+                                <div class="more"><i class="ion-plus-round"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="organik-services">
+                            <a href="#">
+                                <div class="icon"><i class="organik-lemon"></i></div>
+                                <div class="title"> Convenience.</div>
+                                <div class="content"> No more driving and parking for your vegetables! We deliver directly to your doorstep. Save time going to the grocery store.</div>
+                                <div class="more"><i class="ion-plus-round"></i></div>
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="section section-bg-6 pt-6 pb-4">
+            <div class="container">
                 <div class="row">
-                    <div class="gallery-grid masonry-grid-post">
-                        <div class="col-md-3 col-sm-6 gallery-item masonry-item text-center fruits juice">
-                            <div class="gallery-image">
-                                <a href="frontend/images/gallery/gallery_1_large.jpg" data-rel="prettyPhoto[gallery]">
-                                    <img src="frontend/images/gallery/gallery_1.jpg" alt="" />
-                                    <div class="desc-wrap">
-                                        <div class="desc">
-                                            <span class="icon ion-android-search"></span>
-                                            <div class="title"> Oranges</div>
-                                            <div class="cates"> Fruits, Juices</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 gallery-item masonry-item text-center dried vegetables">
-                            <div class="gallery-image">
-                                <a href="frontend/images/gallery/gallery_2_large.jpg" data-rel="prettyPhoto[gallery]">
-                                    <img src="frontend/images/gallery/gallery_2.jpg" alt="" />
-                                    <div class="desc-wrap">
-                                        <div class="desc">
-                                            <span class="icon ion-android-search"></span>
-                                            <div class="title"> Oranges</div>
-                                            <div class="cates"> Dried, Vegetables</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12 gallery-item masonry-item text-center fruits">
-                            <div class="gallery-image">
-                                <a href="frontend/images/gallery/gallery_3_large.jpg" data-rel="prettyPhoto[gallery]">
-                                    <img src="frontend/images/gallery/gallery_3.jpg" alt="" />
-                                    <div class="desc-wrap">
-                                        <div class="desc">
-                                            <span class="icon ion-android-search"></span>
-                                            <div class="title"> Oranges</div>
-                                            <div class="cates"> Fruits</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12 gallery-item masonry-item text-center fruits">
-                            <div class="gallery-image">
-                                <a href="frontend/images/gallery/gallery_4_large.jpg" data-rel="prettyPhoto[gallery]">
-                                    <img src="frontend/images/gallery/gallery_4.jpg" alt="" />
-                                    <div class="desc-wrap">
-                                        <div class="desc">
-                                            <span class="icon ion-android-search"></span>
-                                            <div class="title"> Oranges</div>
-                                            <div class="cates"> Fruits</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 gallery-item masonry-item text-center juice">
-                            <div class="gallery-image">
-                                <a href="frontend/images/gallery/gallery_5_large.jpg" data-rel="prettyPhoto[gallery]">
-                                    <img src="frontend/images/gallery/gallery_5.jpg" alt="" />
-                                    <div class="desc-wrap">
-                                        <div class="desc">
-                                            <span class="icon ion-android-search"></span>
-                                            <div class="title"> Oranges</div>
-                                            <div class="cates"> Juices</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 gallery-item masonry-item text-center dried juice">
-                            <div class="gallery-image">
-                                <a href="frontend/images/gallery/gallery_6_large.jpg" data-rel="prettyPhoto[gallery]">
-                                    <img src="frontend/images/gallery/gallery_6.jpg" alt="" />
-                                    <div class="desc-wrap">
-                                        <div class="desc">
-                                            <span class="icon ion-android-search"></span>
-                                            <div class="title"> Oranges</div>
-                                            <div class="cates"> Dried, Juices</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-6 gallery-item masonry-item text-center fruits vegetables">
-                            <div class="gallery-image">
-                                <a href="frontend/images/gallery/gallery_7_large.jpg" data-rel="prettyPhoto[gallery]">
-                                    <img src="frontend/images/gallery/gallery_7.jpg" alt="" />
-                                    <div class="desc-wrap">
-                                        <div class="desc">
-                                            <span class="icon ion-android-search"></span>
-                                            <div class="title"> Oranges</div>
-                                            <div class="cates"> Fruits, Vegetables</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="organik-services">
+                            <a href="#">
+                                <div class="icon"><i class="organik-carrot"></i></div>
+                                <div class="title"> Healthy Diet.</div>
+                                <div class="content"> Get produce delivered home on a set frequency is essential to obtaining the recommended daily fruits and daily vegetables.</div>
+                                <div class="more"><i class="ion-plus-round"></i></div>
+                            </a>
                         </div>
                     </div>
-                    <div class="pagination">
-                        <a class="prev page-numbers" href="#">Prev</a>
-                        <a class="page-numbers" href="#">1</a>
-                        <span class="page-numbers current">2</span>
-                        <a class="page-numbers" href="#">3</a>
-                        <a class="next page-numbers" href="#">Next</a>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="organik-services">
+                            <a href="#">
+                                <div class="icon"><i class="organik-lettuce"></i></div>
+                                <div class="title"> Pesticide Free.</div>
+                                <div class="content"> We deliver organic produce that is pesticide-free and sustainably-grown, ensuring that we maintain healthy communities.</div>
+                                <div class="more"><i class="ion-plus-round"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="organik-services">
+                            <a href="#">
+                                <div class="icon"><i class="organik-broccoli"></i></div>
+                                <div class="title"> Flexibility.</div>
+                                <div class="content"> Choose the delivery frequency that best fits your needs: weekly, every other week, every 3rd or every 4th week delivery.</div>
+                                <div class="more"><i class="ion-plus-round"></i></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="organik-services">
+                            <a href="#">
+                                <div class="icon"><i class="organik-lemon"></i></div>
+                                <div class="title"> Convenience.</div>
+                                <div class="content"> No more driving and parking for your vegetables! We deliver directly to your doorstep. Save time going to the grocery store.</div>
+                                <div class="more"><i class="ion-plus-round"></i></div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
