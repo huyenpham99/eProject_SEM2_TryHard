@@ -37,13 +37,8 @@
                             <td>{{$blog->__get("blog_title")}}</td>
                             <td><img src="{{$blog->__get("blog_image")}}" style="width: 50px; height: 50px"></td>
                             <td>{{$blog->__get("blog_desc")}}</td>
+                            <td>Content</td>
                             <td>{{$blog->__get("blog_date")}}</td>
-                            <td>@php
-                                    $doc = new DOMDocument();
-                                    $doc->loadHTML($blog->__get("blog_content"));
-                                 echo $doc->saveHTML();
-                                @endphp</td>
-{{--                            <td>{{$blog->__get("blog_content")}}</td>--}}
                             <td>{{$blog->__get("view_count")}}</td>
                             <td>{{$blog->__get("blog_category_id")}}</td>
                             <td> <a href="{{url("admin/edit-blog/{$blog->__get("id")}")}}" class="btn btn-outline-warning">Edit</a></td>
