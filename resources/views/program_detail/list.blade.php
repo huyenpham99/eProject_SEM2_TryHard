@@ -2,23 +2,17 @@
 @extends("layout")
 @section("title", "Program Detail List")
 @section("contentHeader", "Program Detail")
-=======
-
 @extends("layout")
 @section("title", "ProgramDetailRepository List")
 @section("contentHeader", "ProgramDetaiRepository List")
-
 @section("content")
     <div class="row mt-4">
         <div class="col">
             <div class="card">
-                <!-- Card header -->
                 <div class="card-header border-0">
                     <h2 class="mb-0 col-lg-9 float-left">Program Detail List</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-
                         <a href="{{url("admin/new-program-detail")}}" class="btn btn-sm btn-neutral">Create</a>
-
                     </div>
                 </div>
                 <!-- Light table -->
@@ -36,7 +30,6 @@
                                 data-sort="name">Program Detail Image
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-
                                 data-sort="name">Program Detail Description
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
@@ -44,7 +37,7 @@
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
 
-                                data-sort="name">Program ID
+                                data-sort="name">Program Name
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Created At
@@ -65,7 +58,6 @@
                             <tr>
                                 <td>{{$program_detail->__get("id")}}</td>
                                 <td>{{$program_detail->__get("program_detail_name")}}</td>
-
                                 <td><img src="{{$program_detail->__get("program_detail_image")}}" style="width: 50px; height: 50px"></td>
                                 <td>{{$program_detail->__get("program_detail_desc")}}</td>
                                 <td>{{$program_detail->__get("program_detail_content")}}</td>
@@ -73,23 +65,10 @@
                                 <td>{{$program_detail->__get("created_at")}}</td>
                                 <td>{{$program_detail->__get("updated_at")}}</td>
                                 <td>
-                                    <a href="{{url("admin/edit-program_detail/{$program_detail->__get("id")}")}}" class="btn btn-outline-dark">Edit</a>
+                                    <a href="{{url("admin/edit-program-detail/{$program_detail->__get("id")}")}}" class="btn btn-outline-dark">Edit</a>
                                 </td>
                                 <td>
-                                    <form action="{{url("admin/delete-program_detail/{$program_detail->__get("id")}")}}" method="post">
-
-                                <td>{{$program_detail->__get("program_detail_image")}}</td>
-                                <td>{{$program_detail->__get("program_detail_desc")}}</td>
-                                <td>{{$program_detail->__get("program_detail_content")}}</td>
-                                <td>{{$program_detail->__get("program_id")}}</td>
-                                <td>{{$program_detail->__get("created_at")}}</td>
-                                <td>{{$program_detail->__get("updated_at")}}</td>
-                                <td>
-                                    <a href="{{url("/edit-program-detail/{$program_detail->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
-
-                                </td>
-                                <td>
-                                    <form action="{{url("/delete-program-detail/{$program_detail->__get("id")}")}}" method="post">
+                                    <form action="{{url("admin/delete-program-detail/{$program_detail->__get("id")}")}}" method="post">
                                         @method("DELETE")
                                         @csrf
                                         <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-outline-dark">Delete</button>
@@ -100,13 +79,8 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- Card footer -->
             </div>
         </div>
     </div>
-
 {{--    {!! $program_detail->links() !!}--}}
-
-    {{--    {!! $categories->links() !!}--}}
-
 @endsection
