@@ -14,7 +14,7 @@ class UpdateUserTable1 extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('provider')->nullable()->change();
+            $table->string('provider')->nullable()->change();//có sẵn nhưng muốn đổi thành nullable thì udnfg change(), phải down package về mới dùng được
             $table->string('provider_id')->nullable()->change();
         });
     }
