@@ -162,7 +162,7 @@
                                     foreach ($products as $p){
                                         foreach ($myCart as $item){
                                             if($p->__get("id") == $item["product_id"])
-                                                $grandTotal += ($p->__get("price")*$item["qty"]);
+                                                $grandTotal += ($p->__get("product_price")*$item["qty"]);
                                         }
                                     }
                                 @endphp
