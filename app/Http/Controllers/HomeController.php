@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Banner;
 use App\Blog;
 use App\BlogCategory;
 use App\Cart;
@@ -38,6 +39,7 @@ class HomeController extends Controller
         $category = Category::all();
         $blog = Blog::all();
         $products = Product::all();
+        $banner = Banner::all();
 //         tao slug cho cac truong
         foreach ($category as $p) {
             $slug    = \Illuminate\Support\Str::slug($p->__get("category_name"));
@@ -61,10 +63,12 @@ class HomeController extends Controller
             $p->slug = $slug . $p->__get("id");// luu lai vao DB
             $p->save();
         }
+//        dd($banner);
         return view("frontend.home",[
             "categories" => $category,
             "products" => $products,
             "blogs" => $blog,
+            "banner"=>$banner,
         ]);
     }
     public function blog()

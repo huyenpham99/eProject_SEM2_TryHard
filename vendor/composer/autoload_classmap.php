@@ -62,7 +62,6 @@ return array(
     'App\\Product' => $baseDir . '/app/Product.php',
     'App\\Program' => $baseDir . '/app/Program.php',
     'App\\ProgramDetail' => $baseDir . '/app/ProgramDetail.php',
-    'App\\Program_Detail' => $baseDir . '/app/Program_Detail.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

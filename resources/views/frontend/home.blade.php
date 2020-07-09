@@ -7,71 +7,182 @@
                     <div class="col-sm-12 p-0">
                         <div id="rev_slider" class="rev_slider fullscreenbanner">
                             <ul>
-                                <li data-transition="fade" data-slotamount="default" data-hideafterloop="0"
-                                    data-hideslideonmobile="off" data-easein="default" data-easeout="default"
-                                    data-masterspeed="300" data-rotate="0" data-saveperformance="off"
-                                    data-title="Slide">
-                                    <img src="frontend/images/slider/slide_bg_4.jpg" alt=""
-                                         data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
-                                         data-bgparallax="off" class="rev-slidebg"/>
-                                    <div class="tp-caption rs-parallaxlevel-2"
-                                         data-x="center" data-hoffset=""
-                                         data-y="center" data-voffset="-80"
-                                         data-width="['none','none','none','none']"
-                                         data-height="['none','none','none','none']"
-                                         data-type="image" data-responsive_offset="on"
-                                         data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                                         data-textAlign="['inherit','inherit','inherit','inherit']"
-                                         data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                                         data-paddingbottom="[0,0,0,0]"
-                                         data-paddingleft="[0,0,0,0]">
-                                        <img src="frontend/images/slider/slide_6.png" alt=""/>
-                                    </div>
-                                    <div class="tp-caption rs-parallaxlevel-1"
-                                         data-x="center" data-hoffset=""
-                                         data-y="center" data-voffset="-80"
-                                         data-width="['none','none','none','none']"
-                                         data-height="['none','none','none','none']"
-                                         data-type="image" data-responsive_offset="on"
-                                         data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                                         data-textAlign="['inherit','inherit','inherit','inherit']"
-                                         data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                                         data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
-                                        <img src="frontend/images/slider/slide_7.png" alt=""/>
-                                    </div>
-                                    <a class="tp-caption btn-2 hidden-xs" href="#"
-                                       data-x="['center','center','center','center']"
-                                       data-y="['center','center','center','center']"
-                                       data-voffset="['260','260','260','260']"
-                                       data-width="['auto']" data-height="['auto']"
-                                       data-type="button" data-responsive_offset="on"
-                                       data-responsive="off"
-                                       data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power0.easeIn","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(95,189,116);bg:rgba(51, 51, 51, 0);"}]'
-                                       data-textAlign="['inherit','inherit','inherit','inherit']"
-                                       data-paddingtop="[16,16,16,16]" data-paddingright="[30,30,30,30]"
-                                       data-paddingbottom="[16,16,16,16]" data-paddingleft="[30,30,30,30]">Shop Now
-                                    </a>
-                                </li>
-                                <li data-transition="fade" data-slotamount="default" data-hideafterloop="0"
-                                    data-hideslideonmobile="off" data-easein="default" data-easeout="default"
-                                    data-masterspeed="300" data-rotate="0" data-saveperformance="off"
-                                    data-title="Slide">
-                                    <img src="frontend/images/slider/slide_bg_5.jpg" alt=""
-                                         data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
-                                         data-bgparallax="off" class="rev-slidebg"/>
-                                    <div class="tp-caption rs-parallaxlevel-1"
-                                         data-x="center" data-hoffset=""
-                                         data-y="center" data-voffset="-120"
-                                         data-width="['none','none','none','none']"
-                                         data-height="['none','none','none','none']"
-                                         data-type="image" data-responsive_offset="on"
-                                         data-frames='[{"delay":0,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
-                                         data-textAlign="['inherit','inherit','inherit','inherit']"
-                                         data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
-                                         data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
-                                        <img src="frontend/images/slider/slide_8.png" alt=""/>
-                                    </div>
-                                </li>
+                                @foreach($banner as $b)
+                                    @if($b->__get("thu_tu") == 1)
+                                            @if($b->__get("status") ==1)
+                                                <li data-transition="fade" data-slotamount="default" data-hideafterloop="0"
+                                                    data-hideslideonmobile="off" data-easein="default" data-easeout="default"
+                                                    data-masterspeed="300" data-rotate="0" data-saveperformance="off"
+                                                    data-title="Slide">
+                                                    <img src="{{$b->getImage("banner_image")}}" alt=""
+                                                         data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                                         data-bgparallax="off" class="rev-slidebg"/>
+                                                    <div class="tp-caption rs-parallaxlevel-1"
+                                                         data-x="center" data-hoffset=""
+                                                         data-y="center" data-voffset="-80"
+                                                         data-width="['none','none','none','none']"
+                                                         data-height="['none','none','none','none']"
+                                                         data-type="image" data-responsive_offset="on"
+                                                         data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                                                         data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+                                                         data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
+                                                        <img src="{{$b->getImage("banner_image2")}}" alt=""/>
+                                                    </div>
+
+                                                    <a class="tp-caption btn-2 hidden-xs" href="#"
+                                                       data-x="['center','center','center','center']"
+                                                       data-y="['center','center','center','center']"
+                                                       data-voffset="['260','260','260','260']"
+                                                       data-width="['auto']" data-height="['auto']"
+                                                       data-type="button" data-responsive_offset="on"
+                                                       data-responsive="off"
+                                                       data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power0.easeIn","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(95,189,116);bg:rgba(51, 51, 51, 0);"}]'
+                                                       data-textAlign="['inherit','inherit','inherit','inherit']"
+                                                       data-paddingtop="[16,16,16,16]" data-paddingright="[30,30,30,30]"
+                                                       data-paddingbottom="[16,16,16,16]" data-paddingleft="[30,30,30,30]">Shop Now
+                                                    </a>
+                                                </li>
+                                            @else
+                                                <li data-transition="fade" data-slotamount="default" data-hideafterloop="0"
+                                                    data-hideslideonmobile="off" data-easein="default" data-easeout="default"
+                                                    data-masterspeed="300" data-rotate="0" data-saveperformance="off"
+                                                    data-title="Slide">
+                                                    <img src="frontend/images/slider/slide_bg_5.jpg" alt=""
+                                                         data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                                         data-bgparallax="off" class="rev-slidebg"/>
+                                                    <div class="tp-caption rs-parallaxlevel-1"
+                                                         data-x="center" data-hoffset=""
+                                                         data-y="center" data-voffset="-120"
+                                                         data-width="['none','none','none','none']"
+                                                         data-height="['none','none','none','none']"
+                                                         data-type="image" data-responsive_offset="on"
+                                                         data-frames='[{"delay":0,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                                                         data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+                                                         data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
+                                                        <img src="frontend/images/slider/slide_8.png" alt=""/>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                        @elseif($b->__get("thu_tu") == 2)
+                                                @if($b->__get("status") == 1)
+                                                    <li data-transition="fade" data-slotamount="default" data-hideafterloop="0"
+                                                        data-hideslideonmobile="off" data-easein="default" data-easeout="default"
+                                                        data-masterspeed="300" data-rotate="0" data-saveperformance="off"
+                                                        data-title="Slide">
+                                                        <img src="{{$b->getImage("banner_image")}}" alt=""
+                                                             data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                                             data-bgparallax="off" class="rev-slidebg"/>
+                                                        <div class="tp-caption rs-parallaxlevel-1"
+                                                             data-x="center" data-hoffset=""
+                                                             data-y="center" data-voffset="-80"
+                                                             data-width="['none','none','none','none']"
+                                                             data-height="['none','none','none','none']"
+                                                             data-type="image" data-responsive_offset="on"
+                                                             data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                                                             data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+                                                             data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
+                                                            <img src="{{$b->getImage("banner_image2")}}" alt=""/>
+                                                        </div>
+
+                                                        <a class="tp-caption btn-2 hidden-xs" href="#"
+                                                           data-x="['center','center','center','center']"
+                                                           data-y="['center','center','center','center']"
+                                                           data-voffset="['260','260','260','260']"
+                                                           data-width="['auto']" data-height="['auto']"
+                                                           data-type="button" data-responsive_offset="on"
+                                                           data-responsive="off"
+                                                           data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power0.easeIn","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(95,189,116);bg:rgba(51, 51, 51, 0);"}]'
+                                                           data-textAlign="['inherit','inherit','inherit','inherit']"
+                                                           data-paddingtop="[16,16,16,16]" data-paddingright="[30,30,30,30]"
+                                                           data-paddingbottom="[16,16,16,16]" data-paddingleft="[30,30,30,30]">Shop Now
+                                                        </a>
+                                                    </li>
+                                                @else
+                                                    <li data-transition="fade" data-slotamount="default" data-hideafterloop="0"
+                                                        data-hideslideonmobile="off" data-easein="default" data-easeout="default"
+                                                        data-masterspeed="300" data-rotate="0" data-saveperformance="off"
+                                                        data-title="Slide">
+                                                        <img src="frontend/images/slider/slide_bg_5.jpg" alt=""
+                                                             data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                                             data-bgparallax="off" class="rev-slidebg"/>
+                                                        <div class="tp-caption rs-parallaxlevel-1"
+                                                             data-x="center" data-hoffset=""
+                                                             data-y="center" data-voffset="-120"
+                                                             data-width="['none','none','none','none']"
+                                                             data-height="['none','none','none','none']"
+                                                             data-type="image" data-responsive_offset="on"
+                                                             data-frames='[{"delay":0,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                                                             data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+                                                             data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
+                                                            <img src="frontend/images/slider/slide_8.png" alt=""/>
+                                                        </div>
+                                                    </li>
+                                                @endif
+                                            @elseif($b->__get("thu_tu") == 3)
+                                                    @if($b->__get("status") == 1)
+                                                        <li data-transition="fade" data-slotamount="default" data-hideafterloop="0"
+                                                            data-hideslideonmobile="off" data-easein="default" data-easeout="default"
+                                                            data-masterspeed="300" data-rotate="0" data-saveperformance="off"
+                                                            data-title="Slide">
+                                                            <img src="{{$b->getImage("banner_image")}}" alt=""
+                                                                 data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                                                 data-bgparallax="off" class="rev-slidebg"/>
+                                                            <div class="tp-caption rs-parallaxlevel-1"
+                                                                 data-x="center" data-hoffset=""
+                                                                 data-y="center" data-voffset="-80"
+                                                                 data-width="['none','none','none','none']"
+                                                                 data-height="['none','none','none','none']"
+                                                                 data-type="image" data-responsive_offset="on"
+                                                                 data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                                                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                                                                 data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+                                                                 data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
+                                                                <img src="{{$b->getImage("banner_image2")}}" alt=""/>
+                                                            </div>
+
+                                                            <a class="tp-caption btn-2 hidden-xs" href="#"
+                                                               data-x="['center','center','center','center']"
+                                                               data-y="['center','center','center','center']"
+                                                               data-voffset="['260','260','260','260']"
+                                                               data-width="['auto']" data-height="['auto']"
+                                                               data-type="button" data-responsive_offset="on"
+                                                               data-responsive="off"
+                                                               data-frames='[{"delay":0,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"300","ease":"Power0.easeIn","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:rgb(95,189,116);bg:rgba(51, 51, 51, 0);"}]'
+                                                               data-textAlign="['inherit','inherit','inherit','inherit']"
+                                                               data-paddingtop="[16,16,16,16]" data-paddingright="[30,30,30,30]"
+                                                               data-paddingbottom="[16,16,16,16]" data-paddingleft="[30,30,30,30]">Shop Now
+                                                            </a>
+                                                        </li>
+                                                    @else
+                                                        <li data-transition="fade" data-slotamount="default" data-hideafterloop="0"
+                                                            data-hideslideonmobile="off" data-easein="default" data-easeout="default"
+                                                            data-masterspeed="300" data-rotate="0" data-saveperformance="off"
+                                                            data-title="Slide">
+                                                            <img src="frontend/images/slider/slide_bg_5.jpg" alt=""
+                                                                 data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat"
+                                                                 data-bgparallax="off" class="rev-slidebg"/>
+                                                            <div class="tp-caption rs-parallaxlevel-1"
+                                                                 data-x="center" data-hoffset=""
+                                                                 data-y="center" data-voffset="-120"
+                                                                 data-width="['none','none','none','none']"
+                                                                 data-height="['none','none','none','none']"
+                                                                 data-type="image" data-responsive_offset="on"
+                                                                 data-frames='[{"delay":0,"speed":1500,"frame":"0","from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                                                                 data-textAlign="['inherit','inherit','inherit','inherit']"
+                                                                 data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]"
+                                                                 data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
+                                                                <img src="frontend/images/slider/slide_8.png" alt=""/>
+                                                            </div>
+                                                        </li>
+                                                    @endif
+
+                                        @endif
+                                @endforeach
+
                             </ul>
                         </div>
                     </div>
