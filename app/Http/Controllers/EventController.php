@@ -64,7 +64,7 @@ class EventController extends Controller
                 "banner_id" => $request->get("banner_id"),
             ]);
         }catch (\Exception $exception){
-            return $exception->getMessage();
+            return dd($exception->getMessage());
         }
         return redirect()->to("/admin/list-event");
     }

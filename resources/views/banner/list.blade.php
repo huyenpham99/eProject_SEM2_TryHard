@@ -9,7 +9,7 @@
                 <div class="card-header border-0">
                     <h2 class="mb-0 col-lg-9 float-left">Banner Listing</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("/admin/new-banner")}}" class="btn btn-sm btn-neutral">Create</a>
+                        <a href="{{url("/admin/new-banner")}}" class="btn btn-success btn-sm btn-neutral">Create</a>
                     </div>
                 </div>
                 <!-- Light table -->
@@ -25,6 +25,15 @@
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Banner Image
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Banner Image 2
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Status
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Thứ tự
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Created At
@@ -45,7 +54,22 @@
                             <tr>
                                 <td>{{$banner->__get("id")}}</td>
                                 <td>{{$banner->__get("banner_name")}}</td>
-                                <td><img src="{{$banner->__get("banner_image")}}" style="width: 50px; height: 50px"></td>
+                                <td><img src="{{$banner->getImage("banner_image")}}" style="width: 50px; height: 50px"></td>
+                                <td><img src="{{$banner->getImage("banner_image2")}}" style="width: 50px; height: 50px"></td>
+                                <td>
+                                    @if($banner->__get("status") == 0)
+                                        <a style="color: white" class="btn btn-info">Ẩn</a>
+                                        @elseif($banner->__get("status") == 1)
+                                        <a style="color: white" class="btn btn-primary">Hiện</a>
+                                        @endif
+                                </td>
+                                <td>
+                                    @if($banner->__get("thu_tu") == 4)
+                                        <a style="color: white" class="btn btn-danger">Chờ</a>
+                                        @else
+                                        {{$banner->__get("thu_tu")}}
+                                        @endif
+                                </td>
                                 <td>{{$banner->__get("created_at")}}</td>
                                 <td>{{$banner->__get("updated_at")}}</td>
                                 <td>

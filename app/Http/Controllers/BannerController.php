@@ -25,15 +25,26 @@ class BannerController extends Controller
     public function saveBanner(Request $request){ // tạo biến request lưu dữ liệu người dùng gửi lên ở body
         // đầu tiên phải validate dữ liệu cả bên html và bên sever
         // cách validate
+        if($request->get("thu_tu") == 4){
+            $request->validate([
+                "banner_name"=>"required",
+            ]);
+        }else{
+            $request->validate([
+                "banner_name"=>"required",
+                "thu_tu"=>"required|unique:banner,thu_tu",
+            ]);
+        }
         $request->validate([
-            "banner_name"=>"required",
+            "banner_name"=>"required|min:3|unique:banner,banner_name",
         ]);
         try {
-
             Banner::create([
                 "banner_name"=>$request->get("banner_name"),
                 "banner_image"=>$request->get("banner_image"),
-
+                "banner_image2"=>$request->get("banner_image2"),
+                "status"=>$request->get("status"),
+                "thu_tu"=>$request->get("thu_tu"),
             ]);
         }catch (\Exception $exception){
             return redirect()->back();
@@ -49,15 +60,14 @@ class BannerController extends Controller
            ]);
     }
     public function updateBanner($id,Request $request){
-        $banners = banner::findOrFail($id);
-        $request->validate([
-            "banner_name"=>"required|min:3|unique:banner,banner_name,($id)",
-
-        ]);
+        $banners = Banner::findOrFail($id);
         try {
             $banners->update([
                 "banner_name"=>$request->get("banner_name"),
                 "banner_image"=>$request->get("banner_image"),
+                "banner_image2"=>$request->get("banner_image2"),
+                "status"=>$request->get("status"),
+                "thu_tu"=>$request->get("thu_tu"),
             ]);
         }catch (\Exception $exception){
             return redirect()->back();
