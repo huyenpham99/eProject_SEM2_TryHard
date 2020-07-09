@@ -81,16 +81,21 @@
                                     <div class="mb-3">
                                         <p>{{$product->__get("product_desc")}}</p>
                                     </div>
-                                    <form class="cart">
+                                    <form method="POST" action="{{url("/cart/add/{$product->__get("id")}")}}">
+                                        @method("POST")
+                                        @csrf
                                         <div class="quantity-chooser">
-                                            <div class="quantity">
-                                                <span class="qty-minus" data-min="1"><i class="ion-ios-minus-outline"></i></span>
-                                                <input type="text" name="quantity" value="1" title="Qty" class="input-text qty text" size="4">
-                                                <span class="qty-plus" data-max=""><i class="ion-ios-plus-outline"></i></span>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="quantity">
+                                                        <input type="number" name="qty" value="1" min="1" title="qty">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <button type="submit" class="btn btn-success">Add To Card</button>
+                                                </div>
                                             </div>
                                         </div>
-                                            <a href="javascript: void(0);"
-                                               onclick="addToCart({{$product->__get("id")}})"  class="btn btn-primary single-add-to-cart">ADD TO CART</a>
                                     </form>
                                     <div class="product-meta">
                                         <table>
