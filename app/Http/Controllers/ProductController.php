@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Product;
+use http\Message;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -45,7 +46,8 @@ class ProductController extends Controller
                 "category_id"=>$request->get("category_id"),
             ]);
         }catch (\Exception $exception){
-            return redirect()->back();
+        return redirect()->back();
+//            return $exception->getMessage();
         }
         return redirect()->to("/admin/list-product");
     }
