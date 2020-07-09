@@ -106,7 +106,12 @@
                     <div class="btn-wrap">
                         <div class="mini-cart-wrap">
                             <div class="mini-cart">
-                                <div class="mini-cart-icon" data-count="2">
+                                @php
+                                        $count = 0 ;
+                                    $myCart = session()->has("my_cart")?session("my_cart"):[];
+                                    $dem  = count($myCart);
+                                    @endphp
+                                <div class="mini-cart-icon" data-count="{{$dem}}">
                                     <i class="ion-bag"></i>
                                 </div>
                             </div>
@@ -152,7 +157,6 @@
                             <div class="mini-cart">
                                 @php
                                     $myCart = session()->has("my_cart")?session("my_cart"):[];
-                                    $count_item  = count($myCart);
                                     $productIds = [];
                                     foreach ($myCart as $item){
                                         $productIds[] = $item["product_id"];
@@ -166,8 +170,7 @@
                                         }
                                     }
                                 @endphp
-                                <div class="mini-cart-icon" data-count="{{$count_item}}">
-                                    <i class="ion-bag"></i>
+                                <div>
                                 </div>
                             </div>
                         </a>
