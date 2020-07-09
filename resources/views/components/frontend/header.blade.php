@@ -53,7 +53,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <a href="index.html" id="logo">
+                <a href="{{url("/home")}}" id="logo">
                     <img class="logo-image" src="/frontend/images/logohealthyfood1.png" style="width: 150px;margin-top: 15px" alt="Organik Logo" />
                 </a>
             </div>
@@ -150,7 +150,23 @@
                     <div class="mini-cart-wrap">
                         <a href="cart.html">
                             <div class="mini-cart">
-                                <div class="mini-cart-icon" data-count="2">
+                                @php
+                                    $myCart = session()->has("my_cart")?session("my_cart"):[];
+                                    $count_item  = count($myCart);
+                                    $productIds = [];
+                                    foreach ($myCart as $item){
+                                        $productIds[] = $item["product_id"];
+                                    }
+                                    $grandTotal = 0;
+                                    $products = \App\Product::find($productIds);
+                                    foreach ($products as $p){
+                                        foreach ($myCart as $item){
+                                            if($p->__get("id") == $item["product_id"])
+                                                $grandTotal += ($p->__get("product_price")*$item["qty"]);
+                                        }
+                                    }
+                                @endphp
+                                <div class="mini-cart-icon" data-count="{{$count_item}}">
                                     <i class="ion-bag"></i>
                                 </div>
                             </div>

@@ -17,7 +17,7 @@
                         <ul class="breadcrumbs">
                             <li><a href="{{url("/home")}}">Home</a></li>
                             <li><a href="{{url("/shop")}}">Shop</a></li>
-                            <li>Product Grid</li>
+                            <li>Product</li>
                         </ul>
                     </div>
                 </div>
@@ -64,7 +64,7 @@
                             @endforeach
                         </div>
                         <div class="product-grid">
-                                @foreach(\App\Product::all() as $product)
+                                @foreach(\App\Product::with("Category")->paginate(20) as $product)
                             <div class="col-md-4 col-sm-6 product-item text-center mb-3">
                                 <div class="product-thumb">
                                     <a href="{{$product->getProductUrl()}}">
@@ -132,7 +132,7 @@
                             <div class="widget widget-products">
                                 <h3 class="widget-title">Products</h3>
                                 <ul class="product-list-widget">
-                                    @foreach(\App\Product::all() as $product)
+                                    @foreach(\App\Product::limit(4)->get() as $product)
                                     <li>
                                         <a href="{{$product->getProductUrl()}}">
                                             <img src="{{$product->__get("product_image")}}" alt="" />
