@@ -115,7 +115,7 @@
                                     <div class="pl-clock countdown-bar" data-time="2022/10/10"></div>
                                 </div>
                             </div>
-                            <a class="organik-btn brown" href="#">Shop Now</a>
+                            <a class="organik-btn brown" href="{{url("/shop")}}">Shop Now</a>
                         </div>
                     </div>
                     <div class="col-sm-6">
