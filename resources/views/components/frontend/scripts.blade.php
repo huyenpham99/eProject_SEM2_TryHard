@@ -23,7 +23,7 @@
 <script type='text/javascript' src='{{asset("frontend/js/jquery.prettyPhoto.js")}}'></script>
 <script type='text/javascript' src='{{asset("frontend/js/jquery.prettyPhoto.init.min.js")}}'></script>
 <script type='text/javascript' src='{{asset("frontend/js/slick.min.js")}}'></script>
-
+{{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--}}
 <script>
     var map;
     function initMap() {
@@ -52,3 +52,13 @@
         });
     }
 </script>
+<script>
+    $(document).ready(function(){
+        //user sided variable for PHP value
+        var total = 0;
+        $(".ajax_add_to_cart").click(function(){
+            total++;                     //add to cart
+            $(".mini-cart-icon").attr('data-count',total); //update
+        });
+    });
+</script>product-thumb

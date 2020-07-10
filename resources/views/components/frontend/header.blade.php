@@ -146,7 +146,7 @@
             <div class="col-xs-8">
                 <div class="header-center">
                     <a href="index.html" id="logo-2">
-                        <img class="logo-image" src="public/frontend/images/logohealthyfood.png" style="width: 85px" alt="healthy food logo" />
+                        <img class="logo-image" src="public/frontend/images/logohealthyfood1.png" style="width: 85px" alt="" />
                     </a>
                 </div>
             </div>
