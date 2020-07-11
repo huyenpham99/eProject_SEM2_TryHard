@@ -101,6 +101,8 @@ return array(
     'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),
     'Clue\\StreamFilter\\' => array($vendorDir . '/clue/stream-filter/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
+    'CKSource\\CKFinder\\' => array($vendorDir . '/ckfinder/ckfinder-laravel-package/_connector'),
+    'CKSource\\CKFinderBridge\\' => array($vendorDir . '/ckfinder/ckfinder-laravel-package/src'),
     'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
     'Aws\\' => array($vendorDir . '/aws/aws-sdk-php/src'),
     'Asm89\\Stack\\' => array($vendorDir . '/asm89/stack-cors/src'),

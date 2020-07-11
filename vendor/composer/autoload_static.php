@@ -194,6 +194,8 @@ class ComposerStaticInit9d4bdc2bd183f0fa372ae1be5ac0d13e
             'Cron\\' => 5,
             'Clue\\StreamFilter\\' => 18,
             'Carbon\\' => 7,
+            'CKSource\\CKFinder\\' => 18,
+            'CKSource\\CKFinderBridge\\' => 24,
         ),
         'B' => 
         array (
@@ -590,6 +592,14 @@ class ComposerStaticInit9d4bdc2bd183f0fa372ae1be5ac0d13e
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
+        ),
+        'CKSource\\CKFinder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/_connector',
+        ),
+        'CKSource\\CKFinderBridge\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/src',
         ),
         'Brick\\Math\\' => 
         array (
@@ -1402,6 +1412,11 @@ class ComposerStaticInit9d4bdc2bd183f0fa372ae1be5ac0d13e
         'Brick\\Math\\Internal\\Calculator\\GmpCalculator' => __DIR__ . '/..' . '/brick/math/src/Internal/Calculator/GmpCalculator.php',
         'Brick\\Math\\Internal\\Calculator\\NativeCalculator' => __DIR__ . '/..' . '/brick/math/src/Internal/Calculator/NativeCalculator.php',
         'Brick\\Math\\RoundingMode' => __DIR__ . '/..' . '/brick/math/src/RoundingMode.php',
+        'CKSource\\CKFinderBridge\\CKFinderMiddleware' => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/src/CKFinderMiddleware.php',
+        'CKSource\\CKFinderBridge\\CKFinderServiceProvider' => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/src/CKFinderServiceProvider.php',
+        'CKSource\\CKFinderBridge\\Command\\CKFinderDownloadCommand' => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/src/Command/CKFinderDownloadCommand.php',
+        'CKSource\\CKFinderBridge\\Controller\\CKFinderController' => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/src/Controller/CKFinderController.php',
+        'CKSource\\CKFinderBridge\\Polyfill\\CommandResolver' => __DIR__ . '/..' . '/ckfinder/ckfinder-laravel-package/src/Polyfill/CommandResolver.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
         'Carbon\\CarbonInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterface.php',
