@@ -9,6 +9,8 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
+        "ext-dom": "*",
+        "ckfinder/ckfinder-laravel-package": "v3.5.1.5",
         "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
@@ -18,8 +20,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "nesbot/carbon": "^2.35",
-        "phpviet/laravel-omnipay": "^1.1",
-      "ext-dom": "*"
+        "phpviet/laravel-omnipay": "^1.1"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
