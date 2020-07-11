@@ -47,7 +47,7 @@
                 _token:"{{@csrf_token()}}"
             },
             success: function () {
-                alertify.success("Add product to cart successfully");
+                alertify.success("Add to card successfully");
             }
         });
     }
@@ -58,7 +58,8 @@
         var total = 0;
         $(".ajax_add_to_cart").click(function(){
             total++;                     //add to cart
+            console.log(total);
             $(".mini-cart-icon").attr('data-count',total); //update
         });
     });
-</script>product-thumb
+</script>
