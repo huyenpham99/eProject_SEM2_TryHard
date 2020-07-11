@@ -1,8 +1,8 @@
-<div class="topbar">
+<div class="topbar" style="background-color: #f5f5f5">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <div class="topbar-text" style="margin-top:7px">
+                <div class="topbar-text">
                     <span>Work time: Monday - Friday: 08AM-06PM</span>
                     <span>Saturday - Sunday: 10AM-06PM</span>
                 </div>
@@ -18,18 +18,40 @@
                                                                                      class="btn btn-secondary">Login</a>
                                 </li>
                             @else
-                                <a class="dropdown-item"
-                                   href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-                                    <li class="float-right" style="list-style: none;">
-                                        <button class="btn btn-outline-danger"  style="border-radius: 20px; width: 100px; height: 40px" type="button" >Logout
-                                        </button>
-                                    </li>
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
+                                <li class="dropdown mega-menu">
+                                    <p data-toggle="dropdown">Welcome , {{\Illuminate\Support\Facades\Auth::user()->name}}<i class="fa fa-angle-down ml-1 opacity-8"></i></p>
+                                    <ul class="sub-menu" style="background-color: white!important;width: 200px;">
+                                        <li style="padding: 10px 0">
+                                            <a href="{{url("#")}}" tabindex="0" class="dropdown-item">Profile</a>
+                                        </li>
+                                        <li style="padding: 10px 0">
+                                            <a href="{{url("/change-password")}}" tabindex="0" class="dropdown-item">Change Password</a>
+                                        </li>
+                                        <li style="padding: 10px 0">
+                                            <a href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();" class="dropdown-item "
+                                               >
+                                                Logout
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+
+                                </li>
+{{--                                    <a href="{{url("#")}}" tabindex="0" class="dropdown-item">Profile</a>--}}
+{{--                                    --}}
+{{--                                    <a class="dropdown-item "--}}
+{{--                                       href="{{ route('logout') }}"--}}
+{{--                                       onclick="event.preventDefault();--}}
+{{--                            document.getElementById('logout-form').submit();">--}}
+{{--                                        <li class="float-right" style="list-style: none;">--}}
+{{--                                            Logout--}}
+{{--                                        </li>--}}
+{{--                                    </a>--}}
+
                             @endguest
                         </div>
                     </ul>

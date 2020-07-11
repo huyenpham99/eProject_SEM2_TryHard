@@ -46,7 +46,7 @@
                 qty:1,
                 _token:"{{@csrf_token()}}"
             },
-            success: function () {
+            success: function (data) {
                 alertify.success("Add to card successfully");
             }
         });
