@@ -47,7 +47,7 @@
                                 <p>{{$blog->__get("blog_desc")}}</p>
                                 @php
                                     $doc = new DOMDocument();
-                                    $doc->loadHTML($blog->__get("blog_content"));
+                                    $doc->loadHTML('<?xml encoding="utf-8" ?>'.($blog->__get("blog_content")));
                                  echo $doc->saveHTML();
                                 @endphp
                             </div>
