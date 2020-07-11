@@ -14,7 +14,7 @@ Route::get('/', 'HomeController@index');
 
 //Route::get('/', 'HomeController@index');
 
-Route::get("/category/{category:slug}", "HomeController@category")->name("category");
+Route::get("/shop/{category:slug}", "HomeController@shop");
 
 Route::get("/product/{product:slug}", "HomeController@product");
 
