@@ -19,7 +19,7 @@ class Admin
     {
         $currentUser = Auth::user();
         if($currentUser->__get('role') == User::USER_ROLE)
-            return abort(404);
+            return redirect()->to("/404");
         return $next($request);
     }
 }

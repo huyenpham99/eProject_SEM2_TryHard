@@ -32,5 +32,6 @@ Route::post("/change-password","ChangePasswordController@postCredentials");
 Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
 Route::get('/callback/{provider}', 'SocialController@callback');
 
+Route::get('/404', 'HomeController@Error');
 
 

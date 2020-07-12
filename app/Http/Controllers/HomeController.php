@@ -287,5 +287,7 @@ class HomeController extends Controller
         }
         return redirect()->to("/home");
     }
-    //
+    public function Error(Request $request){
+        return view("frontend.404Error");
+    }
 }
