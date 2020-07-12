@@ -19,7 +19,7 @@ class DeadActive
     {
         $currentUser = Auth::user();
         if($currentUser->__get('role') == User::DEAD_ACTIVE)
-            return abort(404);
+            return redirect()->to("/404");
         return $next($request);
     }
 }
