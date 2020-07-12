@@ -17,13 +17,14 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::group(["middleware"=>["deadactive","auth"]],function(){
+    Route::get('/home', 'HomeController@index')->name('home');
     require_once "user.php";
 });
 Route::group(["middleware"=>["deadactive","admin","auth"], "prefix"=>"admin"],function(){
     require_once "admin.php";
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 Route::post('reset-password', 'ResetPasswordController@sendMail');
 Route::put('reset-password/{token}', 'ResetPasswordController@reset');
 Route::get("/change-password","ChangePasswordController@change");
