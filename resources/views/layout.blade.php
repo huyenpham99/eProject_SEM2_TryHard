@@ -5,6 +5,7 @@
 <head>
     <x-head/>
     <meta property="fb:app_id" content="{618524112104934}"/>
+    <script src="{{asset("assets/scripts/jquery.js")}}"></script>
 </head>
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -32,3 +33,19 @@
 </script>
 </html>
 
+<script type="text/javascript">
+    $('#search').keyup(function(){
+        $value = $(this).val();
+        $.ajax({
+            type: 'get',
+            url: '{{ \Illuminate\Support\Facades\URL::to('search') }}',
+            success:function(data){
+                if($value===""){
+                    return $('tbody').html(data);
+                }else{
+                    return $('tbody').html(data);
+                }
+            }
+        });
+    });
+</script>

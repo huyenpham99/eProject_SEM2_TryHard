@@ -7,6 +7,7 @@ use App\Blog;
 use App\BlogCategory;
 use App\Cart;
 use App\Category;
+use App\Event;
 use App\Events\OrderCreated;
 use App\Order;
 use App\Product;
@@ -40,6 +41,7 @@ class HomeController extends Controller
         $blog = Blog::all();
         $products = Product::all();
         $banner = Banner::all();
+        $event = Event::all();
 //         tao slug cho cac truong
         foreach ($category as $p) {
             $slug    = \Illuminate\Support\Str::slug($p->__get("category_name"));
@@ -69,6 +71,7 @@ class HomeController extends Controller
             "products" => $products,
             "blogs" => $blog,
             "banner"=>$banner,
+            "event"=>$event,
         ]);
     }
     public function blog()
