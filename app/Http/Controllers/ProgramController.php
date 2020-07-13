@@ -40,6 +40,7 @@ class ProgramController extends Controller
         try {
             Program::create([
                 "program_name" => $request->get("program_name"),
+                "program_image"=>$request->get("program_image"),
                 "user_id"=>$request->get("user_id"),
             ]);
 
@@ -71,6 +72,7 @@ class ProgramController extends Controller
         try {
             $program->update([
                 "program_name" => $request->get("program_name"),
+                "program_image"=>$request->get("program_image"),
                 "user_id"=>$request->get("user_id"),
             ]);
         } catch (\Exception $exception) {
