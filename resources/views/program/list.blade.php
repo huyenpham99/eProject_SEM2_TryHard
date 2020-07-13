@@ -30,6 +30,7 @@
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Program Image
                             </th>
+{{--                            hello--}}
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">User Name
                             </th>
