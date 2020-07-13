@@ -97,5 +97,39 @@ class ProductController extends Controller
         }
         return redirect()->to("/admin/list-product");
     }
+    public function searchUser(Request $request){
+        $output = '';
+        if ($request->ajax()) {
+            $products = Product::where('product_name', 'like', '%'.$request->search.'%')
+                ->orwhere('product_desc', '%'.$request->search.'%')
+                ->orwhere('product_price', '%'.$request->search.'%')->get();
+            if ($products) {
+                foreach ($products as $key => $product) {
+                    $output .= '<tr>
+                                <td>'. $product->id .'</td>
+                                <td>'. $product->product_name .'</td>
+                                <td><img src="'. $product->product_image .'" style="width: 50px; height: 50px"></td>
+                                <td><img src="'. $product->product_image1 .'" style="width: 50px; height: 50px"></td>
+                                <td><img src="'. $product->product_image2 .'" style="width: 50px; height: 50px"></td>
+                                <td>'. $product->product_desc .'</td>
+                                <td>'. $product->product_price .'</td>
+                                <td>'. $product->qty .'</td>
+                                <td>'. $product->category_id .'</td>
+                                <td>'. $product->created_at .'</td>
+                                <td>'. $product->updated_at .'</td>
+                                <td>
+                                    <a href="http://127.0.0.1:8000/admin/edit-product/'. $product->id .'" class="btn btn-outline-dark">Edit</a>
+                                </td>
+                                <td>
+                                    <form action="http://127.0.0.1:8000/admin/delete-product/'. $product->id .'" method="post">
+                                        <input type="hidden" name="_method" value="DELETE">                                        <input type="hidden" name="_token" value="dAKuGx9nKdhb78Z0djNgUel4rJrC3qQXDbvkYF8M">                                        <button type="submit" onclick="return confirm(\'chac khong?\');" class="btn btn-outline-dark">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>';
+                }
+            }
+            return Response($output);
+        }
+    }
 }
 

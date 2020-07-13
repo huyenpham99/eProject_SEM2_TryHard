@@ -226,27 +226,28 @@
         <div class="section section-bg-2 section-cover pt-14">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6">
-                        <div class="text-center">
-                            <div class="mb-1 section-pretitle white">Hot Deal</div>
-                            <h2 class="section-title mtn-2 mb-3">Natural fresh juices</h2>
-                            <p class="white mb-4">
-                                Cur tantas regiones barbarorum pedibus obiit, tot maria transmisit? Uterque enim summo
-                                bono fruitur, id est voluptate
-                            </p>
-                            <div class="countdown-wrap mb-4">
-                                <div class="countdown-content">
-                                    <div class="pl-clock countdown-bar" data-time="2022/10/10"></div>
+                    @foreach($event as $e)
+                        <div class="col-sm-6">
+                            <div class="text-center">
+                                <div class="mb-1 section-pretitle white">{{$e->__get("event_name")}}</div>
+                                <h2 class="section-title mtn-2 mb-3">{{$e->__get("event_address")}}</h2>
+                                <p class="white mb-4">
+                                    {{$e->__get("event_desc")}}
+                                </p>
+                                <div class="countdown-wrap mb-4">
+                                    <div class="countdown-content">
+                                        <div class="pl-clock countdown-bar" data-time="{{$e->__get("event_date_end")}}"></div>
+                                    </div>
                                 </div>
+                                <a class="organik-btn brown" href="{{url("/shop")}}">Join now</a>
                             </div>
-                            <a class="organik-btn brown" href="{{url("/shop")}}">Shop Now</a>
                         </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="text-center floating">
-                            <img src="frontend/images/can.png" alt=""/>
+                        <div class="col-sm-6">
+                            <div class="text-center floating">
+                                <img src="frontend/images/can.png" alt=""/>
+                            </div>
                         </div>
-                    </div>
+                        @endforeach
                 </div>
             </div>
         </div>

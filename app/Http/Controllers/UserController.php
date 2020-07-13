@@ -89,4 +89,22 @@ class UserController extends Controller
             "currentUser" => $currentUser,
         ]);
     }
+    public function searchUser(Request $request){
+        if ($request->ajax()) {
+            $usersFull = User::all();
+            $output = '';
+            $users = User::where('name', 'like', '%'.$request->search.'%')->
+            orwhere('email', '%'.$request->search.'%')->get();
+            if ($users) {
+                foreach ($users as $key => $user) {
+                    $output .= '<tr>
+                                <td>'. $user->__get("id"). '</td>
+                                <td>'. $user->__get("name"). '</td>
+                            </tr>';
+                }
+            }
+            return Response($output);
+        }
+    }
+
 }
