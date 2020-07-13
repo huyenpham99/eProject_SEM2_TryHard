@@ -23,7 +23,7 @@ class Category extends Model
     }
 
     public function getCategoryUrl(){
-        return url("/category/{$this->__get("slug")}");
+        return url("/shop/{$this->__get("slug")}");
     }
     public function getImage(){
         if(is_null($this->__get("category_image"))){

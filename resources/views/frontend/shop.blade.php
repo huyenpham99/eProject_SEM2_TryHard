@@ -33,10 +33,6 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="shop-filter-right">
-                                    <div class="switch-view">
-                                        <a href="shop-list.html" class="switcher" data-toggle="tooltip" data-placement="top" title="" data-original-title="List"><i class="ion-navicon"></i></a>
-                                        <a href="shop.html" class="switcher active" data-toggle="tooltip" data-placement="top" title="" data-original-title="Grid"><i class="ion-grid"></i></a>
-                                    </div>
                                     <form class="commerce-ordering">
                                         <select name="orderby" class="orderby">
                                             <option value="">Sort by popularity</option>
@@ -53,7 +49,7 @@
                             @foreach(\App\Category::all() as $category)
                             <div class="cat-item">
                                 <div class="cats-wrap" data-bg-color="#f8c9c2">
-                                    <a href="#">
+                                    <a href="{{$category->getCategoryUrl()}}">
                                         <img src="{{$category->__get("category_image")}}" alt="" />
                                         <h2 class="category-title">
                                             {{$category->__get("category_name")}}
@@ -64,7 +60,7 @@
                             @endforeach
                         </div>
                         <div class="product-grid">
-                                @foreach(\App\Product::with("Category")->paginate(20) as $product)
+                            @forelse($products as $product)
                             <div class="col-md-4 col-sm-6 product-item text-center mb-3">
                                 <div class="product-thumb">
                                     <a href="{{$product->getProductUrl()}}">
@@ -92,15 +88,11 @@
                                     </a>
                                 </div>
                             </div>
-                                @endforeach
+                            @empty
+                                <p>Product not found</p>
+                            @endforelse
                         </div>
-                        <div class="pagination">
-                            <a class="prev page-numbers" href="#">Prev</a>
-                            <a class="page-numbers" href="#">1</a>
-                            <span class="page-numbers current">2</span>
-                            <a class="page-numbers" href="#">3</a>
-                            <a class="next page-numbers" href="#">Next</a>
-                        </div>
+                            {!! $products->links() !!}
                     </div>
                     <div class="col-md-3 col-md-pull-9">
                         <div class="sidebar">
@@ -132,7 +124,7 @@
                             <div class="widget widget-products">
                                 <h3 class="widget-title">Products</h3>
                                 <ul class="product-list-widget">
-                                    @foreach(\App\Product::limit(4)->get() as $product)
+                                    @foreach(\App\Product::orderBy("product_name")->limit(4) as $product)
                                     <li>
                                         <a href="{{$product->getProductUrl()}}">
                                             <img src="{{$product->__get("product_image")}}" alt="" />

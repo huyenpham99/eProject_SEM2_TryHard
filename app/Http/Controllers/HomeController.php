@@ -97,9 +97,15 @@ class HomeController extends Controller
         return view("frontend.about");
     }
 
-    public function shop()
+    public function shop(Category $category)
     {
-        return view("frontend.shop");
+        $products = $category->Products()->paginate(9);
+        // dung trong model de lay tat ca\
+        return view("frontend.shop", [
+            "category" => $category,
+//            "categories"=>$categories// tra ve category trong front end
+            "products" => $products
+        ]);
     }
 
     public function contact()
@@ -141,36 +147,19 @@ class HomeController extends Controller
 ////            $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Thông báo về sự kiện ...  '.Auth::user()->__get("name"));
 ////        });
 //    }
-
-    public function category(Category $category)
-    {
-//        $products = Product::where("category_id",$category->__get("id"))->paginate(12);
-        $products = $category->Products()->simplePaginate(12);
-        // dung trong model de lay tat ca\
-        return view("frontend.category", [
-            "category" => $category,
-//            "categories"=>$categories// tra ve category trong front end
-            "products" => $products
-        ]);
-    }
-
-    public function product(Product $product)
-    {
-        $category = Category::all();
-//        if (!session()->has("view_count_{$product->__get("id")}")) {
-//            $product->increment("view_count");
-//            session(["view_count{$product->__get("id")} => true"]);
-        $relativeProducts = Product::with("Category")->paginate(4);//nạp sẵn phần cần nạp trong collection, lấy theo kiểu quan hệ
-
-        return view("frontend.product-detail", [
-            "category" => $category,
-            "product" => $product,
-            "relativeProduct" => $relativeProducts,
-
-        ]);
-    }
-
-
+//    public function product(Product $product)
+//    {
+//        $category = Category::all();
+//        $relativeProducts = Product::with("Category")->paginate(4);//nạp sẵn phần cần nạp trong collection, lấy theo kiểu quan hệ
+//
+//        return view("frontend.product-detail", [
+//            "category" => $category,
+//            "product" => $product,
+//            "relativeProduct" => $relativeProducts,
+//
+//        ]);
+//    }
+//
     public function addToCart(Product $product, Request $request)
     {
         $qty = $request->has("qty") && (int)$request->get("qty") > 0 ? (int)$request->get("qty") : 1;
@@ -298,5 +287,7 @@ class HomeController extends Controller
         }
         return redirect()->to("/home");
     }
-    //
+    public function Error(Request $request){
+        return view("frontend.404Error");
+    }
 }

@@ -19,7 +19,7 @@ class ProductAdmin
     {
         $currentUser = Auth::user();
         if($currentUser->__get('role') != User::PRODUCT_ADMIN_ROLE && $currentUser->__get("role") != User::ADMIN_ROLE)
-            return abort(404);
+            return redirect()->to("/404");
         return $next($request);
     }
 }
