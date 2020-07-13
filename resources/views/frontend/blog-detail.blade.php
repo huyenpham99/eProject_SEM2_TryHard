@@ -79,61 +79,16 @@
                                     </div>
                                 </div>
                             </div>
+                            <div id="fb-root"></div>
+                            <script>(function(d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id)) return;
+                                    js = d.createElement(s); js.id = id;
+                                    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=618524112104934";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));</script>
+                            <div class="fb-comments" data-href="https://www.facebook.com/df.jerry" data-numposts="5" data-colorscheme="light"></div>
                             <div class="comments-area">
-                                <div class="single-comments-list mt-0">
-                                    <div class="mb-2">
-                                        <h2 class="comment-title">2 reviews for Orange Juice</h2>
-                                    </div>
-                                    <ul class="comment-list">
-                                        <li>
-                                            <div class="comment-container">
-                                                <div class="comment-author-vcard">
-                                                    <img alt="" src="frontend/images/avatar/avatar.png" />
-                                                </div>
-                                                <div class="comment-author-info">
-                                                    <span class="comment-author-name">admin</span>
-                                                    <a href="#" class="comment-date">July 27, 2016</a>
-                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                                                </div>
-                                                <div class="reply">
-                                                    <a class="comment-reply-link" href="#">Reply</a>
-                                                </div>
-                                            </div>
-                                            <ul class="children">
-                                                <li>
-                                                    <div class="comment-container">
-                                                        <div class="comment-author-vcard">
-                                                            <img alt="" src="frontend/images/avatar/avatar.png" />
-                                                        </div>
-                                                        <div class="comment-author-info">
-                                                            <span class="comment-author-name">admin</span>
-                                                            <a href="#" class="comment-date">July 27, 2016</a>
-                                                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                                                        </div>
-                                                        <div class="reply">
-                                                            <a class="comment-reply-link" href="#">Reply</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <div class="comment-container">
-                                                <div class="comment-author-vcard">
-                                                    <img alt="" src="frontend/images/avatar/avatar.png" />
-                                                </div>
-                                                <div class="comment-author-info">
-                                                    <span class="comment-author-name">admin</span>
-                                                    <a href="#" class="comment-date">July 27, 2016</a>
-                                                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                                                </div>
-                                                <div class="reply">
-                                                    <a class="comment-reply-link" href="#">Reply</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
                                 <div class="single-comment-form">
                                     <div class="mb-2">
                                         <h2 class="comment-title">LEAVE A REPLY</h2>
@@ -203,4 +158,5 @@
             </div>
         </div>
     </div>
+
 @endsection
