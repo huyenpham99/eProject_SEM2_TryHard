@@ -2,6 +2,13 @@
 @section("title", "Product List")
 @section("contentHeader", "Product")
 @section("content")
+    <div class="search-wrapper">
+        <div class="input-holder">
+            <input type="text" class="search-input search" id="search" name="search" placeholder="Type to search">
+            <button class="search-icon"><span></span></button>
+        </div>
+        <button class="close"></button>
+    </div>
     <div class="row mt-4">
         <div class="col">
             <div class="card">
