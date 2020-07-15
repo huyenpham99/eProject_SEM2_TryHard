@@ -35,4 +35,4 @@ Route::get('/callback/{provider}', 'SocialController@callback');
 
 Route::get('/404', 'HomeController@Error');
 
-
+Route::get("/search", "ProductController@searchUser");
