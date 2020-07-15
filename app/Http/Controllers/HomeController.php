@@ -38,13 +38,20 @@ class HomeController extends Controller
     public function index()
     {
         $category = Category::all();
-        $blog = Blog::all();
+        $blog = Blog::orderBy("view_count",'desc')->limit(3)->get();
+        $blogcategory = BlogCategory::all();
+
         $products = Product::all();
         $banner = Banner::all();
         $event = Event::all();
 //         tao slug cho cac truong
         foreach ($category as $p) {
             $slug    = \Illuminate\Support\Str::slug($p->__get("category_name"));
+            $p->slug = $slug . $p->__get("id");// luu lai vao DB
+            $p->save();
+        }
+        foreach ($blogcategory as $p) {
+            $slug    = \Illuminate\Support\Str::slug($p->__get("blog_category_name"));
             $p->slug = $slug . $p->__get("id");// luu lai vao DB
             $p->save();
         }
@@ -76,7 +83,7 @@ class HomeController extends Controller
     }
     public function blog()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::paginate(4);
         $blogcategory = BlogCategory::all();
         return view("frontend.blog",[
             "blogs" => $blogs,

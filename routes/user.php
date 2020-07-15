@@ -10,13 +10,13 @@ Route::get('/', 'HomeController@index');
 
 //Route::get("/product/{product:slug}", "HomeController@product");
 
-//Route::get("/blog/{blog:slug}", "HomeController@product");
+Route::get("/blog/{blog:slug}", "HomeController@product");
 
 //Route::get('/', 'HomeController@index');
 
 Route::get("/shop/{category:slug}", "HomeController@shop");
 
-Route::get("/product/{product:slug}", "HomeController@product");
+Route::get("/product/{product:slug}", "HomeController@productdetail");
 
 Route::get("/about", "HomeController@about");
 

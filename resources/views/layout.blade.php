@@ -40,6 +40,7 @@
             type: 'get',
             url: '{{ \Illuminate\Support\Facades\URL::to('search') }}',
             success:function(data){
+                console.log(data);
                 if($value===""){
                     return $('tbody').html(data);
                 }else{

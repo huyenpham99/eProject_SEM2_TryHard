@@ -1,4 +1,3 @@
-
 <div class="topbar" style="background-color: #f5f5f5">
     <div class="container">
         <div class="row">
@@ -20,38 +19,43 @@
                                 </li>
                             @else
                                 <li class="dropdown mega-menu">
-                                    <p data-toggle="dropdown">Welcome , {{\Illuminate\Support\Facades\Auth::user()->name}}<i class="fa fa-angle-down ml-1 opacity-8"></i></p>
+                                    <p data-toggle="dropdown">Welcome
+                                        , {{\Illuminate\Support\Facades\Auth::user()->name}}<i
+                                            class="fa fa-angle-down ml-1 opacity-8"></i></p>
                                     <ul class="sub-menu" style="background-color: white!important;width: 200px;">
                                         <li style="padding: 10px 0">
                                             <a href="{{url("#")}}" tabindex="0" class="dropdown-item">Profile</a>
                                         </li>
                                         <li style="padding: 10px 0">
-                                            <a href="{{url("/change-password")}}" tabindex="0" class="dropdown-item">Change Password</a>
+                                            <a href="{{url("/change-password")}}" tabindex="0" class="dropdown-item">Change
+                                                Password</a>
                                         </li>
-                                        <li style="padding: 10px 0">
+                                        <li style="https://www.upsieutoc.com/images/2020/07/12/slide_bg_4.jpg
+https://www.upsieutoc.com/images/2020/07/12/slide_8.pngpadding: 10px 0">
                                             <a href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();" class="dropdown-item "
-                                               >
+                                            >
                                                 Logout
                                             </a>
                                         </li>
                                     </ul>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
                                         @csrf
                                     </form>
 
                                 </li>
-{{--                                    <a href="{{url("#")}}" tabindex="0" class="dropdown-item">Profile</a>--}}
-{{--                                    --}}
-{{--                                    <a class="dropdown-item "--}}
-{{--                                       href="{{ route('logout') }}"--}}
-{{--                                       onclick="event.preventDefault();--}}
-{{--                            document.getElementById('logout-form').submit();">--}}
-{{--                                        <li class="float-right" style="list-style: none;">--}}
-{{--                                            Logout--}}
-{{--                                        </li>--}}
-{{--                                    </a>--}}
+                                {{--                                    <a href="{{url("#")}}" tabindex="0" class="dropdown-item">Profile</a>--}}
+                                {{--                                    --}}
+                                {{--                                    <a class="dropdown-item "--}}
+                                {{--                                       href="{{ route('logout') }}"--}}
+                                {{--                                       onclick="event.preventDefault();--}}
+                                {{--                            document.getElementById('logout-form').submit();">--}}
+                                {{--                                        <li class="float-right" style="list-style: none;">--}}
+                                {{--                                            Logout--}}
+                                {{--                                        </li>--}}
+                                {{--                                    </a>--}}
 
                             @endguest
                         </div>
@@ -67,7 +71,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <form>
-                        <input type="search" class="top-search-input" name="s" placeholder="What are you looking for?" />
+                        <input type="search" class="top-search-input" name="s" placeholder="What are you looking for?"/>
                     </form>
                 </div>
             </div>
@@ -77,7 +81,8 @@
         <div class="row">
             <div class="col-md-3">
                 <a href="{{url("/home")}}" id="logo">
-                    <img class="logo-image" src="/frontend/images/logohealthyfood1.png" style="width: 150px;margin-top: 15px" alt="Organik Logo" />
+                    <img class="logo-image" src="/frontend/images/logohealthyfood1.png"
+                         style="width: 150px;margin-top: 15px" alt="Organik Logo"/>
                 </a>
             </div>
             <div class="col-md-9">
@@ -95,8 +100,8 @@
                                 <a href="{{url("/programs")}}">Programs</a>
                             </li>
                             <li class="dropdown mega-menu">
-                                <a href="{{url("/shop/fruits1")}}">Shop</a>
-                                <ul class="sub-menu" >
+                                <a href="{{url("/shop/dried5")}}">Shop</a>
+                                <ul class="sub-menu">
                                     <li>
                                         <div class="mega-menu-content col-sm-12">
                                             <div class="row">
@@ -106,7 +111,8 @@
                                                             <h3 href="">{{$category->__get("category_name")}}</h3>
                                                             <ul>
                                                                 @foreach(\App\Product::with("Category")->where("category_id","like",$category->__get("id"))->get() as $pro )
-                                                                    <li><a href="{{$pro->getProductUrl()}}">{{$pro->__get("product_name")}}</a>
+                                                                    <li>
+                                                                        <a href="{{$pro->getProductUrl()}}">{{$pro->__get("product_name")}}</a>
                                                                     </li>
                                                                 @endforeach
                                                             </ul>
@@ -118,7 +124,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li >
+                            <li>
                                 <a href="{{url("/blog")}}">Blog</a>
                             </li>
                             <li>
@@ -130,10 +136,10 @@
                         <div class="mini-cart-wrap">
                             <div class="mini-cart">
                                 @php
-                                        $count = 0 ;
-                                    $myCart = session()->has("my_cart")?session("my_cart"):[];
-                                    $dem  = count($myCart);
-                                    @endphp
+                                    $count = 0 ;
+                                $myCart = session()->has("my_cart")?session("my_cart"):[];
+                                $dem  = count($myCart);
+                                @endphp
                                 <div class="mini-cart-icon" data-count="{{$dem}}">
                                     <i class="ion-bag"></i>
                                 </div>
@@ -141,7 +147,7 @@
                             <div class="widget-shopping-cart-content">
                                 <p class="buttons">
                                     <a href="{{url("/shopping-cart")}}" class="view-cart">View cart</a>
-                                    <a  href="{{url("/checkout")}}" class="checkout">Checkout</a>
+                                    <a href="{{url("/checkout")}}" class="checkout">Checkout</a>
                                 </p>
                             </div>
                         </div>
@@ -169,7 +175,8 @@
             <div class="col-xs-8">
                 <div class="header-center">
                     <a href="index.html" id="logo-2">
-                        <img class="logo-image" src="public/frontend/images/logohealthyfood1.png" style="width: 85px" alt="" />
+                        <img class="logo-image" src="public/frontend/images/logohealthyfood1.png" style="width: 85px"
+                             alt=""/>
                     </a>
                 </div>
             </div>

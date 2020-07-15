@@ -17,7 +17,7 @@
                 <div class="card-header border-0">
                     <h2 class="mb-0 col-lg-9 float-left">User Listing</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("admin/new-user")}}" class="btn btn-success btn-sm text-white">Create</a>
+                        <a href="{{url("admin/new-manager")}}" class="btn btn-success btn-sm text-white">New Manager</a>
                     </div>
                 </div>
                 <!-- Light table -->

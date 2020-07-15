@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function listBlog(){
-        $blogs = Blog::with("BlogCategory")->paginate(4);
+        $blogs = Blog::with("BlogCategory")->paginate(20);
         return view("blog.list",[
             "blogs" => $blogs
         ]);

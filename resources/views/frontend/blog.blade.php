@@ -75,7 +75,9 @@
                                 <h3 class="widget-title">Blog Category</h3>
                                 @foreach($blogcategory as $category)
                                 <ul class="product-categories">
-                                    <li>{{$category->__get("blog_category_name")}}</li>
+                                    <a href="{{$category->getBlogCategoryUrl()}}">
+                                        <li>{{$category->__get("blog_category_name")}}</li>
+                                    </a>
                                 </ul>
                                 @endforeach
                             </div>
@@ -96,8 +98,10 @@
                                 @endforeach
                             </div>
                         </div>
+
                     </div>
                 </div>
+                {!! $blogs->links() !!}
             </div>
         </div>
     </div>
