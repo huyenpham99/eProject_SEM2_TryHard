@@ -24,6 +24,14 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <div><label for="exampleInputEmail1">Program Image</label></div>
+                            <img src="{{$program->get("program_image")}}" style="width: 70px; height: 70px;"/>
+                            <input class="form-control @error("program_image") is-invalid @enderror" type="text" name="program_image" />
+                            @error("program_image")
+                            <span class="error invalid-feedback">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label>User Id</label>
                             <select name="user_id" class="form-control">
                                 @foreach($user as $user)

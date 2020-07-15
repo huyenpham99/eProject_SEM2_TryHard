@@ -20,6 +20,13 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <label> Image</label>
+                    <input type="text" name="program_image" class="form-control @error("program_image")  is-invalid @enderror" placeholder="Link Image">
+                    @error("program_image")
+                    <span class="error invalid-feedback">  {{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
                     <label>User Id</label>
                     <select name="user_id" class="form-control">
                     @foreach($user as $u)

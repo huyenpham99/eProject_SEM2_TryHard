@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-@extends("layout")
-@section("title", "Program Detail List")
-@section("contentHeader", "Program Detail")
 @extends("layout")
 @section("title", "ProgramDetailRepository List")
 @section("contentHeader", "ProgramDetaiRepository List")
@@ -60,7 +56,7 @@
                                 <td>{{$program_detail->__get("program_detail_name")}}</td>
                                 <td><img src="{{$program_detail->__get("program_detail_image")}}" style="width: 50px; height: 50px"></td>
                                 <td>{{$program_detail->__get("program_detail_desc")}}</td>
-                                <td>{{$program_detail->__get("program_detail_content")}}</td>
+                                <td>Content</td>
                                 <td>{{$program_detail->Program->__get("program_name")}}</td>
                                 <td>{{$program_detail->__get("created_at")}}</td>
                                 <td>{{$program_detail->__get("updated_at")}}</td>

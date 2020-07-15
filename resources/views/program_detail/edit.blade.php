@@ -41,7 +41,7 @@
                         </div>
                         <div class="form-group">
                             <label>Program Detail Content</label>
-                            <input type="text" value="{{$program_detail->__get("program_detail_content")}}" name="program_detail_content" id="editor1" class="form-control @error("program_detail_content") is-invalid @enderror" placeholder="New Program Detail Content ">
+                            <textarea type="text" value="{{$program_detail->__get("program_detail_content")}}" name="program_detail_content" id="editor1" class="form-control @error("program_detail_content") is-invalid @enderror" placeholder="New Program Detail Content "></textarea>
                             @error("program_detail_content")
                             <span class="error invalid-feedback">{{$message}}</span>
                             @enderror

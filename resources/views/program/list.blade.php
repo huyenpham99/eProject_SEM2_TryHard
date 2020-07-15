@@ -1,4 +1,3 @@
-
 @extends("layout")
 @section("title", "ProgramRepository List")
 @section("contentHeader", "ProgramRepository List")
@@ -11,10 +10,6 @@
                     <h2 class="mb-0 col-lg-9 float-left">Program List</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
                         <a href="{{url("/admin/new-program")}}" class="btn btn-sm btn-neutral">Create</a>
-                        {{--                        @foreach($categories as $category)--}}
-                        {{--                            <a href="{{url("/admin/edit-category/{$category->__get("id")}")}}" class="btn btn-sm btn-neutral">Update</a>--}}
-                        {{--                        @endforeach--}}
-
                     </div>
                 </div>
                 <!-- Light table -->
@@ -28,6 +23,10 @@
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Program Name
                             </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Program Image
+                            </th>
+{{--                            hello--}}
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">User Name
                             </th>
@@ -50,8 +49,8 @@
                             <tr>
                                 <td>{{$program->__get("id")}}</td>
                                 <td>{{$program->__get("program_name")}}</td>
+                                <td><img src="{{$program->__get("program_image")}}" style="width: 50px; height: 50px"></td>
                                 <td>{{$program->User->__get("name")}}</td>
-{{--                                <td>{{$product->Category->__get("category_name")}}</td>--}}
                                 <td>{{$program->__get("created_at")}}</td>
                                 <td>{{$program->__get("updated_at")}}</td>
                                 <td>
