@@ -20,7 +20,6 @@
                 <div class="form-group">
                     <label> Image</label>
                     <input type="text" name="program_detail_image" class="form-control @error("program_detail_image")  is-invalid @enderror" placeholder="Link Image">
-                    <label>Program Detail Image</label>
                     @error("program_detail_image")
                     <span class="error invalid-feedback">  {{$message}}</span>
                     @enderror
@@ -34,7 +33,7 @@
                 </div>
                 <div class="form-group">
                     <label> Content</label>
-                    <input type="text" name="program_detail_content" id="editor1" class="form-control @error("program_detail_content")  is-invalid @enderror" placeholder="New Program Detail Content">
+                    <textarea type="text" name="program_detail_content" id="editor1" class="form-control @error("program_detail_content")  is-invalid @enderror" placeholder="New Program Detail Content"></textarea>
                     @error("program_detail_content")
                     <span class="error invalid-feedback">  {{$message}}</span>
                     @enderror

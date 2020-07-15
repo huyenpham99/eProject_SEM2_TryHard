@@ -10,6 +10,7 @@ class Program extends Model
     protected $table = "program";
     public $fillable = [
         "program_name",
+        "program_image",
         "user_id"
     ];
 
