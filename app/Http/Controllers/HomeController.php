@@ -7,11 +7,13 @@ use App\Blog;
 use App\BlogCategory;
 use App\Cart;
 use App\Category;
+use App\Comment;
 use App\Event;
 use App\Events\OrderCreated;
 use App\Order;
 use App\Product;
 use App\Program;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -90,11 +92,29 @@ class HomeController extends Controller
             $blog->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
             session(["view_count{$blog->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
         }
+        $comments = $blog->comments;
         return view("frontend.blog-detail",[
             "blog" => $blog,
+            "comments" => $comments,
         ]);
     }
-
+    public function saveComment(Request $request){
+        $blog = Blog::find($request->get("blog_id"));
+        $currentUser = Auth::user();
+        $name = $currentUser->name;
+        try{
+            $comment = new Comment([
+               'content' => $request->get("content"),
+               'comment_date' => Carbon::now('Asia/Ho_Chi_Minh'),
+               'comment_user' => $name,
+               'blog_id' => $request->get("blog_id"),
+            ]);
+            $blog->comments()->save($comment);
+        }catch (\Exception $exception){
+           dd($exception->getMessage());
+        }
+        return redirect()->back();
+    }
     public function about()
     {
         return view("frontend.about");

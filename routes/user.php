@@ -22,6 +22,7 @@ Route::get("/about", "HomeController@about");
 
 Route::get("/blog","HomeController@blog");
 Route::get("/blog/{blog:slug}","HomeController@blogdetail");
+Route::post("/blog/comment","HomeController@saveComment");
 
 Route::get("/shop","HomeController@shop");
 
