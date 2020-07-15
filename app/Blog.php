@@ -17,6 +17,9 @@ class Blog extends Model
         return $this->__get("slug");
     }
     public function BlogCategory(){
-        return $this->belongsTo("\App\BlogCategory", "blog_category_id");
+        return $this->belongsTo("App\BlogCategory", "blog_category_id");
+    }
+    public function comments(){
+        return $this->hasMany("App\Comment");
     }
 }

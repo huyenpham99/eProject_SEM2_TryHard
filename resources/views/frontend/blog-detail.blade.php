@@ -68,51 +68,82 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="entry-author">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <img alt="" src="frontend/images/avatar/avatar.png" class="avatar" />
-                                    </div>
-                                    <div class="col-md-10">
-                                        <h3 class="name">TM Organik</h3>
-                                        <div class="desc">We are online market of organic fruits, vegetables, juices and dried fruits. We bring fresh, seasonal products from our family farm right to your doorstep.</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="fb-root"></div>
-                            <script>(function(d, s, id) {
-                                    var js, fjs = d.getElementsByTagName(s)[0];
-                                    if (d.getElementById(id)) return;
-                                    js = d.createElement(s); js.id = id;
-                                    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=618524112104934";
-                                    fjs.parentNode.insertBefore(js, fjs);
-                                }(document, 'script', 'facebook-jssdk'));</script>
-                            <div class="fb-comments" data-href="https://www.facebook.com/df.jerry" data-numposts="5" data-colorscheme="light"></div>
+{{--                            <div id="fb-root"></div>--}}
+{{--                            <script>(function(d, s, id) {--}}
+{{--                                    var js, fjs = d.getElementsByTagName(s)[0];--}}
+{{--                                    if (d.getElementById(id)) return;--}}
+{{--                                    js = d.createElement(s); js.id = id;--}}
+{{--                                    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=618524112104934";--}}
+{{--                                    fjs.parentNode.insertBefore(js, fjs);--}}
+{{--                                }(document, 'script', 'facebook-jssdk'));</script>--}}
+{{--                            <div class="fb-comments" data-href="https://www.facebook.com/df.jerry" data-numposts="5" data-colorscheme="light"></div>--}}
                             <div class="comments-area">
+                                <div class="single-comments-list mt-0">
+                                    <div class="mb-2">
+                                        <h2 class="comment-title fa fa-comment-o"> {{count($comments)}} Comment</h2>
+                                    </div>
+                                    <ul class="comment-list">
+                                        @foreach($comments as $comment)
+                                            @if($comment->__get("comment_status")==0)
+                                        <li>
+                                            <div class="comment-container">
+                                                <div class="comment-author-vcard">
+                                                    <img alt="" src="{{url("https://icdn.dantri.com.vn/thumb_w/640/2019/10/21/nu-sinh-bac-ninh-mac-dong-phuc-hut-anh-nhin-vi-nhan-sac-kha-aidocx-1571614826507.jpeg")}}">
+                                                </div>
+                                                <div class="comment-author-info">
+                                                    <span class="comment-author-name">{{$comment->comment_user}}</span>
+                                                    <span class="comment-date">{{$comment->comment_date}}</span>
+                                                    <p style="font-size: 16px">{{$comment->content}}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                                @elseif($comment->__get("comment_status")==1)
+                                                <li>
+                                                    <div class="comment-container" style="display: none">
+                                                        <div class="comment-author-vcard">
+                                                            <img alt="" src="{{url("https://icdn.dantri.com.vn/thumb_w/640/2019/10/21/nu-sinh-bac-ninh-mac-dong-phuc-hut-anh-nhin-vi-nhan-sac-kha-aidocx-1571614826507.jpeg")}}">
+                                                        </div>
+                                                        <div class="comment-author-info">
+                                                            <span class="comment-author-name">{{$comment->comment_user}}</span>
+                                                            <span class="comment-date">{{$comment->comment_date}}</span>
+                                                            <p style="font-size: 16px">{{$comment->content}}</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            @elseif($comment->__get("comment_status")==2)
+                                                <li>
+                                                    <div class="comment-container">
+                                                        <div class="comment-author-vcard">
+                                                            <img alt="" src="{{url("https://icdn.dantri.com.vn/thumb_w/640/2019/10/21/nu-sinh-bac-ninh-mac-dong-phuc-hut-anh-nhin-vi-nhan-sac-kha-aidocx-1571614826507.jpeg")}}">
+                                                        </div>
+                                                        <div class="comment-author-info">
+                                                            <span class="comment-author-name">{{$comment->comment_user}}</span>
+                                                            <span class="comment-date">{{$comment->comment_date}}</span>
+                                                            <p style="color: red;font-size: 16px;">
+                                                                <strike>Comments are locked by the administrator please contact for more details</strike></p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    </ul>
+                                </div>
                                 <div class="single-comment-form">
                                     <div class="mb-2">
-                                        <h2 class="comment-title">LEAVE A REPLY</h2>
+                                        <h2 class="comment-title">LEAVE A Comment</h2>
                                     </div>
-                                    <form class="comment-form">
+                                    <form action="{{url("/blog/comment")}}" method="post" class="comment-form">
+                                        @method("POST")
+                                        @csrf
+                                        <input type="hidden" name="blog_id" value="{{$blog->id}}}"/>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <textarea id="comment" name="comment" cols="45" rows="5" placeholder="Message *"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <input id="author" name="author" type="text" value="" size="30" placeholder="Name *" class="mb-2">
-                                            </div>
-                                            <div class="col-md-4">
-                                                <input id="email" name="email" type="email" value="" size="30" placeholder="Email *" class="mb-2">
-                                            </div>
-                                            <div class="col-md-4">
-                                                <input id="url" name="url" type="text" value="" placeholder="Website">
+                                                <textarea id="comment" name="content" cols="45" rows="5" placeholder="Send A Comment"></textarea>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <input name="submit" type="submit" id="submit" class="btn btn-alt btn-border" value="Submit">
+                                                <button type="submit" class="btn btn-success">Send</button>
                                             </div>
                                         </div>
                                     </form>

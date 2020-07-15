@@ -25,6 +25,9 @@ Route::post("/save-blogcategory","BlogCategoryController@saveBlogCategory")->mid
 Route::get("/edit-blogcategory/{id}","BlogCategoryController@editBlogCategory")->middleware('blog');
 Route::put("/update-blogcategory/{id}","BlogCategoryController@updateBlogCategory")->middleware('blog');
 Route::delete("/delete-blogcategory/{id}","BlogCategoryController@deleteBlogCategory")->middleware('blog');
+Route::get("/list-comment","CommentController@commentList")->middleware('blog');
+Route::get("/edit-comment/{id}","CommentController@editComment")->middleware('blog');
+Route::put("/update-comment/{id}","CommentController@saveComment")->middleware('blog');
 
 Route::get("/list-blog","BlogController@listBlog")->middleware('blog');
 Route::get("/new-blog","BlogController@newBlog")->middleware('blog');
@@ -91,5 +94,7 @@ Route::post("/save-ticket","TicketController@saveTicket")->middleware('event');
 Route::get("/edit-ticket/{id}","TicketController@editTicket")->middleware('event');
 Route::put("/update-ticket/{id}","TicketController@updateTicket")->middleware('event');
 Route::delete("/delete-ticket/{id}","TicketController@deleteTicket")->middleware('event');
+
+
 
 
