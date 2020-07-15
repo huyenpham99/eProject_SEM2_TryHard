@@ -522,6 +522,7 @@
                                 <a href="{{$blog->getBlogUrl()}}">
                                     <img src="{{$blog->__get("blog_image")}}" alt=""/>
                                 </a>
+{{--                                --}}
                             </div>
                             <div class="post-content">
                                 <div class="entry-meta">
