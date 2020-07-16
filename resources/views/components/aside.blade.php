@@ -218,6 +218,22 @@
                     <li>
                         <a href="#">
                             <i class="metismenu-icon pe-7s-diamond"></i>
+                            Blog Comment Manager
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="{{url("/admin/list-comment")}}">
+
+                                    <i class="metismenu-icon"></i>
+                                    Comment List
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon pe-7s-diamond"></i>
                             Event
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
@@ -300,6 +316,22 @@
 
                                     <i class="metismenu-icon"></i>
                                     List Blog Category
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon pe-7s-diamond"></i>
+                            Blog Comment Manager
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="{{url("/admin/list-comment")}}">
+
+                                    <i class="metismenu-icon"></i>
+                                    Comment List
                                 </a>
                             </li>
                         </ul>

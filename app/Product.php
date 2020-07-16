@@ -37,4 +37,7 @@ class Product extends Model
     public function getSlug(){
         return $this->__get("slug");
     }
+//    public function comments(){
+//        return $this->hasMany("App\Comment");
+//    }
 }
