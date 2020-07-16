@@ -1,5 +1,10 @@
 @extends("frontend.layout")
 @section("content")
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <div id="main">
         <div class="section">
             <div class="container-fluid">
@@ -236,7 +241,8 @@
                                 </p>
                                 <div class="countdown-wrap mb-4">
                                     <div class="countdown-content">
-                                        <div class="pl-clock countdown-bar" data-time="{{$e->__get("event_date_end")}}"></div>
+                                        <div class="pl-clock countdown-bar"
+                                             data-time="{{$e->__get("event_date_end")}}"></div>
                                     </div>
                                 </div>
                                 <a class="organik-btn brown" href="{{url("/shop")}}">Join now</a>
@@ -247,7 +253,7 @@
                                 <img src="frontend/images/can.png" alt=""/>
                             </div>
                         </div>
-                        @endforeach
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -363,11 +369,12 @@
                         <div class="text-center">
                             <ul class="masonry-filter">
                                 <li><a href="{{url("/shop")}}">All</a>
-
                                 </li>
-                                    @foreach($categories as $category)
-                                        <li><a href="{{$category->getCategoryUrl()}}">{{$category->__get("category_name")}}</a></li>
-                                    @endforeach
+                                @foreach($categories as $category)
+                                    <li>
+                                        <a href="{{$category->getCategoryUrl()}}">{{$category->__get("category_name")}}</a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -385,7 +392,7 @@
                                     </a>
                                     <div class="product-action">
 												<span class="add-to-cart">
-													<a href="javascript: void(0);"  class="ajax_add_to_cart"
+													<a href="javascript: void(0);" class="ajax_add_to_cart"
                                                        onclick="addToCart({{$product->__get("id")}})"
                                                        data-toggle="tooltip" data-placement="top"
                                                        title="Add to cart"></a>
@@ -402,9 +409,9 @@
                                         <span class="price">
                                             <ins>{{$product->__get("product_price")}}</ins>
                                         </span>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                     <div class="loadmore-contain">
@@ -440,7 +447,8 @@
                                 <div id="collapse1" class="accordion-body collapse in">
                                     <div class="accordion-inner">
                                         <p>
-                                            Healthy Food grown foods have more nutrients—vitamins, minerals, enzymes, and
+                                            Healthy Food grown foods have more nutrients—vitamins, minerals, enzymes,
+                                            and
                                             micronutrients—than commercially grown foods because the soil is managed and
                                             nourished with sustainable practices by responsible standards. Organic
                                             farming supports eco-sustenance, or farming in harmony with nature.
@@ -468,8 +476,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                             <div class="accordion-group toggle">
                                 <div class="accordion-heading toggle_title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="collapse3"
@@ -514,96 +520,36 @@
                     </div>
                 </div>
                 <div class="row">
+                    @foreach($blogs as $blog)
                     <div class="col-md-4">
                         <div class="blog-grid-item">
                             <div class="post-thumbnail">
-                                <a href="blog-detail.html">
-                                    <img src="frontend/images/blog/blog_1.jpg" alt=""/>
+                                <a href="{{$blog->getBlogUrl()}}">
+                                    <img src="{{$blog->__get("blog_image")}}" alt=""/>
                                 </a>
+{{--                                --}}
                             </div>
                             <div class="post-content">
                                 <div class="entry-meta">
 											<span class="posted-on">
 												<i class="ion-calendar"></i>
-												<span>August 9, 2016</span>
+												<span>{{$blog->__get("blog_date")}}}</span>
 											</span>
-                                    <span class="comment">
-												<i class="ion-chatbubble-working"></i> 0
-											</span>
+                                    <span class="comment">View:{{$blog->__get("view_count")}}</span>
                                 </div>
-                                <a href="blog-detail.html">
-                                    <h1 class="entry-title">How to steam &amp; purée your sugar pie pumkin</h1>
+                                <a href="{{$blog->getBlogUrl()}}">
+                                    <h1 class="entry-title">{{$blog->__get("blog_title")}}</h1>
                                 </a>
                                 <div class="entry-content">
-                                    Cut the halves into smaller pieces and place in a large pot of water with a steam
-                                    basket to keep the pumpkin pieces from touching…
+                                    {{$blog->__get("blog_desc")}}
                                 </div>
                                 <div class="entry-more">
-                                    <a href="blog-detail.html">Read more</a>
+                                    <a href="{{$blog->getBlogUrl()}}">Read more</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="blog-grid-item">
-                            <div class="post-thumbnail">
-                                <a href="blog-detail.html">
-                                    <img src="frontend/images/blog/blog_2.jpg" alt=""/>
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="entry-meta">
-                                    <span class="posted-on">
-                                        <i class="ion-calendar"></i>
-                                        <span>August 9, 2016</span>
-                                    </span>
-                                    <span class="comment">
-                                        <i class="ion-chatbubble-working"></i> 0
-                                    </span>
-                                </div>
-                                <a href="blog-detail.html">
-                                    <h1 class="entry-title">Great bulk recipes to help use all your organic vegetables</h1>
-                                </a>
-                                <div class="entry-content">
-                                    A fridge full of organic vegetables purchased or harvested with the best of
-                                    intentions, and then life gets busy, leaving no time to peel,
-                                </div>
-                                <div class="entry-more">
-                                    <a href="blog-detail.html">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="blog-grid-item">
-                            <div class="post-thumbnail">
-                                <a href="blog-detail.html">
-                                    <img src="frontend/images/blog/blog_1.jpg" alt=""/>
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="entry-meta">
-											<span class="posted-on">
-												<i class="ion-calendar"></i>
-												<span>August 9, 2016</span>
-											</span>
-                                    <span class="comment">
-												<i class="ion-chatbubble-working"></i> 0
-											</span>
-                                </div>
-                                <a href="blog-detail.html">
-                                    <h1 class="entry-title">How can salmon be raised organically in fish farms?</h1>
-                                </a>
-                                <div class="entry-content">
-                                    Organic food consumption is rapidly increasing. The heightened interest in the
-                                    global environment and a willingness to look
-                                </div>
-                                <div class="entry-more">
-                                    <a href="blog-detail.html">Read more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
@@ -658,10 +604,8 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));</script>
         <div class="fb-comments" data-href="https://www.facebook.com/df.jerry" data-numposts="5"
-             data-colorscheme="light"></div>
-
-
-
+             data-colorscheme="light">
+        </div>
     </div>
 @endsection
 {{----}}

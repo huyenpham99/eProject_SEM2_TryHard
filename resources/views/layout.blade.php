@@ -12,7 +12,6 @@
     <x-header/>
     <x-theme-ui-setting/>
     <div class="app-main">
-
         <x-aside/>
         <div class="app-main__outer">
             <div class="app-main__inner">
@@ -40,6 +39,7 @@
             type: 'get',
             url: '{{ \Illuminate\Support\Facades\URL::to('search') }}',
             success:function(data){
+                console.log(data);
                 if($value===""){
                     return $('tbody').html(data);
                 }else{

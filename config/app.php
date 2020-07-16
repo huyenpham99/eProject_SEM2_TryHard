@@ -14,7 +14,6 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -177,7 +176,8 @@ return [
 
         // Other service providers…
         Laravel\Socialite\SocialiteServiceProvider::class,
-
+        //cloudinary
+        JD\Cloudder\CloudderServiceProvider::class,
     ],
 
     /*
@@ -231,6 +231,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         // Other aliases…
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        //cloudinary
+        'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
     ],
 
 ];

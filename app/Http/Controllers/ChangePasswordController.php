@@ -48,7 +48,7 @@ class ChangePasswordController extends Controller
                     $obj_user = User::find($user_id);
                     $obj_user->password = Hash::make($request_data['password']);
                     $obj_user->save();
-                    return "change password success";
+                    return redirect()->to('/home')->with('message', 'Your password has been change successfully!');
                 }
                 else
                 {

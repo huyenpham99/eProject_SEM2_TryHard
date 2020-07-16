@@ -17,6 +17,6 @@ class BlogCategory extends Model
         return "slug";
     }
     public function getBlogCategoryUrl(){
-        return url("/blogcategory/{$this->__get("slug")}");
+        return url("/blog/{$this->__get("slug")}");
     }
 }

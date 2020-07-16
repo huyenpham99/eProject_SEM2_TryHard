@@ -1,5 +1,10 @@
 @extends("layout")
 @section("content")
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <div class="row">
         <div class="col-md-6 col-xl-4">
             <div class="card mb-3 widget-content bg-arielle-smile">
@@ -7,14 +12,13 @@
                     <div class="widget-content-left">
                         <div class="widget-heading">Total Product: </div>
                         <div class="widget-heading">Product View Count: </div>
-                        <div class="widget-heading">Total Money: </div>
-                        <div class="widget-heading">Pending Order: </div>
+
                         <div class="widget-heading">Complete Order: </div>
+                        <div class="widget-heading">Total Money: </div>
                     </div>
                     <div class="widget-content-right">
                         <div class="widget-heading">{{$countproduct}} Products</div>
                         <div class="widget-heading">{{$viewcountproduct}} Views</div>
-                        <div class="widget-heading">{{$pendingcount}} Pending</div>
                         <div class="widget-heading">{{$completecount}} Complete</div>
                         <div class="widget-heading">{{$totalmoney}}</div>
                     </div>

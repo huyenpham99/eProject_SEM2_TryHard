@@ -27,7 +27,10 @@ return [
     */
 
     'cloud' => env('FILESYSTEM_CLOUD', 's3'),
-
+    'local' => [
+        'driver' => 'local',
+        'root' => public_path(),
+    ],
     /*
     |--------------------------------------------------------------------------
     | Filesystem Disks

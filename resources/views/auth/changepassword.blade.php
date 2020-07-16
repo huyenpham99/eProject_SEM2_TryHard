@@ -22,7 +22,7 @@
                             <div class="card-body">
                                 <form id="form-change-password" role="form" method="POST" action="{{ url('change-password') }}" novalidate class="form-horizontal">
                                     <div class="user col-12">
-                                        <p>Current User : {{\Illuminate\Support\Facades\Auth::user()->__get("name")}}</p>
+                                        <p class="btn btn-primary" style="margin-left: 86px">Current User : {{\Illuminate\Support\Facades\Auth::user()->__get("name")}}</p>
                                     </div>
                                     <div class="col-md-12">
                                         <label for="current-password" class="col-sm-12 control-label">Current Password</label>
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-offset-5 col-sm-6">
-                                            <button type="submit" class="btn btn-danger">Change</button>
+                                            <button type="submit" class="btn btn-success" style="margin-left: 115px;padding: 5px 30px;">Change</button>
                                         </div>
                                     </div>
                                 </form>
