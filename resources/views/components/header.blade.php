@@ -43,12 +43,17 @@
                             <div class="btn-group">
                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                    class="p-0 btn">
-                                    <img width="42" class="rounded-circle" src="/assets/images/avatars/User.jpg" alt="">
+
+                                    <img width="42" class="rounded-circle" src="{{\Illuminate\Support\Facades\Auth::user()->__get("image")}}" alt="">
+
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
                                 <div tabindex="-1" role="menu" aria-hidden="true"
                                      class="dropdown-menu dropdown-menu-right">
-                                    <a href="{{url("#")}}" tabindex="0" class="dropdown-item">Profile</a>
+                                    @php
+                                       $id =  \Illuminate\Support\Facades\Auth::user()->__get("id");
+                                    @endphp
+                                    <a href="{{url("admin/view-user/$id")}}" tabindex="0" class="dropdown-item">Change Profile</a>
                                     <a href="{{url("/change-password")}}" tabindex="0" class="dropdown-item">Change Password</a>
                                     <div tabindex="-1" class="dropdown-divider"></div>
                                     <a class="dropdown-item"

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use JD\Cloudder\CloudderServiceProvider;
+use JD\Cloudder\Facades\Cloudder;
 
 class UserController extends Controller
 {
@@ -89,22 +91,66 @@ class UserController extends Controller
             "currentUser" => $currentUser,
         ]);
     }
-    public function searchUser(Request $request){
-        if ($request->ajax()) {
-            $usersFull = User::all();
-            $output = '';
-            $users = User::where('name', 'like', '%'.$request->search.'%')->
-            orwhere('email', '%'.$request->search.'%')->get();
-            if ($users) {
-                foreach ($users as $key => $user) {
-                    $output .= '<tr>
-                                <td>'. $user->__get("id"). '</td>
-                                <td>'. $user->__get("name"). '</td>
-                            </tr>';
-                }
-            }
-            return Response($output);
+    public function updateUser($id, Request $request){
+        $user = User::findOrFail($id);
+        try {
+            $user->update([
+                "name"=>$request->get("name"),
+                "image"=>$request->get("image"),
+                "email"=>$request->get("email"),
+                "address"=>$request->get("address"),
+                "telephone"=>$request->get("telephone"),
+            ]);
+        }catch (\Exception $exception){
+            return redirect()->back();
         }
+        return redirect()->to('/admin')->with('message', 'Change profile successfully!');
     }
+    public function viewUser1($id){
+        $currentUser = User::findorFail($id);
+        return view("user.userProfile",[
+            "currentUser" => $currentUser,
+        ]);
+    }
+    public function updateUser1($id, Request $request){
+        $user = User::findOrFail($id);
+        if ($request->hasFile('image')) {
+            //get name image
+            $filename = $request->image;
+            //upload image
+            Cloudder::upload($filename, $id, array("width"=>260, "height"=>200, "gravity"=>"north", "crop"=>"crop"));
+
+        }
+        try {
+            $user->update([
+                "name"=>$request->get("name"),
+                "image"=>Cloudder::show('uploads/'. $filename),
+                "email"=>$request->get("email"),
+                "address"=>$request->get("address"),
+                "telephone"=>$request->get("telephone"),
+            ]);
+        }catch (\Exception $exception){
+//            return redirect()->back();
+            dd($exception->getMessage());
+        }
+        return redirect()->to('/')->with('message', 'Change profile successfully!');
+    }
+//    public function searchUser(Request $request){
+//        if ($request->ajax()) {
+//            $usersFull = User::all();
+//            $output = '';
+//            $users = User::where('name', 'like', '%'.$request->search.'%')->
+//            orwhere('email', '%'.$request->search.'%')->get();
+//            if ($users) {
+//                foreach ($users as $key => $user) {
+//                    $output .= '<tr>
+//                                <td>'. $user->__get("id"). '</td>
+//                                <td>'. $user->__get("name"). '</td>
+//                            </tr>';
+//                }
+//            }
+//            return Response($output);
+//        }
+//    }
 
 }

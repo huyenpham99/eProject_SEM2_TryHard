@@ -1,5 +1,10 @@
 @extends("frontend.layout")
 @section("content")
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <div id="main">
         <div class="section">
             <div class="container-fluid">
