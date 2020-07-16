@@ -12,7 +12,6 @@
     <x-header/>
     <x-theme-ui-setting/>
     <div class="app-main">
-
         <x-aside/>
         <div class="app-main__outer">
             <div class="app-main__inner">

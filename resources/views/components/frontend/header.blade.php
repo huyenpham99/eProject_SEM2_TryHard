@@ -24,14 +24,16 @@
                                             class="fa fa-angle-down ml-1 opacity-8"></i></p>
                                     <ul class="sub-menu" style="background-color: white!important;width: 200px;">
                                         <li style="padding: 10px 0">
-                                            <a href="{{url("#")}}" tabindex="0" class="dropdown-item">Profile</a>
+                                            @php
+                                                $id =  \Illuminate\Support\Facades\Auth::user()->__get("id");
+                                            @endphp
+                                            <a href="{{url("/view-user/{$id}")}}" tabindex="0" class="dropdown-item">Profile</a>
                                         </li>
                                         <li style="padding: 10px 0">
                                             <a href="{{url("/change-password")}}" tabindex="0" class="dropdown-item">Change
                                                 Password</a>
                                         </li>
-                                        <li style="https://www.upsieutoc.com/images/2020/07/12/slide_bg_4.jpg
-https://www.upsieutoc.com/images/2020/07/12/slide_8.pngpadding: 10px 0">
+                                        <li style=": 10px 0">
                                             <a href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();" class="dropdown-item "
