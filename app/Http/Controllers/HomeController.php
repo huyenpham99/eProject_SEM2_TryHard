@@ -320,7 +320,7 @@ class HomeController extends Controller
                 "email" => $request->get("email"),
                 "note" => $request->get("note"),
                 "grand_total" => $grandTotal,
-                "status" => Order::PENDING
+                "status" => Order::PROCESS
             ]);
 //            die("done");
             foreach ($cart->getItems as $item) {
@@ -333,7 +333,7 @@ class HomeController extends Controller
             }
 //            die("done");
 //            $currentUser = Auth::user();
-//            $order = Order::where("user_id", Auth::id())->firstOrFail();
+//            $order = OrderController::where("user_id", Auth::id())->firstOrFail();
 //            Mail::send('mail.checkout-form', ["cart" => $cart->getItems, "user" => $currentUser, "order" => $order], function ($message) {
 //                $message->to(Auth::user()->__get("email"), Auth::user()->__get("name"))->subject('Healthy Food Đơn Hàng Khách Hàng ' . Auth::user()->__get("name"));
 //            });
