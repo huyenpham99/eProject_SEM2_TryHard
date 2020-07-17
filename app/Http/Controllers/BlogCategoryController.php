@@ -14,7 +14,7 @@ class BlogCategoryController extends Controller
         $blogcategory = BlogCategory::all();
         return view("blogcategory.list", [
             "blogcategories" => $blogcategory]);
-        //
+
     }
 
     public function newBlogCategory()
@@ -34,9 +34,9 @@ class BlogCategoryController extends Controller
             ]);
 
         } catch (\Exception $exception) {
-            return redirect()->back();
+           dd($exception->getMessage());
         }
-        return redirect()->to("/admin/list-blogcategory");
+//        return redirect()->to("/admin/list-blogcategory");
     }
 
     public function editBlogCategory($id)

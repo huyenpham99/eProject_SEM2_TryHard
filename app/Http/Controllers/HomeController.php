@@ -39,13 +39,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $category = Category::all();
-        $blog = Blog::orderBy("view_count",'desc')->limit(3)->get();
+        $category     = Category::all();
+        $blog         = Blog::orderBy("view_count", 'desc')->limit(3)->get();
         $blogcategory = BlogCategory::all();
 
         $products = Product::all();
-        $banner = Banner::all();
-        $event = Event::all();
+        $banner   = Banner::all();
+        $event    = Event::all();
 //         tao slug cho cac truong
         foreach ($category as $p) {
             $slug    = \Illuminate\Support\Str::slug($p->__get("category_name"));
@@ -75,19 +75,20 @@ class HomeController extends Controller
             $p->save();
         }
 //        dd($banner);
-        return view("frontend.home",[
+        return view("frontend.home", [
             "categories" => $category,
             "products" => $products,
             "blogs" => $blog,
-            "banner"=>$banner,
-            "event"=>$event,
+            "banner" => $banner,
+            "event" => $event,
         ]);
     }
+
     public function blog()
     {
-        $blogs = Blog::paginate(4);
+        $blogs        = Blog::paginate(4);
         $blogcategory = BlogCategory::all();
-        return view("frontend.blog",[
+        return view("frontend.blog", [
             "blogs" => $blogs,
             "blogcategory" => $blogcategory,
         ]);
@@ -100,28 +101,53 @@ class HomeController extends Controller
             session(["view_count{$blog->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
         }
         $comments = $blog->comments;
-        return view("frontend.blog-detail",[
+        return view("frontend.blog-detail", [
             "blog" => $blog,
             "comments" => $comments,
         ]);
     }
-    public function saveComment(Request $request){
-        $blog = Blog::find($request->get("blog_id"));
+
+    public function saveComment(Request $request)
+    {
+        $id          = $request->get("id");
+        $content     = $request->get("comment");
+        $blog        = Blog::find($id);
         $currentUser = Auth::user();
-        $name = $currentUser->name;
-        try{
+        $name        = $currentUser->name;
+        try {
             $comment = new Comment([
-               'content' => $request->get("content"),
-               'comment_date' => Carbon::now('Asia/Ho_Chi_Minh'),
-               'comment_user' => $name,
-               'blog_id' => $request->get("blog_id"),
+                'content' => $content,
+                'comment_date' => Carbon::now('Asia/Ho_Chi_Minh'),
+                'comment_user' => $name,
+                'blog_id' => $request->get("blog_id"),
             ]);
             $blog->comments()->save($comment);
-        }catch (\Exception $exception){
-           dd($exception->getMessage());
+        } catch (\Exception $exception) {
+            dd($exception->getMessage());
         }
-        return redirect()->back();
+        if ($request->ajax()) {
+
+            $comments = $blog->comments;
+            $output   = '';
+            if ($comments) {
+                $output = '
+                    <li class="comment-add">
+                        <div class="comment-container">
+                        <div class="comment-author-vcard">
+                    <img alt="" src="https://icdn.dantri.com.vn/thumb_w/640/2019/10/21/nu-sinh-bac-ninh-mac-dong-phuc-hut-anh-nhin-vi-nhan-sac-kha-aidocx-1571614826507.jpeg">
+                     </div>
+                     <div class="comment-author-info">
+                     <span class="comment-author-name">' . $comment->comment_user . '</span>
+                     <span class="comment-date">' . $comment->comment_date . '</span>
+                     <p style="font-size: 16px">' . $comment->content . '</p>
+                     </div></div>
+                             </li>';
+
+            }
+        }
+        return Response($output);
     }
+
     public function about()
     {
         return view("frontend.about");
@@ -145,15 +171,15 @@ class HomeController extends Controller
 
     public function productdetail(Product $product)
     {
-        $products = Product::all();
+        $products   = Product::all();
         $categories = Category::all();
         if (!session()->has("view_count_{$product->__get("id")}")) {// kiểm tra xem sesion  nếu chưa có sẽ đăng lên
             $product->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
             session(["view_count{$product->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
         }
-        return view("frontend.product-detail",[
+        return view("frontend.product-detail", [
             "categories" => $categories,
-            "product" =>$product,
+            "product" => $product,
             "products" => $products,
         ]);
     }
@@ -192,8 +218,8 @@ class HomeController extends Controller
 //
     public function addToCart(Product $product, Request $request)
     {
-        $qty = $request->has("qty") && (int)$request->get("qty") > 0 ? (int)$request->get("qty") : 1;
-        $myCart = session()->has("my_cart") && is_array(session("my_cart")) ? session("my_cart") : [];
+        $qty     = $request->has("qty") && (int)$request->get("qty") > 0 ? (int)$request->get("qty") : 1;
+        $myCart  = session()->has("my_cart") && is_array(session("my_cart")) ? session("my_cart") : [];
         $contain = false;
         if (Auth::check()) {
             if (Cart::where("user_id", Auth::id())->where("is_checkout", true)->exists()) {
@@ -208,7 +234,7 @@ class HomeController extends Controller
         foreach ($myCart as $key => $item) {
             if ($item["product_id"] == $product->__get("id")) {
                 $myCart[$key]["qty"] += $qty;
-                $contain = true;
+                $contain             = true;
                 if (Auth::check()) {
                     DB::table("cart_products")->where("cart_id", $cart->__get("id"))
                         ->where("product_id", $item["product_id"])
@@ -237,17 +263,17 @@ class HomeController extends Controller
 
     public function shoppingCart()
     {
-        $myCart = session()->has("my_cart") && is_array(session("my_cart")) ? session("my_cart") : [];
+        $myCart     = session()->has("my_cart") && is_array(session("my_cart")) ? session("my_cart") : [];
         $productIds = [];
         foreach ($myCart as $item) {
             $productIds[] = $item["product_id"];
         }
         $grandTotal = 0;
-        $products = Product::find($productIds);
+        $products   = Product::find($productIds);
         foreach ($products as $p) {
             foreach ($myCart as $item) {
                 if ($p->__get("id") == $item["product_id"]) {
-                    $grandTotal += ($p->__get("product_price") * $item["qty"]);
+                    $grandTotal  += ($p->__get("product_price") * $item["qty"]);
                     $p->cart_qty = $item["qty"];
                 }
             }
@@ -277,13 +303,13 @@ class HomeController extends Controller
 //            "address" => "required",
 //            "telephone" => "required",
         ]);
-        $cart = Cart::where("user_id", Auth::id())
+        $cart       = Cart::where("user_id", Auth::id())
             ->where("is_checkout", true)
             ->with("getItems")
             ->firstOrFail();
         $grandTotal = 0;
         foreach ($cart->getItems as $item) {
-            $grandTotal += $item->pivot->__get("qty")*$item->__get("product_price");
+            $grandTotal += $item->pivot->__get("qty") * $item->__get("product_price");
         }
         try {
             $order = Order::create([
@@ -317,7 +343,9 @@ class HomeController extends Controller
         }
         return redirect()->to("/home");
     }
-    public function Error(Request $request){
+
+    public function Error(Request $request)
+    {
         return view("frontend.404Error");
     }
 }
