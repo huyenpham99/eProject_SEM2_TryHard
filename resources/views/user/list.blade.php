@@ -69,7 +69,7 @@
 {{--                                            <button type="submit" onclick="return confirm('Are you sure!');"--}}
 {{--                                                    class="btn btn-danger btn-sm">Delete--}}
 {{--                                            </button>--}}
-{{--                                        </form>--}}
+{{--                                       </form>--}}
                                     @endif
                                 </td>
                             </tr>

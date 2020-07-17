@@ -96,5 +96,12 @@ Route::put("/update-ticket/{id}","TicketController@updateTicket")->middleware('e
 Route::delete("/delete-ticket/{id}","TicketController@deleteTicket")->middleware('event');
 
 
+// ORDer
+Route::get("/list-order","OrderController@listOrder");
+Route::get("/new-order","OrderController@newOrder");
+Route::post("/save-order","OrderController@saveOrder");
+Route::get("/edit-order/{id}","OrderController@editOrder");
+Route::put("/update-order/{id}","OrderController@updateOrder");
+Route::delete("/delete-order/{id}","OrderController@deleteOrder");
 
 

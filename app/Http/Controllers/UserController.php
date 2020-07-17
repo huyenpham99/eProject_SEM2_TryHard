@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -108,18 +109,26 @@ class UserController extends Controller
     }
     public function viewUser1($id){
         $currentUser = User::findorFail($id);
+        $orders = Order::where("user_id", "=", $id)->get();
+
         return view("user.userProfile",[
             "currentUser" => $currentUser,
+            "orders"=> $orders,
         ]);
     }
     public function updateUser1($id, Request $request){
         $user = User::findOrFail($id);
+        $this->validate($request,[
+            'image'=>'required|mimes:jpeg,bmp,jpg,png|between:1, 6000',
+        ]);
         if ($request->hasFile('image')) {
             //get name image
             $filename = $request->image;
             //upload image
-            Cloudder::upload($filename, $id, array("width"=>260, "height"=>200, "gravity"=>"north", "crop"=>"crop"));
-
+            Cloudder::upload($filename, 'uploads/' . $id, array('fetch_format' => 'auto',
+                'quality' => 'auto',
+                'crop' => 'scale',
+                ));
         }
         try {
             $user->update([
