@@ -70,15 +70,6 @@
                                     </div>
                                 </div>
                             </div>
-                            {{--                            <div id="fb-root"></div>--}}
-                            {{--                            <script>(function(d, s, id) {--}}
-                            {{--                                    var js, fjs = d.getElementsByTagName(s)[0];--}}
-                            {{--                                    if (d.getElementById(id)) return;--}}
-                            {{--                                    js = d.createElement(s); js.id = id;--}}
-                            {{--                                    js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=618524112104934";--}}
-                            {{--                                    fjs.parentNode.insertBefore(js, fjs);--}}
-                            {{--                                }(document, 'script', 'facebook-jssdk'));</script>--}}
-                            {{--                            <div class="fb-comments" data-href="https://www.facebook.com/df.jerry" data-numposts="5" data-colorscheme="light"></div>--}}
                             <div class="comments-area">
                                 <div class="single-comments-list mt-0">
                                     <div class="mb-2">
@@ -87,55 +78,56 @@
                                     <ul class="comment-list">
                                         @foreach($comments as $comment)
                                             @if($comment->__get("comment_status")==0)
-                                                <li class="comment-add">
-                                                    <div class="comment-container">
-                                                        <div class="comment-author-vcard">
-                                                            <img alt=""
-                                                                 src="{{url("https://icdn.dantri.com.vn/thumb_w/640/2019/10/21/nu-sinh-bac-ninh-mac-dong-phuc-hut-anh-nhin-vi-nhan-sac-kha-aidocx-1571614826507.jpeg")}}">
-                                                        </div>
-                                                        <div class="comment-author-info">
+                                                    <li class="comment-add">
+                                                        <div class="comment-container">
+                                                            <div class="comment-author-vcard">
+                                                                <img alt=""
+                                                                     src="{{url("https://icdn.dantri.com.vn/thumb_w/640/2019/10/21/nu-sinh-bac-ninh-mac-dong-phuc-hut-anh-nhin-vi-nhan-sac-kha-aidocx-1571614826507.jpeg")}}">
+                                                            </div>
+                                                            <div class="comment-author-info">
                                                             <span
                                                                 class="comment-author-name">{{$comment->comment_user}}</span>
-                                                            <span class="comment-date">{{$comment->comment_date}}</span>
-                                                            <p style="font-size: 16px">{{$comment->content}}</p>
+                                                                <span class="comment-date">{{$comment->comment_date}}</span>
+                                                                <p style="font-size: 16px">{{$comment->content}}</p>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </li>
+                                                    </li>
                                             @elseif($comment->__get("comment_status")==1)
-                                                <li class="comment-add">
-                                                    <div class="comment-container" style="display: none">
-                                                        <div class="comment-author-vcard">
-                                                            <img alt=""
-                                                                 src="{{url("https://icdn.dantri.com.vn/thumb_w/640/2019/10/21/nu-sinh-bac-ninh-mac-dong-phuc-hut-anh-nhin-vi-nhan-sac-kha-aidocx-1571614826507.jpeg")}}">
-                                                        </div>
-                                                        <div class="comment-author-info">
+                                                    <li class="comment-add">
+                                                        <div class="comment-container" style="display: none">
+                                                            <div class="comment-author-vcard">
+                                                                <img alt=""
+                                                                     src="{{url("https://icdn.dantri.com.vn/thumb_w/640/2019/10/21/nu-sinh-bac-ninh-mac-dong-phuc-hut-anh-nhin-vi-nhan-sac-kha-aidocx-1571614826507.jpeg")}}">
+                                                            </div>
+                                                            <div class="comment-author-info">
                                                             <span
                                                                 class="comment-author-name">{{$comment->comment_user}}</span>
-                                                            <span class="comment-date">{{$comment->comment_date}}</span>
-                                                            <p style="font-size: 16px">{{$comment->content}}</p>
+                                                                <span class="comment-date">{{$comment->comment_date}}</span>
+                                                                <p style="font-size: 16px">{{$comment->content}}</p>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </li>
+                                                    </li>
                                             @elseif($comment->__get("comment_status")==2)
-                                                <li class="comment-add">
-                                                    <div class="comment-container">
-                                                        <div class="comment-author-vcard">
-                                                            <img alt=""
-                                                                 src="{{url("https://icdn.dantri.com.vn/thumb_w/640/2019/10/21/nu-sinh-bac-ninh-mac-dong-phuc-hut-anh-nhin-vi-nhan-sac-kha-aidocx-1571614826507.jpeg")}}">
-                                                        </div>
-                                                        <div class="comment-author-info">
+                                                    <li class="comment-add">
+                                                        <div class="comment-container">
+                                                            <div class="comment-author-vcard">
+                                                                <img alt=""
+                                                                     src="{{url("https://icdn.dantri.com.vn/thumb_w/640/2019/10/21/nu-sinh-bac-ninh-mac-dong-phuc-hut-anh-nhin-vi-nhan-sac-kha-aidocx-1571614826507.jpeg")}}">
+                                                            </div>
+                                                            <div class="comment-author-info">
                                                             <span
                                                                 class="comment-author-name">{{$comment->comment_user}}</span>
-                                                            <span class="comment-date">{{$comment->comment_date}}</span>
-                                                            <p style="color: red;font-size: 16px;">
-                                                                <strike>Comments are locked by the administrator please
-                                                                    contact for more details</strike></p>
+                                                                <span class="comment-date">{{$comment->comment_date}}</span>
+                                                                <p style="color: red;font-size: 16px;">
+                                                                    <strike>Comments are locked by the administrator please
+                                                                        contact for more details</strike></p>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </li>
+                                                    </li>
                                             @endif
                                         @endforeach
                                     </ul>
+                                    {!! $comments->links() !!}
                                 </div>
                                 <div class="single-comment-form">
                                     <div class="mb-2">
@@ -148,7 +140,7 @@
                                            data-id="{{$blog->id}}"/>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <textarea id="comment" name="content" cols="45" rows="5"
+                                            <textarea id="comment" onkeypress="postComment1()" name="content" cols="45" rows="5"
                                                       placeholder="Send A Comment"></textarea>
                                         </div>
                                     </div>
@@ -204,6 +196,30 @@
         </div>
     </div>
     <script type="text/javascript">
+        function postComment1() {
+            var key = window.event.keyCode;
+            if (key === 13) {
+                var id = $("#blog_id").attr('data-id');
+                var comment = $("#comment").val();
+                $.ajax({
+                    method: "post",
+                    url: '{{url("/blog/comment")}}',
+                    data: {
+                        id: id,
+                        comment: comment,
+                        _token: "{{csrf_token()}}"
+                    },
+                    success: function (response) {
+                        $('.comment-list').append(response);
+                        $("#comment").val('');
+                    }
+                })
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
         function postComment() {
             var id = $("#blog_id").attr('data-id');
             var comment = $("#comment").val();
@@ -217,29 +233,9 @@
                 },
                 success: function (response) {
                     $('.comment-list').append(response);
-                    // $("#comment").html('');
+                    $("#comment").val('');
                 }
             })
         }
-        {{--$("#comment").keypress(function (event) {--}}
-        {{--    var keycode = (event.keyCode ? event.keyCode : event.which);--}}
-        {{--    if(keycode === '13'){--}}
-        {{--        console.log('aaaaa');--}}
-        {{--        var id = $("#blog_id").attr('data-id');--}}
-        {{--        var comment = $("#comment").val();--}}
-        {{--        $.ajax({--}}
-        {{--            method: "post",--}}
-        {{--            url: '{{url("/blog/comment")}}',--}}
-        {{--            data: {--}}
-        {{--                id: id,--}}
-        {{--                comment: comment,--}}
-        {{--                _token: "{{csrf_token()}}"--}}
-        {{--            },--}}
-        {{--            success: function (response) {--}}
-        {{--                $('.comment-list').append(response);--}}
-        {{--            }--}}
-        {{--        })--}}
-        {{--    }--}}
-        {{--})--}}
     </script>
 @endsection

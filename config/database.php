@@ -82,16 +82,6 @@ return [
             'password' =>'4d1f522e6eb6d6f1cff04ea89b0ae2792ec12ebd05aa47726690867f73878e22',//env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
-            'strict' => true,
-            'modes' => [
-                //'ONLY_FULL_GROUP_BY', // Disable this to allow grouping by one column
-                'STRICT_TRANS_TABLES',
-                'NO_ZERO_IN_DATE',
-                'NO_ZERO_DATE',
-                'ERROR_FOR_DIVISION_BY_ZERO',
-                'NO_AUTO_CREATE_USER',
-                'NO_ENGINE_SUBSTITUTION'
-            ],
             'prefix_indexes' => true,
             'schema' => 'public',
             'sslmode' => 'prefer',
