@@ -22,7 +22,7 @@
                                     <p data-toggle="dropdown">Welcome
                                         , {{\Illuminate\Support\Facades\Auth::user()->name}}<i
                                             class="fa fa-angle-down ml-1 opacity-8"></i></p>
-                                    <ul class="sub-menu" style="background-color: white!important;width: 200px;">
+                                    <ul class="sub-menu" style="background-color: #f5f5f5!important;width: 160px;">
                                         <li style="padding: 10px 0">
                                             @php
                                                 $id =  \Illuminate\Support\Facades\Auth::user()->__get("id");
@@ -36,8 +36,7 @@
                                         <li style=": 10px 0">
                                             <a href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();" class="dropdown-item "
-                                            >
+                            document.getElementById('logout-form').submit();" class="dropdown-item ">
                                                 Logout
                                             </a>
                                         </li>
@@ -211,5 +210,4 @@
             </div>
         </div>
     </div>
-
 </header>

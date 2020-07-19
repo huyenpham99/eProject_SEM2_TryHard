@@ -171,7 +171,7 @@ class HomeController extends Controller
 
     public function productdetail(Product $product)
     {
-        $products   = Product::all();
+        $products   = Product::paginate(4);
         $categories = Category::all();
         if (!session()->has("view_count_{$product->__get("id")}")) {// kiểm tra xem sesion  nếu chưa có sẽ đăng lên
             $product->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
