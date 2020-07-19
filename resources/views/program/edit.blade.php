@@ -32,10 +32,10 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>User Id</label>
+                            <label>User</label>
                             <select name="user_id" class="form-control">
                                 @foreach($user as $user)
-                                    <option >{{$user->__get("id")}}</option>
+                                    <option value="{{$user->__get("id")}}">{{$user->__get("name")}}</option>
                                 @endforeach
                             </select>
                         </div>

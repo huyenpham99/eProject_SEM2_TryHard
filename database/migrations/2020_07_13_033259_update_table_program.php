@@ -14,7 +14,7 @@ class UpdateTableProgram extends Migration
     public function up()
     {
         Schema::table('program', function (Blueprint $table) {
-            $table->string("program_image")->after("program_name");;
+            $table->string("program_image")->after("program_name")->nullable();
         });
     }
 

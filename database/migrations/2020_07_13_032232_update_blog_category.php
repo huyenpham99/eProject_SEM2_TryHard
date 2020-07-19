@@ -14,7 +14,7 @@ class UpdateBlogCategory extends Migration
     public function up()
     {
         Schema::table('blogcategory', function (Blueprint $table) {
-            $table->string("slug")->after("blog_category_name");
+            $table->string("slug")->after("blog_category_name")->nullable();;
         });
     }
 

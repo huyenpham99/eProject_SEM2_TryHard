@@ -30,11 +30,11 @@ class WebController extends Controller
         $event            = Event::all();
         $countEvent       = count($event);
         $totalPeople      = Event::select("event_people_count")->sum('event_people_count');
-//        $blog = BlogCategory::leftjoin('blog','blogcategory.id',"=","blog.blog_category_id")
-//            ->selectRaw('blogcategory.*, count(blog.id) as countBlogs')
-//            ->groupBy("blogcategory.id")
-//            ->orderByDesc('countBlogs')
-//            ->get();
+        $blog = BlogCategory::leftjoin('blog','blogcategory.id',"=","blog.blog_category_id")
+            ->selectRaw('blogcategory.*, count(blog.id) as countBlogs')
+            ->groupBy("blogcategory.id")
+            ->orderByDesc('countBlogs')
+            ->get();
         $blogcount = BlogCategory::leftjoin('blog','blogcategory.id',"=","blog.blog_category_id")
             ->selectRaw('blogcategory.*,count(blog.id) as countBlogs')
             ->groupBy("blogcategory.id")
