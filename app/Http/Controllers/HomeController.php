@@ -100,7 +100,7 @@ class HomeController extends Controller
             $blog->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
             session(["view_count{$blog->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
         }
-        $comments = $blog->comments;
+        $comments = Comment::with('blog')->simplePaginate(4);
         return view("frontend.blog-detail", [
             "blog" => $blog,
             "comments" => $comments,

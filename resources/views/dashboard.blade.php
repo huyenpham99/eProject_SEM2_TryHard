@@ -92,6 +92,33 @@
                             </div>
                         </div>
                     </div>
+                    <h6 class="text-muted text-uppercase font-size-md opacity-5 font-weight-normal">Top 10 Blog</h6>
+                    <div class="scroll-area-sm">
+                        <div class="scrollbar-container ps ps--active-y">
+                            <ul class="rm-list-borders rm-list-borders-scroll list-group list-group-flush">
+                                @foreach($topBlog as $blog)
+                                <li class="list-group-item">
+                                    <div class="widget-content p-0">
+                                        <div class="widget-content-wrapper">
+                                            <div class="widget-content-left mr-3">
+                                                {{$blog->id}}
+                                            </div>
+                                            <div class="widget-content-left">
+                                                <div class="widget-heading">{{$blog->blog_title}}</div>
+                                            </div>
+                                            <div class="widget-content-right">
+                                                <div class="font-size-xlg text-muted">
+                                                    <small class="opacity-5 pr-1"></small>
+                                                    <span>{{$blog->blog_date}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                @endforeach
+                            </ul>
+                            <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 200px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 139px;"></div></div></div>
+                    </div>
                 </div>
             </div>
         </div>
