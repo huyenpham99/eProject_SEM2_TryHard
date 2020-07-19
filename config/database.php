@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => 'pgsql',//env('DB_CONNECTION', 'mysql'),//,////env('DB_CONNECTION', 'mysql'),//'pgsql',//
 
     /*
     |--------------------------------------------------------------------------
@@ -74,14 +74,24 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            //'url' => 'postgres://aaymbcjwgpkpmg:ece97038105d4f1e3b23aca0fd95c5e943b655b1d95b12d992b54718c583e72c@ec2-34-198-243-120.compute-1.amazonaws.com:5432/ddlbjm7c2unrrl',//env('DATABASE_URL'),
+            'host' =>'ec2-34-200-15-192.compute-1.amazonaws.com',//env('DB_HOST', '127.0.0.1'),
+            'port' => '5432',//env('DB_PORT', '5432'),
+            'database'=>'dcib283q9r4mqg', //env('DB_DATABASE', 'forge'),
+            'username' =>'ypsbbwpcgxupfm', //env('DB_USERNAME', 'forge'),
+            'password' =>'4d1f522e6eb6d6f1cff04ea89b0ae2792ec12ebd05aa47726690867f73878e22',//env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
+            'strict' => true,
+            'modes' => [
+                //'ONLY_FULL_GROUP_BY', // Disable this to allow grouping by one column
+                'STRICT_TRANS_TABLES',
+                'NO_ZERO_IN_DATE',
+                'NO_ZERO_DATE',
+                'ERROR_FOR_DIVISION_BY_ZERO',
+                'NO_AUTO_CREATE_USER',
+                'NO_ENGINE_SUBSTITUTION'
+            ],
             'prefix_indexes' => true,
             'schema' => 'public',
             'sslmode' => 'prefer',
