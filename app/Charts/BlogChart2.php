@@ -18,7 +18,7 @@ class BlogChart2 extends Chart
             'legend' => [
                 'display' => true,
                 'labels' => [
-                    'fontColor' => 'rgb(255, 99, 132)'
+                    'fontColor' => 'rgb(255, 99, 132)',
                 ],
             ],
 
