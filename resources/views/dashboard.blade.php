@@ -67,8 +67,8 @@
                             <div class="card mb-3 widget-chart widget-chart2 text-left w-100">
                                 <div class="widget-chat-wrapper-outer">
                                     <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
-                                        {!! $chart->container() !!}
-                                        {!! $chart->script() !!}
+{{--                                        {!! $chart->container() !!}--}}
+{{--                                        {!! $chart->script() !!}--}}
                                     </div>
                                 </div>
                             </div>
@@ -87,8 +87,8 @@
                     <div class="card mb-3 widget-chart widget-chart2 text-left w-100">
                         <div class="widget-chat-wrapper-outer">
                             <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
-                                {!! $chart2->container() !!}
-                                {!! $chart2->script() !!}
+{{--                                {!! $chart2->container() !!}--}}
+{{--                                {!! $chart2->script() !!}--}}
                             </div>
                         </div>
                     </div>
