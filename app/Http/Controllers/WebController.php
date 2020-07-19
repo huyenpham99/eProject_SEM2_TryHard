@@ -64,8 +64,8 @@ class WebController extends Controller
            ->selectRaw('blogcategory.*, count(blog.id) as countBlogs')
            ->groupBy("blogcategory.id")
            ->orderByDesc('countBlogs')
-           ->get()
-       $blogcount = BlogCategory::leftjoin('blog','blogcategory.id',"=","blog.blog_category_id");
+           ->get();
+       $blogcount = BlogCategory::leftjoin('blog','blogcategory.id',"=","blog.blog_category_id")
            ->selectRaw('blogcategory.*,count(blog.id) as countBlogs')
            ->groupBy("blogcategory.id")
            ->orderByDesc('countBlogs')
@@ -76,7 +76,7 @@ class WebController extends Controller
            ->orderByDesc('view')
            ->limit(10)
            ->get();
-      
+
        $label1 = $blogcount->pluck('blog_category_name');
        $values = $blogcount->pluck('countBlogs');
        $chart = new BlogChart();
