@@ -13,9 +13,6 @@
                 <form role="form" action="{{url("admin/update-program-detail/{$program_detail->__get("id")}")}}" method="post" enctype="multipart/form-data">
                     @method("PUT")
                     @csrf
-                <form role="form" action="{{url("admin/update-program-detail/{$program_detail->__get("id")}")}}" method="post" enctype="multipart/form-data">
-                    @method("PUT")
-                    @csrf
                     <div class="card-body">
                         <div class="form-group">
                             <label>Program Detail Name</label>
@@ -46,17 +43,18 @@
                             <span class="error invalid-feedback">{{$message}}</span>
                             @enderror
                         </div>
-                            <label>Program Id</label>
-                            <select name="program_id" class="form-control">
-                                @foreach($program as $program)
-                                    <option >{{$program->__get("id")}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+                        <label>Program</label>
+                        <select name="program_id" class="form-control">
+                            @foreach($program as $program)
+                                <option value="{{$program->__get("id")}}">{{$program->__get("program_name")}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
+                </form>
+            </div>
             </div>
         </div>
-    </div>
 @endsection
