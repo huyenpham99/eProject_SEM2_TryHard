@@ -217,8 +217,29 @@
                 },
                 success: function (response) {
                     $('.comment-list').append(response);
+                    // $("#comment").html('');
                 }
             })
         }
+        {{--$("#comment").keypress(function (event) {--}}
+        {{--    var keycode = (event.keyCode ? event.keyCode : event.which);--}}
+        {{--    if(keycode === '13'){--}}
+        {{--        console.log('aaaaa');--}}
+        {{--        var id = $("#blog_id").attr('data-id');--}}
+        {{--        var comment = $("#comment").val();--}}
+        {{--        $.ajax({--}}
+        {{--            method: "post",--}}
+        {{--            url: '{{url("/blog/comment")}}',--}}
+        {{--            data: {--}}
+        {{--                id: id,--}}
+        {{--                comment: comment,--}}
+        {{--                _token: "{{csrf_token()}}"--}}
+        {{--            },--}}
+        {{--            success: function (response) {--}}
+        {{--                $('.comment-list').append(response);--}}
+        {{--            }--}}
+        {{--        })--}}
+        {{--    }--}}
+        {{--})--}}
     </script>
 @endsection
