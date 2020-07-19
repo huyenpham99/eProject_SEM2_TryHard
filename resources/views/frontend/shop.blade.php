@@ -132,7 +132,7 @@
                                         </a>
                                         <ins>{{$product->__get("product_price")}}</ins>
                                     </li>
-                                        @endforeach
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

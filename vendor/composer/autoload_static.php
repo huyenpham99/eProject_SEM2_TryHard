@@ -684,6 +684,8 @@ class ComposerStaticInit4cf48748e22170f9b52afcdd2c158715
         'App\\BlogCategory' => __DIR__ . '/../..' . '/app/BlogCategory.php',
         'App\\Cart' => __DIR__ . '/../..' . '/app/Cart.php',
         'App\\Category' => __DIR__ . '/../..' . '/app/Category.php',
+        'App\\Charts\\BlogChart' => __DIR__ . '/../..' . '/app/Charts/BlogChart.php',
+        'App\\Charts\\BlogChart2' => __DIR__ . '/../..' . '/app/Charts/BlogChart2.php',
         'App\\Comment' => __DIR__ . '/../..' . '/app/Comment.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Event' => __DIR__ . '/../..' . '/app/Event.php',

@@ -136,85 +136,88 @@
                                         <div id="tab-reviews" class="tab-pane fade">
                                             <div class="single-comments-list mt-0">
                                                 <div class="mb-2">
-                                                    <h2 class="comment-title">2 reviews for Orange Juice</h2>
+                                                    <h2 class="comment-title"> Reviews {{$product->__get("product_name")}}</h2>
                                                 </div>
-                                                <ul class="comment-list">
-                                                    <li>
-                                                        <div class="comment-container">
-                                                            <div class="comment-author-vcard">
-                                                                <img alt="" src="images/avatar/avatar.png" />
-                                                            </div>
-                                                            <div class="comment-author-info">
-                                                                <span class="comment-author-name">admin</span>
-                                                                <a href="#" class="comment-date">July 27, 2016</a>
-                                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                                                            </div>
-                                                            <div class="reply">
-                                                                <a class="comment-reply-link" href="#">Reply</a>
-                                                            </div>
-                                                        </div>
-                                                        <ul class="children">
-                                                            <li>
-                                                                <div class="comment-container">
-                                                                    <div class="comment-author-vcard">
-                                                                        <img alt="" src="images/avatar/avatar.png" />
-                                                                    </div>
-                                                                    <div class="comment-author-info">
-                                                                        <span class="comment-author-name">admin</span>
-                                                                        <a href="#" class="comment-date">July 27, 2016</a>
-                                                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                                                                    </div>
-                                                                    <div class="reply">
-                                                                        <a class="comment-reply-link" href="#">Reply</a>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        <div class="comment-container">
-                                                            <div class="comment-author-vcard">
-                                                                <img alt="" src="images/avatar/avatar.png" />
-                                                            </div>
-                                                            <div class="comment-author-info">
-                                                                <span class="comment-author-name">admin</span>
-                                                                <a href="#" class="comment-date">July 27, 2016</a>
-                                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                                                            </div>
-                                                            <div class="reply">
-                                                                <a class="comment-reply-link" href="#">Reply</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
+{{--                                                <ul class="comment-list">--}}
+{{--                                                    <li>--}}
+{{--                                                        <div class="comment-container">--}}
+{{--                                                            <div class="comment-author-vcard">--}}
+{{--                                                                <img alt="" src="images/avatar/avatar.png" />--}}
+{{--                                                            </div>--}}
+{{--                                                            <div class="comment-author-info">--}}
+{{--                                                                <span class="comment-author-name">admin</span>--}}
+{{--                                                                <a href="#" class="comment-date">July 27, 2016</a>--}}
+{{--                                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>--}}
+{{--                                                            </div>--}}
+{{--                                                            <div class="reply">--}}
+{{--                                                                <a class="comment-reply-link" href="#">Reply</a>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                        <ul class="children">--}}
+{{--                                                            <li>--}}
+{{--                                                                <div class="comment-container">--}}
+{{--                                                                    <div class="comment-author-vcard">--}}
+{{--                                                                        <img alt="" src="images/avatar/avatar.png" />--}}
+{{--                                                                    </div>--}}
+{{--                                                                    <div class="comment-author-info">--}}
+{{--                                                                        <span class="comment-author-name">admin</span>--}}
+{{--                                                                        <a href="#" class="comment-date">July 27, 2016</a>--}}
+{{--                                                                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>--}}
+{{--                                                                    </div>--}}
+{{--                                                                    <div class="reply">--}}
+{{--                                                                        <a class="comment-reply-link" href="#">Reply</a>--}}
+{{--                                                                    </div>--}}
+{{--                                                                </div>--}}
+{{--                                                            </li>--}}
+{{--                                                        </ul>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li>--}}
+{{--                                                        <div class="comment-container">--}}
+{{--                                                            <div class="comment-author-vcard">--}}
+{{--                                                                <img alt="" src="images/avatar/avatar.png" />--}}
+{{--                                                            </div>--}}
+{{--                                                            <div class="comment-author-info">--}}
+{{--                                                                <span class="comment-author-name">admin</span>--}}
+{{--                                                                <a href="#" class="comment-date">July 27, 2016</a>--}}
+{{--                                                                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>--}}
+{{--                                                            </div>--}}
+{{--                                                            <div class="reply">--}}
+{{--                                                                <a class="comment-reply-link" href="#">Reply</a>--}}
+{{--                                                            </div>--}}
+{{--                                                        </div>--}}
+{{--                                                    </li>--}}
+{{--                                                </ul>--}}
                                             </div>
-                                            <div class="single-comment-form mt-0">
-                                                <div class="mb-2">
-                                                    <h2 class="comment-title">LEAVE A REPLY</h2>
+                                            <div class="comments-area">
+                                                <div class="single-comments-list mt-0">
+                                                    <div class="mb-2">
+                                                        {{--                                        <h2 class="comment-title fa fa-comment-o"> {{count($comments)}} Comment</h2>--}}
+                                                    </div>
                                                 </div>
-                                                <form class="comment-form">
+                                                <div class="single-comment-form">
+                                                    <div class="mb-2">
+                                                        <h2 class="comment-title">LEAVE A Comment</h2>
+                                                    </div>
+                                                    {{--                                    <form action="{{url("/blog/comment")}}" method="post" class="comment-form">--}}
+                                                    {{--                                        @method("POST")--}}
+                                                    {{--                                        @csrf--}}
+                                                    <input type="hidden" id="blog_id" name="blog_id" value="{{$product->id}}}"
+                                                           data-id="{{$product->id}}"/>
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <textarea id="comment" name="comment" cols="45" rows="5" placeholder="Message *"></textarea>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-4">
-                                                            <input id="author" name="author" type="text" value="" size="30" placeholder="Name *" class="mb-2">
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <input id="email" name="email" type="email" value="" size="30" placeholder="Email *" class="mb-2">
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <input id="url" name="url" type="text" value="" placeholder="Website">
+                                            <textarea id="comment" onkeypress="postComment1()" name="content" cols="45" rows="5"
+                                                      placeholder="Send A Comment"></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-md-2">
-                                                            <button type="submit" id="submit" class="btn btn-alt btn-border">Submit</button>
+                                                            <button type="button" id="buttonsave" onclick="postComment()"
+                                                                    class="btn btn-success">Send
+                                                            </button>
                                                         </div>
                                                     </div>
-                                                </form>
+                                                    {{--                                    </form>--}}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -224,33 +227,6 @@
                                         <div class="text-center mb-1 section-pretitle fz-34">Related</div>
                                         <h2 class="text-center section-title mtn-2 fz-24">Products</h2>
                                     </div>
-{{--                                    <div class="product-carousel p-0" data-auto-play="true" data-desktop="3" data-laptop="2" data-tablet="2" data-mobile="1">--}}
-{{--                                        @foreach($products as $p)--}}
-{{--                                        <div class="product-item text-center">--}}
-
-{{--                                            <div class="product-thumb">--}}
-{{--                                                <a href="{{$p->getProductUrl()}}">--}}
-{{--                                                    <div class="badges">--}}
-{{--                                                        <span class="hot">Hot</span>--}}
-{{--                                                    </div>--}}
-{{--                                                    <img src="{{$p->__get("product_image")}}" alt="" />--}}
-{{--                                                </a>--}}
-{{--                                                <div class="product-action">--}}
-{{--															<span class="add-to-cart">--}}
-{{--																<a href="javascript: void(0);"--}}
-{{--                                                                   onclick="addToCart({{$product->__get("id")}})" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>--}}
-{{--															</span>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="product-info">--}}
-{{--                                                <a href="{{$p->getProductUrl()}}">--}}
-{{--                                                    <h2 class="title">{{$p->__get("product_name")}}</h2>--}}
-{{--                                                    <span class="price">${{$p->__get("product_price")}}</span>--}}
-{{--                                                </a>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        @endforeach--}}
-{{--                                    </div>--}}
                                 </div>
                             </div>
                         </div>
@@ -263,32 +239,73 @@
                                     <input type="submit" value="Search" />
                                 </form>
                             </div>
-{{--                            <div class="widget widget-product-categories">--}}
-{{--                                <h3 class="widget-title">Categories List</h3>--}}
-{{--                                <ul class="product-categories">--}}
-{{--                                    @foreach($categories as $category)--}}
-{{--                                    <li><a href="#">{{$category->__get("category_name")}}</a> <span class="count"></span></li>--}}
-{{--                                    @endforeach--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
-{{--                            <div class="widget widget-products">--}}
-{{--                                <h3 class="widget-title">Most Viewer Product</h3>--}}
-{{--                                <ul class="product-list-widget">--}}
-{{--                                    @foreach($products as $p)--}}
-{{--                                    <li>--}}
-{{--                                        <a href="">--}}
-{{--                                            <img src="{{$p->__get("product_image")}}" alt="" />--}}
-{{--                                            <span class="product-title">{{$p->__get("product_name")}}</span>--}}
-{{--                                        </a>--}}
-{{--                                        <ins>${{$p->__get("product_price")}}</ins>--}}
-{{--                                    </li>--}}
-{{--                                    @endforeach--}}
-{{--                                </ul>--}}
-{{--                            </div>--}}
+                            <div class="widget widget-product-categories">
+                                <h3 class="widget-title">Categories List</h3>
+                                <ul class="product-categories">
+                                    <x-frontend.sidebar_item/>
+                                </ul>
+                            </div>
+                            <div class="widget widget-products">
+                                <h3 class="widget-title">Most Viewer Product</h3>
+                                <ul class="product-list-widget">
+                                    @foreach($products as $p)
+                                    <li>
+                                        <a href="{{$p->getProductUrl()}}">
+                                            <img src="{{$p->__get("product_image")}}" alt="" />
+                                            <span class="product-title">{{$p->__get("product_name")}}</span>
+                                        </a>
+                                        <ins>${{$p->__get("product_price")}}</ins>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        function postComment1() {
+            var key = window.event.keyCode;
+            if (key === 13) {
+                var id = $("#product_id").attr('data-id');
+                var comment = $("#comment").val();
+                $.ajax({
+                    method: "post",
+                    url: '{{url("/product/comment")}}',
+                    data: {
+                        id: id,
+                        comment: comment,
+                        _token: "{{csrf_token()}}"
+                    },
+                    success: function (response) {
+                        $('.comment-list').append(response);
+                        $("#comment").val('');
+                    }
+                })
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+        function postComment() {
+            var id = $("#blog_id").attr('data-id');
+            var comment = $("#comment").val();
+            $.ajax({
+                method: "post",
+                url: '{{url("/blog/comment")}}',
+                data: {
+                    id: id,
+                    comment: comment,
+                    _token: "{{csrf_token()}}"
+                },
+                success: function (response) {
+                    $('.comment-list').append(response);
+                    $("#comment").val('');
+                }
+            })
+        }
+    </script>
 @endsection
