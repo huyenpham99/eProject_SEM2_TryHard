@@ -26,10 +26,11 @@ class WebController extends Controller
         $countorder       = count($order);
         $order_product    = DB::table("orders_products")->count();
         $completecount    = count($order);
-        $totalMoney       = number_format(Order::select("grand_total")->sum('grand_total')) . "$";
+        $totalMoney       = number_format(Order::select("grand_total")->sum('grand_total'));
         $event            = Event::all();
         $countEvent       = count($event);
         $totalPeople      = Event::select("event_people_count")->sum('event_people_count');
+
         $blog = BlogCategory::leftjoin('blog','blogcategory.id',"=","blog.blog_category_id")
             ->selectRaw('blogcategory.*, count(blog.id) as countBlogs')
             ->groupBy("blogcategory.id")
@@ -46,7 +47,6 @@ class WebController extends Controller
             ->orderByDesc('view')
             ->limit(10)
             ->get();
-        ;
         $label1 = $blogcount->pluck('blog_category_name');
         $values = $blogcount->pluck('countBlogs');
         $chart = new BlogChart();
@@ -59,6 +59,37 @@ class WebController extends Controller
         $chart2->labels($label2);
         $dataset = $chart2->dataset('View Count Each Blog', 'line', $values2);
         $dataset->backgroundColor(collect(['#ff6397','#3ae374', '#ff3838','#7158e2']));
+
+       $blog = BlogCategory::leftjoin('blog','blogcategory.id',"=","blog.blog_category_id")
+           ->selectRaw('blogcategory.*, count(blog.id) as countBlogs')
+           ->groupBy("blogcategory.id")
+           ->orderByDesc('countBlogs')
+           ->get()
+       $blogcount = BlogCategory::leftjoin('blog','blogcategory.id',"=","blog.blog_category_id");
+           ->selectRaw('blogcategory.*,count(blog.id) as countBlogs')
+           ->groupBy("blogcategory.id")
+           ->orderByDesc('countBlogs')
+           ->get();
+       $viewcount =  DB::table('blog')
+           ->select('blog.view_count as view','blog.blog_title','blog.id')
+           ->groupBy('blog.id')
+           ->orderByDesc('view')
+           ->limit(10)
+           ->get();
+      
+       $label1 = $blogcount->pluck('blog_category_name');
+       $values = $blogcount->pluck('countBlogs');
+       $chart = new BlogChart();
+       $chart->labels($label1);
+       $dataset = $chart->dataset('Blog Count Each Category', 'bar', $values);
+       $dataset->backgroundColor(collect(['#ff6397','#3ae374', '#ff3838','#7158e2']));
+       $chart2 = new BlogChart2();
+       $label2 = $viewcount->pluck('id');
+       $values2 = $viewcount->pluck('view');
+       $chart2->labels($label2);
+       $dataset = $chart2->dataset('View Count Each Blog', 'line', $values2);
+       $dataset->backgroundColor(collect(['#ff6397','#3ae374', '#ff3838','#7158e2']));
+
         return view("dashboard", [
             'countblog' => $countBlog,
             'viewcountblog' => $sumViewCount,
@@ -69,8 +100,8 @@ class WebController extends Controller
             'totalpeople' => $totalPeople,
             'pendingcount' => $order_product,
             'completecount' => $completecount,
-            'chart' => $chart,
-            'chart2' => $chart2,
+           'chart' => $chart,
+           'chart2' => $chart2,
         ]);
     }
 }
