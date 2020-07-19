@@ -27,7 +27,7 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label>User Id</label>
+                    <label>User</label>
                     <select name="user_id" class="form-control">
                     @foreach($user as $u)
                             <option>{{$u->__get("id")}}</option>
