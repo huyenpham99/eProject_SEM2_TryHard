@@ -28,7 +28,7 @@ class UpdateTablePrograms1 extends Migration
     {
         Schema::table('program', function (Blueprint $table) {
             $table->dropForeign(["program_category_id"]);
-            $table->dropColumn("program_category_id");
+            $table->dropColumn(["program_category_id"]);
         });
     }
 }
