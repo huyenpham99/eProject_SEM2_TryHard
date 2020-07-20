@@ -44,7 +44,7 @@
                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                    class="p-0 btn">
 
-                                    <img width="42" class="rounded-circle" src="{{\Illuminate\Support\Facades\Auth::user()->__get("image")}}" alt="">
+                                    <img style="border-radius: 50%; width: 50px;height: 50px; overflow: hidden"src="{{\Illuminate\Support\Facades\Auth::user()->__get("image")}}" alt="">
 
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>

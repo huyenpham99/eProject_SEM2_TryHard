@@ -19,8 +19,9 @@
                                 </li>
                             @else
                                 <li class="dropdown mega-menu">
-                                    <p data-toggle="dropdown">Welcome
-                                        , {{\Illuminate\Support\Facades\Auth::user()->name}}<i
+                                    <p data-toggle="dropdown"><img style="position:absolute; top: -15px;left: -45px; border-radius: 50%; width: 50px;height: 50px; overflow: hidden"src="{{\Illuminate\Support\Facades\Auth::user()->__get("image")}}" alt="">
+
+                                         {{\Illuminate\Support\Facades\Auth::user()->name}}<i
                                             class="fa fa-angle-down ml-1 opacity-8"></i></p>
                                     <ul class="sub-menu" style="background-color: white!important;width: 200px;">
                                         <li style="padding: 10px 0">
