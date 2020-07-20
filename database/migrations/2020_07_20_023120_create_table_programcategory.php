@@ -18,7 +18,6 @@ class CreateTableProgramcategory extends Migration
             $table->string("progam_category_name");
             $table->string("program_category_image")->nullable();
             $table->string("slug")->nullable();
-
             $table->timestamps();
         });
     }
