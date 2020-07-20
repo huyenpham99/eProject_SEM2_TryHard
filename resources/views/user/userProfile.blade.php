@@ -8,16 +8,50 @@
 
    <section>
        <div class="container">
-           <nav>
-               <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                   <h5 class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Profile</h5>
-                   <h5 class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Order</h5>
-                   <h5 class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Blog</h5>
+           <ul class="nav nav-tabs" id="myTab" role="tablist">
+               <li class="nav-item" role="presentation">
+                   <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+               </li>
+               <li class="nav-item" role="presentation">
+                   <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+               </li>
+               <li class="nav-item" role="presentation">
+                   <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+               </li>
+           </ul>
+           <div class="tab-content" id="myTabContent">
+               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                   <div class="table-responsive">
+                       <table class="table align-items-center table-flush">
+                           <thead class="thead-light">
+                           <tr>
+                               <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                   data-sort="name">Đơn hàng số
+                               </th>
+                               <th>Tên đơn hàng</th>
+                               <th>Trạng thái đơn hàng</th>
+
+                           </tr>
+                           </thead>
+                           <tbody class="list">
+                           @foreach($orders as $order)
+                               <tr>
+                                   <td>Số: {{$order->order_id}}</td>
+                                   <td>{{$order->product_name}}</td>
+                                   @if($order->status == 1)
+                                       <td><a style="color: white" class="btn btn-danger">Chờ xác nhận</a></td>
+                                   @elseif($order->status == 2) <td><a style="color: white" class="btn btn-primary">Đang giao hàng</a></td>
+                                   @elseif($order->status == 3) <td><a style="color: white" class="btn btn-success">Đã hoàn thành</a></td>
+                                   @elseif($order->status == 4) <td><a style="color: white" class="btn btn-dark">Đã hủy đơn</a></td>
+                                   @endif
+
+                               </tr>
+                           @endforeach
+                           </tbody>
+                       </table>
+                   </div>
                </div>
-           </nav>
-           <div class="tab-content" id="nav-tabContent">
-               <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                   <form action="{{url("update-user/{$currentUser->__get("id")}")}}" method="post" enctype="multipart/form-data">
+               <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">  <form action="{{url("update-user/{$currentUser->__get("id")}")}}" method="post" enctype="multipart/form-data">
                        @method("PUT")
                        {{--            // method"POST" dùng để báo route--}}
                        @csrf
@@ -101,46 +135,9 @@
                        <!-- Description -->
                        <button style="width: 80px" type="submit" class="btn btn-primary btn-lg btn-block btn-sm">Change</button>
                    </form>
-
                </div>
-               <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                   <div class="table-responsive">
-                       <table class="table align-items-center table-flush">
-                           <thead class="thead-light">
-                           <tr>
-                               <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                   data-sort="name">Đơn hàng số
-                               </th>
-                               <th>Tên đơn hàng</th>
-                               <th>Trạng thái đơn hàng</th>
-
-                           </tr>
-                           </thead>
-                           <tbody class="list">
-                           @foreach($orders as $order)
-                               <tr>
-                                   <td>Số: {{$order->order_id}}</td>
-                                   <td>{{$order->product_name}}</td>
-                                   @if($order->status == 1)
-                                       <td><a style="color: white" class="btn btn-danger">Chờ xác nhận</a></td>
-                                   @elseif($order->status == 2) <td><a style="color: white" class="btn btn-primary">Đang giao hàng</a></td>
-                                   @elseif($order->status == 3) <td><a style="color: white" class="btn btn-success">Đã hoàn thành</a></td>
-                                   @elseif($order->status == 4) <td><a style="color: white" class="btn btn-dark">Đã hủy đơn</a></td>
-                                   @endif
-
-                               </tr>
-                           @endforeach
-                           </tbody>
-                       </table>
-                   </div>
-               </div>
-               <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-
-               </div>
+               <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
            </div>
-
-
-
 
        </div>
    </section>
@@ -151,7 +148,12 @@
 </html>
 
 
-
+<script>
+    $('#myTab a').on('click', function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    })
+</script>
 
 
 
