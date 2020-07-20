@@ -129,7 +129,7 @@ class UserController extends Controller
             //upload image
             Cloudder::upload($filename, 'uploads/' . $filename->getClientOriginalName());
         }
-        Cloudder::show('uploads/'. $filename->getClientOriginalName());
+        Cloudder::show('uploads/'.$filename->getClientOriginalName());
         try {
             $user->update([
                 "name"=>$request->get("name"),
@@ -139,7 +139,7 @@ class UserController extends Controller
                 "telephone"=>$request->get("telephone"),
             ]);
         }catch (\Exception $exception){
-//            return redirect()->back();
+            return redirect()->back();
             dd($exception->getMessage());
         }
         return redirect()->to('/')->with('message', 'Change profile successfully!');
