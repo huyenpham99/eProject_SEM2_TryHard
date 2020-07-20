@@ -39,7 +39,7 @@ class WebController extends Controller
         $viewcount = DB::table('blog')
             ->selectRaw('blog.view_count as view', 'blog.blog_title', 'blog.id')
             ->groupByRaw('blog.id')
-            ->orderByDescRaw('view')
+            ->orderByDesc('view')
             ->limit(10)
             ->get();
         $label1    = $blogcount->pluck('blog_category_name');
