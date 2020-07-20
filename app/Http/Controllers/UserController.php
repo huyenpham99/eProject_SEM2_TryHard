@@ -111,7 +111,7 @@ class UserController extends Controller
     public function viewUser1($id){
         $currentUser = User::findorFail($id);
         $orders = DB::table("orders_products")->leftJoin("orders", "orders.id", "=", "orders_products.order_id")
-            ->leftJoin("products","products.id","=","orders_products.product_id")->get();
+        ->leftJoin("products","products.id","=","orders_products.product_id")->get();
 //        dd($orders);
         return view("user.userProfile",[
             "currentUser" => $currentUser,
@@ -129,6 +129,7 @@ class UserController extends Controller
             //upload image
             Cloudder::upload($filename, 'uploads/' . $filename->getClientOriginalName());
         }
+        Cloudder::show('uploads/'.$filename->getClientOriginalName());
         try {
             $user->update([
                 "name"=>$request->get("name"),
@@ -138,8 +139,7 @@ class UserController extends Controller
                 "telephone"=>$request->get("telephone"),
             ]);
         }catch (\Exception $exception){
-//            return redirect()->back();
-            dd($exception->getMessage());
+            return redirect()->back();
         }
         return redirect()->to('/')->with('message', 'Change profile successfully!');
     }

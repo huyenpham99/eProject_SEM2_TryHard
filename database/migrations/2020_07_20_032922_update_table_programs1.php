@@ -14,7 +14,7 @@ class UpdateTablePrograms1 extends Migration
     public function up()
     {
         Schema::table('program', function (Blueprint $table) {
-            $table->string("program_category_id");
+            $table->unsignedBigInteger("program_category_id");
             $table->foreign("program_category_id")->references("id")->on("programcategory");
         });
     }

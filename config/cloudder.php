@@ -18,12 +18,4 @@ return [
     'apiBaseUrl' => env('CLOUDINARY_API_BASE_URL', 'https://api.cloudinary.com/v1_1/'.env('CLOUDINARY_CLOUD_NAME')),
     'apiKey'     => env('CLOUDINARY_API_KEY'),
     'apiSecret'  => env('CLOUDINARY_API_SECRET'),
-
-    'scaling'    => [
-        'width'  => 150,
-        'height' => 150,
-        'crop'   => 'fit',
-        'effect' => null
-    ],
-
 ];

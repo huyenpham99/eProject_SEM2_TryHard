@@ -99,7 +99,7 @@
                             </li>
 
                             <li>
-                                <a href="{{url("/programs")}}">Programs</a>
+                                <a href="{{url("/programcategory")}}">Programs</a>
                             </li>
                             <li class="dropdown mega-menu">
                                 <a href="{{url("/shop/dried5")}}">Shop</a>

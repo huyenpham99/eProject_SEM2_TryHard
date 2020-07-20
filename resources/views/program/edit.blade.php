@@ -39,6 +39,14 @@
                                 @endforeach
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label>Program Category</label>
+                            <select name="program_category_id" class="form-control">
+                                @foreach($programcategory as $programcategory)
+                                    <option value="{{$programcategory->__get("id")}}">{{$programcategory->__get("progam_category_name")}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
