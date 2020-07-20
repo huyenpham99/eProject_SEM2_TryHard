@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Order;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use JD\Cloudder\CloudderServiceProvider;
 use JD\Cloudder\Facades\Cloudder;
@@ -109,8 +110,9 @@ class UserController extends Controller
     }
     public function viewUser1($id){
         $currentUser = User::findorFail($id);
-        $orders = Order::where("user_id", "=", $id)->get();
-
+        $orders = DB::table("orders_products")->leftJoin("orders", "orders.id", "=", "orders_products.order_id")
+        ->leftJoin("products","products.id","=","orders_products.product_id")->get();
+//        dd($orders);
         return view("user.userProfile",[
             "currentUser" => $currentUser,
             "orders"=> $orders,
@@ -123,23 +125,21 @@ class UserController extends Controller
         ]);
         if ($request->hasFile('image')) {
             //get name image
-            $filename = $request->image;
+            $filename = $request->file('image');
             //upload image
-            Cloudder::upload($filename, 'uploads/' . $id, array('fetch_format' => 'auto',
-                'quality' => 'auto',
-                'crop' => 'scale',
-                ));
+            Cloudder::upload($filename, 'uploads/' . $filename->getClientOriginalName());
         }
+        Cloudder::show('uploads/'.$filename->getClientOriginalName());
         try {
             $user->update([
                 "name"=>$request->get("name"),
-                "image"=>Cloudder::show('uploads/'. $filename),
+                "image"=>Cloudder::show('uploads/'. $filename->getClientOriginalName()),
                 "email"=>$request->get("email"),
                 "address"=>$request->get("address"),
                 "telephone"=>$request->get("telephone"),
             ]);
         }catch (\Exception $exception){
-//            return redirect()->back();
+            return redirect()->back();
             dd($exception->getMessage());
         }
         return redirect()->to('/')->with('message', 'Change profile successfully!');
