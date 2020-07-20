@@ -80,6 +80,7 @@ class ProgramDetailController extends Controller
                 "program_id" => $request->get("program_id"),
             ]);
         } catch (\Exception $exception) {
+            dd($exception->getMessage());
             return redirect()->back();
         }
         return redirect()->to("/admin/list-program-detail");

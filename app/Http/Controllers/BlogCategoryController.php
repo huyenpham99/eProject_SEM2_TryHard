@@ -36,7 +36,7 @@ class BlogCategoryController extends Controller
         } catch (\Exception $exception) {
            dd($exception->getMessage());
         }
-//        return redirect()->to("/admin/list-blogcategory");
+        return redirect()->to("/admin/list-blogcategory");
     }
 
     public function editBlogCategory($id)

@@ -57,10 +57,6 @@ class HomeController extends Controller
             $p->slug = $slug . $p->__get("id");// luu lai vao DB
             $p->save();
         }
-//        $u = Auth::user();
-//        $u->role =User::ADMIN_ROLE;
-//        $u->save();
-//        die("done");
 //        Tạo slug Blog
         foreach ($blog as $p) {
             $slug    = \Illuminate\Support\Str::slug($p->__get("title"));
@@ -100,7 +96,7 @@ class HomeController extends Controller
             $blog->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
             session(["view_count{$blog->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
         }
-        $comments = $blog->comments;
+        $comments = Comment::with('blog')->simplePaginate(4);
         return view("frontend.blog-detail", [
             "blog" => $blog,
             "comments" => $comments,
@@ -171,7 +167,7 @@ class HomeController extends Controller
 
     public function productdetail(Product $product)
     {
-        $products   = Product::all();
+        $products   = Product::paginate(4);
         $categories = Category::all();
         if (!session()->has("view_count_{$product->__get("id")}")) {// kiểm tra xem sesion  nếu chưa có sẽ đăng lên
             $product->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm

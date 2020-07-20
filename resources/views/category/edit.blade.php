@@ -28,7 +28,7 @@
                         <div><label for="exampleInputEmail1">Category Image</label></div>
                         <img src="{{$category->get("category_image")}}" style="width: 70px; height: 70px;"/>
                         <input class="form-control @error("category_image") is-invalid @enderror" type="text" name="category_image" />
-                        @error("product_image")
+                        @error("category_image")
                         <span class="error invalid-feedback">{{$message}}</span>
                         @enderror
                     </div>

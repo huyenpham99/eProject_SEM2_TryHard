@@ -39,7 +39,7 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label>Program Id</label>
+                    <label>Program ID</label>
                     <select name="program_id" class="form-control">
                         @foreach($program as $program)
                             <option>{{$program->__get("id")}}</option>
