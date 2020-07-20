@@ -49,7 +49,13 @@ Route::get("/edit-program/{id}","ProgramController@editProgram");
 Route::put("/update-program/{id}","ProgramController@updateProgram");
 Route::delete("/delete-program/{id}","ProgramController@deleteProgram");
 
-
+//Program Router
+Route::get("/list-programcategory","ProgramCategoryController@listProgramCategory");
+Route::get("/new-programcategory","ProgramCategoryController@newProgramCategory");
+Route::post("/save-programcategory","ProgramCategoryController@saveProgramCategory");
+Route::get("/edit-programcategory/{id}","ProgramCategoryController@editProgramCategory");
+Route::put("/update-programcategory/{id}","ProgramCategoryController@updateProgramCategory");
+Route::delete("/delete-programcategory/{id}","ProgramCategoryController@deleteProgramCategory");
 
 
 //Event Router
