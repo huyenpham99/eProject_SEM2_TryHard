@@ -57,10 +57,6 @@ class HomeController extends Controller
             $p->slug = $slug . $p->__get("id");// luu lai vao DB
             $p->save();
         }
-//        $u = Auth::user();
-//        $u->role =User::ADMIN_ROLE;
-//        $u->save();
-//        die("done");
 //        Tạo slug Blog
         foreach ($blog as $p) {
             $slug    = \Illuminate\Support\Str::slug($p->__get("title"));
