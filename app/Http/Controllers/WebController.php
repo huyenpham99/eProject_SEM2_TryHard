@@ -34,12 +34,12 @@ class WebController extends Controller
         $blogcount = BlogCategory::leftjoin('blog', 'blogcategory.id', "=", "blog.blog_category_id")
             ->selectRaw('blogcategory.id,count(blog.id) as countBlogs')
             ->groupByRaw("blogcategory.id")
-            ->orderByRaw('countBlogs')
+            ->orderByRaw('countBlogs DESC')
             ->get();
         $viewcount = DB::table('blog')
             ->select('blog.view_count as view', 'blog.blog_title', 'blog.id')
             ->groupByRaw('blog.id')
-            ->orderByRaw('view')
+            ->orderByRaw('view DESC')
             ->limit(10)
             ->get();
         $label1    = $blogcount->pluck('blog_category_name');
