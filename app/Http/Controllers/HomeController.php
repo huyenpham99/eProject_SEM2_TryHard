@@ -13,6 +13,8 @@ use App\Events\OrderCreated;
 use App\Order;
 use App\Product;
 use App\Program;
+use App\ProgramCategory;
+use App\ProgramDetail;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -180,11 +182,20 @@ class HomeController extends Controller
         ]);
     }
 
-    public function programs()
+    public function programcategory()
     {
-        $program = Program::paginate(5);
-        return view("frontend.programs", [
+        $programcategory = ProgramCategory::paginate(5);
+        return view("frontend.programcategory", [
+            "programcategory" => $programcategory,
+        ]);
+    }
+    public function program()
+    {
+        $programdetail = ProgramDetail::paginate(4);
+        $program= Program::paginate(5);
+        return view("frontend.program", [
             "program" => $program,
+            "programdetail"=>$programdetail
         ]);
     }
 

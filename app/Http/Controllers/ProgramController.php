@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Program;
+use App\ProgramCategory;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -23,10 +24,12 @@ class ProgramController extends Controller
     public function newProgram()
     {
         $user =User::all();
+        $programcategory =ProgramCategory::all();
 //        dd($user);
 
         return view("program.new",[
-            "user"=>$user
+            "user"=>$user,
+            "programcategory"=>$programcategory,
         ]);
     }
 
@@ -42,9 +45,11 @@ class ProgramController extends Controller
                 "program_name" => $request->get("program_name"),
                 "program_image"=>$request->get("program_image"),
                 "user_id"=>$request->get("user_id"),
+                "program_category_id"=>$request->get("program_category_id"),
             ]);
 
         } catch (\Exception $exception) {
+            dd($exception->getMessage());
             return redirect()->back();
         }
         return redirect()->to("/admin/list-program");
@@ -54,10 +59,12 @@ class ProgramController extends Controller
     public function editProgram($id)
     {
         $user = User::all();
+        $programcategory =ProgramCategory::all();
         $program = Program::findOrFail($id);
         return view("program.edit",
             ["program" => $program,
-                "user"=>$user
+                "user"=>$user,
+                "programcategory"=>$programcategory
                 ]);
     }
 
@@ -75,9 +82,10 @@ class ProgramController extends Controller
                 "program_name" => $request->get("program_name"),
                 "program_image"=>$request->get("program_image"),
                 "user_id"=>$request->get("user_id"),
+                "program_category_id"=>$request->get("program_category_id"),
             ]);
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
+//            dd($exception->getMessage());
             return redirect()->back();
         }
         return redirect()->to("/admin/list-program");

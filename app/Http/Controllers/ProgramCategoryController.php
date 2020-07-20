@@ -35,10 +35,10 @@ class ProgramCategoryController extends Controller
             ]);
 
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
+//            dd($exception->getMessage());
             return redirect()->back();
         }
-//        return redirect()->to("/admin/list-programcategory");
+        return redirect()->to("/admin/list-programcategory");
 
     }
 

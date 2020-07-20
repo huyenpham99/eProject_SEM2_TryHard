@@ -17,6 +17,9 @@ class ProgramCategory extends Model
         return "slug";
     }
 
+    public function Program(){
+        return $this->hasMany("App\Program"); // tra ve 1 collection
+    }
     public function getProgramCategoryUrl(){
         return url("/programcategory/{$this->__get("slug")}");
     }

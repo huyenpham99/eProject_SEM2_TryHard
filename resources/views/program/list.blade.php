@@ -31,10 +31,7 @@
                                 data-sort="name">User Name
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Created At
-                            </th>
-                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Updated At
+                                data-sort="name">Program Category Name
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Edit
@@ -51,8 +48,7 @@
                                 <td>{{$program->__get("program_name")}}</td>
                                 <td><img src="{{$program->__get("program_image")}}" style="width: 50px; height: 50px"></td>
                                 <td>{{$program->User->__get("name")}}</td>
-                                <td>{{$program->__get("created_at")}}</td>
-                                <td>{{$program->__get("updated_at")}}</td>
+                                <td>{{$program->ProgramCategory->__get("progam_category_name")}}</td>
                                 <td>
                                     <a href="{{url("/admin/edit-program/{$program->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
 

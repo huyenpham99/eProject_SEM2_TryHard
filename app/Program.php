@@ -11,7 +11,8 @@ class Program extends Model
     public $fillable = [
         "program_name",
         "program_image",
-        "user_id"
+        "user_id",
+        "program_category_id"
     ];
 
     public function getProgramUrl()
@@ -19,6 +20,9 @@ class Program extends Model
         return url("/program/{$this->__get("slug")}");
     }
 
+    public function ProgramCategory(){
+        return $this->belongsTo("App\ProgramCategory", "program_category_id");
+    }
     public function User()
     {
         return $this->belongsTo("\App\User", "user_id");
