@@ -35,6 +35,15 @@
                     @endforeach
                     </select>
                 </div>
+                <div class="form-group">
+                    <label>Program Category</label>
+                    <select name="program_category_id" class="form-control">
+                        @foreach($programcategory as $programcategory)
+                            <option>{{$programcategory->__get("id")}}</option>
+                            {{--                        @php dd($u)@endphp--}}
+                        @endforeach
+                    </select>
+                </div>
             </div>
 
 
