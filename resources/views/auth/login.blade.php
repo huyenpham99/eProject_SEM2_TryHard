@@ -63,7 +63,7 @@
                                             </a>
                                         </div>
                                         <hr>
-                                        <a href="{{url("/")}}" class="btn btn-google btn-user btn-block">
+                                        <a href="{{ url('/auth/redirect/google') }}" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google
                                         </a>
                                         <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-facebook btn-user btn-block">
