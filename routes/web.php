@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use SimpleSoftwareIO\QrCode\Generator;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +36,8 @@ Route::get('/callback/{provider}', 'SocialController@callback');
 Route::get('/404', 'HomeController@Error');
 
 Route::get("/search", "ProductController@searchUser");
+
+Route::get('/qr-code', function () {
+    $qrcode = new Generator;
+    return $qrcode->size(200)->generate('I love you me Min!');
+});

@@ -179,6 +179,8 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         //cloudinary
         JD\Cloudder\CloudderServiceProvider::class,
+        //QRcode
+        \SimpleSoftwareIO\QrCode\ServiceProvider::class,
     ],
 
     /*
@@ -192,7 +194,7 @@ return [
     |
     */
 
-    'aliases' => [
+    'aliases' => array(
 
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
@@ -234,6 +236,9 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         //cloudinary
         'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
-    ],
+        //qrcode
+        //'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facade\QrCode::class,
+    ),
 
 ];
