@@ -130,13 +130,6 @@
                   </div>
               </div>
            </div>
-
-
-
-
-
-
-
        </div>
    </section>
 
@@ -146,7 +139,12 @@
 </html>
 
 
-
+<script>
+    $('#myTab a').on('click', function (e) {
+        e.preventDefault();
+        $(this).tab('show')
+    })
+</script>
 
 
 

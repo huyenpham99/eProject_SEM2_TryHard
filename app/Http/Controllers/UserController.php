@@ -140,7 +140,6 @@ class UserController extends Controller
             ]);
         }catch (\Exception $exception){
             return redirect()->back();
-            dd($exception->getMessage());
         }
         return redirect()->to('/')->with('message', 'Change profile successfully!');
     }
