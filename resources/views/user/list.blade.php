@@ -5,7 +5,7 @@
 
     <div class="search-wrapper">
         <div class="input-holder">
-            <input type="text" class="search-input search" id="search" name="search" placeholder="Type to search">
+            <input type="text" class="search-input search" id="search-user" name="search" placeholder="Type to search">
             <button class="search-icon"><span></span></button>
         </div>
         <button class="close"></button>

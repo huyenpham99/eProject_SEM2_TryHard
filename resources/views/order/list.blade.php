@@ -2,17 +2,20 @@
 @section("title", "OrderController List")
 @section("contentHeader", "OrderController List")
 @section("content")
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <div class="row mt-4">
         <div class="col">
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left">Order List</h2>
+                    <h2 class="mb-0 col-lg-4 float-left">Order List</h2>
+                    <p class="col-lg-5 mt-3 float-left">Tổng số đơn hàng đã hoàn thành: <b style="background-color: green; color: white; padding: 5px 5px 5px 5px; border-radius: 50%">{{$ordersCount}}</b></p>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
                         <a href="{{url("admin/new-order")}}" class="btn btn-sm btn-neutral">Create</a>
-                        {{--                        @foreach($categories as $category)--}}
-                        {{--                            <a href="{{url("admin/admin/edit-category/{$category->__get("id")}")}}" class="btn btn-sm btn-neutral">Update</a>--}}
-                        {{--                        @endforeach--}}
 
                     </div>
                 </div>
@@ -36,7 +39,7 @@
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Note
                             </th>
-                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                            <th scope="col" width="200px" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Status
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"

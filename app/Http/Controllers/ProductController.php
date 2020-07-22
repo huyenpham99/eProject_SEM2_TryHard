@@ -97,12 +97,16 @@ class ProductController extends Controller
         }
         return redirect()->to("/admin/list-product");
     }
-    public function searchUser(Request $request){
+    public function searchProduct(Request $request, $value){
         $output = '';
-        if ($request->ajax()) {
-            $products = Product::where('product_name', 'like', '%'.$request->search.'%')
-                ->orwhere('product_desc', '%'.$request->search.'%')
-                ->orwhere('product_price', '%'.$request->search.'%')->get();
+                if ($value == "all"){
+                    $products = Product::all();
+                }else{
+                    $products = Product::where('product_name', 'like', '%'. $value .'%')
+                        ->orwhere('product_desc', '%'.$value.'%')
+                        ->orwhere('product_price', '%'.$value.'%')
+                        ->get();
+                }
             if ($products) {
                 foreach ($products as $key => $product) {
                     $output .= '<tr>
@@ -122,7 +126,8 @@ class ProductController extends Controller
                                 </td>
                                 <td>
                                     <form action="http://127.0.0.1:8000/admin/delete-product/'. $product->id .'" method="post">
-                                        <input type="hidden" name="_method" value="DELETE">                                        <input type="hidden" name="_token" value="dAKuGx9nKdhb78Z0djNgUel4rJrC3qQXDbvkYF8M">                                        <button type="submit" onclick="return confirm(\'chac khong?\');" class="btn btn-outline-dark">Delete</button>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="dAKuGx9nKdhb78Z0djNgUel4rJrC3qQXDbvkYF8M">                                        <button type="submit" onclick="return confirm(\'chac khong?\');" class="btn btn-outline-dark">Delete</button>
                                     </form>
                                 </td>
                             </tr>';
@@ -130,6 +135,6 @@ class ProductController extends Controller
             }
             return Response($output);
         }
-    }
+
 }
 

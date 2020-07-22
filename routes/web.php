@@ -35,7 +35,7 @@ Route::get('/callback/{provider}', 'SocialController@callback');
 
 Route::get('/404', 'HomeController@Error');
 
-Route::get("/search", "ProductController@searchUser");
+
 
 Route::get('/qr-code', function () {
     $qrcode = new Generator;

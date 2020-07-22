@@ -104,10 +104,10 @@ Route::delete("/delete-ticket/{id}","TicketController@deleteTicket")->middleware
 
 // ORDer
 Route::get("/list-order","OrderController@listOrder");
-Route::get("/new-order","OrderController@newOrder");
-Route::post("/save-order","OrderController@saveOrder");
 Route::get("/edit-order/{id}","OrderController@editOrder");
 Route::put("/update-order/{id}","OrderController@updateOrder");
 Route::delete("/delete-order/{id}","OrderController@deleteOrder");
 
 
+//product search
+Route::get("/search/{value}", "ProductController@searchProduct");

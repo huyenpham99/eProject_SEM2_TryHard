@@ -96,7 +96,7 @@
                           <button style="width: 80px" type="submit" class="btn btn-primary btn-lg btn-block btn-sm">Change</button>
                       </form>
                   </div>
-                  <div style="position:absolute;right: 0; top: 0px; width: 40%;" class="col-6">
+                  <div style="position:absolute;right: 0; top: 0px; width: 47%;" class="col-6">
                       <h3 class="mb-3">My orders</h3>
                       <div class="table-responsive">
                           <table class="table align-items-center table-flush">
@@ -107,22 +107,36 @@
                                   </th>
                                   <th>Tên đơn hàng</th>
                                   <th>Trạng thái đơn hàng</th>
+                                  <th>Hủy đơn hàng</th>
 
                               </tr>
                               </thead>
                               <tbody class="list">
                               @foreach($orders as $order)
-                                  <tr>
-                                      <td>Số: {{$order->order_id}}</td>
-                                      <td>{{$order->product_name}}</td>
-                                      @if($order->status == 1)
-                                          <td><a style="color: white" class="btn btn-danger">Chờ xác nhận</a></td>
-                                      @elseif($order->status == 2) <td><a style="color: white" class="btn btn-primary">Đang giao hàng</a></td>
-                                      @elseif($order->status == 3) <td><a style="color: white" class="btn btn-success">Đã hoàn thành</a></td>
-                                      @elseif($order->status == 4) <td><a style="color: white" class="btn btn-dark">Đã hủy đơn</a></td>
+                                  @if($order->status == 4)
+                                      <tr>
+                                          <td>Số: {{$order->order_id}}</td>
+                                          <td>{{$order->product_name}}</td>
+                                          <td><a style="color: white" class="btn btn-danger">Đã hủy đơn</a></td>
+                                          <td><button class="btn btn-primary" type="submit">Đặt lại đơn hàng này</button></td>
+                                      </tr>
+                                      @else
+                                      <tr>
+                                          <td>Số: {{$order->order_id}}</td>
+                                          <td>{{$order->product_name}}</td>
+                                          @if($order->status == 1)
+                                              <td><a style="color: white" class="btn btn-danger">Chờ xác nhận</a></td>
+                                          @elseif($order->status == 2) <td><a style="color: white" class="btn btn-primary">Đang giao hàng</a></td>
+                                          @elseif($order->status == 3) <td><a style="color: white" class="btn btn-success">Đã hoàn thành</a></td>
+                                          @elseif($order->status == 4) <td><a style="color: white" class="btn btn-dark">Đã hủy đơn</a></td>
+                                          @endif
+                                          @if($order->status == 1)
+                                              <td><button type="submit">Hủy đơn hàng</button></td>
+                                          @else
+                                              <td></td>
+                                          @endif
+                                      </tr>
                                       @endif
-
-                                  </tr>
                               @endforeach
                               </tbody>
                           </table>
