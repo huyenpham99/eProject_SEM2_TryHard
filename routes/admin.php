@@ -111,3 +111,5 @@ Route::delete("/delete-order/{id}","OrderController@deleteOrder");
 
 //product search
 Route::get("/search/{value}", "ProductController@searchProduct");
+//user search
+Route::get("/searchUser/{value}", "UserController@searchUser");

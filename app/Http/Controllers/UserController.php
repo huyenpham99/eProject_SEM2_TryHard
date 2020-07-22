@@ -143,23 +143,31 @@ class UserController extends Controller
         }
         return redirect()->to('/')->with('message', 'Change profile successfully!');
     }
-//    public function searchUser(Request $request){
-//        if ($request->ajax()) {
-//            $usersFull = User::all();
-//            $output = '';
-//            $users = User::where('name', 'like', '%'.$request->search.'%')->
-//            orwhere('email', '%'.$request->search.'%')->get();
-//            if ($users) {
-//                foreach ($users as $key => $user) {
-//                    $output .= '<tr>
-//                                <td>'. $user->__get("id"). '</td>
-//                                <td>'. $user->__get("name"). '</td>
-//                            </tr>';
-//                }
-//            }
-//            return Response($output);
-//        }
-//    }
+    public function searchUser($value){
+        if ($value == "all"){
+            $users = User::all();
+        }elseif($value== "admin"){
+            $users = User::where('role', "=", 1)->get();
+        }elseif($value== "blog"){
+            $users = User::where('role', "=", 2)->get();
+        }elseif($value== "event"){
+            $users = User::where('role', "=", 3)->get();
+        }elseif($value== "product"){
+            $users = User::where('role', "=", 4)->get();
+        }elseif($value== "program"){
+            $users = User::where('role', "=", 5)->get();
+        }elseif($value== "dead"){
+            $users = User::where('role', "=", 6)->get();
+        }elseif($value== "user"){
+            $users = User::where('role', "=", 0)->get();
+        }else{
+            $users = User::where('name', 'like', '%'.$value.'%')->
+            orwhere('email', 'like', '%'.$value.'%')->get();
+        }
+        return view(("user.searchUser"), [
+            "users" => $users,
+        ]);
+    }
 
 }
 
