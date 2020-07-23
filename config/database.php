@@ -15,8 +15,8 @@ return [
     |
     */
 
-   'default' =>'pgsql',//env('DB_CONNECTION', 'mysql'),//,////env('DB_CONNECTION', 'mysql'),//'pgsql',//
-//    'default' =>env('DB_CONNECTION', 'mysql'),//,////env('DB_CONNECTION', 'mysql'),//'pgsql',//
+//   'default' =>'pgsql',//env('DB_CONNECTION', 'mysql'),
+    'default' =>env('DB_CONNECTION', 'mysql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -151,7 +151,5 @@ return [
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
-
     ],
-
 ];
