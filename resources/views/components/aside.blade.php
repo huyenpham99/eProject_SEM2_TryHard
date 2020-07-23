@@ -297,6 +297,22 @@
                         </ul>
 
                     </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon pe-7s-diamond"></i>
+                            Order
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="{{url("/admin/list-order")}}">
+                                    <i class="metismenu-icon"></i>
+                                    List Order
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
                     @elseif(Auth::user()->role === 2)
                     <li>
                             <a href="#">

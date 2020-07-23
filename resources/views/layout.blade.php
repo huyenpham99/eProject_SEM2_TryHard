@@ -33,20 +33,3 @@
 </script>
 </html>
 
-<script type="text/javascript">
-    $('#search').keyup(function(){
-        $value = $(this).val();
-        $.ajax({
-            type: 'get',
-            url: '{{ \Illuminate\Support\Facades\URL::to('search') }}',
-            success:function(data){
-                console.log(data);
-                if($value===""){
-                    return $('tbody').html(data);
-                }else{
-                    return $('tbody').html(data);
-                }
-            }
-        });
-    });
-</script>

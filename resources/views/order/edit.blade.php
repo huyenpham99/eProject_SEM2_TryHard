@@ -2,6 +2,7 @@
 @section("title", "Update Order")
 @section("contentHeader", "Update Order")
 @section("content")
+
     <div class="row mt-4">
         <div class="col">
             <div class="card">
@@ -47,10 +48,27 @@
                         <div class="form-group">
                             <label>Status</label>
                             <select class="form-control" name="status" id="status">
-                                <option value="1">Chờ xác nhận</option>
-                                <option value="2">Đang giao hàng</option>
-                                <option value="3">Hoàn thành đơn hàng</option>
-                                <option value="4">Hủy đơn hàng</option>
+                                @if($order->__get("status") == 1)
+                                    <option value="1" selected>Chờ xác nhận</option>
+                                    <option value="2">Đang giao hàng</option>
+                                    <option value="3">Hoàn thành đơn hàng</option>
+                                    <option value="4">Hủy đơn hàng</option>
+                                    @elseif($order->__get("status") == 2)
+                                    <option value="1">Chờ xác nhận</option>
+                                    <option value="2" selected>Đang giao hàng</option>
+                                    <option value="3">Hoàn thành đơn hàng</option>
+                                    <option value="4">Hủy đơn hàng</option>
+                                @elseif($order->__get("status") == 3)
+                                    <option value="1">Chờ xác nhận</option>
+                                    <option value="2" >Đang giao hàng</option>
+                                    <option value="3" selected>Hoàn thành đơn hàng</option>
+                                    <option value="4">Hủy đơn hàng</option>
+                                @elseif($order->__get("status") == 4)
+                                    <option value="1">Chờ xác nhận</option>
+                                    <option value="2" >Đang giao hàng</option>
+                                    <option value="3" >Hoàn thành đơn hàng</option>
+                                    <option value="4" selected>Hủy đơn hàng</option>
+                                    @endif
                             </select>
                             @error("status")
                             <span class="error invalid-feedback">{{$message}}</span>

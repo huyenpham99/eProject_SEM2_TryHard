@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Order;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use JD\Cloudder\CloudderServiceProvider;
@@ -109,57 +110,74 @@ class UserController extends Controller
         return redirect()->to('/admin')->with('message', 'Change profile successfully!');
     }
     public function viewUser1($id){
-        $currentUser = User::findorFail($id);
-        $orders = DB::table("orders_products")->leftJoin("orders", "orders.id", "=", "orders_products.order_id")
-        ->leftJoin("products","products.id","=","orders_products.product_id")->get();
-//        dd($orders);
-        return view("user.userProfile",[
-            "currentUser" => $currentUser,
-            "orders"=> $orders,
-        ]);
+        if (Auth::user()->id==$id){
+            $currentUser = User::findorFail($id);
+            $orders = DB::table("orders_products")->leftJoin("orders", "orders.id", "=", "orders_products.order_id")
+                ->leftJoin("products","products.id","=","orders_products.product_id")->where("orders.user_id","=",$id)->get();
+            return view("user.userProfile",[
+                "currentUser" => $currentUser,
+                "orders"=> $orders,
+            ]);
+        }else{
+            return redirect()->to("/404");
+        }
+
     }
     public function updateUser1($id, Request $request){
-        $user = User::findOrFail($id);
-        $this->validate($request,[
-            'image'=>'required|mimes:jpeg,bmp,jpg,png|between:1, 6000',
-        ]);
-        if ($request->hasFile('image')) {
-            //get name image
-            $filename = $request->file('image');
-            //upload image
-            Cloudder::upload($filename, 'uploads/' . $filename->getClientOriginalName());
-        }
-        Cloudder::show('uploads/'.$filename->getClientOriginalName());
-        try {
-            $user->update([
-                "name"=>$request->get("name"),
-                "image"=>Cloudder::show('uploads/'. $filename->getClientOriginalName()),
-                "email"=>$request->get("email"),
-                "address"=>$request->get("address"),
-                "telephone"=>$request->get("telephone"),
+        if (Auth::user()->id==$id) {
+            $user = User::findOrFail($id);
+            $this->validate($request,[
+                'image'=>'required|mimes:jpeg,bmp,jpg,png|between:1, 6000',
             ]);
-        }catch (\Exception $exception){
-            return redirect()->back();
+            if ($request->hasFile('image')) {
+                //get name image
+                $filename = $request->file('image');
+                //upload image
+                Cloudder::upload($filename, 'uploads/' . $filename->getClientOriginalName());
+            }
+            Cloudder::show('uploads/'.$filename->getClientOriginalName());
+            try {
+                $user->update([
+                    "name"=>$request->get("name"),
+                    "image"=>Cloudder::show('uploads/'. $filename->getClientOriginalName()),
+                    "email"=>$request->get("email"),
+                    "address"=>$request->get("address"),
+                    "telephone"=>$request->get("telephone"),
+                ]);
+            }catch (\Exception $exception){
+                return redirect()->back();
+            }
+            return redirect()->to('/')->with('message', 'Change profile successfully!');
+        }else{
+            return redirect()->to("/404");
         }
-        return redirect()->to('/')->with('message', 'Change profile successfully!');
+
     }
-//    public function searchUser(Request $request){
-//        if ($request->ajax()) {
-//            $usersFull = User::all();
-//            $output = '';
-//            $users = User::where('name', 'like', '%'.$request->search.'%')->
-//            orwhere('email', '%'.$request->search.'%')->get();
-//            if ($users) {
-//                foreach ($users as $key => $user) {
-//                    $output .= '<tr>
-//                                <td>'. $user->__get("id"). '</td>
-//                                <td>'. $user->__get("name"). '</td>
-//                            </tr>';
-//                }
-//            }
-//            return Response($output);
-//        }
-//    }
+    public function searchUser($value){
+        if ($value == "all"){
+            $users = User::all();
+        }elseif($value== "admin"){
+            $users = User::where('role', "=", 1)->get();
+        }elseif($value== "blog"){
+            $users = User::where('role', "=", 2)->get();
+        }elseif($value== "event"){
+            $users = User::where('role', "=", 3)->get();
+        }elseif($value== "product"){
+            $users = User::where('role', "=", 4)->get();
+        }elseif($value== "program"){
+            $users = User::where('role', "=", 5)->get();
+        }elseif($value== "dead"){
+            $users = User::where('role', "=", 6)->get();
+        }elseif($value== "user"){
+            $users = User::where('role', "=", 0)->get();
+        }else{
+            $users = User::where('name', 'like', '%'.$value.'%')->
+            orwhere('email', 'like', '%'.$value.'%')->get();
+        }
+        return view(("user.searchUser"), [
+            "users" => $users,
+        ]);
+    }
 
 }
 
