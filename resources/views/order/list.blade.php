@@ -15,7 +15,7 @@
                     <h2 class="mb-0 col-lg-4 float-left">Order List</h2>
                     <p class="col-lg-5 mt-3 float-left">Tổng số đơn hàng đã hoàn thành: <b style="background-color: green; color: white; padding: 5px 5px 5px 5px; border-radius: 50%">{{$ordersCount}}</b></p>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("admin/new-order")}}" class="btn btn-sm btn-neutral">Create</a>
+                        <a href="{{url("admin/new-order")}}" class="btn btn-success"><i class="fas fa-plus"></i></a>
 
                     </div>
                 </div>
@@ -52,10 +52,10 @@
                                 data-sort="name">Updated At
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Edit
+                                data-sort="name">
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Delete
+                                data-sort="name">
                             </th>
                         </tr>
                         </thead>
@@ -77,14 +77,14 @@
                                 <td>{{$order->__get("created_at")}}</td>
                                 <td>{{$order->__get("updated_at")}}</td>
                                 <td>
-                                    <a href="{{url("admin/edit-order/{$order->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
+                                    <a href="{{url("admin/edit-order/{$order->__get("id")}")}}" class="btn btn-warning"><i class="fas fa-pencil-alt"> Edit</i></a>
 
                                 </td>
                                 <td>
                                     <form action="{{url("admin/delete-order/{$order->__get("id")}")}}" method="post">
                                         @method("DELETE")
                                         @csrf
-                                        <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-outline-dark">Delete</button>
+                                        <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger"><i class="fas fa-times"> Delete</i> </button>
                                     </form>
                                 </td>
                             </tr>

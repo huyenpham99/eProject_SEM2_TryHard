@@ -45,8 +45,8 @@
 														<span>{{$blog->__get("blog_date")}}</span>
 													</span>
                                             <span class="comment">
-														<i class="ion-chatbubble-working"></i> 0
-													</span>
+                                                <i class="ion-chatbubble-working"></i> 0
+                                            </span>
                                         </div>
                                         <a href="{{$blog->getBlogUrl()}}">
                                             <h1 class="entry-title">{{$blog->__get("blog_title")}}</h1>
@@ -55,7 +55,7 @@
                                             {{$blog->__get("blog_desc")}}
                                         </div>
                                         <div class="entry-more">
-                                            <a href="{{$blog->getBlogUrl()}}">Read more</a>
+                                            <a href="{{$blog->getBlogUrl()}}" class="btn btn-success" style="color: white">Read more</a>
                                         </div>
                                     </div>
                                 </div>

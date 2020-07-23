@@ -121,20 +121,20 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="widget widget-products">
-                                <h3 class="widget-title">Products</h3>
-                                <ul class="product-list-widget">
-                                    @foreach(\App\Product::orderBy("product_name")->limit(4) as $product)
-                                    <li>
-                                        <a href="{{$product->getProductUrl()}}">
-                                            <img src="{{$product->__get("product_image")}}" alt="" />
-                                            <span class="product-title">{{$product->__get("product_name")}}</span>
-                                        </a>
-                                        <ins>{{$product->__get("product_price")}}</ins>
-                                    </li>
-                                    @endforeach
-                                </ul>
-                            </div>
+{{--                            <div class="widget widget-products">--}}
+{{--                                <h3 class="widget-title">Products</h3>--}}
+{{--                                <ul class="product-list-widget">--}}
+{{--                                    @foreach(\App\Product::orderBy("product_name")->limit(4) as $product)--}}
+{{--                                    <li>--}}
+{{--                                        <a href="{{$product->getProductUrl()}}">--}}
+{{--                                            <img src="{{$product->__get("product_image")}}" alt="" />--}}
+{{--                                            <span class="product-title">{{$product->__get("product_name")}}</span>--}}
+{{--                                        </a>--}}
+{{--                                        <ins>{{$product->__get("product_price")}}</ins>--}}
+{{--                                    </li>--}}
+{{--                                    @endforeach--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
                         </div>
                     </div>
                 </div>

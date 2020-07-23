@@ -9,7 +9,7 @@
                 <div class="card-header border-0">
                     <h2 class="mb-0 col-lg-9 float-left text-capitalize">Blog List</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("admin/new-blog")}}" class="btn btn-sm btn-neutral">Create</a>
+                        <a href="{{url("admin/new-blog")}}" class="btn btn-success"><i class="fas fa-plus"></i></a>
                     </div>
                 </div>
                 <!-- Light table -->
@@ -25,8 +25,8 @@
                             <th>Blog_Date</th>
                             <th>View_Count</th>
                             <th>Blog Category</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th></th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -41,12 +41,12 @@
                             <td>{{$blog->__get("blog_date")}}</td>
                             <td>{{$blog->__get("view_count")}}</td>
                             <td>{{$blog->__get("blog_category_id")}}</td>
-                            <td> <a href="{{url("admin/edit-blog/{$blog->__get("id")}")}}" class="btn btn-outline-warning">Edit</a></td>
+                            <td> <a href="{{url("admin/edit-blog/{$blog->__get("id")}")}}" class="btn btn-warning" style="width: 75px"><i class="fas fa-pencil-alt"> Edit</i></a>
                             <td>
                                 <form action="{{url("admin/delete-blog/{$blog->__get("id")}")}}" method="post">
                                     @method("DELETE")
                                     @csrf
-                                    <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-outline-dark">Delete</button>
+                                    <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger" style="width: 90px"><i class="fas fa-times"> Delete</i> </button>
                                 </form>
                             </td>
                         </tr>
