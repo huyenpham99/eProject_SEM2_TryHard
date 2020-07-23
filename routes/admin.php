@@ -109,6 +109,7 @@ Route::put("/update-order/{id}","OrderController@updateOrder");
 Route::delete("/delete-order/{id}","OrderController@deleteOrder");
 
 
+
 //product search
 Route::get("/search/{value}", "ProductController@searchProduct");
 //user search

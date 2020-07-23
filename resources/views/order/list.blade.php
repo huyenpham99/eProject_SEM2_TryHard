@@ -73,9 +73,9 @@
                                     @elseif($order->__get("status") == 3) <td><a style="color: white" class="btn btn-success">Đã hoàn thành</a></td>
                                     @elseif($order->__get("status") == 4) <td><a style="color: white" class="btn btn-dark">Đã hủy đơn</a></td>
                                     @endif
-                                <td>{{$order->__get("grand_total")}}</td>
+                                <td>{{number_format($order->__get("grand_total"))}}đ</td>
                                 <td>{{$order->__get("created_at")}}</td>
-                                <td>{{$order->__get("update_at")}}</td>
+                                <td>{{$order->__get("updated_at")}}</td>
                                 <td>
                                     <a href="{{url("admin/edit-order/{$order->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
 

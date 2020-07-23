@@ -48,6 +48,7 @@ class OrderController extends Controller
                     "telephone"=>$request->get("telephone"),
                     "note"=>$request->get("note"),
                     "status"=>$request->get("status"),
+                    
                 ]);
             }catch (\Exception $exception){
                 return redirect()->back();
@@ -68,5 +69,21 @@ class OrderController extends Controller
 
         }
         return redirect()->to("/admin/list-order");
+    }
+    public function cancelOrder($id){
+        $order = Order::findorFail($id);
+
+        if ($order->status == 1){
+            try {
+                $order->update([
+                    "status"=>4,
+                ]);
+            }catch (\Exception $exception){
+                redirect()->back()->with('message', 'Chỉ có thể hủy khi đơn hàng đang ở trạng thái chờ xác nhận!');
+            }
+        }else{
+            return redirect()->back()->with('message', 'Chỉ có thể hủy khi đơn hàng đang ở trạng thái chờ xác nhận!');
+        }
+        return redirect()->back()->with('message', 'Hủy đơn hàng thành công!');
     }
 }

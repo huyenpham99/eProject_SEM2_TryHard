@@ -7,6 +7,11 @@
     <x-frontend.header/>
 
    <section>
+       @if(session()->has('message'))
+           <div class="alert alert-success">
+               {{ session()->get('message') }}
+           </div>
+       @endif
        <div class="container">
            <div class="row">
               <div style="position: relative" class="col-12">
@@ -130,11 +135,14 @@
                                           @elseif($order->status == 3) <td><a style="color: white" class="btn btn-success">Đã hoàn thành</a></td>
                                           @elseif($order->status == 4) <td><a style="color: white" class="btn btn-dark">Đã hủy đơn</a></td>
                                           @endif
-                                          @if($order->status == 1)
-                                              <td><button type="submit">Hủy đơn hàng</button></td>
-                                          @else
-                                              <td></td>
-                                          @endif
+                                          <td>
+<!--                                              --><?php //echo "<pre>"; var_dump($order->order_id); ?>
+                                              <form action="{{url("cancel-order/{$order->order_id}")}}" method="post">
+                                                  @method("post")
+                                                  @csrf
+                                              <button class="btn btn-primary" type="submit">Hủy đơn hàng</button>
+                                              </form>
+                                          </td>
                                       </tr>
                                       @endif
                               @endforeach
