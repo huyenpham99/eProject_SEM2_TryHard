@@ -6,7 +6,7 @@
 <body>
     <x-frontend.header/>
 
-   <section>
+   <section style="background-color: #f5f5f5;">
        @if(session()->has('message'))
            <div class="alert alert-success">
                {{ session()->get('message') }}
@@ -14,7 +14,7 @@
        @endif
        <div class="container">
            <div class="row">
-              <div style="position: relative" class="col-12">
+              <div style="position: relative;margin-top: 20px" class="col-12">
                   <div style="width: 50%" class="col-6">
                       <h3 class="mb-3">Change Profile</h3>
                       <form action="{{url("update-user/{$currentUser->__get("id")}")}}" method="post" enctype="multipart/form-data">
@@ -25,8 +25,8 @@
                               <div class="row">
                                   <div class="col-lg-6">
                                       <div class="form-group">
-                                          <label>User Name</label>
-                                          <input type="text" value="{{$currentUser->__get("name")}}" name="name" class="form-control @error("name") is-invalid @enderror">
+                                          <label><b>User Name</b></label>
+                                          <input type="text" value="{{$currentUser->__get("name")}}" name="name" class="form-control @error("name") is-invalid @enderror" style="height: 35px">
                                           @error("name")
                                           <span class="error invalid-feedback">{{$message}}</span>
                                           @enderror
@@ -35,7 +35,7 @@
                                   <div class="col-lg-6">
                                       <div class="form-group">
 {{--                                          <img style="position:absolute; top: -113px;right: -16px; width: 150px;height: 150px;"src="{{\Illuminate\Support\Facades\Auth::user()->__get("image")}}" alt="">--}}
-                                          <label>User Image</label>
+                                          <label><b>User Image</b></label>
                                           <input type="file" name="image" class="form-control"/>
                                       </div>
                                   </div>
@@ -57,7 +57,7 @@
                                   </div>
                               </div>
                           </div>
-                          <hr class="my-4" />
+                          <hr class="my-4" style="border-top: 1px solid #868585;" />
                           <!-- Address -->
                           <h6 class="heading-small text-muted mb-4">Contact information</h6>
                           <div class="pl-lg-4">
@@ -65,7 +65,7 @@
                                   <div class="col-md-12">
 
                                       <div class="form-group">
-                                          <label>User Email</label>
+                                          <label><b>User Email</b></label>
                                           <input type="text" value="{{\Illuminate\Support\Facades\Auth::user()->__get("email")}}" name="email" class="form-control @error("email") is-invalid @enderror">
                                           @error("email")
                                           <span class="error invalid-feedback">{{$message}}</span>
@@ -76,7 +76,7 @@
                               <div class="row">
                                   <div class="col-md-12">
                                       <div class="form-group">
-                                          <label>User Address</label>
+                                          <label><b>User Address</b></label>
                                           <input type="text" value="{{$currentUser->__get("address")}}" name="address" class="form-control @error("address") is-invalid @enderror">
                                           @error("address")
                                           <span class="error invalid-feedback">{{$message}}</span>
@@ -87,7 +87,7 @@
                               <div class="row">
                                   <div class="col-md-12">
                                       <div class="form-group">
-                                          <label>User Telephone</label>
+                                          <label><b>User Telephone</b></label>
                                           <input type="text" value="{{$currentUser->__get("telephone")}}" name="telephone" class="form-control @error("telephone") is-invalid @enderror">
                                           @error("telephone")
                                           <span class="error invalid-feedback">{{$message}}</span>
@@ -96,9 +96,11 @@
                                   </div>
                               </div>
                           </div>
-                          <hr class="my-4" />
+                          <hr class="my-4" style="border-top: 1px solid #868585;" />
                           <!-- Description -->
-                          <button style="width: 80px" type="submit" class="btn btn-primary btn-lg btn-block btn-sm">Change</button>
+                          <button style="width: 100px;margin-left: 40%;padding: 7px;margin-bottom: 20px;font-size: 14px;"
+                                  type="submit" class="btn btn-success btn-lg btn-block btn-sm">Change
+                          </button>
                       </form>
                   </div>
                   <div style="position:absolute;right: 0; top: 0px; width: 47%;" class="col-6">
