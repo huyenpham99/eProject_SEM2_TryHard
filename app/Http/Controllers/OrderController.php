@@ -48,7 +48,7 @@ class OrderController extends Controller
                     "telephone"=>$request->get("telephone"),
                     "note"=>$request->get("note"),
                     "status"=>$request->get("status"),
-                    
+
                 ]);
             }catch (\Exception $exception){
                 return redirect()->back();
