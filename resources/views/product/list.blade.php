@@ -31,7 +31,7 @@
                             <div class="card-header border-0">
                                 <h2 class="mb-0 col-lg-9 float-left">Product List</h2>
                                 <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                                    <a href="{{url("admin/new-product")}}" class="btn btn-sm btn-neutral">Create</a>
+                                    <a href="{{url("admin/new-product")}}" class="btn btn-success"><i class="fas fa-plus"></i></a>
                                 </div>
                             </div>
                             <!-- Light table -->
@@ -73,10 +73,10 @@
                                             data-sort="name">Updated At
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Edit
+                                            data-sort="name">
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Delete
+                                            data-sort="name">
                                         </th>
                                     </tr>
                                     </thead>
@@ -97,13 +97,13 @@
                                             <td>{{$product->__get("created_at")}}</td>
                                             <td>{{$product->__get("updated_at")}}</td>
                                             <td>
-                                                <a href="{{url("admin/edit-product/{$product->__get("id")}")}}" class="btn btn-outline-dark">Edit</a>
+                                                <a href="{{url("admin/edit-product/{$product->__get("id")}")}}" class="btn btn-warning" style="width: 75px"><i class="fas fa-pencil-alt"> Edit</i></a>
                                             </td>
                                             <td>
                                                 <form action="{{url("admin/delete-product/{$product->__get("id")}")}}" method="post">
                                                     @method("DELETE")
                                                     @csrf
-                                                    <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-outline-dark">Delete</button>
+                                                    <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger" style="width: 90px"><i class="fas fa-times"> Delete</i></button>
                                                 </form>
                                             </td>
                                         </tr>

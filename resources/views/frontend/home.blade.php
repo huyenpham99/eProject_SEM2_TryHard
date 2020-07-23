@@ -384,7 +384,7 @@
                         @foreach($products as $product)
                             <div class="col-md-3 col-sm-6 product-item masonry-item text-center">
                                 <div class="product-thumb">
-                                    <a href="shop-detail.html">
+                                    <a href="{{$product->getProductUrl()}}">
                                         <div class="badges">
                                             <span class="hot">View: </span>
                                         </div>
@@ -538,7 +538,7 @@
                                     <span class="comment">View:{{$blog->__get("view_count")}}</span>
                                 </div>
                                 <a href="{{$blog->getBlogUrl()}}">
-                                    <h1 class="entry-title">{{$blog->__get("blog_title")}}</h1>
+                                    <h1 class="entry-title" style="hover: #333333">{{$blog->__get("blog_title")}}</h1>
                                 </a>
                                 <div class="entry-content">
                                     {{$blog->__get("blog_desc")}}
