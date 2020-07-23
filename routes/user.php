@@ -47,3 +47,5 @@ Route::post("/checkout","HomeController@placeOrder")->middleware("auth");
 Route::get("/view-user/{id}","UserController@viewUser1")->middleware("auth");
 Route::put("/update-user/{id}", "UserController@updateUser1")->middleware("auth");
 Route::post("/cancel-order/{id}","OrderController@cancelOrder");
+Route::get("/vn-pay","VNPayController@createPayment")->middleware("auth");
+Route::get("/return-vnpay","VNPayController@return")->middleware("auth");
