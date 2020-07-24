@@ -18,57 +18,132 @@
                 <br>
                 <div class="form-group">
                     <div class="row">
+                        @if($user->__get("role")== 3)
                         <div class="col-lg-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status" id="gridRadios1"
-                                       value="eventmanager" checked>
+                                       value="3" checked>
                                 <label class="form-check-label" for="gridRadios1">
                                     Event Manager
                                 </label>
                             </div>
-                        </div>   <div class="col-lg-2">
+                        </div>
+                        @else
+                            <div class="col-lg-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="status" id="gridRadios1"
+                                           value="3">
+                                    <label class="form-check-label" for="gridRadios1">
+                                        Event Manager
+                                    </label>
+                                </div>
+                            </div>
+                        @endif
+                        @if($user->__get("role")== 2)
+                        <div class="col-lg-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status" id="gridRadios1"
-                                       value="blogmanager">
+                                       value="2" checked>
                                 <label class="form-check-label" for="gridRadios1">
                                     Blog Manager
                                 </label>
                             </div>
-                        </div>   <div class="col-lg-2">
+                        </div>
+                            @else
+                                <div class="col-lg-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="gridRadios1"
+                                               value="2" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Blog Manager
+                                        </label>
+                                    </div>
+                                </div>
+                            @endif
+                            @if($user->__get("role")== 5)
+                        <div class="col-lg-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status" id="gridRadios1"
-                                       value="programmanager">
+                                       value="5" checked>
                                 <label class="form-check-label" for="gridRadios1">
                                     Program Manager
                                 </label>
                             </div>
                         </div>
+                            @else
+                                <div class="col-lg-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="gridRadios1"
+                                               value="5" >
+                                        <label class="form-check-label" for="gridRadios1">
+                                            Program Manager
+                                        </label>
+                                    </div>
+                                </div>
+                                @endif
+                            @if($user->__get("role")== 4)
                         <div class="col-lg-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status" id="gridRadios2"
-                                       value="productmanager">
+                                       value="4" checked>
                                 <label class="form-check-label" for="gridRadios2">
                                     Product Manager
                                 </label>
                             </div>
                         </div>
+                            @else
+                                <div class="col-lg-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="gridRadios2"
+                                               value="4" >
+                                        <label class="form-check-label" for="gridRadios2">
+                                            Product Manager
+                                        </label>
+                                    </div>
+                                </div>
+                                @endif
+                            @if($user->__get("role")== 0)
                         <div class="col-lg-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status" id="gridRadios3"
-                                       value="user">
+                                       value="0" checked>
                                 <label class="form-check-label" for="gridRadios3">
                                     User
                                 </label>
                             </div>
-                        </div>       <div class="col-lg-2">
+                        </div>
+                            @else
+                                <div class="col-lg-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="gridRadios3"
+                                               value="0">
+                                        <label class="form-check-label" for="gridRadios3">
+                                            User
+                                        </label>
+                                    </div>
+                                </div>
+                                @endif
+                            @if($user->__get("role")== 6)
+                        <div class="col-lg-2">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="status" id="gridRadios3"
-                                       value="deadactive">
+                                       value="6" checked>
                                 <label class="form-check-label" for="gridRadios3">
                                     Dead Active Account
                                 </label>
                             </div>
                         </div>
+                                @else
+                                <div class="col-lg-2">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="gridRadios3"
+                                               value="6" >
+                                        <label class="form-check-label" for="gridRadios3">
+                                            Dead Active Account
+                                        </label>
+                                    </div>
+                                </div>
+                        @endif
                     </div>
                 </div>
             {{--                // biến error để lưu lỗi--}}

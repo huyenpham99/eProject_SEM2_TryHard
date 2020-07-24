@@ -24,7 +24,8 @@ class SocialController extends Controller
                 'name'     => $getInfo->name,
                 'email'    => $getInfo->email,
                 'provider' => $provider,
-                'provider_id' => $getInfo->id
+                'provider_id' => $getInfo->id,
+                'image' => $getInfo->avatar,
             ]);
         }
         return $user;
