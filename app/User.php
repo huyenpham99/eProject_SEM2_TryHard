@@ -34,6 +34,7 @@ class User extends Authenticatable
     public const PROGRAM_ADMIN_ROLE = 5;
     public const DEAD_ACTIVE = 6;
 
+
     /**
      * The attributes that should be hidden for arrays.
      *

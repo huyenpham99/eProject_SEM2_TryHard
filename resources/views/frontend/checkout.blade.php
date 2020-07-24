@@ -103,10 +103,6 @@
                                                 <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_free_shipping1" value="free_shipping:1" class="shipping_method" checked="checked">
                                                 <span>Free shipping</span>
                                             </li>
-                                            <li>
-                                                <input type="radio" name="shipping_method[0]" data-index="0" id="shipping_method_0_local_pickup2" value="local_pickup:2" class="shipping_method">
-                                                <span>Local pickup</span>
-                                            </li>
                                         </ul>
                                     </td>
                                 </tr>
@@ -122,16 +118,15 @@
                     <div class="col-md-12">
                         <div class="checkout-payment">
                             <ul class="payment-method">
+                                <h3>Payment Detail</h3>
                                 <li>
                                     <input id="payment_method_cod" type="radio" class="input-radio" name="payment_method" value="cod" checked="checked" data-order_button_text="">
-                                    <span>Cash on delivery</span>
+                                    <span>
+                                        <img src="https://1office.vn/wp-content/uploads/2020/02/1564381662138-unnamed-1.jpg"/>
+                                    </span>
                                     <div class="payment-box">
-                                        <p>Pay with cash upon delivery.</p>
+                                        <p>Cổng thanh toán VNPAY.</p>
                                     </div>
-                                </li>
-                                <li>
-                                    <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="paypal" data-order_button_text="Proceed to PayPal">
-                                    PayPal <img src="images/payment.jpg" alt="">
                                 </li>
                             </ul>
                             <div class="text-right text-center-sm">
