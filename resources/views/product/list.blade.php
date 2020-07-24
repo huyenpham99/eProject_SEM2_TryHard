@@ -73,10 +73,10 @@
                                             data-sort="name">Updated At
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">
+                                            data-sort="name">Sửa
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">
+                                            data-sort="name">Xóa
                                         </th>
                                     </tr>
                                     </thead>
@@ -97,13 +97,13 @@
                                             <td>{{$product->__get("created_at")}}</td>
                                             <td>{{$product->__get("updated_at")}}</td>
                                             <td>
-                                                <a href="{{url("admin/edit-product/{$product->__get("id")}")}}" class="btn btn-warning" style="width: 75px"><i class="fas fa-pencil-alt"> Edit</i></a>
+                                                <a href="{{url("admin/edit-product/{$product->__get("id")}")}}" class="btn btn-warning" style="width: 75px"><i class="fas fa-pencil-alt"></i></a>
                                             </td>
                                             <td>
                                                 <form action="{{url("admin/delete-product/{$product->__get("id")}")}}" method="post">
                                                     @method("DELETE")
                                                     @csrf
-                                                    <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger" style="width: 90px"><i class="fas fa-times"> Delete</i></button>
+                                                    <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger" style="width: 90px"><i class="fas fa-trash-alt"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

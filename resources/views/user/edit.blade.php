@@ -1,6 +1,5 @@
 @extends("layout")
-@section("title","Edit User")
-@section("contentHeader","Edit Access")
+@section('tieude',"Sửa Quyền Quản Trị")
 @section("content")
     <div class="card card-primary">
         <div class="card-header">

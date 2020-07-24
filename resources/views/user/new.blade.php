@@ -1,46 +1,42 @@
 @extends("layout")
-@section("title", "Create Manager")
-@section("contentHeader", "New Manager")
+@section('tieude',"Thêm Mới Quản Trị Viên")
 @section("content")
     <div class="row mt-4">
         <div class="col">
             <div class="card">
-                <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left">Create New Manager</h2>
-                </div>
                 <form role="form" action="{{url("admin/save-manager")}}" method="post" enctype="multipart/form-data">
                     @method("POST")
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Name</label>
+                            <label>Tên Tài Khoản: </label>
                             <input type="text" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
+                            <label>Địa Chỉ Email :</label>
                             <input type="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label>Password</label>
+                            <label>Mật Khẩu</label>
                             <input type="password" name="password" class="form-control" autocomplete="new-password" required/>
                         </div>
                         <div class="form-group">
-                            <label>Confirm Password</label>
+                            <label>Xác Nhận Mật Khẩu</label>
                             <input type="password" name="password_confirmation" autocomplete="new-password"  class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="exampleFormControlSelect1">Role</label>
+                            <label for="exampleFormControlSelect1">Quyền Hạn</label>
                             <select name="role" class="form-control" id="exampleFormControlSelect1">
-                                <option value="2">Blog Manager</option>
-                                <option value="3">Event Manager</option>
-                                <option value="4">Product Manager</option>
-                                <option value="5">Program Manager</option>
+                                <option value="2">Quản Lý Bài Viết</option>
+                                <option value="3">Quản Lý Sự Kiện</option>
+                                <option value="4">Quản Lý Sản Phẩm</option>
+                                <option value="5">Quản Lý Chương Trình</option>
                             </select>
                         </div>
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="submit" class="btn btn-primary">Thêm Mới</button>
                     </div>
                 </form>
                 <!-- Card footer -->
