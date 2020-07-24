@@ -42,9 +42,14 @@ class UserController extends Controller
     public function editUser($id)
     {
         $user = User::findOrFail($id);
-        return view("user.edit", [
-            "user" => $user
-        ]);
+        $curentRole = $user->role;
+        if(!($curentRole == User::ADMIN_ROLE)){
+            return view("user.edit", [
+                "user" => $user
+            ]);
+        }else{
+            return abort(404);
+        }
     }
     public function updateAccess($id, Request $request){
         $currentUser = User::findorFail($id);
@@ -53,32 +58,32 @@ class UserController extends Controller
             $currentUser->update([
                 "account_status" =>  $request->get("status"),
             ]);
-            if($currentUser->__get("account_status") == "blogmanager"){
+            if($currentUser->__get("account_status") == "2"){
                 $currentUser->update([
                     "role" =>  2,
                 ]);
             }
-            elseif ($currentUser->__get("account_status") == "productmanager"){
+            elseif ($currentUser->__get("account_status") == "4"){
                 $currentUser->update([
                     "role" =>  4,
                 ]);
             }
-            elseif ($currentUser->__get("account_status") == "eventmanager"){
+            elseif ($currentUser->__get("account_status") == "3"){
                 $currentUser->update([
                     "role" =>  3,
                 ]);
             }
-            elseif ($currentUser->__get("account_status") == "programmanager"){
+            elseif ($currentUser->__get("account_status") == "5"){
                 $currentUser->update([
                     "role" =>  5,
                 ]);
             }
-            elseif ($currentUser->__get("account_status") == "user"){
+            elseif ($currentUser->__get("account_status") == "0"){
                 $currentUser->update([
                     "role" =>  0,
                 ]);
             }
-            elseif ($currentUser->__get("account_status") == "deadactive"){
+            elseif ($currentUser->__get("account_status") == "6"){
                 $currentUser->update([
                     "role" =>  6,
                 ]);
