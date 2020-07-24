@@ -12,7 +12,7 @@
 Healthy Food Admin DashBoard + Front-end Page(Updating)
 ## Demo Page
 
-[Here is my demo link to my homepage using HerokuAPP](https://healthyfood.herokuapp.com/).
+[Here is my demo link to my homepage using HerokuAPP](https://healthyfoods.herokuapp.com/).
 
 ## Dowload Source
 
