@@ -20,11 +20,11 @@ DownLoad or Clone Source from github to your computer
 
 ## Usage
 ```python
-1 : Go to : [Login](https://healthyfood.herokuapp.com/)
+1 : Go to : [Login](https://healthyfoods.herokuapp.com/)
 2 : Admin Account : 
-Email Address : admin1@gmail.com
+Email Address : admin@gmail.com
 Password: 12345678
-3: Go to admin dashboard by link [Admin DashBoard](https://healthyfood.herokuapp.com/admin) 
+3: Go to admin dashboard by link [Admin DashBoard](https://healthyfoods.herokuapp.com/admin) 
 ```
 ## License
 ```python
