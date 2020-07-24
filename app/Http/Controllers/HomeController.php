@@ -16,11 +16,13 @@ use App\Program;
 use App\ProgramCategory;
 use App\ProgramDetail;
 use Carbon\Carbon;
+use http\Url;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use MicrosoftAzure\Storage\Blob\Models\Blob;
+use function GuzzleHttp\Psr7\uri_for;
 
 class HomeController extends Controller
 {
@@ -304,6 +306,7 @@ class HomeController extends Controller
 
     public function placeOrder(Request $request)
     {
+        $currentName = Auth::user()->name;
 //        dd($request->all());
         $request->validate([
 //            "username" => "required",
@@ -358,9 +361,9 @@ class HomeController extends Controller
             $vnp_TmnCode = "1P3HV4G2"; //Mã website tại VNPAY
             $vnp_HashSecret = "CICMOGOUKDUBWVSHPDSORUZMNWOXFLYJ"; //Chuỗi bí mật
             $vnp_Url = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-            $vnp_Returnurl = "http://127.0.0.1:8000/return-vnpay";
+            $vnp_Returnurl = url("/return-vnpay");
             $vnp_TxnRef = date("YmdHis"); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
-            $vnp_OrderInfo = "Thanh Toán Hóa Đơn Hàng HealthyFoods";
+            $vnp_OrderInfo = "Khách Hàng ".$currentName." Thanh Toán Hóa Đơn Hàng HealthyFoods";
             $vnp_OrderType = 'billpayment';
             $vnp_Amount = $grandTotal * 100;
             $vnp_Locale = 'vn';
