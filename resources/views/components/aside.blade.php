@@ -248,6 +248,28 @@
                         </ul>
 
                     </li>
+                    <li>
+                        <a href="#">
+                            <i class="metismenu-icon pe-7s-photo-gallery"></i>
+                            Quản Lý Donate
+                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="{{url("/admin/new-donate")}}">
+                                    <i class="metismenu-icon"></i>
+                                    Thêm Mới Ủng Hộ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url("/admin/list-donate")}}">
+                                    <i class="metismenu-icon"></i>
+                                    Danh Sách Ủng Hộ
+                                </a>
+                            </li>
+                        </ul>
+
+                    </li>
                     @elseif(Auth::user()->role === 2)
                     <li>
                         <a href="#">

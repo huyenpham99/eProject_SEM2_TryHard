@@ -49,3 +49,6 @@ Route::put("/update-user/{id}", "UserController@updateUser1")->middleware("auth"
 Route::post("/cancel-order/{id}","OrderController@cancelOrder")->middleware("auth");
 //Route::get("/vn-pay","VNPayController@createPayment")->middleware("auth");
 Route::get("/return-vnpay","VNPayController@return")->middleware("auth");
+Route::get('/donate/{donate:slug}',"DonateController@donateDetail");
+Route::get('/donate',"DonateController@donate");
+Route::get("/update-money/{id}","DonateController@saveMoney");
