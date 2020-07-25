@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class EventController extends Controller
 {
     public function listEvent(){
-        $event = Event::with("Banner")->with("User")->paginate(10);
+        $event = Event::with("User")->paginate(10);
         $user =User::all();
         $banner =Banner::all();
         return view("event.list",[

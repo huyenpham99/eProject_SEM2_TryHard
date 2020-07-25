@@ -229,20 +229,20 @@
                     <li>
                         <a href="#">
                             <i class="metismenu-icon pe-7s-photo-gallery"></i>
-                            Quản Lý Slide
+                            Quản Lý Banner
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
                         <ul>
                             <li>
                                 <a href="{{url("/admin/new-banner")}}">
                                     <i class="metismenu-icon"></i>
-                                   Thêm Mới Ảnh Bìa
+                                   Thêm Mới Banner
                                 </a>
                             </li>
                             <li>
                                 <a href="{{url("/admin/list-banner")}}">
                                     <i class="metismenu-icon"></i>
-                                    Danh Sách Slide
+                                    Danh Sách Banner
                                 </a>
                             </li>
                         </ul>
@@ -294,20 +294,20 @@
                     <li>
                         <a href="#">
                             <i class="metismenu-icon pe-7s-photo-gallery"></i>
-                            Quản Lý Slide
+                            Quản Lý Banner
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
                         <ul>
                             <li>
                                 <a href="{{url("/admin/new-banner")}}">
                                     <i class="metismenu-icon"></i>
-                                    Thêm Mới Ảnh Bìa
+                                    Thêm Mới Banner
                                 </a>
                             </li>
                             <li>
                                 <a href="{{url("/admin/list-banner")}}">
                                     <i class="metismenu-icon"></i>
-                                    Danh Sách Slide
+                                    Danh Sách Banner
                                 </a>
                             </li>
                         </ul>
@@ -350,20 +350,20 @@
                     <li>
                         <a href="#">
                             <i class="metismenu-icon pe-7s-photo-gallery"></i>
-                            Quản Lý Slide
+                            Quản Lý Banner
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
                         <ul>
                             <li>
                                 <a href="{{url("/admin/new-banner")}}">
                                     <i class="metismenu-icon"></i>
-                                    Thêm Mới Ảnh Bìa
+                                    Thêm Mới Banner
                                 </a>
                             </li>
                             <li>
                                 <a href="{{url("/admin/list-banner")}}">
                                     <i class="metismenu-icon"></i>
-                                    Danh Sách Slide
+                                    Danh Sách Banner
                                 </a>
                             </li>
                         </ul>
@@ -414,20 +414,20 @@
                     <li>
                         <a href="#">
                             <i class="metismenu-icon pe-7s-photo-gallery"></i>
-                            Quản Lý Slide
+                            Quản Lý Banner
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
                         <ul>
                             <li>
                                 <a href="{{url("/admin/new-banner")}}">
                                     <i class="metismenu-icon"></i>
-                                    Thêm Mới Ảnh Bìa
+                                    Thêm Mới Banner
                                 </a>
                             </li>
                             <li>
                                 <a href="{{url("/admin/list-banner")}}">
                                     <i class="metismenu-icon"></i>
-                                    Danh Sách Slide
+                                    Danh Sách Banner
                                 </a>
                             </li>
                         </ul>
@@ -482,20 +482,20 @@
                     <li>
                         <a href="#">
                             <i class="metismenu-icon pe-7s-photo-gallery"></i>
-                            Quản Lý Slide
+                            Quản Lý Banner
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
                         <ul>
                             <li>
                                 <a href="{{url("/admin/new-banner")}}">
                                     <i class="metismenu-icon"></i>
-                                    Thêm Mới Ảnh Bìa
+                                    Thêm Mới Banner
                                 </a>
                             </li>
                             <li>
                                 <a href="{{url("/admin/list-banner")}}">
                                     <i class="metismenu-icon"></i>
-                                    Danh Sách Slide
+                                    Danh Sách Banner
                                 </a>
                             </li>
                         </ul>

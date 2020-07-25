@@ -113,11 +113,12 @@
                 "search": value,
             },
             success: function (res){
+                var tong = res.count + res.countBlog;
                 if(value===""){
                     $("#count").html('<p id="count">Tìm được: 0 sản phẩm</p><p id="count">Tìm được: 0 blog</p>');
                     $('#tbody').html("");
                 }else{
-                    $("#count").html('<p id="count">Tìm được: '+res.count+' sản phẩm</p><p id="count">Tìm được: '+res.countBlog+' blog</p>');
+                    $("#count").html('<p id="count">Tìm được: '+tong+' kết quả</p>');
                     $('#tbody').html(res.response);
                     $('#tbody2').html(res.blog);
                 }
