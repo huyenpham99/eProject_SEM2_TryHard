@@ -73,8 +73,22 @@
             <div class="row">
                 <div class="col-sm-12">
                     <form>
-                        <input type="search" class="top-search-input" name="s" placeholder="What are you looking for?"/>
+                        <input type="search"  onkeyup="searchHome(this)" class="top-search-input" name="search" placeholder="What are you looking for?"/>
+                        <p id="count"></p>
                     </form>
+                    <div class="table__search">
+                        <table id="table-search"  style="background-color: #5fbd74" class="table table-borderless table-striped">
+                            <thead id="head-search">
+
+                            </thead>
+                            <tbody style="background-color: #5fbd74" id="tbody">
+
+                            </tbody>
+                            <tbody style="background-color: white" id="tbody2">
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,7 +96,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <a href="{{url("/home")}}" id="logo">
+                <a href="{{url("/")}}" id="logo">
                     <img class="logo-image" src="/frontend/images/logohealthyfood1.png"
                          style="width: 150px;margin-top: 15px" alt="Organik Logo"/>
                 </a>
@@ -92,7 +106,7 @@
                     <nav class="menu">
                         <ul class="main-menu">
                             <li>
-                                <a href="{{url("/home")}}">Home</a>
+                                <a href="{{url("/")}}">Home</a>
                             </li>
                             <li>
                                 <a href="{{url("/about")}}">About Us</a>
@@ -102,7 +116,7 @@
                                 <a href="{{url("/programcategory")}}">Programs</a>
                             </li>
                             <li class="dropdown mega-menu">
-                                <a href="{{url("/shop/dried5")}}">Shop</a>
+                                <a href="{{url("/shop")}}">Shop</a>
                                 <ul class="sub-menu">
                                     <li>
                                         <div class="mega-menu-content col-sm-12">

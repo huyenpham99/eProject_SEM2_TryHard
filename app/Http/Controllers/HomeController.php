@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use MicrosoftAzure\Storage\Blob\Models\Blob;
+use function GuzzleHttp\Promise\all;
 use function GuzzleHttp\Psr7\uri_for;
 
 class HomeController extends Controller
@@ -45,6 +46,7 @@ class HomeController extends Controller
     {
         $category     = Category::all();
         $blog         = Blog::orderBy("view_count", 'desc')->limit(3)->get();
+        $blogs = Blog::all();
         $blogcategory = BlogCategory::all();
 
         $products = Product::all();
@@ -62,8 +64,8 @@ class HomeController extends Controller
             $p->save();
         }
 //        Tạo slug Blog
-        foreach ($blog as $p) {
-            $slug    = \Illuminate\Support\Str::slug($p->__get("title"));
+        foreach ($blogs as $p){
+            $slug    = \Illuminate\Support\Str::slug($p->__get("blog_title"));
             $p->slug = $slug . $p->__get("id");// luu lai vao DB
             $p->save();
         }
@@ -161,6 +163,12 @@ class HomeController extends Controller
             "category" => $category,
 //            "categories"=>$categories// tra ve category trong front end
             "products" => $products
+        ]);
+    }
+    public function allShop(){
+        $allshop = Product::paginate(9);
+        return view("frontend.shopall",[
+           "allshop" => $allshop,
         ]);
     }
 
@@ -419,6 +427,98 @@ class HomeController extends Controller
     {
         return view("frontend.404Error");
     }
+    public function searchHome(Request $request){
+        if ($request->ajax()) {
+            $output = '';
+            $products = Product::where('product_name', 'like', '%'.$request->search.'%')
+                ->orwhere('product_price',"like", '%'.$request->search.'%')->get();
+            $blogs = Blog::where('blog_title', 'like', '%'.$request->search.'%')
+                ->orwhere('blog_content',"like", '%'.$request->search.'%')->get();
+//
+
+            $countBlog = count($blogs);
+            $countProduct = count($products);
+//            $countEvent = count($events);
+            if ($products) {
+                foreach ($products as $key => $product) {
+                    $output .= '<tr style="color: black; background-color: white;">
+                    <td><a href="'. $product->getProductUrl() . '"> ' . $product->product_name . '</a></td>
+                    <td><img style="width: 50px; height: 50px;" src="' . $product->getImage() . '" ></td>
+                    <td>' . $product->getPrice() . '</td>
+                    <td>Product</td>
+                    <td><a href="' . $product->getProductUrl() . '">Xem chi tiết </a></td>
+                    </tr>';
+                }
+            }
+            if ($blogs){
+                foreach ($blogs as $key => $blog) {
+                    $output .= '<tr style="color: black; background-color: white">
+                    <td><a href="'. $blog->getBlogUrl() . '"> ' . $blog->blog_title . '</a></td>
+                    <td><img style="width: 50px; height: 50px;" src="' . $blog->getImage() . '" ></td>
+                    <td>' . $blog->blog_desc . '</td>
+                    <td>Blog</td>
+                    <td><a href="' . $blog->getBlogUrl() . '">Xem chi tiết </a></td>
+                    </tr>';
+                }
+            }
+//            if ($events){
+//                foreach ($events as $key => $event) {
+//                    $output .= '<tr style="color: black; background-color: white">
+//                    <td><a href="'. $event->getEventUrl() . '"> ' . $event->blog_title . '</a></td>
+//                    <td><img style="width: 50px; height: 50px;" src="' . $event->getImage() . '" ></td>
+//                    <td>' . $event->blog_desc . '</td>
+//                    <td>Blog</td>
+//                    <td><a href="' . $event->getBlogUrl() . '">Xem chi tiết </a></td>
+//                    </tr>';
+//                }
+//            }
+            return [
+                "response"=>$output,
+                "count"=>$countProduct,
+                "countBlog"=>$countBlog,
+                "blogs"=>$blogs,
+            ];
+        }
+    }
+    public function searchSelected(Request $request){
+
+        $output = '';
+            if ($request->search == "Blog"){
+                $blogs = Blog::where('blog_title', 'like', '%'.$request->value.'%')
+                    ->orwhere('blog_content',"like", '%'.$request->value.'%')->get();
+                $countBlog = count($blogs);
+                foreach ($blogs as $key => $blog) {
+                    $output .= '<tr style="color: black; background-color: white">
+                    <td><a href="'. $blog->getBlogUrl() . '"> ' . $blog->blog_title . '</a></td>
+                    <td><img style="width: 50px; height: 50px;" src="' . $blog->getImage() . '" ></td>
+                    <td>' . $blog->blog_desc . '</td>
+                    <td>Blog</td>
+                    <td><a href="' . $blog->getBlogUrl() . '">Xem chi tiết </a></td>
+                    </tr>';
+                }
+                return [
+                    "count"=>$countBlog,
+                    "response"=>$output,
+                ];
+            }else{
+                $products = Product::where('product_name', 'like', '%'.$request->value.'%')
+                    ->orwhere('product_price',"like", '%'.$request->value.'%')->get();
+                $countProduct = count($products);
+                foreach ($products as $key => $product) {
+                    $output .= '<tr style="color: black; background-color: white;">
+                    <td><a href="'. $product->getProductUrl() . '"> ' . $product->product_name . '</a></td>
+                    <td><img style="width: 50px; height: 50px;" src="' . $product->getImage() . '" ></td>
+                    <td>' . $product->getPrice() . '</td>
+                    <td>Product</td>
+                    <td><a href="' . $product->getProductUrl() . '">Xem chi tiết </a></td>
+                    </tr>';
+                }
+                return [
+                    "response"=>$output,
+                    "count"=>$countProduct,
+                ];
+            }
+        }
 }
 //            die("done");
 //            $currentUser = Auth::user();

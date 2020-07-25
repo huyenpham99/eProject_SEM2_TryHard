@@ -18,7 +18,12 @@ class Event extends Model
         "user_id",
         "banner_id",
     ];
-
+    public function getImage(){
+        if(is_null($this->__get("event_image"))){
+            return asset("media/default.jpg");
+        }
+        return asset($this->__get("event_image"));
+    }
     public function Banner(){
         return $this->belongsTo("\App\Banner", "banner_id");
     }

@@ -1,45 +1,40 @@
 @extends("layout")
-@section("title", "Comment Manager")
-@section("contentHeader", "Comment Manager")
+@section("tieude","Quản Lý Bình Luận")
 @section("content")
     <div class="row mt-4">
         <div class="col">
             <div class="card">
-                <!-- Card header -->
-                <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left">Comment Manager</h2>
-                </div>
                 <!-- Light table -->
                 <div class="table-responsive">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
-                        <tr>
+                        <tr class="text-center">
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">STT
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Comment_User
+                                data-sort="name">Người Bình Luận
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Comment Time
+                                data-sort="name">Thời Gian Bình Luận
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Comment Content
+                                data-sort="name">Nội Dung Bình luận
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Blog Name
+                                data-sort="name">Bài Viết
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Status
+                                data-sort="name">Trạng Thái
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Change Status
+                                data-sort="name">Chức Năng
                             </th>
                         </tr>
                         </thead>
                         <tbody class="list">
                         @foreach($comments as $comment)
-                            <tr>
+                            <tr class="text-center">
                                 <td>{{$comment->__get("id")}}</td>
                                 <td>{{$comment->__get("comment_user")}}</td>
                                 <td>
@@ -49,7 +44,7 @@
                                     {{$comment->__get("content")}}
                                 </td>
                                 <td>
-                                    {{$comment->__get("blog_title")}}
+                                    {{$comment->__get("blog_id")}}
                                 </td>
                                 @if($comment->__get("comment_status")==0)
                                 <td>
@@ -65,7 +60,7 @@
                                     </td>
                                 @endif
                                 <td>
-                                    <a href="{{url("/admin/edit-comment/{$comment->__get("id")}")}}" class="btn btn-sm btn-primary">Change</a>
+                                    <a href="{{url("/admin/edit-comment/{$comment->__get("id")}")}}" class="btn btn-primary"><i class="fas fa-pencil-alt"></i> </a>
                                 </td>
 
                             </tr>

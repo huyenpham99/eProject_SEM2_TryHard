@@ -6,9 +6,9 @@ Route::get("/","WebController@dashboard");
 Route::get("/list-category","CategoryController@listCategory")->middleware('product');
 Route::get("/new-category","CategoryController@newCategory")->middleware('product');
 Route::post("/save-category","CategoryController@saveCategory")->middleware('product');
-Route::get("/edit-category/{id}","CategoryController@editCategory")->middleware('product');
-Route::put("/update-category/{id}","CategoryController@updateCategory")->middleware('product');
-Route::delete("/delete-category/{id}","CategoryController@deleteCategory")->middleware('product');
+Route::get("/edit-category/{category}","CategoryController@editCategory")->middleware('product');
+Route::put("/update-category/{category}","CategoryController@updateCategory")->middleware('product');
+Route::delete("/delete-category/{category}","CategoryController@deleteCategory")->middleware('product');
 
 //Products Router
 Route::get("/list-product","ProductController@listProduct")->middleware('product');

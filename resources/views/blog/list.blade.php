@@ -1,15 +1,14 @@
 @extends("layout")
-@section("title", "BlogRepository List")
-@section("contentHeader", "BlogRepository List")
+@section("tieude","Danh Mục Bài Viết")
 @section("content")
     <div class="row mt-4">
         <div class="col">
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left text-capitalize">Blog List</h2>
+                    <h2 class="mb-0 col-lg-9 float-left text-capitalize"></h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("admin/new-blog")}}" class="btn btn-success"><i class="fas fa-plus"></i></a>
+                        <a href="{{url("admin/new-blog")}}" class="btn btn-success">Viết Bài</a>
                     </div>
                 </div>
                 <!-- Light table -->
@@ -17,16 +16,14 @@
                     <table class="mb-0 table">
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Blog_Title</th>
-                            <td>Blog Image</td>
-                            <th>Blog_Desc</th>
-                            <th>Blog_Content</th>
-                            <th>Blog_Date</th>
-                            <th>View_Count</th>
-                            <th>Blog Category</th>
-                            <th></th>
-                            <th></th>
+                            <th>STT</th>
+                            <th>Tiêu Đề Blog</th>
+                            <td>Ảnh Bìa Blog</td>
+                            <th>Mô Tả Ngắn</th>
+                            <th>Ngày Viết</th>
+                            <th>Lượt Xem</th>
+                            <th>Danh Mục Blog</th>
+                            <th>Chức Năng</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -37,17 +34,21 @@
                             <td>{{$blog->__get("blog_title")}}</td>
                             <td><img src="{{$blog->__get("blog_image")}}" style="width: 50px; height: 50px"></td>
                             <td>{{$blog->__get("blog_desc")}}</td>
-                            <td>Content</td>
                             <td>{{$blog->__get("blog_date")}}</td>
                             <td>{{$blog->__get("view_count")}}</td>
                             <td>{{$blog->__get("blog_category_id")}}</td>
-                            <td> <a href="{{url("admin/edit-blog/{$blog->__get("id")}")}}" class="btn btn-warning" style="width: 75px"><i class="fas fa-pencil-alt"> Edit</i></a>
                             <td>
+                                <div class="box" style="position: absolute; right: 60px">
+                                <a href="{{url("admin/edit-blog/{$blog->__get("id")}")}}" class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                </div>
+                                <div class="box" style="position: absolute; right: 10px">
+
                                 <form action="{{url("admin/delete-blog/{$blog->__get("id")}")}}" method="post">
                                     @method("DELETE")
                                     @csrf
-                                    <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger" style="width: 90px"><i class="fas fa-times"> Delete</i> </button>
+                                    <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
                                 </form>
+                                </div>
                             </td>
                         </tr>
                         @endforeach
