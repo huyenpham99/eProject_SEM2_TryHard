@@ -17,7 +17,7 @@ use SimpleSoftwareIO\QrCode\Generator;
 Auth::routes();
 
 Route::group(["middleware"=>["deadactive","auth"]],function(){
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/', 'HomeController@index');
     require_once "user.php";
 });
 Route::group(["middleware"=>["deadactive","admin","auth"], "prefix"=>"admin"],function(){
@@ -35,7 +35,8 @@ Route::get('/callback/{provider}', 'SocialController@callback');
 
 Route::get('/404', 'HomeController@Error');
 
-
+Route::get('/search', 'HomeController@searchHome');
+Route::get('/searchselected', 'HomeController@searchSelected');
 
 Route::get('/qr-code', function () {
     $qrcode = new Generator;

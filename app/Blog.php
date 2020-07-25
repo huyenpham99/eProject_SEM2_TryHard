@@ -22,4 +22,10 @@ class Blog extends Model
     public function comments(){
         return $this->hasMany("App\Comment");
     }
+    public function getImage(){
+        if(is_null($this->__get("blog_image"))){
+            return asset("media/default.jpg");
+        }
+        return asset($this->__get("blog_image"));
+    }
 }
