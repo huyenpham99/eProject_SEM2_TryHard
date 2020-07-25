@@ -144,6 +144,9 @@
                                 <a href="{{url("/blog")}}">Blog</a>
                             </li>
                             <li>
+                                <a href="{{url("/donate")}}">Donate</a>
+                            </li>
+                            <li>
                                 <a href="{{url("/contact")}}">Contact</a>
                             </li>
                         </ul>

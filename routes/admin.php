@@ -114,3 +114,8 @@ Route::delete("/delete-order/{id}","OrderController@deleteOrder");
 Route::get("/search/{value}", "ProductController@searchProduct");
 //user search
 Route::get("/searchUser/{value}", "UserController@searchUser");
+
+//donate
+Route::get("/list-donate","DonateController@listDonate");
+Route::get("/new-donate","DonateController@newDonate");
+Route::post("/save-donate","DonateController@saveDonate");
