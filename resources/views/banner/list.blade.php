@@ -7,7 +7,7 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left">Banner Listing</h2>
+                    <h2 class="mb-0 col-lg-9 float-left">Danh Sách</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
                         <a href="{{url("/admin/new-banner")}}" class="btn btn-success"><i class="fas fa-plus"></i></a>
                     </div>
@@ -21,25 +21,19 @@
                                 data-sort="name">ID
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Banner Name
+                                data-sort="name">Tên Banner
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Banner Image
+                                data-sort="name">Ảnh
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Banner Image 2
+                                data-sort="name">Ảnh Thứ 2
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Status
+                                data-sort="name">Trạng Thái
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Thứ tự
-                            </th>
-                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Created At
-                            </th>
-                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Updated At
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">

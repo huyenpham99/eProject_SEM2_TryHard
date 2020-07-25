@@ -5,38 +5,32 @@
         <td>{{$user->__get("email")}}</td>
         <td>
             @if($user->__get("role") == 1)
-                <a class="btn btn-warning btn-sm text-white">Admin</a>
+                <a class="btn btn-danger btn-sm text-white">Admin</a>
             @elseif($user->__get("role") == 0)
-                <a class="btn btn-success btn-sm text-white">User Account</a>
+                <a class="btn btn-success btn-sm text-white">Tài Khoản Khách</a>
             @elseif($user->__get("role") == 2)
-                <a class="btn btn-success btn-sm text-white">Blog Manager</a>
+                <a class="btn btn-success btn-sm text-white">Quản Lý Bài Viết</a>
             @elseif($user->__get("role") == 3)
-                <a class="btn btn-success btn-sm text-white">Event Manager</a>
+                <a class="btn btn-success btn-sm text-white">Quản Lý Sự Kiện</a>
             @elseif($user->__get("role") == 4)
-                <a class="btn btn-success btn-sm text-white">Product Manager</a>
+                <a class="btn btn-success btn-sm text-white">Quản Lý Sản Phẩm</a>
             @elseif($user->__get("role") == 5)
-                <a class="btn btn-success btn-sm text-white">Program Manager</a>
+                <a class="btn btn-success btn-sm text-white">Quản Lý Chương Trình</a>
             @elseif($user->__get("role") == 6)
-                <a class="btn btn-danger btn-sm text-white">Dead Active</a>
+                <a class="btn btn-danger btn-sm text-white">Tạm khóa</a>
             @endif
         </td>
         <td class="d-flex">
             @if($user->__get("role") == 1)
-                <a class="btn btn-warning btn-sm text-white" onclick="alert('This user is protected')">Protected User</a>
+
             @else
                 <a class="pr-2" href="{{url("admin/view-user/{$user->__get("id")}")}}">
-                    <button type="button" class="btn btn-info btn-sm">View Info</button>
+                    <button type="button" class="btn btn-info btn-sm">Xem thông tin</button>
                 </a>
                 <a class="pr-2" href="{{url("admin/edit-user/{$user->__get("id")}")}}">
-                    <button type="button" class="btn btn-primary btn-sm">Set Access</button>
+                    <button type="button" class="btn btn-primary btn-sm">Sửa quyền hạn</button>
                 </a>
-                {{--                                        <form action="{{url("adminadmin/delete-user/{$user->__get("id")}")}}" method="post">--}}
-                {{--                                            @method("DELETE")--}}
-                {{--                                            @csrf--}}
-                {{--                                            <button type="submit" onclick="return confirm('Are you sure!');"--}}
-                {{--                                                    class="btn btn-danger btn-sm">Delete--}}
-                {{--                                            </button>--}}
-                {{--                                       </form>--}}
+
             @endif
         </td>
     </tr>
