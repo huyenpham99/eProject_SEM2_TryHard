@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use MicrosoftAzure\Storage\Blob\Models\Blob;
+use function GuzzleHttp\Promise\all;
 use function GuzzleHttp\Psr7\uri_for;
 
 class HomeController extends Controller
@@ -45,6 +46,7 @@ class HomeController extends Controller
     {
         $category     = Category::all();
         $blog         = Blog::orderBy("view_count", 'desc')->limit(3)->get();
+        $blogs = Blog::all();
         $blogcategory = BlogCategory::all();
 
         $products = Product::all();
@@ -62,8 +64,8 @@ class HomeController extends Controller
             $p->save();
         }
 //        Tạo slug Blog
-        foreach ($blog as $p) {
-            $slug    = \Illuminate\Support\Str::slug($p->__get("title"));
+        foreach ($blogs as $p){
+            $slug    = \Illuminate\Support\Str::slug($p->__get("blog_title"));
             $p->slug = $slug . $p->__get("id");// luu lai vao DB
             $p->save();
         }
@@ -161,6 +163,12 @@ class HomeController extends Controller
             "category" => $category,
 //            "categories"=>$categories// tra ve category trong front end
             "products" => $products
+        ]);
+    }
+    public function allShop(){
+        $allshop = Product::paginate(9);
+        return view("frontend.shopall",[
+           "allshop" => $allshop,
         ]);
     }
 

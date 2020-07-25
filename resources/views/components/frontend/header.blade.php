@@ -102,7 +102,7 @@
                                 <a href="{{url("/programcategory")}}">Programs</a>
                             </li>
                             <li class="dropdown mega-menu">
-                                <a href="{{url("/shop/dried5")}}">Shop</a>
+                                <a href="{{url("/shop")}}">Shop</a>
                                 <ul class="sub-menu">
                                     <li>
                                         <div class="mega-menu-content col-sm-12">

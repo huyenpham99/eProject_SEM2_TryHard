@@ -10,7 +10,7 @@ Route::get('/', 'HomeController@index');
 
 //Route::get("/product/{product:slug}", "HomeController@product");
 
-Route::get("/blog/{blog:slug}", "HomeController@product");
+//Route::get("/blog/{blog:slug}", "HomeController@product");
 
 //Route::get('/', 'HomeController@index');
 
@@ -24,7 +24,7 @@ Route::get("/blog","HomeController@blog");
 Route::get("/blog/{blog:slug}","HomeController@blogdetail");
 Route::post("/blog/comment","HomeController@saveComment");
 
-Route::get("/shop","HomeController@shop");
+Route::get("/shop","HomeController@allShop");
 
 Route::get("/product-detail","HomeController@productdetail");
 
@@ -47,5 +47,5 @@ Route::post("/checkout","HomeController@placeOrder")->middleware("auth");
 Route::get("/view-user/{id}","UserController@viewUser1")->middleware("auth");
 Route::put("/update-user/{id}", "UserController@updateUser1")->middleware("auth");
 Route::post("/cancel-order/{id}","OrderController@cancelOrder")->middleware("auth");
-Route::get("/vn-pay","VNPayController@createPayment")->middleware("auth");
+//Route::get("/vn-pay","VNPayController@createPayment")->middleware("auth");
 Route::get("/return-vnpay","VNPayController@return")->middleware("auth");

@@ -1,11 +1,7 @@
 @extends("layout")
-@section("title", "New Blog CategoryRepository Listing")
-@section("contentHeader", "New Blog CategoryRepository")
+@section("tieude","Danh Mục Blog")
 @section("content")
     <div class="card card-primary mt-4">
-        <div class="card-header">
-            <h3 class="card-title">Create A New Blog Category</h3>
-        </div>
         <!-- /.card-header -->
         <!-- form start -->
         <form role="form" action="{{url("admin/save-blogcategory")}}" method="post" enctype="multipart/form-data">
@@ -13,8 +9,8 @@
             @csrf
             <div class="card-body">
                 <div class="form-group">
-                    <label>Blog Category Name</label>
-                    <input type="text" name="blog_category_name" class="form-control @error("blog_category_name")  is-invalid @enderror" placeholder="New Blog Category">
+                    <label>Tên Danh Mục Blog</label>
+                    <input type="text" name="blog_category_name" class="form-control @error("blog_category_name")  is-invalid @enderror" >
                     @error("blog_category_name")
                     <span class="error invalid-feedback">  {{$message}}</span>
                     @enderror
@@ -24,7 +20,7 @@
             <!-- /.card-body -->
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Thêm Mới</button>
             </div>
         </form>
     </div>

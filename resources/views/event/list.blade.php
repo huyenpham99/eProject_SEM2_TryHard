@@ -1,32 +1,30 @@
 @extends("layout")
-@section("title", "EventRepository List")
-@section("contentHeader", "EventRepository List")
+@section("tieude","Danh Sách Sự Kiện")
 @section("content")
     <div class="row mt-4">
         <div class="col">
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left text-capitalize">Event List</h2>
+                    <div class="col-lg-9"></div>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("/admin/new-event")}}" class="btn btn-success"><i class="fas fa-plus"></i></a>
+                        <a href="{{url("/admin/new-event")}}" class="btn btn-success">Thêm Mới Sự Kiện</a>
                     </div>
                 </div>
                 <!-- Light table -->
                 <div class="table-responsive table-borderless table-hover table-striped">
-                    <table class="mb-0 table">
+                    <table class="mb-0 table table-responsive">
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Event Name</th>
-                            <th>Event Date Start</th>
-                            <th>Event Date End</th>
-                            <th>Event People Count</th>
-                            <th>Event Address</th>
-                            <th>Event Content</th>
-                            <th>Event Desciption</th>
-                            <th>User</th>
-                            <th>Banner</th>
+                            <th>STT</th>
+                            <th>Tên Sự Kiện</th>
+                            <th>Ngày Bắt Đầu</th>
+                            <th>Ngày Kết Thúc</th>
+                            <th>Số Người Đăng Ký</th>
+                            <th>Địa Chỉ Sự Kiện</th>
+                            <th>Mô Tả Ngắn</th>
+                            <th>Người Tạo</th>
+                            <th>Chức Năng</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -39,22 +37,19 @@
                                 <td>{{$event->__get("event_date_end")}}</td>
                                 <td>{{$event->__get("event_people_count")}}</td>
                                 <td>{{$event->__get("event_address")}}</td>
-                                <td>{{$event->__get("event_content")}}</td>
                                 <td>{{$event->__get("event_desc")}}</td>
                                 <td>{{$event->__get("user_id")}}</td>
-                                <td>{{$event->__get("banner_id")}}</td>
-                                <td>@php
-                                        $doc = new DOMDocument();
-                                        $doc->loadHTML($event->__get("event_content"));
-                                        echo $doc->saveHTML();
-                                    @endphp</td>
-                                <td> <a href="{{url("/admin/edit-event/{$event->__get("id")}")}}" class="btn btn-warning"><i class="fas fa-pencil-alt"> Edit</i></a>
                                 <td>
-                                    <form action="{{url("/admin/delete-event/{$event->__get("id")}")}}" method="post">
-                                        @method("DELETE")
-                                        @csrf
-                                        <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger"><i class="fas fa-times"> Delete</i></button>
-                                </td>
+                                    <div class="box" style="position: absolute; right: 60px">
+                                        <a href="{{url("/admin/edit-event/{$event->__get("id")}")}}" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
+                                    </div>
+                                    <div class="box" style="position: absolute; right: 10px">
+                                        <form action="{{url("/admin/delete-event/{$event->__get("id")}")}}" method="post">
+                                            @method("DELETE")
+                                            @csrf
+                                            <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                        </form>
+                                    </div>
                             </tr>
                         @endforeach
                         </tbody>

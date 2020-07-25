@@ -1,110 +1,84 @@
-@include('ckfinder::setup')
-    <!doctype html>
-<html lang="en">
-<html ... xmlns:fb="http://ogp.me/ns/fb#">
-<head>
-    <x-head/>
-    <meta property="fb:app_id" content="{618524112104934}"/>
-    <script src="{{asset("assets/scripts/jquery.js")}}"></script>
-</head>
-<body>
-<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-    <x-header/>
-    <x-theme-ui-setting/>
-    <div class="app-main">
-        <x-aside/>
-        <div class="app-main__outer">
-            <div class="app-main__inner">
-                <x-title/>
-
-                <div class="search-wrapper">
-                    <div class="input-holder">
-                        <input type="text" class="search-input" id="search" name="search" placeholder="Type to search">
-                        <button class="search-icon"><span></span></button>
-                    </div>
-                    <button class="close"></button>
-                </div>
+@extends("layout")
+@section("tieude","Danh Sách Sản Phẩm")
+@section("content")
                 <div class="row mt-4">
                     <div class="col">
                         <div class="card">
                             <!-- Card header -->
                             <div class="card-header border-0">
-                                <h2 class="mb-0 col-lg-9 float-left">Product List</h2>
+                                <h2 class="mb-0 col-lg-9 float-left">
+                                    <div class="search-wrapper">
+                                        <div class="input-holder">
+                                            <input type="text" class="search-input" id="search" name="search" placeholder="Type to search">
+                                            <button class="search-icon"><span></span></button>
+                                        </div>
+                                        <button class="close"></button>
+                                    </div>
+                                </h2>
                                 <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                                    <a href="{{url("admin/new-product")}}" class="btn btn-success"><i class="fas fa-plus"></i></a>
+                                    <a href="{{url("admin/new-product")}}" class="btn btn-success">Nhập Hàng</a>
                                 </div>
                             </div>
                             <!-- Light table -->
                             <div class="table-responsive">
-                                <table class="table align-items-center table-flush">
+                                <table class="table table-stripe">
                                     <thead class="thead-light">
-                                    <tr>
+                                    <tr class="text-center">
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">ID
+                                            data-sort="name">Mã Số
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Product Name
+                                            data-sort="name">Tên Sản Phẩm
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Product Image
+                                            data-sort="name">Ảnh Sản Phẩm 1
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Product Image1
+                                            data-sort="name">Ảnh Sản Phẩm 2
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Product Image2
+                                            data-sort="name">Ảnh Sản Phẩm 3
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Product Description
+                                            data-sort="name">Mô Tả Ngắn
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Price
+                                            data-sort="name">Giá Tiền
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Quantity
+                                            data-sort="name">Số Lượng
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Category
+                                            data-sort="name">Danh Mục
                                         </th>
                                         <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Created At
-                                        </th>
-                                        <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Updated At
-                                        </th>
-                                        <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Sửa
-                                        </th>
-                                        <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                            data-sort="name">Xóa
+                                            data-sort="name">Chức Năng
                                         </th>
                                     </tr>
                                     </thead>
-                                    <tbody class="tbody-product">
+                                    <tbody class="list">
                                     @foreach($products as $product)
-                                        <tr>
+                                        <tr class="text-center">
                                             <td>{{$product->__get("id")}}</td>
                                             <td>{{$product->__get("product_name")}}</td>
                                             <td><img src="{{$product->__get("product_image")}}" style="width: 50px; height: 50px"></td>
                                             <td><img src="{{$product->__get("product_image1")}}" style="width: 50px; height: 50px"></td>
                                             <td><img src="{{$product->__get("product_image2")}}" style="width: 50px; height: 50px"></td>
-                                            {{--                                <td><img src="{{$product->__get("product_image3")}}" style="width: 50px; height: 50px"></td>--}}
-                                            {{--                                <td><img src="{{$product->__get("product_image4")}}" style="width: 50px; height: 50px"></td>--}}
                                             <td>{{$product->__get("product_desc")}}</td>
                                             <td>{{$product->__get("product_price")}}</td>
                                             <td>{{$product->__get("qty")}}</td>
                                             <td>{{$product->__get("category_id")}}</td>
-                                            <td>{{$product->__get("created_at")}}</td>
-                                            <td>{{$product->__get("updated_at")}}</td>
                                             <td>
-                                                <a href="{{url("admin/edit-product/{$product->__get("id")}")}}" class="btn btn-warning" style="width: 75px"><i class="fas fa-pencil-alt"></i></a>
-                                            </td>
-                                            <td>
-                                                <form action="{{url("admin/delete-product/{$product->__get("id")}")}}" method="post">
-                                                    @method("DELETE")
-                                                    @csrf
-                                                    <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger" style="width: 90px"><i class="fas fa-trash-alt"></i></button>
-                                                </form>
+                                                    <div class="box" style="position: absolute; right: 60px">
+                                                        <a href="{{url("admin/edit-product/{$product->__get("id")}")}}" class="btn btn-info"><i class="fas fa-pencil-alt"></i></a>
+                                                    </div>
+                                                    <div class="box" style="position: absolute; right: 10px">
+                                                        <form action="{{url("admin/delete-product/{$product->__get("id")}")}}" method="post">
+                                                            @method("DELETE")
+                                                            @csrf
+                                                            <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                                        </form>
+                                                    </div>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -117,12 +91,7 @@
                 </div>
 
                 {!! $products->links() !!}
-            </div>
-        </div>
-    </div>
-    <x-footer/>
-</div>
-</body>
+                <script src="{{asset("assets/scripts/jquery.js")}}"></script>
 <script src="{{asset("https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js")}}"></script>
 <script type="text/javascript" src="{{asset("./assets/scripts/main.js")}}"></script>
 <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
@@ -131,7 +100,6 @@
         filebrowserBrowseUrl: '{{ route('ckfinder_browser') }}',
     } );
 </script>
-</html>
 
 <script type="text/javascript">
     $('#search').keyup(function(){
@@ -164,6 +132,7 @@
 
     });
 </script>
+@endsection
 
 
 
