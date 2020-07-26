@@ -72,10 +72,10 @@
                                     <div class="product-action">
 												<span class="add-to-cart">
 													<a href="javascript: void(0);"
-                                                       onclick="addToCart({{$product->__get("id")}})" data-toggle="tooltip" data-placement="top" title="Add to cart"></a>
+                                                       onclick="addToCart({{$product->__get("id")}})" data-toggle="tooltip" data-placement="top" title="Thêm Vào Giỏ Hàng"></a>
 												</span>
                                         <span class="compare">
-                                            <a href="{{$product->getProductUrl()}}" data-toggle="tooltip" data-placement="top" title="Detail"></a>
+                                            <a href="{{$product->getProductUrl()}}" data-toggle="tooltip" data-placement="top" title="Chi Tiết"></a>
                                         </span>
                                     </div>
                                 </div>
