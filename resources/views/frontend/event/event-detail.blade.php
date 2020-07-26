@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-title text-center">{{$event->__get("event_name")}}</h2>
+                        <h2 class="page-title text-center" style="font-family: 'Playfair Display', serif;">{{$event->__get("event_name")}}</h2>
                     </div>
                 </div>
             </div>

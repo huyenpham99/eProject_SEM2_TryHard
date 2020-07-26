@@ -15,7 +15,7 @@
                                 <li class="float-right" style="list-style: none;"><a href="{{url("/login")}}"
                                                                                      style="border-radius: 20px; width: 100px; height: 40px"
                                                                                      type="button"
-                                                                                     class="btn btn-secondary">Login</a>
+                                                                                     class="btn btn-secondary">Đăng Nhập</a>
                                 </li>
                             @else
                                 <li class="dropdown mega-menu">
@@ -29,17 +29,16 @@
                                             @php
                                                 $id =  \Illuminate\Support\Facades\Auth::user()->__get("id");
                                             @endphp
-                                            <a href="{{url("/view-user/{$id}")}}" tabindex="0" class="dropdown-item">Profile</a>
+                                            <a href="{{url("/view-user/{$id}")}}" tabindex="0" class="dropdown-item">Hồ Sơ</a>
                                         </li>
                                         <li style="padding: 10px 0">
-                                            <a href="{{url("/change-password")}}" tabindex="0" class="dropdown-item">Change
-                                                Password</a>
+                                            <a href="{{url("/change-password")}}" tabindex="0" class="dropdown-item">Đổi Mật Khẩu</a>
                                         </li>
                                         <li style=": 10px 0">
                                             <a href="{{ route('logout') }}"
                                                onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();" class="dropdown-item ">
-                                                Logout
+                                                Đăng Xuất
                                             </a>
                                         </li>
                                     </ul>
@@ -108,9 +107,6 @@
                 <div class="header-right">
                     <nav class="menu">
                         <ul class="main-menu">
-                            <li>
-                                <a href="{{url("/")}}">TRANG CHỦ</a>
-                            </li>
                             <li class="dropdown mega-menu">
                                 <a href="{{url("/shop")}}">CỬA HÀNG</a>
                                 <ul class="sub-menu">
@@ -137,6 +133,15 @@
                                 </ul>
                             </li>
                             <li>
+                                <a href="{{url("/programcategory")}}">CHƯƠNG TRÌNH</a>
+                            </li>
+                            <li>
+                                <a href="{{url("/event")}}">SỰ KIỆN</a>
+                            </li>
+                            <li>
+                                <a href="{{url("/donate")}}">ỦNG HỘ</a>
+                            </li>
+                            <li>
                                 <a href="{{url("/blog")}}">BÀI VIẾT</a>
                             </li>
                             <li class="dropdown">
@@ -146,19 +151,12 @@
                                         <a href="{{url("/about")}}">VỀ CHÚNG TÔI</a>
                                     </li>
                                     <li>
-                                        <a href="{{url("/programcategory")}}">CHƯƠNG TRÌNH</a>
+                                        <a href="{{url("/contact")}}">LIÊN HỆ</a>
                                     </li>
-                                    <li>
-                                        <a href="{{url("/event")}}">SỰ KIỆN</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{url("/donate")}}">ỦNG HỘ</a>
-                                    </li>
+
                                 </ul>
                             </li>
-                            <li>
-                                <a href="{{url("/contact")}}">LIÊN HỆ</a>
-                            </li>
+
                         </ul>
                     </nav>
                     <div class="btn-wrap">
