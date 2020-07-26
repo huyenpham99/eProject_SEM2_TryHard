@@ -132,8 +132,8 @@
                                           <td>Số: {{$order->order_id}}</td>
                                           <td>{{$order->product_name}}</td>
                                           @if($order->status == 1)
-                                              <td><a style="color: white" class="btn btn-danger">Chờ xác nhận</a></td>
-                                          @elseif($order->status == 2) <td><a style="color: white" class="btn btn-primary">Đang giao hàng</a></td>
+                                              <td><a style="color: white" class="btn btn-danger">Chờ Thanh Toán</a></td>
+                                          @elseif($order->status == 2) <td><a style="color: white" class="btn btn-primary">Đang Vận Chuyển</a></td>
                                           @elseif($order->status == 3) <td><a style="color: white" class="btn btn-success">Đã hoàn thành</a></td>
                                           @elseif($order->status == 4) <td><a style="color: white" class="btn btn-dark">Đã hủy đơn</a></td>
                                           @endif

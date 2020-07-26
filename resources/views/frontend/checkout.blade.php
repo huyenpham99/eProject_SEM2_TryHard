@@ -120,12 +120,19 @@
                             <ul class="payment-method">
                                 <h3>Payment Detail</h3>
                                 <li>
-                                    <input id="payment_method_cod" type="radio" class="input-radio" name="payment_method" value="cod" checked="checked" data-order_button_text="">
+                                    <input type="radio" value="vnpay" name="payment"/>
                                     <span>
                                         <img src="https://1office.vn/wp-content/uploads/2020/02/1564381662138-unnamed-1.jpg"/>
                                     </span>
                                     <div class="payment-box">
                                         <p>Cổng thanh toán VNPAY.</p>
+                                    </div>
+                                    <input type="radio" value="tructiep" name="payment"/>
+                                    <span>
+                                        <i class="fas fa-apple-pay">Thanh Toán Trực Tiếp</i>
+                                    </span>
+                                    <div class="payment-box">
+                                        <p>Thanh Toán Trực Tiếp</p>
                                     </div>
                                 </li>
                             </ul>
