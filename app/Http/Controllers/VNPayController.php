@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\BuyTickets;
-use App\Event;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Omnipay\VNPay\Gateway;
 use PHPViet\Laravel\Omnipay\Facades\MoMo\AllInOneGateway;
 use PHPViet\Laravel\Omnipay\Facades\OnePay\DomesticGateway;
@@ -19,12 +16,26 @@ class VNPayController extends Controller
     public function return(Request $request)
     {
         $currentID = Auth::user()->id;
+        $currentUser = Auth::user()->name;
+        $cart = Cart::where("user_id", Auth::id())
+            ->where("is_checkout", true)
+            ->with("getItems")
+            ->firstOrFail();
+        $grandTotal = 0;
+        foreach ($cart->getItems as $item) {
+            $grandTotal += $item->pivot->__get("qty") * $item->__get("product_price");
+        }
         $url = session('url_prev','/');
         if($request->vnp_ResponseCode == "00") {
              Order::where("user_id","=",$currentID)->update([
                 "status" => 2,
             ]);
-            return redirect("/home")->with("success")->with('message', 'Complete Order!');
+            $order = Order::where("user_id", Auth::id())->firstOrFail();
+            Mail::send('mail.checkout-form',["cart" => $cart->getItems,"user" => $currentUser,"order" => $order],function ($message){
+                $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Đơn Hàng HealthyFoods '.Auth::user()->__get("name"));
+            });
+            event(new OrderCreated($order));
+            return redirect("/")->with("success")->with('message', 'Mua Hàng Thành Công Thông Tin Vận Chuyển Gửi Qua Email!');
         }
         session()->forget('url_prev')
         ;
@@ -32,9 +43,10 @@ class VNPayController extends Controller
     }
     public function return1(Request $request)
     {
-        $currentID = Auth::user()->id;
         $url = session('url_prev','/');
         if($request->vnp_ResponseCode == "00") {
+
+
             return redirect("/donate")->with("success")->with('message', 'Ủng Hộ Thành Công!');
         }
         session()->forget('url_prev')
