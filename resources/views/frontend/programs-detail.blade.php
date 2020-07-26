@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-title text-center" style="font-family: 'Playfair Display', serif; ">Blog Detail</h2>
+                        <h2 class="page-title text-center" style="font-family: 'Playfair Display', serif; ">Chương trình chi tiết</h2>
                     </div>
                 </div>
             </div>
@@ -15,8 +15,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="breadcrumbs">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#">Program Detail</a></li>
+                            <li><a href="{{url("/")}}">Trang chủ</a></li>
+                            <li><a href="#">Chương trình chi tiết</a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,9 +53,6 @@
                             <div class="entry-footer">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="tags">
-                                            <a href="#">green</a> <a href="#">natural</a> <a href="#">organic store</a>
-                                        </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="share">
@@ -70,72 +67,9 @@
                             <div class="entry-author">
                                 <div class="row">
                                     <div class="col-md-2">
-                                        <img alt="" src="frontend/images/avatar/avatar.png" class="avatar" />
-                                    </div>
-                                    <div class="col-md-10">
-                                        <h3 class="name">TM Organik</h3>
-                                        <div class="desc">We are online market of organic fruits, vegetables, juices and dried fruits. We bring fresh, seasonal products from our family farm right to your doorstep.</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="entry-nav">
-                                <div class="row">
-                                    <div class="col-md-5 left">
-                                        <i class="fa fa-angle-double-left"></i>
-                                        <a href="#">How can salmon be raised organically in fish farms?</a>
-                                    </div>
-                                    <div class="col-md-2 text-center">
-                                        <i class="ion-grid"></i>
-                                    </div>
-                                    <div class="col-md-5 right">
-                                        <a href="#">How to steam &amp; purée your sugar pie pumkin</a>
-                                        <i class="fa fa-angle-double-right"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <script type="text/javascript">
-                                function postComment1() {
-                                    var key = window.event.keyCode;
-                                    if (key === 13) {
-                                        var id = $("#blog_id").attr('data-id');
-                                        var comment = $("#comment").val();
-                                        $.ajax({
-                                            method: "post",
-                                            url: '{{url("/programdetail/comment")}}',
-                                            data: {
-                                                id: id,
-                                                comment: comment,
-                                                _token: "{{csrf_token()}}"
-                                            },
-                                            success: function (response) {
-                                                $('.comment-list').append(response);
-                                                $("#comment").val('');
-                                            }
-                                        })
-                                        return false;
-                                    }
-                                    else {
-                                        return true;
-                                    }
-                                }
-                                function postComment() {
-                                    var id = $("#blog_id").attr('data-id');
-                                    var comment = $("#comment").val();
-                                    $.ajax({
-                                        method: "post",
-                                        url: '{{url("/blog/comment")}}',
-                                        data: {
-                                            id: id,
-                                            comment: comment,
-                                            _token: "{{csrf_token()}}"
-                                        },
-                                        success: function (response) {
-                                            $('.comment-list').append(response);
-                                            $("#comment").val('');
-                                        }
-                                    })
-                                }
-                            </script>
                         </div>
                         @endforeach
                     </div>
@@ -143,12 +77,12 @@
                         <div class="sidebar">
                             <div class="widget widget-product-search">
                                 <form class="form-search">
-                                    <input type="text" class="search-field" placeholder="Search products…" value="" name="s" />
+                                    <input type="text" class="search-field" placeholder="Tìm kiếm sản phẩm..." value="" name="s" />
                                     <input type="submit" value="Search" />
                                 </form>
                             </div>
                             <div class="widget widget-product-categories">
-                                <h3 class="widget-title">Program Categories</h3>
+                                <h3 class="widget-title">Danh mục chương trình</h3>
                                 <ul class="product-categories">
                                     @foreach(\App\ProgramCategory::all() as $g)
                                         <li><a href="{{asset('program/'.$g->id)}}">{{$g->__get(("progam_category_name"))}}</a></li>
@@ -156,7 +90,7 @@
                                 </ul>
                             </div>
                             <div class="widget widget_posts_widget">
-                                <h3 class="widget-title">Recent Posts</h3>
+                                <h3 class="widget-title">Những bài viết gần đây</h3>
                                 @foreach(\App\ProgramDetail::limit(5)->get() as $program)
                                     <div class="item">
                                         <div class="thumb">
@@ -169,12 +103,6 @@
                                         </div>
                                     </div>
                                 @endforeach
-                            </div>
-                            <div class="widget widget-tags">
-                                <h3 class="widget-title">Search by Tags</h3>
-                                <div class="tagcloud">
-                                    <a href="#">bread</a> <a href="#">food</a> <a href="#">fruits</a> <a href="#">green</a> <a href="#">healthy</a> <a href="#">natural</a> <a href="#">organic store</a> <a href="#">vegatable</a>
-                                </div>
                             </div>
                         </div>
                     </div>

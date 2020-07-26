@@ -46,7 +46,7 @@
                                        {{$pro->program_detail_desc}}
                                         </div>
                                         <div class="entry-more">
-                                            <a href="{{$pro->getProgramDetailUrl()}}">Đọc thêm</a>
+                                            <a href="{{asset('programdetail/'.$pro->id)}}">Đọc thêm</a>
                                         </div>
                                     </div>
                                 </div>
@@ -72,10 +72,9 @@
                             <div class="widget widget-product-categories">
                                 <h3 class="widget-title">Program Categories</h3>
                                 <ul class="product-categories">
-                                    <li><a href="#">Cooking Tips</a> <span class="count">2</span></li>
-                                    <li><a href="#">Nutrition Meal</a> <span class="count">5</span></li>
-                                    <li><a href="#">Organic Planting</a> <span class="count">4</span></li>
-                                    <li><a href="#">Recipes</a> <span class="count">4</span></li>
+                                    @foreach(\App\ProgramCategory::all() as $g)
+                                    <li><a href="{{asset('program/'.$g->id)}}">{{$g->__get(("progam_category_name"))}}</a></li>
+                                        @endforeach
                                 </ul>
                             </div>
                             <div class="widget widget_posts_widget">
