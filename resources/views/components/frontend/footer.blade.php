@@ -52,7 +52,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                Copyright © 2017 <a href="#">Organic Store</a> - All Rights Reserved.
+                Copyright © 2017 <a href="#">Healthy Food</a> - All Rights Reserved.
             </div>
             <div class="col-md-4">
                 <img src="frontend/images/footer_payment.png" alt="" />
