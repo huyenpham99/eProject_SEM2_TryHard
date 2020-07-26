@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Mail;
 use MicrosoftAzure\Storage\Blob\Models\Blob;
 use function GuzzleHttp\Promise\all;
 use function GuzzleHttp\Psr7\uri_for;
+use function Symfony\Component\String\u;
 
 class HomeController extends Controller
 {
@@ -370,7 +371,6 @@ class HomeController extends Controller
                 "grand_total" => $grandTotal,
                 "status" => Order::PROCESS
             ]);
-//            die("done");
             foreach ($cart->getItems as $item) {
                 DB::table("orders_products")->insert([
                     "order_id" => $order->__get("id"),
@@ -449,12 +449,34 @@ class HomeController extends Controller
             }
             $ordercuoicung = DB::table("orders")->select("id")->latest("id")->first();
             if($request->get("payment") === "tructiep"){
-                event(new OrderCreated($order));
+                foreach ($cart->getItems as $item) {
+                    $productcart = Product::where("id","=",$item->id)->get();
+                    try {
+                        for($i=0;$i<count($productcart);$i++){
+                            if($productcart[$i]->qty > 1){
+                                $productcart[$i]->update([
+                                    "qty" => $productcart[$i]->qty - $item->pivot->__get("qty"),
+                                ]);
+                            }
+                            if($productcart[$i]->qty <= 1) {
+                                return redirect("/")->with("message","Đã Hết Hàng Không Thể Đặt Thêm Mời Hủy Đơn Hàng Để Tiếp Tục Mua Sắm");
+                                    }
+                        }
+                    }catch (\Exception $exception){
+                        dd($exception->getMessage());
+                    }
+
+                }
+                $currentUser = Auth::user()->name;
                 Order::where("id","=",$ordercuoicung->id)->update([
                     "status" => 2,
                     "thanhtoan" => 1,
                 ]);
-                return redirect("/")->with("message","Check Email Để Xem Thông Tin Thanh Toán");
+                Mail::send('mail.checkout-form1',["cart" => $cart->getItems,"user" => $currentUser,"order" => $order],function ($message){
+                    $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Đơn Hàng HealthyFoods '.Auth::user()->__get("name"));
+                });
+                event(new OrderCreated($order));
+                return redirect("/")->with("message","Mua Thành Công Check Email Để Xem Thông Tin Chuyển Khoản");
             }
         } catch (\Exception $exception) {
 //            return $exception->getMessage();

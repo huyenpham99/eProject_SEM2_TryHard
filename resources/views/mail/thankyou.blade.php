@@ -305,7 +305,7 @@
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
                             <td class="logo" style="text-align: left;">
-                                <h1><a href="#">Phản Hồi Khách Hàng HealthyFood</a></h1>
+                                <h1><a href="#">Ủng Hộ Gây Quỹ HealthyFood</a></h1>
                             </td>
                         </tr>
                     </table>
@@ -317,13 +317,11 @@
                         <tr>
                             <td style="padding: 0 2.5em; text-align: left;">
                                 <div class="text d-flex flex-column">
-                                    <h4>Healthy Foods Cảm Ơn và Ghi Nhận Góp Ý Của Khách Hàng</h4>
-                                    <p>Thông tin đóng góp: </p>
+                                    <h4>Healthy Foods Cảm Ơn Đã Ủng Hộ Quỹ Của Chúng Tôi</h4>
+                                    <p>Chúng tôi chân thành cảm ơn Ông/Bà : {{$name}} đã ủng hộ số tiền {{number_format($money)."VNĐ"}} để góp phần gây quỹ cộng đồng HealthyFoods Lớn Mạnh</p>
                                 </div>
-                                <p>Họ và tên : {{$name}}</p>
-                                <p>Địa chỉ email : {{$email}}</p>
-                                <p>Chủ đề đóng góp : {{$subject}}</p>
-                                <p>Nội dung góp ý : {{$note}} </p>
+                                <p>Chúng tôi gửi lời cảm ơn sâu sắc và chân thành!</p>
+                                <p>Xem thêm nhiều chương trình ủng hộ khác tại <a class="btn btn-info" href="{{url("/donate")}}">Donate Now</a></p>
                             </td>
                         </tr>
                     </table>

@@ -10,7 +10,9 @@ use App\Event;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class WebController extends Controller
 {
@@ -68,5 +70,12 @@ class WebController extends Controller
             'chart2' => $chart2,
             'topBlog' => $topBlog,
         ]);
+    }
+    public function contactForm(Request $request){
+
+        Mail::send('mail.contact-form', ["name"=>$request->get("name"),"email"=>$request->get("email"),"subject"=>$request->get("subject"),"note"=>$request->get("note")], function ($message) {
+            $message->to('thangsteam3@gmail.com', Auth::user()->__get("name"))->subject('Góp ý từ khách hàng : ' . Auth::user()->__get("name"));
+        });
+        return redirect("/contact");
     }
 }

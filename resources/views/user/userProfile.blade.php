@@ -133,7 +133,7 @@
                                           <td>Số: {{$order->order_id}}</td>
                                           <td>{{$order->product_name}}</td>
                                           @if($order->status == 1)
-                                              <td><a style="color: white" class="btn btn-danger">Đợi Thanh Toán</a></td>
+                                              <td><a style="color: white" class="btn btn-primary">Đang Xử Lý</a></td>
                                           @elseif($order->status == 2) <td><a style="color: white" class="btn btn-primary">Đang Xử Lý</a></td>
                                           @elseif($order->status == 3) <td><a style="color: white" class="btn btn-success">Đã hoàn thành</a></td>
                                           @elseif($order->status == 4) <td><a style="color: white" class="btn btn-dark">Đã hủy đơn</a></td>
