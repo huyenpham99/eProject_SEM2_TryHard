@@ -393,11 +393,11 @@
 													<a href="javascript: void(0);" class="ajax_add_to_cart"
                                                        onclick="addToCart({{$product->__get("id")}})"
                                                        data-toggle="tooltip" data-placement="top"
-                                                       title="Add to cart"></a>
+                                                       title="Thêm Vào Giỏ Hàng"></a>
 												</span>
                                         <span class="compare">
                                             <a href="{{$product->getProductUrl()}}" data-toggle="tooltip"
-                                               data-placement="top" title="Detail"></a>
+                                               data-placement="top" title="Chi Tiết"></a>
                                         </span>
                                     </div>
                                 </div>

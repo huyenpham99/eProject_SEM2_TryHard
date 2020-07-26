@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-title text-center">Cart</h2>
+                        <h2 class="page-title text-center" style="font-family: 'Playfair Display', serif; ">Giỏ Hàng</h2>
                     </div>
                 </div>
             </div>
@@ -15,9 +15,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="breadcrumbs">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="shortcodes.html">Shop</a></li>
-                            <li>Cart</li>
+                            <li><a href="index.html">Trang Chủ</a></li>
+                            <li><a href="shortcodes.html">Cửa Hàng</a></li>
+                            <li>Giỏ Hàng</li>
                         </ul>
                     </div>
                 </div>
@@ -55,8 +55,8 @@
                             @endforeach
                             <tr>
                                 <td colspan="5" class="actions">
-                                    <a class="continue-shopping" href="{{url("/shop")}}"> Continue Shopping</a>
-                                    <input type="submit" class="update-cart" name="update_cart" value="Update Cart" />
+                                    <a class="continue-shopping" href="{{url("/shop")}}"> Tiếp tục mua sắm</a>
+                                    <input type="submit" class="update-cart" name="update_cart" value="Cập nhật giỏ hàng" />
                                 </td>
                             </tr>
                             </tbody>
@@ -67,12 +67,12 @@
                             <table>
                                 <tbody>
                                 <tr class="cart-subtotal">
-                                    <th>Subtotal</th>
+                                    <th>Tổng</th>
                                     <td>${{$grandTotal}}</td>
                                 </tr>
                                 <tr class="shipping">
-                                    <th>Shipping</th>
-                                    <td>Free Shipping</td>
+                                    <th>Vận chuyển</th>
+                                    <td>Miễn Phí Vận Chuyển</td>
                                 </tr>
                                 <tr class="order-total">
                                     <th>Total</th>
@@ -81,14 +81,14 @@
                                 </tbody>
                             </table>
                             <div class="proceed-to-checkout">
-                                <a href="{{url("/checkout")}}">Proceed to Checkout</a>
+                                <a href="{{url("/checkout")}}">Thanh Toán</a>
                             </div>
                         </div>
                         <div class="coupon-shipping">
                             <div class="coupon">
                                 <form>
-                                    <input type="text" name="coupon_code" class="coupon-code" id="coupon_code" value="" placeholder="Coupon code" />
-                                    <input type="submit" class="apply-coupon" name="apply_coupon" value="Apply Coupon" />
+                                    <input type="text" name="coupon_code" class="coupon-code" id="coupon_code" value="" placeholder="Mã giảm giá" />
+                                    <input type="submit" class="apply-coupon" name="apply_coupon" value="phiếu giảm giá" />
                                 </form>
                             </div>
                         </div>
