@@ -16,9 +16,11 @@ class EventController extends Controller
     public function listEvent(){
         $event = Event::with("User")->paginate(10);
         $user =User::all();
+        $banner =Banner::all();
         return view("event.list",[
             "event" => $event,
             "user"=>$user,
+            "banner"=>$banner,
         ]);
     }
     public function editEvent($id){

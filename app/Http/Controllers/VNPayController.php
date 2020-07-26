@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\BuyTickets;
+use App\Cart;
+use App\Donate;
 use App\Event;
+use App\Events\OrderCreated;
+use App\ListDonate;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Omnipay\VNPay\Gateway;
 use PHPViet\Laravel\Omnipay\Facades\MoMo\AllInOneGateway;
 use PHPViet\Laravel\Omnipay\Facades\OnePay\DomesticGateway;
@@ -30,8 +35,10 @@ class VNPayController extends Controller
         }
         $url = session('url_prev','/');
         if($request->vnp_ResponseCode == "00") {
-             Order::where("user_id","=",$currentID)->update([
+            $ordercuoicung = DB::table("orders")->select("id")->latest("id")->first();
+             Order::where("id","=",$ordercuoicung->id)->update([
                 "status" => 2,
+                 "thanhtoan" => 0,
             ]);
             $order = Order::where("user_id", Auth::id())->firstOrFail();
             Mail::send('mail.checkout-form',["cart" => $cart->getItems,"user" => $currentUser,"order" => $order],function ($message){
@@ -48,8 +55,20 @@ class VNPayController extends Controller
     {
         $url = session('url_prev','/');
         if($request->vnp_ResponseCode == "00") {
-
-
+            $array = explode("-", $request->vnp_OrderInfo);
+            $donate_id = $array[3];
+            $donate      = Donate::findOrFail($donate_id);
+            $money = $array[4];
+            $donate->update([
+                "raisermoney" => $donate->raisermoney + $money
+            ]);
+            ListDonate::create([
+                "name" => $array[0],
+                "sodienthoai" => $array[1],
+                "email" => $array[2],
+                "money" => $money,
+                "donate_id" => $donate_id,
+            ]);
             return redirect("/donate")->with("success")->with('message', 'Ủng Hộ Thành Công!');
         }
         session()->forget('url_prev')
@@ -67,17 +86,19 @@ class VNPayController extends Controller
                 $buyer_ticket_id = $buyer_ticket_id->id;
             }
             $array = explode("-", $request->vnp_OrderInfo);
+//            dd($array);
             $event_id = $array[7];
             $event = Event::findOrfail($event_id);
 
             $total_price = $event->__get("total_price") + $array[2];
             $people = $event->__get("event_people_count");
             $people++;
+            $ticket_name = $array[8];
             $event->update([
                 "total_price"=> $total_price,
                 "event_people_count"=> $people,
             ]);
-            $buyer_ticket_code = $array[3] . "-" . $array[6] . "-" . $buyer_ticket_id; //mã code + email + ticket_id
+            $buyer_ticket_code = bcrypt($array[3] . "-" . $array[6] . "-" . $buyer_ticket_id); //mã code + email + ticket_id
             BuyTickets::create([
                 "buyer_name"=>$array[0],
                 "buyer_number"=>$array[4],
@@ -86,6 +107,9 @@ class VNPayController extends Controller
                 "ticket_id"=>$array[1],
                 "buyer_ticket_code"=>$buyer_ticket_code,
             ]);
+            Mail::send('mail.ticketmail', ["name"=>$array[0],"ticketname"=>$array[8],"sdt"=>$array[4],"address" =>$array[5],"email"=>$array[6],"mave" => $buyer_ticket_code ], function ($message) {
+                $message->to(Auth::user()->__get("email"), Auth::user()->__get("name"))->subject('Thông tin vé' . Auth::user()->__get("name"));
+            });
             return redirect("/event")->with("success")->with('message', 'Mua vé thành công!');
         }
         session()->forget('url_prev')
