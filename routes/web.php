@@ -17,7 +17,6 @@ use SimpleSoftwareIO\QrCode\Generator;
 Auth::routes();
 
 Route::group(["middleware"=>["deadactive","auth"]],function(){
-    Route::get('/', 'HomeController@index');
     require_once "user.php";
 });
 Route::group(["middleware"=>["deadactive","admin","auth"], "prefix"=>"admin"],function(){
@@ -41,12 +40,12 @@ Route::get('/searchselected', 'HomeController@searchSelected');
 Route::get('/qr-code', function () {
     $qrcode = new Generator;
     $code = "I love you me Min";
-    $bcrypt = bcrypt($code);
-    $hash = \Illuminate\Support\Facades\Hash::check($code, $bcrypt);
-    var_dump($hash);
-    return $qrcode->size(200)->generate($bcrypt);
+//    $bcrypt = bcrypt($code);
+//    $hash = \Illuminate\Support\Facades\Hash::check($code, $bcrypt);
+//    var_dump($hash);
+    return $qrcode->size(200)->generate($code);
 });
 require_once "userwithoutlogin.php";
-//Route::get('/onepay',"VNPayController@createonepay");
-//Route::get('/thanhtoan',"VNPayController@returnonepay");
+
+
 

@@ -170,10 +170,8 @@ class HomeController extends Controller
     public function shop(Category $category)
     {
         $products = $category->Products()->paginate(9);
-        // dung trong model de lay tat ca\
         return view("frontend.shop", [
             "category" => $category,
-//            "categories"=>$categories// tra ve category trong front end
             "products" => $products
         ]);
     }
@@ -516,7 +514,6 @@ class HomeController extends Controller
         }
     }
     public function searchSelected(Request $request){
-
         $output = '';
             if ($request->search == "Blog"){
                 $blogs = Blog::where('blog_title', 'like', '%'.$request->value.'%')
@@ -557,11 +554,45 @@ class HomeController extends Controller
         public function donate(){
             return view("frontend.donate");
         }
+        public function shopOrderby(Request $request){
+        $orderBy = $request->order;
+
+        if ($orderBy == 1){
+            //$searchOrderBy = DB::table("products")->latest("id")->first();
+            $searchOrderBy = Product::orderBy('view_count', 'DESC')->get();
+            return view("frontend.shop.ordershop", ["orderBy"=>$searchOrderBy]);
+        }elseif ($orderBy == 2){
+            $searchOrderBy = Product::orderBy('created_at', 'DESC')->get();
+            return view("frontend.shop.ordershop", ["orderBy"=>$searchOrderBy]);
+        }elseif ($orderBy == 3){
+            $searchOrderBy = Product::orderBy('product_price', 'ASC')->get();
+            return view("frontend.shop.ordershop", ["orderBy"=>$searchOrderBy]);
+        }elseif ($orderBy ==4 ){
+            $searchOrderBy = Product::orderBy('product_price', 'DESC')->get();
+            return view("frontend.shop.ordershop", ["orderBy"=>$searchOrderBy]);
+        }else{
+            $searchOrderBy = Product::all();
+            return view("frontend.shop.ordershop", ["orderBy"=>$searchOrderBy]);
+        }
+        }
+        public function shopOrderbyDetail(Request $request){
+            $orderBy = $request->order;
+            if ($orderBy == 1){
+                $searchOrderBy = Product::with("category")->where("category_id", "=", $request->id)->orderBy('view_count', 'DESC')->get();
+                return view("frontend.shop.ordershop", ["orderBy"=>$searchOrderBy]);
+            }elseif ($orderBy == 2){
+                $searchOrderBy = Product::with("category")->where("category_id", "=", $request->id)->orderBy('created_at', 'DESC')->get();
+                return view("frontend.shop.ordershop", ["orderBy"=>$searchOrderBy]);
+            }elseif ($orderBy == 3){
+                $searchOrderBy = Product::with("category")->where("category_id", "=", $request->id)->orderBy('product_price', 'ASC')->get();
+                return view("frontend.shop.ordershop", ["orderBy"=>$searchOrderBy]);
+            }elseif ($orderBy ==4 ){
+                $searchOrderBy = Product::with("category")->where("category_id", "=", $request->id)->orderBy('product_price', 'DESC')->get();
+                return view("frontend.shop.ordershop", ["orderBy"=>$searchOrderBy]);
+            }else{
+                $searchOrderBy = Product::all();
+                return view("frontend.shop.ordershop", ["orderBy"=>$searchOrderBy]);
+            }
+        }
 }
-//            die("done");
-//            $currentUser = Auth::user();
-//            $order = OrderController::where("user_id", Auth::id())->firstOrFail();
-//            Mail::send('mail.checkout-form', ["cart" => $cart->getItems, "user" => $currentUser, "order" => $order], function ($message) {
-//                $message->to(Auth::user()->__get("email"), Auth::user()->__get("name"))->subject('Healthy Food Đơn Hàng Khách Hàng ' . Auth::user()->__get("name"));
-//            });
-//mm
+
