@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Donate;
 use App\ListDonate;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\Routing\Matcher\RedirectableUrlMatcher;
@@ -15,7 +16,6 @@ class DonateController extends Controller
     public function listDonate()
     {
         $donates = Donate::leftjoin("users", "donates.user_id", "=", "users.id")
-            ->orderBy("listdonate.money","DESC")
             ->get();
         return view("donate.list", [
             "donates" => $donates
@@ -40,12 +40,15 @@ class DonateController extends Controller
 
     public function saveDonate(Request $request)
     {
+        $date = $request->get("songaydienra");
         try {
             Donate::create([
                 "donate_title" => $request->get("donate_title"),
                 "donate_image" => $request->get("donate_image"),
                 "donate_desc" => $request->get("donate_desc"),
                 "donate_content" => $request->get("donate_content"),
+                "start_at" => Carbon::now()->toDateString(),
+                "end_at" => date('Y-m-d',strtotime(Carbon::now()->toDateString()."+$date"."days")),
                 "goalmoney" => $request->get("goalmoney"),
                 "user_id" => $request->get("user_id")
             ]);
@@ -66,7 +69,10 @@ class DonateController extends Controller
     public function donate()
     {
         $donates = Donate::paginate(4);
-        $peopleList =ListDonate::leftjoin("donates","listdonate.donate_id","=","donates.id")->get();
+        $peopleList =ListDonate::leftjoin("donates","listdonate.donate_id","=","donates.id")
+            ->orderByRaw('listdonate.money DESC')
+            ->limit(10)
+            ->get();
         return view("frontend.donate", [
             "donates" => $donates,
             "listDonates" => $peopleList,
@@ -89,7 +95,7 @@ class DonateController extends Controller
         $vnp_Url        = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
         $vnp_Returnurl  = url("/return-donate");
         $vnp_TxnRef     = date("YmdHis"); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
-        $vnp_OrderInfo  = "Khách Hàng " . $currentName . " Thanh Toán Hóa Đơn Hàng HealthyFoods";
+        $vnp_OrderInfo  = "Khách" . $currentName . "Ủng Hộ Quỹ HealthyFoods";
         $vnp_OrderType  = 'billpayment';
         $vnp_Amount     = $money * 100;
         $vnp_Locale     = 'vn';
