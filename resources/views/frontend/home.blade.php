@@ -353,7 +353,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="text-center mb-1 section-pretitle">Khám Phá</div>
-                        <h2 class="text-center section-title mtn-2">Các Sản Phẩm</h2>
+                        <h2 class="text-center section-title mtn-2">Các Sản Phẩm Mới Nhất</h2>
                         <div class="organik-seperator center">
                             <span class="sep-holder"><span class="sep-line"></span></span>
                             <div class="sep-icon"><i class="organik-flower"></i></div>
@@ -363,16 +363,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 p-0">
-                        <div class="text-center">
-                            <ul class="masonry-filter">
-                                <li><a href="{{url("/shop")}}">Tất Cả</a>
-                                </li>
-                                @foreach($categories as $category)
-                                    <li>
-                                        <a href="{{$category->getCategoryUrl()}}">{{$category->__get("category_name")}}</a>
-                                    </li>
-                                @endforeach
-                            </ul>
+                        <div class="text-center" style="margin-bottom: 10px">
                         </div>
                     </div>
                 </div>
