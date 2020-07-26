@@ -28,10 +28,9 @@
                     @foreach($programcategory as $p)
                     <div class="col-md-3 col-sm-6">
                         <div class="organik-services">
-                            <a href="{{$p->getProgramCategoryUrl()}}">
-                                <div class="icon"><img src="{{$p->__get("program_category_image")}}" alt=""/></div>
+                            <a href="{{asset('program/'.$p->id)}}">
+                                <div class="icon"><img src="{{$p->__get("program_category_image")}}" height="540px" width="350px" alt=""/></div>
                                 <div class="title">{{$p->__get("progam_category_name")}}</div>
-                                <div class="more"><i class="ion-plus-round"></i></div>
                             </a>
                         </div>
                     </div>

@@ -103,10 +103,10 @@ Route::delete("/delete-ticket/{id}","TicketController@deleteTicket")->middleware
 
 
 // ORDer
-Route::get("/list-order","OrderController@listOrder");
-Route::get("/edit-order/{id}","OrderController@editOrder");
-Route::put("/update-order/{id}","OrderController@updateOrder");
-Route::delete("/delete-order/{id}","OrderController@deleteOrder");
+Route::get("/list-order","OrderController@listOrder")->middleware('product');
+Route::get("/edit-order/{id}","OrderController@editOrder")->middleware('product');
+Route::put("/update-order/{id}","OrderController@updateOrder")->middleware('product');
+Route::delete("/delete-order/{id}","OrderController@deleteOrder")->middleware('product');
 
 
 
@@ -114,3 +114,8 @@ Route::delete("/delete-order/{id}","OrderController@deleteOrder");
 Route::get("/search/{value}", "ProductController@searchProduct");
 //user search
 Route::get("/searchUser/{value}", "UserController@searchUser");
+
+//donate
+Route::get("/list-donate","DonateController@listDonate");
+Route::get("/new-donate","DonateController@newDonate");
+Route::post("/save-donate","DonateController@saveDonate");

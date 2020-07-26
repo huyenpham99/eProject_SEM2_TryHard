@@ -20,7 +20,19 @@ class VNPayController extends Controller
             ]);
             return redirect("/home")->with("success")->with('message', 'Complete Order!');
         }
-        session()->forget('url_prev');
+        session()->forget('url_prev')
+        ;
+        return redirect($url)->with('errors' ,'Lỗi trong quá trình thanh toán phí dịch vụ');
+    }
+    public function return1(Request $request)
+    {
+        $currentID = Auth::user()->id;
+        $url = session('url_prev','/');
+        if($request->vnp_ResponseCode == "00") {
+            return redirect("/donate")->with("success")->with('message', 'Ủng Hộ Thành Công!');
+        }
+        session()->forget('url_prev')
+        ;
         return redirect($url)->with('errors' ,'Lỗi trong quá trình thanh toán phí dịch vụ');
     }
 }

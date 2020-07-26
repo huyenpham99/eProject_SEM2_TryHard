@@ -8,6 +8,7 @@ use App\BlogCategory;
 use App\Cart;
 use App\Category;
 use App\Comment;
+use App\Donate;
 use App\Event;
 use App\Events\OrderCreated;
 use App\Order;
@@ -57,9 +58,15 @@ class HomeController extends Controller
             $p->slug = $slug . $p->__get("id");// luu lai vao DB
             $p->save();
         }
+        $donate = Donate::all();
 //         tao slug cho cac truong
         foreach ($category as $p) {
             $slug    = \Illuminate\Support\Str::slug($p->__get("category_name"));
+            $p->slug = $slug . $p->__get("id");// luu lai vao DB
+            $p->save();
+        }
+        foreach ($donate as $p) {
+            $slug    = \Illuminate\Support\Str::slug($p->__get("donate_title"));
             $p->slug = $slug . $p->__get("id");// luu lai vao DB
             $p->save();
         }
@@ -204,19 +211,26 @@ class HomeController extends Controller
             "programcategory" => $programcategory,
         ]);
     }
-    public function program()
+    public function program($id)
     {
-        $programdetail = ProgramDetail::paginate(4);
-        $program= Program::paginate(5);
+        $programcategory =ProgramCategory::limit(5)->get();
+       $program = DB::table('program_detail')
+                    ->select(DB::raw('program_detail.* '))
+                    ->join('program', 'program.id', '=', 'program_detail.program_id')
+                    ->join('programcategory', 'programcategory.id', '=', 'program.program_category_id')
+                    ->where('programcategory.id','=', $id)
+                    ->get();
         return view("frontend.program", [
             "program" => $program,
-            "programdetail"=>$programdetail
+            "programcategory"=>$programcategory
         ]);
     }
-
-    public function programs_detail()
+    public function programs_detail($id)
     {
-        return view("frontend.programs-detail");
+        $programdetail = ProgramDetail::where('id',$id)->get();
+        return view("frontend.programs-detail",[
+            "programdetail"=>$programdetail
+        ]);
     }
 //    public function sendMail(){
 //        // function mail tạo sẵn sẽ làm sau khi render xong giao diện front-end blog và event
@@ -523,6 +537,9 @@ class HomeController extends Controller
                     "count"=>$countProduct,
                 ];
             }
+        }
+        public function donate(){
+            return view("frontend.donate");
         }
 }
 //            die("done");
