@@ -84,7 +84,6 @@ class EventController extends Controller
         // die("loi");
         //      dd($request->all());
         try {
-
             $event->update([
                 "event_name" => $request->get("event_name"),
                 "event_date_start" => $request->get("event_date_start"),

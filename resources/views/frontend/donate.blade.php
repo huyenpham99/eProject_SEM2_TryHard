@@ -35,7 +35,7 @@
             <div class="environment-main-section">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-md-6" style="padding-top: 30px">
                             <div class="environment-cause environment-related-cause">
                                 <ul class="row">
                                         @foreach($donates as $donate)
@@ -65,6 +65,29 @@
                                         </li>
                                 </ul>
                             </div>
+                        </div>
+                        <div class="col-md-6" style="padding-top: 30px">
+                            <h4 class="text-center" style="padding-bottom: 20px">Top Người Ủng Hộ</h4>
+                            <table class="table table-responsive table-striped">
+                                <thead>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Họ Và Tên</th>
+                                    <th>Điện Thoại</th>
+                                    <th>Số Tiền Ủng Hộ</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($listDonates as $list)
+                                <tr>
+                                    <td>{{$list->__get("id")}}</td>
+                                    <td>{{$list->__get("name")}}</td>
+                                    <td>{{$list->__get("sodienthoai")}}</td>
+                                    <td>{{number_format($list->__get("money"))."VNĐ"}}</td>
+                                </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

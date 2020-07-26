@@ -61,7 +61,7 @@
                                         <form action="{{url("/update-money/{$donate->__get("id")}")}}" method="post">
                                             @method("POST")
                                             @csrf
-                                            <div class="col-md-9">
+                                            <div class="col-md-7">
                                                 <div class="environment-donation-section">
                                                     <div class="environment-section-heading"><h2><span>Lựa Chọn Mức Ủng Hộ</span></h2></div>
 
@@ -90,7 +90,7 @@
                                                         <li class="add-amount">
                                                             <div class="environment-section-heading"><h2><span>Số tiền khác</span></h2></div>
                                                             <div class="environment-add-amount">
-                                                                <input type="text" name="sotienunghokhac">
+                                                                <input type="text" class="form-control" name="sotienunghokhac">
                                                                 <label>
                                                                 </label>
                                                             </div>
@@ -99,7 +99,7 @@
                                                 </div>
                                             </div>
                                     </div>
-                                    <div class="col-md-9">
+                                    <div class="col-md-7">
                                         <div class="environment-section-heading"><h2><span>Thông tin người ủng hộ</span></h2></div>
                                         <div class="environment-Donation-form" style="background-color: whitesmoke">
                                             <ul>
@@ -112,7 +112,7 @@
 
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="text" style="background-color: white" class="form-control" name="emailnguoiungho" placeholder="Email"/>
+                                                    <input type="email" style="background-color: white" class="form-control" name="emailnguoiungho" placeholder="Email"/>
 
                                                 </div>
                                                 <div class="form-group">
@@ -121,6 +121,7 @@
                                                 </div>
                                             </ul>
                                         </div>
+                                        <input type="hidden" name="donate_id" value="{{$donate->__get("id")}}">
                                         <button type="submit">Ủng Hộ Ngay</button>
                                     </div>
                                     </form>
