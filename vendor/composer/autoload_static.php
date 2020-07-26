@@ -731,6 +731,7 @@ class ComposerStaticInit4cf48748e22170f9b52afcdd2c158715
         'App\\Http\\Controllers\\SocialController' => __DIR__ . '/../..' . '/app/Http/Controllers/SocialController.php',
         'App\\Http\\Controllers\\TicketController' => __DIR__ . '/../..' . '/app/Http/Controllers/TicketController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
+        'App\\Http\\Controllers\\VNPayController' => __DIR__ . '/../..' . '/app/Http/Controllers/VNPayController.php',
         'App\\Http\\Controllers\\WebController' => __DIR__ . '/../..' . '/app/Http/Controllers/WebController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',

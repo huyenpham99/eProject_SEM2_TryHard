@@ -25,5 +25,4 @@ return [
 //        'crop'   => 'fit',
 //        'effect' => null
 //    ],
-
 ];
