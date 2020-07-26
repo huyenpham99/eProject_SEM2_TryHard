@@ -151,7 +151,7 @@
                                     <div class="product-thumb">
                                         <a href="{{$product->getProductUrl()}}">
                                             <div class="badges">
-                                                <span class="hot">Hot</span>
+                                                <span class="hot">View: {{$product->__get("view_count")}}</span>
                                             </div>
                                             <img src="{{$product->__get("product_image")}}" alt="" />
                                         </a>

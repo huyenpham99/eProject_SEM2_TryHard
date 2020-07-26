@@ -33,7 +33,7 @@
                                 <div class="col-md-6">
                                     <div class="post-thumbnail">
                                         <a href="{{asset('programdetail/'.$pro->id)}}">
-                                            <img src="{{$pro->program_detail_image}}" alt="" />
+                                            <img src="{{$pro->program_detail_image}}" alt="" width="393px" height="250px" />
                                         </a>
                                     </div>
                                 </div>
