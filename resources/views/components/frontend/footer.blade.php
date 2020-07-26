@@ -4,7 +4,7 @@
             <div class="col-md-5">
                 <img src="/frontend/images/logohealthyfood1.png" style="width: 200px;" class="footer-logo" alt="" />
                 <p>
-                    Welcome to Healthy Food. Our products are freshly harvested, washed ready for box and finally delivered from our family farm right to your doorstep.
+                    Chào mừng đến với Thực phẩm lành mạnh. Sản phẩm của chúng tôi được thu hoạch mới, rửa sẵn cho hộp và cuối cùng được giao từ trang trại của gia đình chúng tôi ngay trước cửa nhà bạn.
                 </p>
                 <div class="footer-social">
                     <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -15,34 +15,32 @@
             </div>
             <div class="col-md-2">
                 <div class="widget">
-                    <h3 class="widget-title">Infomation</h3>
+                    <h3 class="widget-title">Thông Tin</h3>
                     <ul>
-                        <li><a href="#">New Products</a></li>
-                        <li><a href="#">Top Sellers</a></li>
-                        <li><a href="#">Our Blog</a></li>
-                        <li><a href="#">About Our Shop</a></li>
+                        <li><a href="#">SẢN PHẨM</a></li>
+                        <li><a href="#">BÁN CHẠY NHẤT</a></li>
+                        <li><a href="#">BLOG XEM NHIỀU</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-2">
                 <div class="widget">
-                    <h3 class="widget-title">Useful Link</h3>
+                    <h3 class="widget-title">Liên Kết</h3>
                     <ul>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Our Blog</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Secure Shopping</a></li>
+                        <li><a href="#">CỬA HÀNG</a></li>
+                        <li><a href="#">BÀI VIẾT</a></li>
+                        <li><a href="#">VỀ CHÚNG TÔI</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="widget">
-                    <h3 class="widget-title">Subscribe</h3>
+                    <h3 class="widget-title">Theo Dõi</h3>
                     <p>
-                        Enter your email address for our mailing list to keep yourself updated.
+                        Nhập địa chỉ email của bạn cho danh sách gửi thư của chúng tôi để giữ cho bản thân cập nhật.
                     </p>
                     <form class="newsletter">
-                        <input type="email" name="EMAIL" placeholder="Your email address" required="" />
+                        <input type="email" name="EMAIL" placeholder="Nhập Email..." required="" />
                         <button><i class="fa fa-paper-plane"></i></button>
                     </form>
                 </div>

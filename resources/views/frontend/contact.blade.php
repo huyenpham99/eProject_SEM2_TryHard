@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-title text-center">Contact Us</h2>
+                        <h2 class="page-title text-center" style="font-family: 'Playfair Display', serif; ">Liên Hệ</h2>
                     </div>
                 </div>
             </div>
@@ -15,8 +15,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="breadcrumbs">
-                            <li><a href="index.html">Home</a></li>
-                            <li>Contact Us</li>
+                            <li><a href="index.html">Trang chủ</a></li>
+                            <li>Liên Hệ</li>
                         </ul>
                     </div>
                 </div>
@@ -26,8 +26,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="text-center mb-1 section-pretitle">Get in touch</div>
-                        <h2 class="text-center section-title mtn-2">HEALTHY FOOD FARM</h2>
+                        <div class="text-center mb-1 section-pretitle">Cách Liên Lạc</div>
+                        <h2 class="text-center section-title mtn-2">Trang Trại HEALTHY FOOD</h2>
                         <div class="organik-seperator mb-6 center">
                             <span class="sep-holder"><span class="sep-line"></span></span>
                             <div class="sep-icon"><i class="organik-flower"></i></div>
@@ -47,7 +47,7 @@
                                 <i class="fa fa-map-marker"></i>
                             </div>
                             <div class="contact-inner">
-                                <h6 class="contact-title"> Address</h6>
+                                <h6 class="contact-title"> Địa chỉ</h6>
                                 <div class="contact-content">
                                     08 Tôn Thất Thuyết
                                     <br />
@@ -62,7 +62,7 @@
                                 <i class="fa fa-phone"></i>
                             </div>
                             <div class="contact-inner">
-                                <h6 class="contact-title"> Hotline</h6>
+                                <h6 class="contact-title">Đường dây Nóng</h6>
                                 <div class="contact-content">
                                     0998.888.888</br>
                                     0968.666.888
@@ -76,7 +76,7 @@
                                 <i class="fa fa-envelope"></i>
                             </div>
                             <div class="contact-inner">
-                                <h6 class="contact-title"> Email Contact</h6>
+                                <h6 class="contact-title"> Email</h6>
                                 <div class="contact-content">
                                     healthyfood@gmail.com
                                     <br />
@@ -102,7 +102,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <hr class="mt-4 mb-7" />
-                        <div class="text-center mb-1 section-pretitle">Leave us a message!</div>
+                        <div class="text-center mb-1 section-pretitle">Để lại lời nhắn cho chúng tôi</div>
                         <div class="organik-seperator mb-6 center">
                             <span class="sep-holder"><span class="sep-line"></span></span>
                             <div class="sep-icon"><i class="organik-flower"></i></div>
@@ -114,13 +114,13 @@
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>your name <span class="required">*</span></label>
+                                        <label>Nhập Tên <span class="required">*</span></label>
                                         <div class="form-wrap">
                                             <input type="text" name="name" value="" size="40" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>your email <span class="required">*</span></label>
+                                        <label> Email <span class="required">*</span></label>
                                         <div class="form-wrap">
                                             <input type="email" name="email" value="" size="40" />
                                         </div>
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label>subject</label>
+                                        <label>Chủ đề</label>
                                         <div class="form-wrap">
                                             <input type="text" name="subject" value="" size="40" />
                                         </div>
@@ -136,7 +136,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label>message</label>
+                                        <label>Tin Nhắn</label>
                                         <div class="form-wrap">
                                             <textarea name="your-message" cols="40" rows="10"></textarea>
                                         </div>
@@ -145,7 +145,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-wrap text-center">
-                                            <input type="submit" value="SEND US NOW" />
+                                            <input type="submit" value="GỬI" style="width: 160px"/>
                                         </div>
                                     </div>
                                 </div>

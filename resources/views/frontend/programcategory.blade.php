@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-title text-center">Program</h2>
+                        <h2 class="page-title text-center" style="font-family: 'Playfair Display', serif; ">Chương trình</h2>
                     </div>
                 </div>
             </div>
@@ -15,8 +15,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="breadcrumbs">
-                            <li><a href="{{url("/home")}}">Home</a></li>
-                            <li>Program</li>
+                            <li><a href="{{url("/home")}}">Trang chủ</a></li>
+                            <li>Chương trình</li>
                         </ul>
                     </div>
                 </div>

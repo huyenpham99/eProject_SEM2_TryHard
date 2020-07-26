@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-title text-center">Product Detail</h2>
+                        <h2 class="page-title text-center" style="font-family: 'Playfair Display', serif; ">Chi Tiết Sản Phẩm</h2>
                     </div>
                 </div>
             </div>
@@ -15,9 +15,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="breadcrumbs">
-                            <li><a href="{{url("/home")}}">Home</a></li>
-                            <li><a href="{{url("/shop")}}">Shop</a></li>
-                            <li>Product Detail</li>
+                            <li><a href="{{url("/home")}}">Trang Chủ</a></li>
+                            <li><a href="{{url("/shop")}}">Cửa Hàng</a></li>
+                            <li>Chi Tiết Sản Phẩm</li>
                         </ul>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                                         <div class="star-rating">
                                             <span style="width:100%"></span>
                                         </div>
-                                        <i>(2 customer reviews)</i>
+                                        <i>(2 Đánh Giá)</i>
                                     </div>
                                     <div class="product-price">
                                         <ins>${{$product->__get("product_price")}}</ins>
@@ -92,7 +92,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <button type="submit" class="btn btn-success">Add To Card</button>
+                                                    <button type="submit" class="btn btn-success">Thêm Vào Giỏ Hàng</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -101,11 +101,11 @@
                                         <table>
                                             <tbody>
                                             <tr>
-                                                <td class="label">Category</td>
-                                                <td><a href="#">Juice</a></td>
+                                                <td class="label">Loại Sản Phẩm</td>
+                                                <td><a href="#">Nước ép</a></td>
                                             </tr>
                                             <tr>
-                                                <td class="label">Share</td>
+                                                <td class="label">Chia sẻ</td>
                                                 <td class="share">
                                                     <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
                                                     <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
@@ -121,10 +121,10 @@
                                 <div class="commerce-tabs tabs classic">
                                     <ul class="nav nav-tabs tabs">
                                         <li class="active">
-                                            <a data-toggle="tab" href="#tab-description" aria-expanded="true">Description</a>
+                                            <a data-toggle="tab" href="#tab-description" aria-expanded="true">Miêu Tả</a>
                                         </li>
                                         <li class="">
-                                            <a data-toggle="tab" href="#tab-reviews" aria-expanded="false">Reviews</a>
+                                            <a data-toggle="tab" href="#tab-reviews" aria-expanded="false">Đánh Giá</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content">
@@ -136,7 +136,7 @@
                                         <div id="tab-reviews" class="tab-pane fade">
                                             <div class="single-comments-list mt-0">
                                                 <div class="mb-2">
-                                                    <h2 class="comment-title"> Reviews {{$product->__get("product_name")}}</h2>
+                                                    <h2 class="comment-title"> Đánh Giá {{$product->__get("product_name")}}</h2>
                                                 </div>
 {{--                                                <ul class="comment-list">--}}
 {{--                                                    <li>--}}
@@ -235,18 +235,18 @@
                         <div class="sidebar">
                             <div class="widget widget-product-search">
                                 <form class="form-search">
-                                    <input type="text" class="search-field" placeholder="Search products…" value="" name="s" />
+                                    <input type="text" class="search-field" placeholder="Tìm kiếm sản phẩm…" value="" name="s" />
                                     <input type="submit" value="Search" />
                                 </form>
                             </div>
                             <div class="widget widget-product-categories">
-                                <h3 class="widget-title">Categories List</h3>
+                                <h3 class="widget-title">Thể loại</h3>
                                 <ul class="product-categories">
                                     <x-frontend.sidebar_item/>
                                 </ul>
                             </div>
                             <div class="widget widget-products">
-                                <h3 class="widget-title">Most Viewer Product</h3>
+                                <h3 class="widget-title">Lượt xem cao nhất</h3>
                                 <ul class="product-list-widget">
                                     @foreach($products as $p)
                                     <li>

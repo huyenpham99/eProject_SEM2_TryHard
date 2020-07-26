@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-title text-center">Program</h2>
+                        <h2 class="page-title text-center" style="font-family: 'Playfair Display', serif; ">Chương trình</h2>
                     </div>
                 </div>
             </div>
@@ -16,8 +16,8 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="breadcrumbs">
-                            <li><a href="{{url("/home")}}">Home</a></li>
-                            <li><a href="{{url("/program")}}">Program</a></li>
+                            <li><a href="{{url("/home")}}">Trang chủ</a></li>
+                            <li><a href="{{url("/program")}}">chương trình</a></li>
                         </ul>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                                        {{$pro->program_detail_desc}}
                                         </div>
                                         <div class="entry-more">
-                                            <a href="{{asset('programdetail/'.$pro->id)}}">Read more</a>
+                                            <a href="{{$pro->getProgramDetailUrl()}}">Đọc thêm</a>
                                         </div>
                                     </div>
                                 </div>
@@ -72,9 +72,10 @@
                             <div class="widget widget-product-categories">
                                 <h3 class="widget-title">Program Categories</h3>
                                 <ul class="product-categories">
-                                    @foreach(\App\ProgramCategory::all() as $g)
-                                    <li><a href="{{asset('program/'.$g->id)}}">{{$g->__get(("progam_category_name"))}}</a></li>
-                                        @endforeach
+                                    <li><a href="#">Cooking Tips</a> <span class="count">2</span></li>
+                                    <li><a href="#">Nutrition Meal</a> <span class="count">5</span></li>
+                                    <li><a href="#">Organic Planting</a> <span class="count">4</span></li>
+                                    <li><a href="#">Recipes</a> <span class="count">4</span></li>
                                 </ul>
                             </div>
                             <div class="widget widget_posts_widget">

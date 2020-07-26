@@ -979,6 +979,9 @@ header.header-1 .header-right {
     top: 0;
     display: flex;
 }
+.header-right ul li{
+    list-style: none;
+}
 header.header-2 .header-right,
 header.header-3 .header-right,
 header.header-4 .header-right {

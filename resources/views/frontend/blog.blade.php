@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-title text-center">Blog List</h2>
+                        <h2 class="page-title text-center" style="font-family: 'Playfair Display', serif; ">Danh Sách Bài Viết</h2>
                     </div>
                 </div>
             </div>
@@ -15,9 +15,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="breadcrumbs">
-                            <li><a href="{{url("/home")}}">Home</a></li>
-                            <li><a href="{{url("/blog")}}">Blog</a></li>
-                            <li>Blog List</li>
+                            <li><a href="{{url("/home")}}">Trang Chủ</a></li>
+                            <li><a href="{{url("/blog")}}">Bài Viết</a></li>
+                            <li>Danh Sách Bài Viết</li>
                         </ul>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                                             {{$blog->__get("blog_desc")}}
                                         </div>
                                         <div class="entry-more">
-                                            <a href="{{$blog->getBlogUrl()}}" class="btn btn-success" style="color: white">Read more</a>
+                                            <a href="{{$blog->getBlogUrl()}}" class="btn btn-success" style="color: white">Đọc Thêm</a>
                                         </div>
                                     </div>
                                 </div>
@@ -67,12 +67,12 @@
                         <div class="sidebar">
                             <div class="widget widget-product-search">
                                 <form class="form-search">
-                                    <input type="text" class="search-field" placeholder="Search products…" value="" name="s" />
+                                    <input type="text" class="search-field" placeholder="Tìm kiếm bài viết…" value="" name="s" />
                                     <input type="submit" value="Search" />
                                 </form>
                             </div>
                             <div class="widget widget-product-categories">
-                                <h3 class="widget-title">Blog Category</h3>
+                                <h3 class="widget-title">Thể loại bài viết</h3>
                                 @foreach($blogcategory as $category)
                                 <ul class="product-categories">
                                     <a href="{{$category->getBlogCategoryUrl()}}">
@@ -82,7 +82,7 @@
                                 @endforeach
                             </div>
                             <div class="widget widget_posts_widget">
-                                <h3 class="widget-title">Recent Posts</h3>
+                                <h3 class="widget-title">Bài viết gần đây</h3>
                                 @foreach($blogs as $blog)
                                 <div class="item">
                                     <div class="thumb">
@@ -98,7 +98,6 @@
                                 @endforeach
                             </div>
                         </div>
-
                     </div>
                 </div>
                 {!! $blogs->links() !!}

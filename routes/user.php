@@ -53,3 +53,7 @@ Route::get("/return-donate","VNPayController@return1")->middleware("auth");
 Route::get('/donate/{donate:slug}',"DonateController@donateDetail");
 Route::get('/donate',"DonateController@donate");
 Route::post("/update-money/{id}","DonateController@saveMoney");
+
+Route::get("/event", "EventController@listEventFrontEnd");
+Route::get("/event/{event:slug}", "EventController@eventDetails");
+Route::get("/create-ticket-buyer", "EventController@createTicketBuyer");

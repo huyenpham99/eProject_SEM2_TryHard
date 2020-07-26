@@ -13,6 +13,8 @@ class Donate extends Model
         'donate_desc',
         'donate_content',
         'raisermoney',
+        'start_at',
+        'end_at',
         'goalmoney',
         'user_id',
     ];

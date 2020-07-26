@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-title text-center">Shop</h2>
+                        <h2 class="page-title text-center" style="font-family: 'Playfair Display', serif; ">Sản phẩm</h2>
                     </div>
                 </div>
             </div>
@@ -15,9 +15,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="breadcrumbs">
-                            <li><a href="{{url("/home")}}">Home</a></li>
-                            <li><a href="{{url("/shop")}}">Shop</a></li>
-                            <li>Product</li>
+                            <li><a href="{{url("/home")}}">Trang Chủ</a></li>
+                            <li><a href="{{url("/shop")}}">Cửa Hàng</a></li>
+                            <li>Sản Phẩm</li>
                         </ul>
                     </div>
                 </div>
@@ -29,17 +29,17 @@
                     <div class="col-md-9 col-md-push-3">
                         <div class="shop-filter">
                             <div class="col-md-6">
-                                <p class="result-count"> Showing 1–12 of 23 results</p>
+                                <p class="result-count"> Hiển thị 1 - 12 kết quả</p>
                             </div>
                             <div class="col-md-6">
                                 <div class="shop-filter-right">
                                     <form class="commerce-ordering">
                                         <select name="orderby" class="orderby">
-                                            <option value="">Sort by popularity</option>
-                                            <option value="">Sort by average rating</option>
-                                            <option value="" selected="selected">Sort by newness</option>
-                                            <option value="">Sort by price: low to high</option>
-                                            <option value="">Sort by price: high to low</option>
+                                            <option value="">Mức Độ Phổ Biến</option>
+                                            <option value="">Mức Độ Đánh Giá</option>
+                                            <option value="" selected="selected">Mức Độ Mới</option>
+                                            <option value="">Giá : Từ Thấp đến Cao</option>
+                                            <option value="">Giá : Từ Cao đến Thấp</option>
                                         </select>
                                     </form>
                                 </div>
@@ -98,22 +98,22 @@
                         <div class="sidebar">
                             <div class="widget widget-product-search">
                                 <form class="form-search">
-                                    <input type="text" class="search-field" placeholder="Search products…" value="" name="s" />
+                                    <input type="text" class="search-field" placeholder="Tìm Kiếm Sản Phẩm..." value="" name="s" />
                                     <input type="submit" value="Search" />
                                 </form>
                             </div>
                             <div class="widget widget-product-categories">
-                                <h3 class="widget-title">Categories</h3>
+                                <h3 class="widget-title">Loại Sản Phẩm</h3>
                                 <x-frontend.sidebar_item/>
                             </div>
                             <div class="widget widget_price_filter">
-                                <h3 class="widget-title">Filter by price</h3>
+                                <h3 class="widget-title">Theo Giá</h3>
                                 <div class="price_slider_wrapper">
                                     <div class="price_slider" style="display:none;"></div>
                                     <div class="price_slider_amount">
-                                        <input type="text" id="min_price" name="min_price" value="" data-min="0" placeholder="Min price"/>
-                                        <input type="text" id="max_price" name="max_price" value="" data-max="150" placeholder="Max price"/>
-                                        <button type="submit" class="button">Filter</button>
+                                        <input type="text" id="min_price" name="min_price" value="" data-min="0" placeholder="Giá Thấp Nhất"/>
+                                        <input type="text" id="max_price" name="max_price" value="" data-max="150" placeholder="Giá Cao Nhất"/>
+                                        <button type="submit" class="button">Tìm Kiếm</button>
                                         <div class="price_label" style="display:none;">
                                             Price: <span class="from"></span> &mdash; <span class="to"></span>
                                         </div>

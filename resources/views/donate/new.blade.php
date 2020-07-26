@@ -25,7 +25,11 @@
                         <textarea name="donate_content" id="editor1" class="form-control"></textarea>
                 </div>
                 <div class="form-group">
-                    <label>Mục Tiêu Donate</label>
+                    <label>Số Ngày Diễn Ra</label>
+                    <input type="text" name="songaydienra" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Số Tiền Mục Tiêu</label>
                     <input type="text" name="goalmoney" class="form-control" >
                 </div>
                 <div class="form-group">

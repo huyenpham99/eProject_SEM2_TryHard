@@ -16,7 +16,10 @@ class Event extends Model
         "event_content",
         "event_desc",
         "user_id",
-        "banner_id",
+        "event_image",
+        "totalprice",
+        "status",
+        "slug",
     ];
     public function getImage(){
         if(is_null($this->__get("event_image"))){
