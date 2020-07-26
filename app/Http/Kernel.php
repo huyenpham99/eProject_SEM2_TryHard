@@ -70,5 +70,6 @@ class Kernel extends HttpKernel
         'event' => \App\Http\Middleware\EventAdmin::class,
         'program' => \App\Http\Middleware\ProgramAdmin::class,
         'deadactive' => \App\Http\Middleware\DeadActive::class,
+        'completePurchase' => \PHPViet\Laravel\Omnipay\Middleware\CompletePurchaseMiddleware::class,
     ];
 }

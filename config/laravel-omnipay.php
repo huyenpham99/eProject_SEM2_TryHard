@@ -50,7 +50,7 @@ return [
                 'vpcAccessCode' => '',
                 'vpcUser' => '',
                 'vpcPassword' => '',
-                'vpcHashKey' => '',
+                'vpcHashKey' => 'A3EFDFABA8653DF2342E8DAC29B51AF0',
                 'testMode' => false,
             ],
         ],
@@ -62,7 +62,7 @@ return [
                 'vpcUser' => '',
                 'vpcPassword' => '',
                 'vpcHashKey' => '',
-                'testMode' => false,
+                'testMode' => true,
             ],
         ],
         'VTCPay' => [
