@@ -1,5 +1,10 @@
 @extends("frontend.layout")
 @section("content")
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <div id="main">
         <div class="section section-bg-10 pt-11 pb-17">
             <div class="container">
@@ -38,9 +43,6 @@
 											<i class="ion-calendar"></i>
 											<span>{{$event->__get("event_date_end")}}</span>
 										</span>
-                                <span class="comment">
-                                    <i class="ion-chatbubble-working"></i> 0
-                                </span>
                             </div>
                             <h1 class="entry-title">{{$event->__get("event_name")}}</h1>
                             <div class="post-thumbnail">
@@ -74,6 +76,7 @@
                                     </div>
                                 </div>
                             </div>
+                            @if($event->__get("event_people_count") >= $event->__get("total_people"))
                             @if(\Illuminate\Support\Facades\Auth::user())
                                 <div class="col-12">
                                     <div class="row">
@@ -139,6 +142,73 @@
                                     </div>
                                 </div>
                                 @endif
+                                @else
+                                @if(\Illuminate\Support\Facades\Auth::user())
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <h3 class="mb-3">Đăng ký tham gia ngay</h3>
+                                            <h6 style="background-color: #232e36; opacity: 0.6; color: white; width: 18%;" class="mb-3 p-1">{{number_format($ticket[0]->__get("ticket_price"))}} đ</h6>
+                                            <form action="{{url("/create-ticket-buyer")}}" method="post">
+                                                @method("POST")
+                                                @csrf
+                                                <input type="hidden" name="ticket_price" value="{{$ticket[0]->__get("ticket_price")}}">
+                                                <input type="hidden" name="ticket_id" value="{{$ticket[0]->__get("id")}}">
+                                                <input type="hidden" name="ticket_code" value="{{$ticket[0]->__get("ticket_code")}}">
+                                                <div class="form-group">
+                                                    <label for="buyer_name">Tên</label>
+                                                    <input type="text" id="buyer_name" name="buyer_name" value="{{\Illuminate\Support\Facades\Auth::user()->name}}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="buyer_number">Số điện thoại</label>
+                                                    <input type="text" id="buyer_number" name="buyer_number" value="{{\Illuminate\Support\Facades\Auth::user()->telephone}}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="buyer_address">Địa chỉ</label>
+                                                    <input type="text" id="buyer_address" name="buyer_address" value="{{\Illuminate\Support\Facades\Auth::user()->address}}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="buyer_email">Email</label>
+                                                    <input type="text" id="buyer_email" name="buyer_email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}">
+                                                </div>
+                                                <a onclick="alert('Không thể mua vé do số lượng người đã đạt giới hạn!')" class="btn btn-primary">Mua vé</a>
+                                                <input type="hidden" name="event_id" value="{{$event->__get("id")}}">
+                                            </form>
+                                        </div>
+                                    </div>
+                                @else
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <h3 class="mb-3">Đăng ký tham gia ngay</h3>
+                                            <h6 style="background-color: #232e36; opacity: 0.6; color: white; width: 18%;" class="mb-3 p-1">{{number_format($ticket[0]->__get("ticket_price"))}} đ</h6>
+                                            <form action="{{url("/create-ticket-buyer")}}" method="POST" >
+                                                @method("POST")
+                                                @csrf
+                                                <input type="hidden" name="ticket_price" value="{{$ticket[0]->__get("ticket_price")}}">
+                                                <input type="hidden" name="ticket_id" value="{{$ticket[0]->__get("id")}}">
+                                                <input type="hidden" name="ticket_code" value="{{$ticket[0]->__get("ticket_code")}}">
+                                                <div class="form-group">
+                                                    <label for="buyer_name">Tên</label>
+                                                    <input type="text" id="buyer_name" name="buyer_name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="buyer_number">Số điện thoại</label>
+                                                    <input type="text" id="buyer_number" name="buyer_number">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="buyer_address">Địa chỉ</label>
+                                                    <input type="text" id="buyer_address" name="buyer_address">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="buyer_email">Email</label>
+                                                    <input type="text" id="buyer_email" name="buyer_email">
+                                                </div>
+                                                <a onclick="alert('Không thể mua vé do số lượng người đã đạt giới hạn!')" class="btn btn-primary">Mua vé</a>
+                                                <input type="hidden" name="event_id" value="{{$event->__get("id")}}">
+                                            </form>
+                                        </div>
+                                    </div>
+                                @endif
+                            @endif
                             <div class="col-12" id="map">
 
                             </div>
