@@ -18,36 +18,36 @@
                             background-position: center;
                             background-size: cover; width: 450px; height: 560px"></div>
                         <div class="col-lg-6">
-                            <div class="card-header">{{ __('Change password') }}</div>
+                            <div class="card-header">{{ __('Thay Đổi Mật khẩu') }}</div>
                             <div class="card-body">
                                 <form id="form-change-password" role="form" method="POST" action="{{ url('change-password') }}" novalidate class="form-horizontal">
                                     <div class="user col-12">
-                                        <p class="btn btn-primary" style="margin-left: 86px">Current User : {{\Illuminate\Support\Facades\Auth::user()->__get("name")}}</p>
+                                        <p class="btn btn-primary" style="margin-left: 86px">Tên Người Dùng : {{\Illuminate\Support\Facades\Auth::user()->__get("name")}}</p>
                                     </div>
                                     <div class="col-md-12">
-                                        <label for="current-password" class="col-sm-12 control-label">Current Password</label>
+                                        <label for="current-password" class="col-sm-12 control-label">Mật Khẩu Hiện Tại</label>
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                <input type="password" class="form-control" id="current-password" name="current-password" placeholder="Password">
+                                                <input type="password" class="form-control" id="current-password" name="current-password" placeholder="Nhập Mật Khẩu">
                                             </div>
                                         </div>
-                                        <label for="password" class="col-sm-12 control-label">New Password</label>
+                                        <label for="password" class="col-sm-12 control-label">Mật Khẩu Mới</label>
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                                                <input type="password" class="form-control" id="password" name="password" placeholder="Nhập Mật Khẩu Mới">
                                             </div>
                                         </div>
-                                        <label for="password_confirmation" class="col-sm-12 control-label">Re-enter Password</label>
+                                        <label for="password_confirmation" class="col-sm-12 control-label">Nhập Lại Mật Khẩu</label>
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Re-enter Password">
+                                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Nhập Lại Mật Khẩu Mới">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-offset-5 col-sm-6">
-                                            <button type="submit" class="btn btn-success" style="margin-left: 115px;padding: 5px 30px;">Change</button>
+                                            <button type="submit" class="btn btn-success" style="margin-left: 130px;width: 100px">Thay Đổi</button>
                                         </div>
                                     </div>
                                 </form>

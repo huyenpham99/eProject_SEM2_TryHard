@@ -16,7 +16,7 @@
            <div class="row">
               <div style="position: relative;margin-top: 20px" class="col-12">
                   <div style="width: 50%" class="col-6">
-                      <h3 class="mb-3">Change Profile</h3>
+                      <h3 class="mb-3">Thông Tin Cá Nhân</h3>
                       <form action="{{url("update-user/{$currentUser->__get("id")}")}}" method="post" enctype="multipart/form-data">
                           @method("PUT")
                           {{--            // method"POST" dùng để báo route--}}
@@ -25,7 +25,7 @@
                               <div class="row">
                                   <div class="col-lg-6">
                                       <div class="form-group">
-                                          <label><b>User Name</b></label>
+                                          <label><b>Tên Người Dùng</b></label>
                                           <input type="text" value="{{$currentUser->__get("name")}}" name="name" class="form-control @error("name") is-invalid @enderror" style="height: 35px">
                                           @error("name")
                                           <span class="error invalid-feedback">{{$message}}</span>
@@ -35,7 +35,7 @@
                                   <div class="col-lg-6">
                                       <div class="form-group">
 {{--                                          <img style="position:absolute; top: -113px;right: -16px; width: 150px;height: 150px;"src="{{\Illuminate\Support\Facades\Auth::user()->__get("image")}}" alt="">--}}
-                                          <label><b>User Image</b></label>
+                                          <label><b>Ảnh Người dùng</b></label>
                                           <input type="file" name="image" class="form-control"/>
                                       </div>
                                   </div>
@@ -50,7 +50,7 @@
                                   </div>
                                   <div class="col-lg-6" style="display: none">
                                       <label>User Password</label>
-                                      <input type="password" value="{{$currentUser->__get("password")}}" name="password" class="form-control @error("password") is-invalid @enderror">
+                                      <input type="password" value="{{$currentUser->__get("password")}}" name="password" class="form-control @error("password") is-invalid @enderror" >
                                       @error("password")
                                       <span class="error invalid-feedback">{{$message}}</span>
                                       @enderror
@@ -59,13 +59,13 @@
                           </div>
                           <hr class="my-4" style="border-top: 1px solid #868585;" />
                           <!-- Address -->
-                          <h6 class="heading-small text-muted mb-4">Contact information</h6>
+                          <h6 class="heading-small text-muted mb-4">Thông tin liên lạc</h6>
                           <div class="pl-lg-4">
                               <div class="row">
                                   <div class="col-md-12">
 
                                       <div class="form-group">
-                                          <label><b>User Email</b></label>
+                                          <label><b>Email Người Dùng</b></label>
                                           <input type="text" value="{{\Illuminate\Support\Facades\Auth::user()->__get("email")}}" name="email" class="form-control @error("email") is-invalid @enderror">
                                           @error("email")
                                           <span class="error invalid-feedback">{{$message}}</span>
@@ -76,7 +76,7 @@
                               <div class="row">
                                   <div class="col-md-12">
                                       <div class="form-group">
-                                          <label><b>User Address</b></label>
+                                          <label><b>Điạ chỉ người dùng</label>
                                           <input type="text" value="{{$currentUser->__get("address")}}" name="address" class="form-control @error("address") is-invalid @enderror">
                                           @error("address")
                                           <span class="error invalid-feedback">{{$message}}</span>
@@ -87,7 +87,7 @@
                               <div class="row">
                                   <div class="col-md-12">
                                       <div class="form-group">
-                                          <label><b>User Telephone</b></label>
+                                          <label><b>Số Điện Thoại</b></label>
                                           <input type="text" value="{{$currentUser->__get("telephone")}}" name="telephone" class="form-control @error("telephone") is-invalid @enderror">
                                           @error("telephone")
                                           <span class="error invalid-feedback">{{$message}}</span>
@@ -99,12 +99,12 @@
                           <hr class="my-4" style="border-top: 1px solid #868585;" />
                           <!-- Description -->
                           <button style="width: 100px;margin-left: 40%;padding: 7px;margin-bottom: 20px;font-size: 14px;"
-                                  type="submit" class="btn btn-success btn-lg btn-block btn-sm">Change
+                                  type="submit" class="btn btn-success btn-lg btn-block btn-sm">Gửi
                           </button>
                       </form>
                   </div>
                   <div style="position:absolute;right: 0; top: 0px; width: 47%;" class="col-6">
-                      <h3 class="mb-3">My orders</h3>
+                      <h3 class="mb-3">Đơn Hàng</h3>
                       <div class="table-responsive">
                           <table class="table align-items-center table-flush">
                               <thead class="thead-light">
