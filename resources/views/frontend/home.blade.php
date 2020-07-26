@@ -36,7 +36,6 @@
                                                      data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]">
                                                     <img src="{{$b->getImage("banner_image2")}}" alt=""/>
                                                 </div>
-
                                                 <a class="tp-caption btn-2 hidden-xs" href="#"
                                                    data-x="['center','center','center','center']"
                                                    data-y="['center','center','center','center']"
@@ -261,7 +260,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="text-center mb-1 section-pretitle">A friendly</div>
+                        <div class="text-center mb-1 section-pretitle">Thân Thiện Với Môi Trường</div>
                         <h2 class="text-center section-title mtn-2">Healthy Food</h2>
                         <div class="organik-seperator mb-9 center">
                             <span class="sep-holder"><span class="sep-line"></span></span>
@@ -274,17 +273,15 @@
                     <div class="col-md-4">
                         <div class="organik-special-title">
                             <div class="number">01</div>
-                            <div class="title">Always Fresh</div>
+                            <div class="title">Tươi Sạch</div>
                         </div>
-                        <p>Cur tantas regiones barbarorum peat dibus obiit, tregiones barbarorum peat dibus obiit, tot
-                            mariata</p>
+                        <p>Đối với cuộc sống thường nhật nhu cầu về thực phẩm các nguồn thực phẩm tươi sạch chúng tôi luôn dành cho bạn những điều tốt nhất</p>
                         <div class="mb-8"></div>
                         <div class="organik-special-title">
                             <div class="number">02</div>
-                            <div class="title">Keep You Healthy</div>
+                            <div class="title">Giúp Bạn Khỏe Mạnh</div>
                         </div>
-                        <p>Cur tantas regiones barbarorum peat dibus obiit, tregiones barbarorum peat dibus obiit, tot
-                            mariata</p>
+                        <p>Các loại thực phẩm chúng tôi cung cấp luôn đảm bảo chất lượng và giữ cho bạn khỏe mạnh</p>
                     </div>
                     <div class="col-md-4">
                         <div class="mb-8"></div>
@@ -292,17 +289,15 @@
                     <div class="col-md-4">
                         <div class="organik-special-title align-right">
                             <div class="number">03</div>
-                            <div class="title">Safe From Pesticides</div>
+                            <div class="title">Giúp Bạn Khỏe Mạnh</div>
                         </div>
-                        <p>Cur tantas regiones barbarorum peat dibus obiit, tregiones barbarorum peat dibus obiit, tot
-                            mariata</p>
+                        <p>Trang trại chúng tôi được làm theo chương trình rau tươi sạch không thuốc trừ sâu, không hóa chất</p>
                         <div class="mb-8"></div>
                         <div class="organik-special-title align-right">
                             <div class="number">04</div>
-                            <div class="title">Keep You Healthy</div>
+                            <div class="title">Giúp Bạn Khỏe Mạnh</div>
                         </div>
-                        <p>Cur tantas regiones barbarorum peat dibus obiit, tregiones barbarorum peat dibus obiit, tot
-                            mariata</p>
+                        <p>Trang trại chúng tôi luôn đặt sức khỏe và cuộc sống của bạn lên hàng đầu</p>
                     </div>
                 </div>
             </div>
@@ -316,8 +311,8 @@
                                 <i class="organik-delivery"></i>
                             </div>
                             <div class="content">
-                                <div class="title">Free shipping</div>
-                                <div class="text">All order over $100</div>
+                                <div class="title">Miễn phí ship</div>
+                                <div class="text">Cho tất cả đơn hàng trên 1 triệu</div>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 organik-process-small-icon-step">
@@ -325,8 +320,8 @@
                                 <i class="organik-hours-support"></i>
                             </div>
                             <div class="content">
-                                <div class="title">Customer support</div>
-                                <div class="text">Support 24/7</div>
+                                <div class="title">Tổng Đài</div>
+                                <div class="text">Hỗ Trợ 24/7</div>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 organik-process-small-icon-step">
@@ -334,8 +329,8 @@
                                 <i class="organik-credit-card"></i>
                             </div>
                             <div class="content">
-                                <div class="title">Secure payments</div>
-                                <div class="text">Confirmed</div>
+                                <div class="title">Thanh Toán An Toàn</div>
+                                <div class="text">Tiện Lợi</div>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 organik-process-small-icon-step">
@@ -343,8 +338,8 @@
                                 <i class="organik-lettuce"></i>
                             </div>
                             <div class="content">
-                                <div class="title">Made with love</div>
-                                <div class="text">Best services</div>
+                                <div class="title">Bằng Hết Tấm Lòng</div>
+                                <div class="text">Dịch vụ tốt nhất</div>
                             </div>
                         </div>
                     </div>
@@ -355,8 +350,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="text-center mb-1 section-pretitle">Discover</div>
-                        <h2 class="text-center section-title mtn-2">Our products</h2>
+                        <div class="text-center mb-1 section-pretitle">Khám Phá</div>
+                        <h2 class="text-center section-title mtn-2">Các Sản Phẩm</h2>
                         <div class="organik-seperator center">
                             <span class="sep-holder"><span class="sep-line"></span></span>
                             <div class="sep-icon"><i class="organik-flower"></i></div>
@@ -368,7 +363,7 @@
                     <div class="col-sm-12 p-0">
                         <div class="text-center">
                             <ul class="masonry-filter">
-                                <li><a href="{{url("/shop")}}">All</a>
+                                <li><a href="{{url("/shop")}}">Tất Cả</a>
                                 </li>
                                 @foreach($categories as $category)
                                     <li>
@@ -415,7 +410,7 @@
                         @endforeach
                     </div>
                     <div class="loadmore-contain">
-                        <a class="organik-btn small" href="#"> Load more </a>
+                        <a class="organik-btn small" href="#">Xem Thêm</a>
                     </div>
                 </div>
             </div>
@@ -424,8 +419,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="text-center mb-1 section-pretitle">Why choose</div>
-                        <h2 class="text-center section-title mtn-2">Healthy Food products?</h2>
+                        <div class="text-center mb-1 section-pretitle">Tại Sao Chọn</div>
+                        <h2 class="text-center section-title mtn-2">Sản Phẩm của Healthy Food?</h2>
                         <div class="organik-seperator center mb-6">
                             <span class="sep-holder"><span class="sep-line"></span></span>
                             <div class="sep-icon"><i class="organik-flower"></i></div>
@@ -440,18 +435,16 @@
                                 <div class="accordion-heading toggle_title active">
                                     <a class="accordion-toggle" data-toggle="collapse" aria-expanded="true"
                                        aria-controls="collapse1" href="#collapse1">
-                                        Benefit from more nutrients
+                                        Lợi ích từ nhiều chất dinh dưỡng
                                     </a>
                                     <span class="icon"><i class="ion-heart"></i></span>
                                 </div>
                                 <div id="collapse1" class="accordion-body collapse in">
                                     <div class="accordion-inner">
                                         <p>
-                                            Healthy Food grown foods have more nutrients—vitamins, minerals, enzymes,
-                                            and
-                                            micronutrients—than commercially grown foods because the soil is managed and
-                                            nourished with sustainable practices by responsible standards. Organic
-                                            farming supports eco-sustenance, or farming in harmony with nature.
+                                            Thực phẩm được trồng thực phẩm tốt cho sức khỏe có nhiều chất dinh dưỡng - vitamin,
+                                            khoáng chất, enzyme và vi chất dinh dưỡng - hơn thực phẩm được trồng thương mại vì
+                                            đất được quản lý và nuôi dưỡng bằng các thực hành bền vững theo tiêu chuẩn có trách nhiệm. Canh tác hữu cơ hỗ trợ sinh thái, hoặc canh tác hài hòa với thiên nhiên.
                                         </p>
                                     </div>
                                 </div>
@@ -460,18 +453,17 @@
                                 <div class="accordion-heading toggle_title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="collapse2"
                                        href="#collapse2">
-                                        Reduce pollution and protect water and soil
+                                        Giảm ô nhiễm và bảo vệ nước và đất
                                     </a>
                                     <span class="icon"><i class="ion-chatboxes"></i></span>
                                 </div>
                                 <div id="collapse2" class="accordion-body toggle_content collapse">
                                     <div class="accordion-inner">
                                         <p>
-                                            Organic agriculture considers the medium- and long-term effect of
-                                            agricultural interventions on the agro-ecosystem. It aims to produce food
-                                            while establishing an ecological balance to prevent soil fertility or pest
-                                            problems. Organic agriculture takes a proactive approach as opposed to
-                                            treating problems after they emerge.
+                                            Nông nghiệp hữu cơ xem xét hiệu quả trung và dài hạn của các can thiệp nông nghiệp đối với hệ sinh
+                                            thái nông nghiệp. Nó nhằm mục đích sản xuất thực phẩm trong khi thiết lập một sự cân bằng sinh thái
+                                            để ngăn ngừa độ phì nhiêu của đất hoặc các vấn đề sâu bệnh. Nông nghiệp hữu cơ có một cách tiếp cận
+                                            chủ động thay vì xử lý các vấn đề sau khi chúng xuất hiện.
                                         </p>
                                     </div>
                                 </div>
@@ -480,18 +472,18 @@
                                 <div class="accordion-heading toggle_title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="collapse3"
                                        href="#collapse3">
-                                        Preserve agricultural diversity
+                                        Bảo tồn đa dạng nông nghiệp
                                     </a>
                                     <span class="icon"><i class="ion-lightbulb"></i></span>
                                 </div>
                                 <div id="collapse3" class="accordion-body toggle_content collapse">
                                     <div class="accordion-inner">
                                         <p>
-                                            Organic farmers are both custodians and users of biodiversity at all levels.
-                                            At the gene level, traditional and adapted seeds and breeds are preferred
-                                            for their greater resistance to diseases and their resilience to climatic
-                                            stress. At the species level, diverse combinations of plants and animals
-                                            optimize nutrient and energy cycling for agricultural production.
+                                            Nông dân hữu cơ vừa là người giám sát vừa là người sử dụng đa dạng sinh học ở mọi cấp độ.
+                                            Ở cấp độ gen, hạt giống và giống truyền thống và thích nghi được ưa thích
+                                            cho khả năng kháng bệnh tốt hơn và khả năng chống chịu với khí hậu
+                                            nhấn mạnh. Ở cấp độ loài, sự kết hợp khác nhau của thực vật và động vật
+                                            tối ưu hóa chu trình dinh dưỡng và năng lượng cho sản xuất nông nghiệp.
                                         </p>
                                     </div>
                                 </div>
@@ -510,8 +502,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="text-center mb-1 section-pretitle">Latest</div>
-                        <h2 class="text-center section-title mtn-2">From our blog</h2>
+                        <div class="text-center mb-1 section-pretitle">Cập Nhật</div>
+                        <h2 class="text-center section-title mtn-2">Mới Nhất Các Bài Viết</h2>
                         <div class="organik-seperator center mb-6">
                             <span class="sep-holder"><span class="sep-line"></span></span>
                             <div class="sep-icon"><i class="organik-flower"></i></div>
@@ -544,7 +536,7 @@
                                     {{$blog->__get("blog_desc")}}
                                 </div>
                                 <div class="entry-more">
-                                    <a href="{{$blog->getBlogUrl()}}">Read more</a>
+                                    <a href="{{$blog->getBlogUrl()}}">Xem Thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -593,18 +585,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="fb-root"></div>
-        <script>(function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s);
-                js.id = id;
-                js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8&appId=618524112104934";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));</script>
-        <div class="fb-comments" data-href="https://www.facebook.com/df.jerry" data-numposts="5"
-             data-colorscheme="light">
         </div>
     </div>
 @endsection

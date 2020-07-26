@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-title text-center">Blog Detail</h2>
+                        <h2 class="page-title text-center" style="font-family: 'Playfair Display', serif; ">Chi Tiết Bài Viết</h2>
                     </div>
                 </div>
             </div>
@@ -15,9 +15,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <ul class="breadcrumbs">
-                            <li><a href="{{url("/home")}}">Home</a></li>
-                            <li><a href="{{url("/blog")}}">Blog</a></li>
-                            <li>Blog Detail</li>
+                            <li><a href="{{url("/home")}}">Trang Chủ</a></li>
+                            <li><a href="{{url("/blog")}}">Bài Viết</a></li>
+                            <li>Chi Tiết Bài Viết</li>
                         </ul>
                     </div>
                 </div>
@@ -55,12 +55,12 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="tags">
-                                            <a href="#">green</a> <a href="#">natural</a> <a href="#">organic store</a>
+                                            <a href="#">Lành Mạnh</a> <a href="#">Tốt cho sức khỏe</a>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="share">
-                                            <span> <i class="ion-android-share-alt"></i> Share this post </span>
+                                            <span> <i class="ion-android-share-alt"></i> Chia sẻ bài viết </span>
                                             <span> <a target="_blank" href="#"><i
                                                         class="fa fa-facebook"></i></a> </span>
                                             <span> <a target="_blank" href="#"><i class="fa fa-twitter"></i></a> </span>
@@ -131,7 +131,7 @@
                                 </div>
                                 <div class="single-comment-form">
                                     <div class="mb-2">
-                                        <h2 class="comment-title">LEAVE A Comment</h2>
+                                        <h2 class="comment-title">Bình Luận</h2>
                                     </div>
                                     {{--                                    <form action="{{url("/blog/comment")}}" method="post" class="comment-form">--}}
                                     {{--                                        @method("POST")--}}
@@ -141,13 +141,13 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <textarea id="comment" onkeypress="postComment1()" name="content" cols="45" rows="5"
-                                                      placeholder="Send A Comment"></textarea>
+                                                      placeholder="Gửi bình luận..."></textarea>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-2">
                                             <button type="button" id="buttonsave" onclick="postComment()"
-                                                    class="btn btn-success">Send
+                                                    class="btn btn-success">Gửi Đi
                                             </button>
                                         </div>
                                     </div>
@@ -160,13 +160,13 @@
                         <div class="sidebar">
                             <div class="widget widget-product-search">
                                 <form class="form-search">
-                                    <input type="text" class="search-field" placeholder="Search products…" value=""
+                                    <input type="text" class="search-field" placeholder="Tìm kiếm bài viết…" value=""
                                            name="s"/>
                                     <input type="submit" value="Search"/>
                                 </form>
                             </div>
                             <div class="widget widget-product-categories">
-                                <h3 class="widget-title">Categories</h3>
+                                <h3 class="widget-title">Thể loại</h3>
                                 <ul class="product-categories">
                                     @foreach(\App\BlogCategory::all() as $category)
                                         <li>{{$category->__get("blog_category_name")}}</li>
@@ -174,7 +174,7 @@
                                 </ul>
                             </div>
                             <div class="widget widget_posts_widget">
-                                <h3 class="widget-title">Popular Posts</h3>
+                                <h3 class="widget-title">Bài viết phổ biến</h3>
                                 @foreach(\App\Blog::all() as $blog)
                                     <div class="item">
                                         <div class="thumb">

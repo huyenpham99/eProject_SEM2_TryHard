@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h2 class="page-title text-center">Blog Detail</h2>
+                        <h2 class="page-title text-center" style="font-family: 'Playfair Display', serif; ">Blog Detail</h2>
                     </div>
                 </div>
             </div>

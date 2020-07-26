@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="topbar-text">
-                    <span>Work time: Monday - Friday: 08AM-06PM</span>
-                    <span>Saturday - Sunday: 10AM-06PM</span>
+                    <span>Thời gian làm việc: Thứ 2 - Thứ 6: 08h - 18h</span>
+                    <span>Thứ 7 - Chủ Nhật: 10h - 18h</span>
                 </div>
             </div>
             <div class="col-md-6">
@@ -19,9 +19,10 @@
                                 </li>
                             @else
                                 <li class="dropdown mega-menu">
-                                    <p data-toggle="dropdown"><img style="position:absolute; top: -15px;left: -45px; border-radius: 50%; width: 50px;height: 50px; overflow: hidden"src="{{\Illuminate\Support\Facades\Auth::user()->__get("image")}}" alt="">
-
-                                         {{\Illuminate\Support\Facades\Auth::user()->name}}<i
+                                    <p data-toggle="dropdown"><img
+                                            style="position:absolute; top: -15px;left: -45px; border-radius: 50%; width: 50px;height: 50px; overflow: hidden"
+                                            src="{{\Illuminate\Support\Facades\Auth::user()->__get("image")}}" alt="">
+                                        {{\Illuminate\Support\Facades\Auth::user()->name}}<i
                                             class="fa fa-angle-down ml-1 opacity-8"></i></p>
                                     <ul class="sub-menu" style="background-color: #f5f5f5!important;width: 160px;">
                                         <li style="padding: 10px 0">
@@ -73,11 +74,13 @@
             <div class="row">
                 <div class="col-sm-12">
                     <form>
-                        <input type="search"  onkeyup="searchHome(this)" class="top-search-input" name="search" placeholder="What are you looking for?"/>
+                        <input type="search" onkeyup="searchHome(this)" class="top-search-input" name="search"
+                               placeholder="Bạn muốn tìm kiếm?"/>
                         <p id="count"></p>
                     </form>
                     <div class="table__search">
-                        <table id="table-search"  style="background-color: #5fbd74" class="table table-borderless table-striped">
+                        <table id="table-search" style="background-color: #5fbd74"
+                               class="table table-borderless table-striped">
                             <thead id="head-search">
 
                             </thead>
@@ -106,17 +109,10 @@
                     <nav class="menu">
                         <ul class="main-menu">
                             <li>
-                                <a href="{{url("/")}}">Home</a>
-                            </li>
-                            <li>
-                                <a href="{{url("/about")}}">About Us</a>
-                            </li>
-
-                            <li>
-                                <a href="{{url("/programcategory")}}">Programs</a>
+                                <a href="{{url("/")}}">TRANG CHỦ</a>
                             </li>
                             <li class="dropdown mega-menu">
-                                <a href="{{url("/shop")}}">Shop</a>
+                                <a href="{{url("/shop")}}">CỬA HÀNG</a>
                                 <ul class="sub-menu">
                                     <li>
                                         <div class="mega-menu-content col-sm-12">
@@ -141,13 +137,27 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{url("/blog")}}">Blog</a>
+                                <a href="{{url("/blog")}}">BÀI VIẾT</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#">THÊM</a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="{{url("/about")}}">VỀ CHÚNG TÔI</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url("/programcategory")}}">CHƯƠNG TRÌNH</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url("/event")}}">SỰ KIỆN</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{url("/donate")}}">ỦNG HỘ</a>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
-                                <a href="{{url("/donate")}}">Donate</a>
-                            </li>
-                            <li>
-                                <a href="{{url("/contact")}}">Contact</a>
+                                <a href="{{url("/contact")}}">LIÊN HỆ</a>
                             </li>
                         </ul>
                     </nav>
@@ -156,8 +166,8 @@
                             <div class="mini-cart">
                                 @php
                                     $count = 0 ;
-                                $myCart = session()->has("my_cart")?session("my_cart"):[];
-                                $dem  = count($myCart);
+                                    $myCart = session()->has("my_cart")?session("my_cart"):[];
+                                    $dem  = count($myCart);
                                 @endphp
                                 <div class="mini-cart-icon" data-count="{{$dem}}">
                                     <i class="ion-bag"></i>
