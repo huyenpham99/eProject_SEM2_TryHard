@@ -2,6 +2,11 @@
 @section("tieude", "Thêm Sự Kiện")
 @section("contentHeader", "New EventRepository")
 @section("content")
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <div class="card card-primary mt-4">
         <div class="card-header">
             <h3 class="card-title"></h3>

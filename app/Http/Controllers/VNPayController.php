@@ -71,11 +71,11 @@ class VNPayController extends Controller
             $event = Event::findOrfail($event_id);
 
             $total_price = $event->__get("total_price") + $array[2];
-            $people = $event->__get("total_people");
+            $people = $event->__get("event_people_count");
             $people++;
             $event->update([
                 "total_price"=> $total_price,
-                "total_people"=> $people,
+                "event_people_count"=> $people,
             ]);
             $buyer_ticket_code = $array[3] . "-" . $array[6] . "-" . $buyer_ticket_id; //mã code + email + ticket_id
             BuyTickets::create([

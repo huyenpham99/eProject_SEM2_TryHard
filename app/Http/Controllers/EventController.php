@@ -39,9 +39,7 @@ class EventController extends Controller
 
     public function saveEvent(Request $request){
         $eventOn =  DB::table("event")->where("status", "=", "1")->get();
-        if (empty($eventOn)){
-            $eventOn = 0;
-            if ($eventOn[0]->status == 1){
+        if (empty($eventOn[0])){
                 $request->validate([
                     "event_name" => "required|string|min:6",
                     "event_date_start" => "required|string",
@@ -68,10 +66,10 @@ class EventController extends Controller
                 }catch (\Exception $exception){
                     return dd($exception->getMessage());
                 }
-            }else{
-                return redirect()->back();
-            }
         }else{
+            if ($request->status == 1 && $eventOn[0]->status ==1){
+                return redirect()->back();
+            }else{
                 $request->validate([
                     "event_name" => "required|string|min:6",
                     "event_date_start" => "required|string",
@@ -96,8 +94,9 @@ class EventController extends Controller
                         "total_people" => $request->get("total_people"),
                     ]);
                 }catch (\Exception $exception){
-                    return dd($exception->getMessage());
+                    return redirect()->back();
                 }
+            }
         }
         return redirect()->to("/admin/list-event");
     }
@@ -107,7 +106,7 @@ class EventController extends Controller
             "event_name" => "required",
             "event_date_start" => "required",
             "event_date_end" => "required",
-            "event_people_count" => "required",
+            "total_people" => "required",
             "event_address" => "required",
             "event_content" => "required|string|min:12",
             "event_desc" =>"required",
@@ -124,7 +123,7 @@ class EventController extends Controller
                 "user_id" => $request->get("user_id"),
                 "event_image" => $request->get("event_image"),
                 "status" => $request->get("status"),
-                "total_price" => $request->get("total_price"),
+                "total_people" => $request->get("total_people"),
             ]);
         } catch (\Exception $exception) {
             return redirect()->back();
@@ -158,7 +157,7 @@ class EventController extends Controller
     public function createTicketBuyer(Request $request){
         $event = Event::findOrfail($request->event_id);
         $timeNow = Carbon::now()->toDateString();
-        if ($event->event_people_count <= $event->total_people){
+        if ($event->event_people_count >= $event->total_people){
             return redirect()->back()->with('message', 'Rất tiếc, số lượng người đã vượt quá quy mô của sự kiện, hẹn bạn vào những sự kiện tiếp theo của chúng tôi!');
         }
         $eventDateEnd = str_replace("/", "-", $event->event_date_end);

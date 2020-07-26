@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                             </div>
-                            @if($event->__get("event_people_count") >= $event->__get("total_people"))
+                            @if($event->__get("event_people_count") <= $event->__get("total_people"))
                             @if(\Illuminate\Support\Facades\Auth::user())
                                 <div class="col-12">
                                     <div class="row">
@@ -240,16 +240,5 @@
         </div>
     </div>
 @endsection
-<script>
-    var map;
-    function initMap() {
-        var address = {lat: 21.0288, lng: 105.781},
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: address,
-                zoom: 18,
-            });
-        var marker = new google.maps.Marker({position: address, map:map, label: "LA IMPERIAL"});
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?&amp;callback=initMap&amp;key=AIzaSyBpqQNgFcsbNWQV-l50YZPFhZtz135Fs2U" async="" defer=""></script>
+
 
