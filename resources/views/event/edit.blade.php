@@ -40,16 +40,26 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Số Người Đăng Ký</label>
-                            <input type="text" name="event_people_count" value="{{$event->__get("event_people_count")}}" class="form-control @error("event_people_count")  is-invalid @enderror">
-                            @error("event_people_count")
-                            <span class="error invalid-feedback">  {{$message}}</span>
-                            @enderror
+                            <label>Trạng thái</label>
+                            <div class="row ml-3">
+                                <div class="col-1">
+                                    <input class="form-check-input " id="status1" value="1" type="radio" name="status">
+                                    <label class="form-check-label" for="status1">
+                                        Hiện
+                                    </label>
+                                </div>
+                                <div class="col-1">
+                                    <input class="form-check-input " id="status2" value="0" type="radio" name="status">
+                                    <label class="form-check-label" for="status2">
+                                        Ẩn
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label>Tổng tiền</label>
-                            <input type="text" name="total_price" value="{{$event->__get("total_price")}}" class="form-control @error("total_price")  is-invalid @enderror">
-                            @error("total_price")
+                            <label>Quy mô sự kiện</label>
+                            <input type="text" name="total_people" value="{{$event->__get("total_people")}}" class="form-control @error("total_people")  is-invalid @enderror">
+                            @error("total_people")
                             <span class="error invalid-feedback">  {{$message}}</span>
                             @enderror
                         </div>

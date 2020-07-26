@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                             </div>
-                            @if($event->__get("event_people_count") >= $event->__get("total_people"))
+                            @if($event->__get("event_people_count") <= $event->__get("total_people"))
                             @if(\Illuminate\Support\Facades\Auth::user())
                                 <div class="col-12">
                                     <div class="row">
@@ -106,6 +106,7 @@
                                         </div>
                                         <button type="submit" class="btn btn-primary">Mua vé</button>
                                             <input type="hidden" name="event_id" value="{{$event->__get("id")}}">
+                                            <input type="hidden" name="ticket_name" value="{{$ticket[0]->__get("ticket_name")}}">
                                         </form>
                                     </div>
                                 </div>
@@ -240,16 +241,5 @@
         </div>
     </div>
 @endsection
-<script>
-    var map;
-    function initMap() {
-        var address = {lat: 21.0288, lng: 105.781},
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: address,
-                zoom: 18,
-            });
-        var marker = new google.maps.Marker({position: address, map:map, label: "LA IMPERIAL"});
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?&amp;callback=initMap&amp;key=AIzaSyBpqQNgFcsbNWQV-l50YZPFhZtz135Fs2U" async="" defer=""></script>
+
 
