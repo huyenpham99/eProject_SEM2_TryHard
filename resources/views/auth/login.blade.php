@@ -17,7 +17,7 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">HealthyFood Login</h1>
+                                        <h1 class="h4 text-gray-900 mb-4"> Đăng Nhập</h1>
                                     </div>
                                     <form method="POST" action="{{route('login')}}">
                                         @csrf
@@ -44,30 +44,30 @@
                                                 <div class="form-check">
                                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                                     <label class="form-check-label" for="remember">
-                                                        {{ __('Remember Me') }}
+                                                        {{ __('Nhớ Mật Khẩu') }}
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group pl--4">
                                             <button type="submit" class="btn btn-primary" style="width: 100%">
-                                                {{ __('Login') }}
+                                                {{ __('Đăng Nhập') }}
                                             </button>
                                             @if (Route::has('password.request'))
                                                 <a class="btn btn-link"  style="width: 100%" href="{{ route('password.request') }}">
-                                                    {{ __('Forgot Your Password?') }}
+                                                    {{ __('Quên Mật khẩu?') }}
                                                 </a>
                                             @endif
                                             <a class="btn btn-link"  style="width: 100%" href="{{ route('register') }}">
-                                                {{ __('Dont Have Account Regiser Now?') }}
+                                                {{ __('Đăng Ký Ngay?') }}
                                             </a>
                                         </div>
                                         <hr>
                                         <a href="{{ url('/auth/redirect/google') }}" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
+                                            <i class="fab fa-google fa-fw"></i> Đăng Nhập Bằng Google
                                         </a>
                                         <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                                            <i class="fab fa-facebook-f fa-fw"></i> Đăng Nhập Bằng Facebook
                                         </a>
                                     </form>
                                     <hr>
