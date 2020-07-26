@@ -20,6 +20,7 @@ class UpdateTableEvent extends Migration
             $table->dropForeign(["banner_id"]);
             $table->dropColumn(["banner_id"]);
             $table->bigInteger("total_price")->after("event_image")->default(0);
+            $table->bigInteger("total_people")->after("total_price")->default(0);
         });
     }
 
@@ -37,6 +38,7 @@ class UpdateTableEvent extends Migration
             $table->unsignedBigInteger("banner_id");
             $table->foreign("banner_id")->references("id")->on("banner")->onDelete("cascade");
             $table->dropColumn("total_price");
+            $table->dropColumn("total_people");
         });
     }
 }

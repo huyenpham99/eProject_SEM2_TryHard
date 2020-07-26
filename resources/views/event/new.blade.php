@@ -27,6 +27,13 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <label>Quy mô về người</label>
+                    <input type="text" name="total_people" class="form-control @error("total_people")  is-invalid @enderror">
+                    @error("total_people")
+                    <span class="error invalid-feedback">  {{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
                     <label>Ảnh mô tả</label>
                     <input name="event_image" type="text">
                 </div>

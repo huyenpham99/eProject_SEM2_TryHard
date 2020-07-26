@@ -24,7 +24,7 @@
                             <th>Số Người Đăng Ký</th>
                             <th>Địa Chỉ Sự Kiện</th>
                             <th>Mô Tả Ngắn</th>
-                            <th>Người Tạo</th>
+                            <th>Quy mô</th>
                             <th>Trạng thái</th>
                             <th>Tổng tiền</th>
                             <th>Quản lí</th>
@@ -42,7 +42,7 @@
                                 <td>{{$event->__get("event_people_count")}}</td>
                                 <td>{{$event->__get("event_address")}}</td>
                                 <td>{{$event->__get("event_desc")}}</td>
-                                <td>{{$event->__get("user_id")}}</td>
+                                <td>{{$event->__get("total_people")}} người</td>
                                 <td style="color: white">
                                     @if($event->__get("status") == 1)
                                     <a class="btn btn-primary">On</a>
