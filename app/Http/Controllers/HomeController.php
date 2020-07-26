@@ -560,3 +560,4 @@ class HomeController extends Controller
 //            Mail::send('mail.checkout-form', ["cart" => $cart->getItems, "user" => $currentUser, "order" => $order], function ($message) {
 //                $message->to(Auth::user()->__get("email"), Auth::user()->__get("name"))->subject('Healthy Food Đơn Hàng Khách Hàng ' . Auth::user()->__get("name"));
 //            });
+//mm
