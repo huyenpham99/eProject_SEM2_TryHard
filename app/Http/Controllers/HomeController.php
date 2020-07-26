@@ -52,6 +52,11 @@ class HomeController extends Controller
         $products = Product::all();
         $banner   = Banner::all();
         $event    = Event::all();
+        foreach ($event as $p) {
+            $slug    = \Illuminate\Support\Str::slug($p->__get("event_name"));
+            $p->slug = $slug . $p->__get("id");// luu lai vao DB
+            $p->save();
+        }
 //         tao slug cho cac truong
         foreach ($category as $p) {
             $slug    = \Illuminate\Support\Str::slug($p->__get("category_name"));

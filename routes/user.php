@@ -49,3 +49,7 @@ Route::put("/update-user/{id}", "UserController@updateUser1")->middleware("auth"
 Route::post("/cancel-order/{id}","OrderController@cancelOrder")->middleware("auth");
 //Route::get("/vn-pay","VNPayController@createPayment")->middleware("auth");
 Route::get("/return-vnpay","VNPayController@return")->middleware("auth");
+
+Route::get("/event", "EventController@listEventFrontEnd");
+Route::get("/event/{event:slug}", "EventController@eventDetails");
+Route::get("/create-ticket-buyer", "EventController@createTicketBuyer");

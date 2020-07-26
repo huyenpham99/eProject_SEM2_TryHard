@@ -245,7 +245,7 @@
                                              data-time="{{$e->__get("event_date_end")}}"></div>
                                     </div>
                                 </div>
-                                <a class="organik-btn brown" href="{{url("/shop")}}">Join now</a>
+                                <a class="organik-btn brown" href="{{$e->getEventUrl()}}">Tham gia</a>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -608,4 +608,3 @@
         </div>
     </div>
 @endsection
-{{----}}
