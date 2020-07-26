@@ -17,8 +17,8 @@
                 </div>
                 <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
                     <div class="d-flex justify-content-between">
-                        <a href="#" class="btn btn-sm btn-info  mr-4 ">Connect</a>
-                        <a href="#" class="btn btn-sm btn-default float-right">Message</a>
+                        <a href="#" class="btn btn-sm btn-info  mr-4 ">Kết nối</a>
+                        <a href="#" class="btn btn-sm btn-default float-right">Tin nhắn</a>
                     </div>
                 </div>
                 <div class="card-body pt-0">
@@ -27,15 +27,15 @@
                             <div class="card-profile-stats d-flex justify-content-center">
                                 <div>
                                     <span class="heading">22</span>
-                                    <span class="description">Friends</span>
+                                    <span class="description">Bạn bè</span>
                                 </div>
                                 <div>
                                     <span class="heading">10</span>
-                                    <span class="description">Photos</span>
+                                    <span class="description">Ảnh</span>
                                 </div>
                                 <div>
                                     <span class="heading">89</span>
-                                    <span class="description">Comments</span>
+                                    <span class="description">Bình luận</span>
                                 </div>
                             </div>
                         </div>
@@ -53,25 +53,25 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>User Name: </label>
+                                        <label>Tên tài khoản: </label>
                                     </div>
                                     <div class="col-md-6">
                                         <p>{{$currentUser->__get("name")}}</p>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Email Address: </label>
+                                        <label>Địa chỉ Email: </label>
                                     </div>
                                     <div class="col-md-6">
                                         <p>{{$currentUser->__get("email")}}</p>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>User Name: </label>
+                                        <label>Tên người dùng: </label>
                                     </div>
                                     <div class="col-md-6">
                                         <p>{{$currentUser->__get("telephone")}}</p>
                                     </div>
                                     <div class="col-md-6">
-                                        <label>Address:</label>
+                                        <label>Địa chỉ:</label>
                                     </div>
                                     <div class="col-md-6">
                                         <p>{{$currentUser->__get("address")}}</p>
@@ -81,7 +81,7 @@
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Experience</label>
+                                        <label>Trải nghiệm</label>
                                     </div>
                                     <div class="col-md-6">
                                         <p>Expert</p>
@@ -142,7 +142,7 @@
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-12">
-                            <h3 class="mb-0">Change profile</h3>
+                            <h3 class="mb-0">Thay đổi thông tin</h3>
                         </div>
                     </div>
                 </div>
@@ -151,12 +151,12 @@
                         @method("PUT")
                         {{--            // method"POST" dùng để báo route--}}
                         @csrf
-                        <h6 class="heading-small text-muted mb-4">User information</h6>
+                        <h6 class="heading-small text-muted mb-4">Thông tin người dùng</h6>
                         <div class="pl-lg-4">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label>User Name</label>
+                                        <label>Tên người dùng</label>
                                         <input type="text" value="{{$currentUser->__get("name")}}" name="name" class="form-control @error("name") is-invalid @enderror">
                                         @error("name")
                                         <span class="error invalid-feedback">{{$message}}</span>
@@ -165,13 +165,13 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label>User Image</label>
+                                        <label>Ảnh người dùng</label>
                                         <input type="text" name="image" class="form-control"/>
                                     </div>
                                 </div>
                                 <div class="col-lg-6" style="display: none">
                                     <div class="form-group">
-                                        <label>User Role</label>
+                                        <label>Phân quyền người dùng</label>
                                         <input type="text" value="{{$currentUser->__get("role")}}" name="role" class="form-control @error("role") is-invalid @enderror">
                                         @error("role")
                                         <span class="error invalid-feedback">{{$message}}</span>
@@ -179,7 +179,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6" style="display: none">
-                                    <label>User Password</label>
+                                    <label>Mật khẩu người dùng</label>
                                     <input type="password" value="{{$currentUser->__get("password")}}" name="password" class="form-control @error("password") is-invalid @enderror">
                                     @error("password")
                                     <span class="error invalid-feedback">{{$message}}</span>
@@ -189,13 +189,13 @@
                         </div>
                         <hr class="my-4" />
                         <!-- Address -->
-                        <h6 class="heading-small text-muted mb-4">Contact information</h6>
+                        <h6 class="heading-small text-muted mb-4">Thông tin liên hệ</h6>
                         <div class="pl-lg-4">
                             <div class="row">
                                 <div class="col-md-12">
 
                                     <div class="form-group">
-                                        <label>User Email</label>
+                                        <label>Email người dùng</label>
                                         <input type="text" value="{{$currentUser->__get("email")}}" name="email" class="form-control @error("email") is-invalid @enderror">
                                         @error("email")
                                         <span class="error invalid-feedback">{{$message}}</span>
@@ -206,7 +206,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>User Address</label>
+                                        <label>Địa chỉ người dùng</label>
                                         <input type="text" value="{{$currentUser->__get("address")}}" name="address" class="form-control @error("address") is-invalid @enderror">
                                         @error("address")
                                         <span class="error invalid-feedback">{{$message}}</span>
@@ -217,7 +217,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>User Telephone</label>
+                                        <label>Điện thoại</label>
                                         <input type="text" value="{{$currentUser->__get("telephone")}}" name="telephone" class="form-control @error("telephone") is-invalid @enderror">
                                         @error("telephone")
                                         <span class="error invalid-feedback">{{$message}}</span>
@@ -228,7 +228,7 @@
                         </div>
                         <hr class="my-4" />
                         <!-- Description -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block btn-sm">Change</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block btn-sm">Thay đổi</button>
                     </form>
                 </div>
             </div>

@@ -1,45 +1,45 @@
 @extends("layout")
-@section("title", "New ProgramDetailRepository Listing")
+@section("tieude", "Thêm chi tiết chương trình")
 @section("contentHeader", "New ProgramDetailRepository")
 @section("content")
     <div class="card card-primary mt-4">
         <div class="card-header">
-            <h3 class="card-title">Create A New Program Detail</h3>
+            <h3 class="card-title"></h3>
         </div>
         <form role="form" action="{{url("/admin/save-program-detail")}}" method="post" enctype="multipart/form-data">
             @method("POST")
             @csrf
             <div class="card-body">
                 <div class="form-group">
-                    <label> Name</label>
-                    <input type="text" name="program_detail_name" class="form-control @error("program_detail_name")  is-invalid @enderror" placeholder="New Program Detail Name">
+                    <label> Tên</label>
+                    <input type="text" name="program_detail_name" class="form-control @error("program_detail_name") is-invalid @enderror" placeholder="">
                     @error("program_detail_name")
-                    <span class="error invalid-feedback">  {{$message}}</span>
+                    <span class="error invalid-feedback"> {{$message}}</span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label> Image</label>
-                    <input type="text" name="program_detail_image" class="form-control @error("program_detail_image")  is-invalid @enderror" placeholder="Link Image">
+                    <label> Ảnh</label>
+                    <input type="text" name="program_detail_image" class="form-control @error("program_detail_image") is-invalid @enderror" placeholder="">
                     @error("program_detail_image")
-                    <span class="error invalid-feedback">  {{$message}}</span>
+                    <span class="error invalid-feedback"> {{$message}}</span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label> Desc</label>
-                    <input type="text" name="program_detail_desc" class="form-control @error("program_detail_desc")  is-invalid @enderror" placeholder="New Program Detail Desc">
+                    <label> Mô Tả</label>
+                    <input type="text" name="program_detail_desc" class="form-control @error("program_detail_desc") is-invalid @enderror" placeholder="">
                     @error("program_detail_desc")
-                    <span class="error invalid-feedback">  {{$message}}</span>
+                    <span class="error invalid-feedback"> {{$message}}</span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label> Content</label>
-                    <textarea type="text" name="program_detail_content" id="editor1" class="form-control @error("program_detail_content")  is-invalid @enderror" placeholder="New Program Detail Content"></textarea>
+                    <label> Nội Dung </label>
+                    <textarea type="text" name="program_detail_content" id="editor1" class="form-control @error("program_detail_content") is-invalid @enderror" placeholder=""></textarea>
                     @error("program_detail_content")
-                    <span class="error invalid-feedback">  {{$message}}</span>
+                    <span class="error invalid-feedback"> {{$message}}</span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label>Program ID</label>
+                    <label>ID Chương Trình</label>
                     <select name="program_id" class="form-control">
                         @foreach($program as $program)
                             <option>{{$program->__get("id")}}</option>
@@ -50,9 +50,8 @@
             <div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Thêm Mới</button>
             </div>
         </form>
     </div>
 @endsection
-

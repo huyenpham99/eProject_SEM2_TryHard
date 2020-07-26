@@ -18,7 +18,7 @@
                         <span class="hamburger-box">
                             <span class="hamburger-inner"></span>
                         </span>
-            </button>
+            </button> 
         </div>
     </div>
     <div class="app-header__menu">
@@ -51,15 +51,15 @@
                                     @php
                                        $id =  \Illuminate\Support\Facades\Auth::user()->__get("id");
                                     @endphp
-                                    <a href="{{url("admin/view-user/$id")}}" tabindex="0" class="dropdown-item">Change Profile</a>
-                                    <a href="{{url("/change-password")}}" tabindex="0" class="dropdown-item">Change Password</a>
+                                    <a href="{{url("admin/view-user/$id")}}" tabindex="0" class="dropdown-item">Thay Đổi Thông Tin</a>
+                                    <a href="{{url("/change-password")}}" tabindex="0" class="dropdown-item">Thay Đổi Mật Khẩu</a>
                                     <div tabindex="-1" class="dropdown-divider"></div>
                                     <a class="dropdown-item"
                                        href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                                         <li class="float-right" style="list-style: none;">
-                                            Logout
+                                            Đăng Xuất
                                         </li>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf

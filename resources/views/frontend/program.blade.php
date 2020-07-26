@@ -45,6 +45,9 @@
                                         <div class="entry-content">
                                        {{$pro->program_detail_desc}}
                                         </div>
+                                        <span class="comment">
+                                             View: {{$pro->view_count}}
+                                            </span>
                                         <div class="entry-more">
                                             <a href="{{asset('programdetail/'.$pro->id)}}">Đọc thêm</a>
                                         </div>
@@ -54,11 +57,7 @@
                                 @endforeach
                         </div>
                         <div class="pagination">
-                            <a class="prev page-numbers" href="#">Prev</a>
-                            <a class="page-numbers" href="#">1</a>
-                            <span class="page-numbers current">2</span>
-                            <a class="page-numbers" href="#">3</a>
-                            <a class="next page-numbers" href="#">Next</a>
+
                         </div>
                     </div>
                     <div class="col-md-3">

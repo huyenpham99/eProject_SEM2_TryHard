@@ -109,17 +109,17 @@ class HomeController extends Controller
     }
 
     public function blogdetail(Blog $blog)
-    {
-        if (!session()->has("view_count_{$blog->__get("id")}")) {// kiểm tra xem sesion  nếu chưa có sẽ đăng lên
-            $blog->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
-            session(["view_count{$blog->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
-        }
-        $comments = Comment::with('blog')->simplePaginate(4);
-        return view("frontend.blog-detail", [
-            "blog" => $blog,
-            "comments" => $comments,
-        ]);
+{
+    if (!session()->has("view_count_{$blog->__get("id")}")) {// kiểm tra xem sesion  nếu chưa có sẽ đăng lên
+        $blog->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
+        session(["view_count{$blog->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
     }
+    $comments = Comment::with('blog')->simplePaginate(4);
+    return view("frontend.blog-detail", [
+        "blog" => $blog,
+        "comments" => $comments,
+    ]);
+}
 
     public function saveComment(Request $request)
     {
@@ -222,7 +222,7 @@ class HomeController extends Controller
                     ->get();
         return view("frontend.program", [
             "program" => $program,
-            "programcategory"=>$programcategory
+            "programcategory"=>$programcategory,
         ]);
     }
     public function programs_detail($id)
@@ -232,6 +232,18 @@ class HomeController extends Controller
             "programdetail"=>$programdetail
         ]);
     }
+
+    public function program_detail(ProgramDetail $programDetail)
+    {
+        if (!session()->has("view_count_{$programDetail->__get("id")}")) {// kiểm tra xem sesion  nếu chưa có sẽ đăng lên
+            $programDetail->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
+            session(["view_count{$programDetail->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
+        }
+        return view("frontend.programs-detail", [
+            "programDetail" => $programDetail,
+        ]);
+    }
+
 //    public function sendMail(){
 //        // function mail tạo sẵn sẽ làm sau khi render xong giao diện front-end blog và event
 ////        $currentUser = Auth::user(); // lấy user đăng nhập hiện tại

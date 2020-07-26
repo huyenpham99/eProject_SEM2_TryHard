@@ -1,12 +1,12 @@
 @extends("layout")
-@section("title", "Create Banner List")
+@section("tieude", "Tạo Banner Mới")
 @section("contentHeader", "New Banner")
 @section("content")
     <div class="row mt-4">
         <div class="col">
             <div class="card">
                 <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left">Tạo Banner Mới</h2>
+                    <h2 class="mb-0 col-lg-9 float-left"></h2>
                 </div>
                 <form role="form" action="{{url("/admin/save-banner")}}" method="post" enctype="multipart/form-data">
                     @method("POST")

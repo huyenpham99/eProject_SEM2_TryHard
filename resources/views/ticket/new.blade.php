@@ -1,10 +1,10 @@
 @extends("layout")
-@section("title", "New TicketRepository Listing")
+@section("tieude", "Tạo vé cho sự kiện")
 @section("contentHeader", "New TicketRepository")
 @section("content")
     <div class="card card-primary mt-4">
         <div class="card-header">
-            <h3 class="card-title">Tạo vé cho sự kiện</h3>
+            <h3 class="card-title"></h3>
         </div>
         <form role="form" action="{{url("/admin/save-ticket")}}" method="post" enctype="multipart/form-data">
             @method("POST")
@@ -64,7 +64,7 @@
             <!-- /.card-body -->
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Thêm Mới</button>
             </div>
         </form>
     </div>

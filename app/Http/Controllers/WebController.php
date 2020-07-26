@@ -46,13 +46,13 @@ class WebController extends Controller
         $values    = $blogcount->pluck('countBlogs');
         $chart     = new BlogChart();
         $chart->labels($label1);
-        $dataset = $chart->dataset('Blog Count Each Category', 'bar', $values);
+        $dataset = $chart->dataset('Từng Danh Mục Bài Viết', 'bar', $values);
         $dataset->backgroundColor(collect(['#ff6397', '#3ae374', '#ff3838', '#7158e2']));
         $chart2  = new BlogChart2();
         $label2  = $viewcount->pluck('id');
         $values2 = $viewcount->pluck('view');
         $chart2->labels($label2);
-        $dataset = $chart2->dataset('View Count Each Blog', 'line', $values2);
+        $dataset = $chart2->dataset('Lượt Xem Trên Mỗi Bài Viết', 'line', $values2);
         $dataset->backgroundColor(collect(['#ff6397', '#3ae374', '#ff3838', '#7158e2']));
         return view("dashboard", [
             'countblog' => $countBlog,
