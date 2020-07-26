@@ -17,7 +17,7 @@ class Event extends Model
         "event_desc",
         "user_id",
         "event_image",
-        "totalprice",
+        "total_price",
         "status",
         "slug",
     ];

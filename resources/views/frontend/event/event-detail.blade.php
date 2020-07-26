@@ -79,6 +79,12 @@
                                     <div class="row">
                                         <h3 class="mb-3">Đăng ký tham gia ngay</h3>
                                         <h6 style="background-color: #232e36; opacity: 0.6; color: white; width: 18%;" class="mb-3 p-1">{{number_format($ticket[0]->__get("ticket_price"))}} đ</h6>
+                                        <form action="{{url("/create-ticket-buyer")}}" method="post">
+                                            @method("POST")
+                                            @csrf
+                                            <input type="hidden" name="ticket_price" value="{{$ticket[0]->__get("ticket_price")}}">
+                                            <input type="hidden" name="ticket_id" value="{{$ticket[0]->__get("id")}}">
+                                            <input type="hidden" name="ticket_code" value="{{$ticket[0]->__get("ticket_code")}}">
                                         <div class="form-group">
                                             <label for="buyer_name">Tên</label>
                                             <input type="text" id="buyer_name" name="buyer_name" value="{{\Illuminate\Support\Facades\Auth::user()->name}}">
@@ -95,7 +101,9 @@
                                             <label for="buyer_email">Email</label>
                                             <input type="text" id="buyer_email" name="buyer_email" value="{{\Illuminate\Support\Facades\Auth::user()->email}}">
                                         </div>
-                                        <button type="submit" class="btn btn-primary">Đăng ký</button>
+                                        <button type="submit" class="btn btn-primary">Mua vé</button>
+                                            <input type="hidden" name="event_id" value="{{$event->__get("id")}}">
+                                        </form>
                                     </div>
                                 </div>
                                 @else
@@ -103,23 +111,31 @@
                                     <div class="row">
                                         <h3 class="mb-3">Đăng ký tham gia ngay</h3>
                                         <h6 style="background-color: #232e36; opacity: 0.6; color: white; width: 18%;" class="mb-3 p-1">{{number_format($ticket[0]->__get("ticket_price"))}} đ</h6>
-                                        <div class="form-group">
-                                            <label for="buyer_name">Tên</label>
-                                            <input type="text" id="buyer_name" name="buyer_name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="buyer_number">Số điện thoại</label>
-                                            <input type="text" id="buyer_number" name="buyer_number">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="buyer_address">Địa chỉ</label>
-                                            <input type="text" id="buyer_address" name="buyer_address">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="buyer_email">Email</label>
-                                            <input type="text" id="buyer_email" name="buyer_email">
-                                        </div>
-                                        <a href="{{url("/create-ticket-buyer")}}" class="btn btn-primary">Đăng ký</a>
+                                        <form action="{{url("/create-ticket-buyer")}}" method="POST" >
+                                            @method("POST")
+                                            @csrf
+                                            <input type="hidden" name="ticket_price" value="{{$ticket[0]->__get("ticket_price")}}">
+                                            <input type="hidden" name="ticket_id" value="{{$ticket[0]->__get("id")}}">
+                                            <input type="hidden" name="ticket_code" value="{{$ticket[0]->__get("ticket_code")}}">
+                                            <div class="form-group">
+                                                <label for="buyer_name">Tên</label>
+                                                <input type="text" id="buyer_name" name="buyer_name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="buyer_number">Số điện thoại</label>
+                                                <input type="text" id="buyer_number" name="buyer_number">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="buyer_address">Địa chỉ</label>
+                                                <input type="text" id="buyer_address" name="buyer_address">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="buyer_email">Email</label>
+                                                <input type="text" id="buyer_email" name="buyer_email">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Đăng ký</button>
+                                            <input type="hidden" name="event_id" value="{{$event->__get("id")}}">
+                                        </form>
                                     </div>
                                 </div>
                                 @endif
@@ -154,15 +170,16 @@
         </div>
     </div>
 @endsection
-<script>
-    var map;
-    function initMap() {
-        var address = {lat:21.0288772, lng: 105.7795577};
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: address,
-            zoom: 16
-        });
-        var maker = new google.maps.Marker({position: address, map: map, label: "Try hard"});
-    }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?&amp;callback=initMap" async="" defer=""></script>
+{{--<script>--}}
+{{--    var map;--}}
+{{--    function initMap() {--}}
+{{--        var address = {lat:21.0288772, lng: 105.7795577};--}}
+{{--        map = new google.maps.Map(document.getElementById('map'), {--}}
+{{--            center: address,--}}
+{{--            zoom: 16--}}
+{{--        });--}}
+{{--        var maker = new google.maps.Marker({position: address, map: map, label: "Try hard"});--}}
+{{--    }--}}
+{{--</script>--}}
+
+{{--<script src="https://maps.googleapis.com/maps/api/js?&amp;callback=initMap" async="" defer=""></script>--}}
