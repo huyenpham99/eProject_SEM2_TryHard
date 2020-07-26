@@ -92,65 +92,65 @@
         <x-frontend.footer/>
     </div>
     <x-frontend.scripts/>
-<script type="text/javascript">
-    function searchHome(e) {
-        var value =$(e).val();
-        $("#head-search").html('<tr>\n' +
-            '                                <th>Tên</th>\n' +
-            '                                <th>Ảnh mô tả</th>\n' +
-            '                                <th>Liên quan</th>\n' +
-            '                                <th>' +
-            '<select style="background-color: #5fbd74; color: white; border: none; padding: 0" onchange="selectSearch(this)" name="select-search">\n' +
-            '                <option value="product">Product</option>\n' +
-            '                <option value="blog">Blog</option>\n' +
-            '            </select></th>\n' +
-            '                                <th></th>\n' +
-            '                            </tr>');
-        $.ajax({
-            url: '/search',
-            method:"get",
-            data:{
-                "search": value,
-            },
-            success: function (res){
-                var tong = res.count + res.countBlog;
-                if(value===""){
-                    $("#count").html('<p id="count">Tìm được: 0 sản phẩm</p><p id="count">Tìm được: 0 blog</p>');
-                    $('#tbody').html("");
-                }else{
-                    $("#count").html('<p id="count">Tìm được: '+tong+' kết quả</p>');
-                    $('#tbody').html(res.response);
-                    $('#tbody2').html(res.blog);
+    <script type="text/javascript">
+        function searchHome(e) {
+            var value =$(e).val();
+            $("#head-search").html('<tr>\n' +
+                '                                <th>Tên</th>\n' +
+                '                                <th>Ảnh mô tả</th>\n' +
+                '                                <th>Liên quan</th>\n' +
+                '                                <th>' +
+                '<select style="background-color: #5fbd74; color: white; border: none; padding: 0" onchange="selectSearch(this)" name="select-search">\n' +
+                '                <option value="product">Product</option>\n' +
+                '                <option value="blog">Blog</option>\n' +
+                '            </select></th>\n' +
+                '                                <th></th>\n' +
+                '                            </tr>');
+            $.ajax({
+                url: '/search',
+                method:"get",
+                data:{
+                    "search": value,
+                },
+                success: function (res){
+                    var tong = res.count + res.countBlog;
+                    if(value===""){
+                        $("#count").html('<p id="count">Tìm được: 0 kết quả</p>');
+                        $('#tbody').html("");
+                    }else{
+                        $("#count").html('<p id="count">Tìm được: '+tong+' kết quả</p>');
+                        $('#tbody').html(res.response);
+                        $('#tbody2').html(res.blog);
+                    }
                 }
-            }
+            });
+        }
+        $(".top-search-input").bind("click",function (){
+            $(".table__search").css('display', 'block' );
         });
-    }
-    $(".top-search-input").bind("click",function (){
-        $(".table__search").css('display', 'block' );
-    });
-    function selectSearch(e) {
-        var selected = $(e).find(":selected").text();
-        var value = $(".top-search-input").val();
-        console.log(value)
-        $.ajax({
-            url: '/searchselected',
-            method:"get",
-            data:{
-                "search": selected,
-                "value": value,
-            },
-            success: function (res){
-                if(value===""){
-                    $("#count").html('<p id="count">Tìm được: 0 sản phẩm</p><p id="count">Tìm được: 0 blog</p>');
-                    $('#tbody').html("");
-                }else{
-                    $("#count").html('<p id="count">Tìm được: '+res.count+' kết quả</p>');
-                    $('#tbody').html(res.response);
-                    // $('#tbody2').html(res.blog);
+        function selectSearch(e) {
+            var selected = $(e).find(":selected").text();
+            var value = $(".top-search-input").val();
+            $.ajax({
+                url: '/searchselected',
+                method:"get",
+                data:{
+                    "search": selected,
+                    "value": value,
+                },
+                success: function (res){
+                    if(value===""){
+                        $("#count").html('<p id="count">Tìm được: 0 kết quả</p>');
+                        $('#tbody').html("");
+                    }else{
+                        $("#count").html('<p id="count">Tìm được: '+res.count+' kết quả</p>');
+                        $('#tbody').html(res.response);
+                        // $('#tbody2').html(res.blog);
+                    }
                 }
-            }
-        });
-    }
-</script>
+            });
+        }
+    </script>
+
 </body>
 </html>

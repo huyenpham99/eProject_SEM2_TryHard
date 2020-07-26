@@ -54,6 +54,12 @@
 														<i class="ion-calendar"></i>
 														<span>{{$event->__get("event_date_end")}}</span>
 													</span>
+                                                <?php $timeNow = \Carbon\Carbon::now()->toDateString(); $eventDateEnd = str_replace("/", "-", $event->event_date_end);?>
+                                                @if($timeNow <= $eventDateEnd)
+                                                    <h5>Sự kiện vẫn đang diễn ra</h5>
+                                                    @else
+                                                    <h5>Sự kiện đã kết thúc</h5>
+                                                @endif
                                             </div>
                                             <a href="{{$event->getEventUrl()}}">
                                                 <h1 class="entry-title">{{$event->__get("event_name")}}</h1>
