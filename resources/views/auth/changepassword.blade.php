@@ -19,7 +19,7 @@
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0" style="display: flex; flex-direction: row">
                         <!-- Nested Row within Card Body -->
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background: url({{asset("frontend/images/oranges.png")}});
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background: url({{asset("frontend/images/ChangePW.jpg")}});
                             background-position: center;
                             background-size: cover; width: 450px; height: 560px"></div>
                         <div class="col-lg-6">
@@ -34,19 +34,19 @@
                                         <div class="col-sm-12">
                                             <div class="form-group">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                <input type="password" class="form-control" id="current-password" name="current-password" placeholder="Nhập Mật Khẩu">
+                                                <input type="password" class="form-control" id="current-password" name="current-password" placeholder="">
                                             </div>
                                         </div>
                                         <label for="password" class="col-sm-12 control-label">Mật Khẩu Mới</label>
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <input type="password" class="form-control" id="password" name="password" placeholder="Nhập Mật Khẩu Mới">
+                                                <input type="password" class="form-control" id="password" name="password" placeholder="">
                                             </div>
                                         </div>
                                         <label for="password_confirmation" class="col-sm-12 control-label">Nhập Lại Mật Khẩu</label>
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Nhập Lại Mật Khẩu Mới">
+                                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="">
                                             </div>
                                         </div>
                                     </div>
