@@ -32,9 +32,9 @@ Route::get("/contact","HomeController@contact");
 
 Route::get("/programcategory","HomeController@programcategory");
 
-Route::get("/program","HomeController@program");
+Route::get("/program/{id}","HomeController@program");
 
-Route::get("/programs-detail","HomeController@programs_detail");
+Route::get("/programdetail/{id}","HomeController@programs_detail");
 
 Route::post("/cart/add/{product}", "HomeController@addToCart");
 
