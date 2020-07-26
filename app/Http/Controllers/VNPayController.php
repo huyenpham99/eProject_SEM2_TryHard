@@ -7,6 +7,9 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Omnipay\VNPay\Gateway;
+use PHPViet\Laravel\Omnipay\Facades\MoMo\AllInOneGateway;
+use PHPViet\Laravel\Omnipay\Facades\OnePay\DomesticGateway;
+use PHPViet\Laravel\Omnipay\Facades\OnePay\InternationalGateway;
 
 class VNPayController extends Controller
 {
@@ -35,4 +38,36 @@ class VNPayController extends Controller
         ;
         return redirect($url)->with('errors' ,'Lỗi trong quá trình thanh toán phí dịch vụ');
     }
+//    public function createonepay(){
+//        $response = InternationalGateway::purchase([
+//            'AgainLink' => url("/checkout"),
+//            'vpcMerchant' => 'TESTONEPAY',
+//            'vpcAccessCode' => '6BEB2546',
+//            'vpcHashKey' => '6D0870CDE5F24F34F3915FB0045120DB',
+//            'vpc_MerchTxnRef' => microtime(false),
+//            'vpc_ReturnURL' => url("/thanhtoan"),
+//            'Title' => 'Thich thi thanh toan',
+//            'vpc_TicketNo' => '127.0.0.1',
+//            'vpc_Amount' => '200000',
+//            'vpc_OrderInfo' => 456,
+//        ])->send();
+//
+//        if ($response->isRedirect()) {
+//            $redirectUrl = $response->getRedirectUrl();
+//            return redirect($redirectUrl);
+//        }
+//    }
+//    public function returnonepay(){
+//        $response = InternationalGateway::completePurchase()->send();
+//
+//        if ($response->isSuccessful()) {
+//            return redirect("/home")->with("message","hehe");
+//
+////            var_dump($response->getData()); // toàn bộ data do OnePay gửi sang.
+//
+//        } else {
+//
+//            print $response->getMessage();
+//        }
+//    }
 }
