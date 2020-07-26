@@ -14,7 +14,9 @@ class DonateController extends Controller
 {
     public function listDonate()
     {
-        $donates = Donate::leftjoin("users", "donates.user_id", "=", "users.id")->get();
+        $donates = Donate::leftjoin("users", "donates.user_id", "=", "users.id")
+            ->orderBy("listdonate.money","DESC")
+            ->get();
         return view("donate.list", [
             "donates" => $donates
         ]);
@@ -50,7 +52,7 @@ class DonateController extends Controller
         } catch (\Exception $exception) {
             dd($exception->getMessage());
         }
-//        return redirect()->to("admin/list-donate");
+        return redirect()->to("admin/list-donate");
     }
 
     public function donateDetail(Donate $donate)
@@ -67,6 +69,7 @@ class DonateController extends Controller
         $peopleList =ListDonate::leftjoin("donates","listdonate.donate_id","=","donates.id")->get();
         return view("frontend.donate", [
             "donates" => $donates,
+            "listDonates" => $peopleList,
         ]);
     }
 
@@ -132,6 +135,13 @@ class DonateController extends Controller
         }
         $donate->update([
             "raisermoney" => $donate->raisermoney + $money
+        ]);
+        ListDonate::create([
+            "name" => $request->get("tennguoiungho"),
+            "sodienthoai" => $request->get("sodienthoai"),
+            "email" => $request->get("emailnguoiungho"),
+            "money" => $money,
+            "donate_id" => $request->get("donate_id"),
         ]);
         return redirect($vnp_Url);
     }
