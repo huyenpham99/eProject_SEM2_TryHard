@@ -18,9 +18,9 @@ class CreateTableEvent extends Migration
             $table->string("event_name");
             $table->string("event_date_start");
             $table->string("event_date_end");
-            $table->integer("event_people_count");
+            $table->integer("event_people_count")->default(0);
             $table->string("event_address");
-            $table->string("event_content");
+            $table->text("event_content");
             $table->string("event_desc");
             $table->unsignedBigInteger("user_id");
             $table->unsignedBigInteger("banner_id");

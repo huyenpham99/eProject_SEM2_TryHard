@@ -13,10 +13,15 @@ class Ticket extends Model
         "ticket_price",
         "ticket_code",
         "user_id",
+        "event_id",
     ];
     public function User()
     {
         return $this->belongsTo("\App\User", "user_id");
+    }
+    public function Event()
+    {
+        return $this->belongsTo("\App\Event", "event_id");
     }
     public function getTicketUrl(){
         return url("/ticket/{$this->__get("slug")}");
