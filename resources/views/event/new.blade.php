@@ -13,64 +13,70 @@
             @csrf
             <div class="card-body">
                 <div class="form-group">
-                    <label>Event Name</label>
-                    <input type="text" name="event_name" class="form-control @error("event_name")  is-invalid @enderror" placeholder="New Event">
+                    <label>Tên sự kiện</label>
+                    <input type="text" name="event_name" class="form-control @error("event_name")  is-invalid @enderror">
                     @error("event_name")
                     <span class="error invalid-feedback">  {{$message}}</span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label>Event Date Start</label>
-                    <input type="text" name="event_date_start" class="form-control @error("event_date_start")  is-invalid @enderror" placeholder="Event Date Start">
-                    @error("event_date_start")
-                    <span class="error invalid-feedback">  {{$message}}</span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label>Event Date End</label>
-                    <input type="text" name="event_date_end" class="form-control @error("event_date_end")  is-invalid @enderror" placeholder="Event Date End">
-                    @error("event_date_end")
-                    <span class="error invalid-feedback">  {{$message}}</span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label>Event People Count</label>
-                    <input type="text" name="event_people_count" class="form-control @error("event_people_count")  is-invalid @enderror" placeholder="New Event">
-                    @error("event_people_count")
-                    <span class="error invalid-feedback">  {{$message}}</span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label>Event Address</label>
-                    <textarea type="text" name="event_address" class="form-control @error("event_address")  is-invalid @enderror" placeholder="New Event"></textarea>
-                    @error("event_address")
-                    <span class="error invalid-feedback">  {{$message}}</span>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label>Event Content</label>
-                    <textarea name="event_content" id="editor1" class="form-control"></textarea>
-                </div>
-                <div class="form-group">
-                    <label>Event Desciption</label>
-                    <input type="text" name="event_desc" class="form-control @error("event_desc")  is-invalid @enderror" placeholder="New Desc">
+                    <label>Mô tả ngắn</label>
+                    <input type="text" name="event_desc" class="form-control @error("event_desc")  is-invalid @enderror">
                     @error("event_desc")
                     <span class="error invalid-feedback">  {{$message}}</span>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label>User</label>
-                    <select name="user_id" class="form-control">
-                        @foreach($user as $user)
-                            <option>{{$user->__get("id")}}</option>
-                        @endforeach
-                    </select>
+                    <label>Ảnh mô tả</label>
+                    <input name="event_image" type="text">
                 </div>
                 <div class="form-group">
-                    <label>Banner</label>
-                    <select name="banner_id" class="form-control">
-                        @foreach($banner as $banner)
-                            <option>{{$banner->__get("id")}}</option>
+                    <label>Trạng thái</label>
+                    <div class="row ml-3">
+                        <div class="col-1">
+                            <input class="form-check-input " id="status1" value="1" type="radio" name="status">
+                            <label class="form-check-label" for="status1">
+                                Hiện
+                            </label>
+                        </div>
+                        <div class="col-1">
+                            <input class="form-check-input " id="status2" value="0" type="radio" name="status">
+                            <label class="form-check-label" for="status2">
+                                Ẩn
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Ngày bắt đầu</label>
+                    <input type="text" name="event_date_start" class="form-control @error("event_date_start")  is-invalid @enderror" placeholder="yyyy/mm/dd">
+                    @error("event_date_start")
+                    <span class="error invalid-feedback">  {{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label>Ngày kết thúc</label>
+                    <input type="text" name="event_date_end" class="form-control @error("event_date_end")  is-invalid @enderror" placeholder="yyyy/mm/dd">
+                    @error("event_date_end")
+                    <span class="error invalid-feedback">  {{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label>Địa chỉ tổ chức</label>
+                    <input type="text" name="event_address" class="form-control @error("event_address")  is-invalid @enderror"/>
+                    @error("event_address")
+                    <span class="error invalid-feedback">  {{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label>Nội dung sự kiện</label>
+                    <textarea name="event_content" id="editor1" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Người tạo event</label>
+                    <select name="user_id" class="form-control">
+                        @foreach($user as $user)
+                            <option value="{{$user->__get("id")}}">{{$user->__get("email")}}</option>
                         @endforeach
                     </select>
                 </div>

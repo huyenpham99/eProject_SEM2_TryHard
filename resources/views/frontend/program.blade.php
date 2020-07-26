@@ -29,22 +29,22 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="blog-list">
-                            @foreach($programdetail as $pro)
+                            @foreach($program as $pro )
                             <div class="blog-list-item">
                                 <div class="col-md-6">
                                     <div class="post-thumbnail">
-                                        <a href="{{$pro->getProgramDetailUrl()}}">
-                                            <img src="{{$pro->__get("program_detail_image")}}" alt="" />
+                                        <a href="{{asset('programdetail/'.$pro->id)}}">
+                                            <img src="{{$pro->program_detail_image}}" alt="" />
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="post-content">
-                                        <a href="blog-detail.html">
-                                            <h1 class="entry-title">{{$pro->__get("program_detail_name")}}</h1>
+                                        <a href="{{asset('programdetail/'.$pro->id)}}">
+                                            <h1 class="entry-title">{{$pro->program_detail_name}}</h1>
                                         </a>
                                         <div class="entry-content">
-                                       {{$pro->__get("program_detail_desc")}}
+                                       {{$pro->program_detail_desc}}
                                         </div>
                                         <div class="entry-more">
                                             <a href="{{$pro->getProgramDetailUrl()}}">Đọc thêm</a>
@@ -71,7 +71,7 @@
                                 </form>
                             </div>
                             <div class="widget widget-product-categories">
-                                <h3 class="widget-title">Categories</h3>
+                                <h3 class="widget-title">Program Categories</h3>
                                 <ul class="product-categories">
                                     <li><a href="#">Cooking Tips</a> <span class="count">2</span></li>
                                     <li><a href="#">Nutrition Meal</a> <span class="count">5</span></li>
@@ -80,47 +80,21 @@
                                 </ul>
                             </div>
                             <div class="widget widget_posts_widget">
-                                <h3 class="widget-title">Popular Posts</h3>
+                                <h3 class="widget-title">Recent Posts</h3>
+                                @foreach(\App\ProgramDetail::limit(5)->get() as $program)
                                 <div class="item">
                                     <div class="thumb">
-                                        <img src="images/blog/thumb/blog_1.jpg" alt="" />
+                                        <img src={{$program->program_detail_image}} alt="" />
                                     </div>
                                     <div class="info">
 												<span class="title">
-													<a href="blog-detail.html"> How to steam &amp; purée your sugar pie pumkin </a>
+													    <a href="{{asset('programdetail/'.$program->id)}}"> {{$program->program_detail_name}} </a>
 												</span>
-                                        <span class="date"> August 9, 2016 </span>
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <img src="images/blog/thumb/blog_2.jpg" alt="" />
-                                    </div>
-                                    <div class="info">
-												<span class="title">
-													<a href="blog-detail.html"> How to steam &amp; purée your sugar pie pumkin </a>
-												</span>
-                                        <span class="date"> August 9, 2016 </span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="thumb">
-                                        <img src="images/blog/thumb/blog_1.jpg" alt="" />
-                                    </div>
-                                    <div class="info">
-												<span class="title">
-													<a href="blog-detail.html"> How can salmon be raised organically in fish farms? </a>
-												</span>
-                                        <span class="date"> August 9, 2016 </span>
-                                    </div>
-                                </div>
+                                    @endforeach
                             </div>
-                            <div class="widget widget-tags">
-                                <h3 class="widget-title">Search by Tags</h3>
-                                <div class="tagcloud">
-                                    <a href="#">bread</a> <a href="#">food</a> <a href="#">fruits</a> <a href="#">green</a> <a href="#">healthy</a> <a href="#">natural</a> <a href="#">organic store</a> <a href="#">vegatable</a>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>

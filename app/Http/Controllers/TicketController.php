@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
 use App\Http\Controllers\Controller;
 use App\Ticket;
 use App\User;
@@ -12,45 +13,41 @@ class TicketController extends Controller
     //
     public function listTicket()
     {
-        //lay tat ca
         $ticket = Ticket::with("User")->paginate(20);
-//        dd($program);
         return view("ticket.list", [
-            "ticket" => $ticket]);
-        //
+            "ticket" => $ticket
+        ]);
     }
 
     public function newTicket()
     {
-        $user =User::all();
-//        dd($user);
-
+        $users =User::all();
+        $events =Event::all();
         return view("ticket.new",[
-            "user"=>$user
+            "users"=>$users,
+            "events"=>$events
         ]);
     }
 
     public function saveTicket(Request $request)
     {
-        //validate du lieu
         $request->validate([
-            "ticket_name" => "required|string|min:6|unique:tickets",
-            "ticket_type"=>"required",
+            "ticket_name" => "required",
             "ticket_price"=>"required",
-            "ticket_code"=>"required",
-            "user_id"=>"required"
+            "user_id"=>"required",
+            "event_id"=>"required",
+            "ticket_code"=>"required"
         ]);
         try {
             Ticket::create([
                 "ticket_name" => $request->get("ticket_name"),
-                "ticket_type" => $request->get("ticket_type"),
                 "ticket_price" => $request->get("ticket_price"),
                 "ticket_code" => $request->get("ticket_code"),
                 "user_id"=>$request->get("user_id"),
+                "event_id"=>$request->get("event_id"),
             ]);
-
         } catch (\Exception $exception) {
-            return redirect()->back();
+            dd($exception->getMessage());
         }
         return redirect()->to("/admin/list-ticket");
     }
