@@ -13,6 +13,7 @@ class BuyTickets extends Model
         "buyer_address",
         "buyer_email",
         "ticket_id",
+        "buyer_ticket_code",
     ];
     public function User()
     {

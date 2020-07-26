@@ -18,6 +18,7 @@ class CreateTableListTicketsBuyer extends Migration
             $table->string("buyer_name")->nullable();
             $table->string("buyer_number")->nullable();
             $table->string("buyer_address")->nullable();
+            $table->string("buyer_ticket_code");
             $table->string("buyer_email");
             $table->unsignedBigInteger("ticket_id");
             $table->foreign("ticket_id")->references("id")->on("tickets");

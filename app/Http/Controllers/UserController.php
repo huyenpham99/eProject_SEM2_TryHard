@@ -138,7 +138,7 @@ class UserController extends Controller
                 //get name image
                 $filename = $request->file('image');
                 //upload image
-                Cloudder::upload($filename, 'uploads/' . $filename->getClientOriginalName());
+                Cloudder::upload($filename, 'uploads/' . $filename->getClientOriginalName(), array(["width"=>"1000"]));
             }
             Cloudder::show('uploads/'.$filename->getClientOriginalName());
             try {

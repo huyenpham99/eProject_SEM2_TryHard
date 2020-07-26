@@ -2,6 +2,11 @@
 @extends('layouts.app')
 
 @section('content')
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <body class="bg-gradient-primary register" style="background-color: #4e73df;
     background-image: linear-gradient(180deg,#fee06e 10%,#bbdd7f 100%);
     background-size: cover;">

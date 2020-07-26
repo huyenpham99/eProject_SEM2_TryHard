@@ -16,12 +16,26 @@ class VNPayController extends Controller
     public function return(Request $request)
     {
         $currentID = Auth::user()->id;
+        $currentUser = Auth::user()->name;
+        $cart = Cart::where("user_id", Auth::id())
+            ->where("is_checkout", true)
+            ->with("getItems")
+            ->firstOrFail();
+        $grandTotal = 0;
+        foreach ($cart->getItems as $item) {
+            $grandTotal += $item->pivot->__get("qty") * $item->__get("product_price");
+        }
         $url = session('url_prev','/');
         if($request->vnp_ResponseCode == "00") {
              Order::where("user_id","=",$currentID)->update([
                 "status" => 2,
             ]);
-            return redirect("/home")->with("success")->with('message', 'Complete Order!');
+            $order = Order::where("user_id", Auth::id())->firstOrFail();
+            Mail::send('mail.checkout-form',["cart" => $cart->getItems,"user" => $currentUser,"order" => $order],function ($message){
+                $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Đơn Hàng HealthyFoods '.Auth::user()->__get("name"));
+            });
+            event(new OrderCreated($order));
+            return redirect("/")->with("success")->with('message', 'Mua Hàng Thành Công Thông Tin Vận Chuyển Gửi Qua Email!');
         }
         session()->forget('url_prev')
         ;
@@ -29,10 +43,41 @@ class VNPayController extends Controller
     }
     public function return1(Request $request)
     {
-        $currentID = Auth::user()->id;
         $url = session('url_prev','/');
         if($request->vnp_ResponseCode == "00") {
+
+
             return redirect("/donate")->with("success")->with('message', 'Ủng Hộ Thành Công!');
+        }
+        session()->forget('url_prev')
+        ;
+        return redirect($url)->with('errors' ,'Lỗi trong quá trình thanh toán phí dịch vụ');
+    }
+    public function return3(Request $request)
+    {
+        $url = session('url_prev','/');
+        if($request->vnp_ResponseCode == "00") {
+            $buyer_ticket_id = DB::table("buy_tickets")->select("id")->latest("id")->first();
+//            dd($request->vnp_OrderInfo);
+            $array = explode("-", $request->vnp_OrderInfo);
+//            dd($array);
+            $event_id = $array[7];
+            $event = Event::findOrfail($event_id);
+
+            $total_price = $event->__get("total_price") + $array[2];
+            $event->update([
+                "total_price"=> $total_price,
+            ]);
+            $buyer_ticket_code = $array[3] . "-" . $array[6] . "-" . $buyer_ticket_id->id; //mã code + email + ticket_id
+            BuyTickets::create([
+                "buyer_name"=>$array[0],
+                "buyer_number"=>$array[4],
+                "buyer_address"=>$array[5],
+                "buyer_email"=>$array[6],
+                "ticket_id"=>$array[7],
+                "buyer_ticket_code"=>$buyer_ticket_code,
+            ]);
+            return redirect("/event")->with("success")->with('message', 'Mua vé thành công!');
         }
         session()->forget('url_prev')
         ;
