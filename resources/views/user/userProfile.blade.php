@@ -114,6 +114,7 @@
                                   </th>
                                   <th>Tên đơn hàng</th>
                                   <th>Trạng thái đơn hàng</th>
+                                  <th>Trạng thái thanh toán</th>
                                   <th>Hủy đơn hàng</th>
 
                               </tr>
@@ -132,11 +133,15 @@
                                           <td>Số: {{$order->order_id}}</td>
                                           <td>{{$order->product_name}}</td>
                                           @if($order->status == 1)
-                                              <td><a style="color: white" class="btn btn-danger">Chờ Thanh Toán</a></td>
-                                          @elseif($order->status == 2) <td><a style="color: white" class="btn btn-primary">Đang Vận Chuyển</a></td>
+                                              <td><a style="color: white" class="btn btn-danger">Đợi Thanh Toán</a></td>
+                                          @elseif($order->status == 2) <td><a style="color: white" class="btn btn-primary">Đang Xử Lý</a></td>
                                           @elseif($order->status == 3) <td><a style="color: white" class="btn btn-success">Đã hoàn thành</a></td>
                                           @elseif($order->status == 4) <td><a style="color: white" class="btn btn-dark">Đã hủy đơn</a></td>
                                           @endif
+                                          @if($order->thanhtoan == 1)
+                                              <td><a style="color: white" class="btn btn-danger">Chưa Thanh Toán</a></td>
+                                          @elseif($order->thanhtoan == 0) <td><a style="color: white" class="btn btn-success">Đã Thanh Toán</a></td>
+                                              @endif
                                           <td>
 <!--                                              --><?php //echo "<pre>"; var_dump($order->order_id); ?>
                                               <form action="{{url("cancel-order/{$order->order_id}")}}" method="post">

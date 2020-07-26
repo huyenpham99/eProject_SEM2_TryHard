@@ -58,7 +58,7 @@
                         </div>
                         <div class="form-group">
                             <label>Quy mô sự kiện</label>
-                            <input type="text" name="total_people" value="{{$event->__get("event_people_count")}}" class="form-control @error("total_people")  is-invalid @enderror">
+                            <input type="text" name="total_people" value="{{$event->__get("total_people")}}" class="form-control @error("total_people")  is-invalid @enderror">
                             @error("total_people")
                             <span class="error invalid-feedback">  {{$message}}</span>
                             @enderror

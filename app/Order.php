@@ -14,7 +14,8 @@ class Order extends Model
         "address",
         "telephone",
         "note",
-        "status"
+        "status",
+        "thanhtoan",
     ];
     public const PROCESS = 1;
     public const SHIPPING = 2;

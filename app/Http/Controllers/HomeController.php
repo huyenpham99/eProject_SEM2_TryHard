@@ -343,6 +343,7 @@ class HomeController extends Controller
 
     public function placeOrder(Request $request)
     {
+        $currentID = Auth::user()->id;
         $currentName = Auth::user()->name;
 //        dd($request->all());
         $request->validate([
@@ -446,8 +447,13 @@ class HomeController extends Controller
                 }
                 return redirect($vnp_Url);
             }
+            $ordercuoicung = DB::table("orders")->select("id")->latest("id")->first();
             if($request->get("payment") === "tructiep"){
                 event(new OrderCreated($order));
+                Order::where("id","=",$ordercuoicung->id)->update([
+                    "status" => 2,
+                    "thanhtoan" => 1,
+                ]);
                 return redirect("/")->with("message","Check Email Để Xem Thông Tin Thanh Toán");
             }
         } catch (\Exception $exception) {
@@ -455,7 +461,6 @@ class HomeController extends Controller
         }
         return redirect()->to("/home");
     }
-
     public function Error()
     {
         return view("frontend.404Error");

@@ -106,6 +106,7 @@
                                         </div>
                                         <button type="submit" class="btn btn-primary">Mua vé</button>
                                             <input type="hidden" name="event_id" value="{{$event->__get("id")}}">
+                                            <input type="hidden" name="ticket_name" value="{{$ticket[0]->__get("ticket_name")}}">
                                         </form>
                                     </div>
                                 </div>

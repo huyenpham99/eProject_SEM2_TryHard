@@ -81,8 +81,6 @@ class DonateController extends Controller
 
     public function saveMoney($id, Request $request)
     {
-        $currentName = Auth::user()->name;
-        $donate      = Donate::findOrFail($id);
         $money = 0;
         if($request->has("sotienunghokhac")){
             $money += $request->get("sotienunghokhac");
@@ -95,7 +93,7 @@ class DonateController extends Controller
         $vnp_Url        = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
         $vnp_Returnurl  = url("/return-donate");
         $vnp_TxnRef     = date("YmdHis"); //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
-        $vnp_OrderInfo  = "Khách" . $currentName . "Ủng Hộ Quỹ HealthyFoods";
+        $vnp_OrderInfo  = $request->get("tennguoiungho")."-".$request->get("sodienthoai")."-".$request->get("emailnguoiungho")."-".$request->get("donate_id")."-".$money."-";
         $vnp_OrderType  = 'billpayment';
         $vnp_Amount     = $money * 100;
         $vnp_Locale     = 'vn';
@@ -139,16 +137,6 @@ class DonateController extends Controller
             $vnpSecureHash = hash('sha256', $vnp_HashSecret . $hashdata);
             $vnp_Url       .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
         }
-        $donate->update([
-            "raisermoney" => $donate->raisermoney + $money
-        ]);
-        ListDonate::create([
-            "name" => $request->get("tennguoiungho"),
-            "sodienthoai" => $request->get("sodienthoai"),
-            "email" => $request->get("emailnguoiungho"),
-            "money" => $money,
-            "donate_id" => $request->get("donate_id"),
-        ]);
         return redirect($vnp_Url);
     }
 }
