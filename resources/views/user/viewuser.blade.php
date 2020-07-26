@@ -227,7 +227,6 @@
                             </div>
                         </div>
                         <hr class="my-4" />
-                        <!-- Description -->
                         <button type="submit" class="btn btn-primary btn-lg btn-block btn-sm">Thay đổi</button>
                     </form>
                 </div>
