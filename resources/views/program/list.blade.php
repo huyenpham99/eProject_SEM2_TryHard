@@ -1,5 +1,5 @@
 @extends("layout")
-@section("title", "ProgramRepository List")
+@section("tieude", "Danh sách chương trình")
 @section("contentHeader", "ProgramRepository List")
 @section("content")
     <div class="row mt-4">
@@ -7,9 +7,9 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left">Program List</h2>
+                    <h2 class="mb-0 col-lg-9 float-left"></h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("/admin/new-program")}}"  class="btn btn-success"><i class="fas fa-plus"></i></a>
+                        <a href="{{url("/admin/new-program")}}" class="btn btn-success"><i class="fas fa-plus"></i></a>
                     </div>
                 </div>
                 <!-- Light table -->
@@ -18,20 +18,20 @@
                         <thead class="thead-light">
                         <tr>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">ID
+                                data-sort="name">STT
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Program Name
+                                data-sort="name">Tên Chương Trình
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Program Image
+                                data-sort="name">Ảnh
                             </th>
-{{--                            hello--}}
+                            {{-- hello--}}
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">User Name
+                                data-sort="name">Tên Người Dùng
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Program Category Name
+                                data-sort="name">Hạng Mục Chương Trình
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">
@@ -50,14 +50,14 @@
                                 <td>{{$program->User->__get("name")}}</td>
                                 <td>{{$program->ProgramCategory->__get("progam_category_name")}}</td>
                                 <td>
-                                    <a href="{{url("/admin/edit-program/{$program->__get("id")}")}}" class="btn btn-warning"><i class="fas fa-pencil-alt"> Edit</i></a>
+                                    <a href="{{url("/admin/edit-program/{$program->__get("id")}")}}" class="btn btn-warning"><i class="fas fa-pencil-alt"> Sửa</i></a>
 
                                 </td>
                                 <td>
                                     <form action="{{url("/admin/delete-program/{$program->__get("id")}")}}" method="post">
                                         @method("DELETE")
                                         @csrf
-                                        <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger"><i class="fas fa-times"> Delete</i> </button>
+                                        <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-danger"><i class="fas fa-times"> Xóa</i> </button>
                                     </form>
                                 </td>
                             </tr>
@@ -69,5 +69,5 @@
             </div>
         </div>
     </div>
-    {{--    {!! $categories->links() !!}--}}
+    {{-- {!! $categories->links() !!}--}}
 @endsection

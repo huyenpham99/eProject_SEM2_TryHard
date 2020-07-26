@@ -172,7 +172,7 @@
                             <li>
                                 <a href="{{url("/admin/new-ticket")}}">
                                     <i class="metismenu-icon"></i>
-                                    Tạo Mới Vé
+                                    Tạo Vé Mới
                                 </a>
                             </li>
                             <li>
@@ -490,7 +490,7 @@
                             <li>
                                 <a href="{{url("/admin/new-program-detail")}}">
                                     <i class="metismenu-icon"></i>
-                                    Chi Tiết Chương Trình
+                                    Thêm Mới Chi Tiết Chương Trình
                                 </a>
                             </li>
                             <li>

@@ -1,5 +1,5 @@
 @extends("layout")
-@section("title", "Update Banner List")
+@section("tieude", "Sửa Banner")
 @section("contentHeader", "Update Banner")
 @section("content")
     <div class="row mt-4">
@@ -7,7 +7,7 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left">Update Banner</h2>
+                    <h2 class="mb-0 col-lg-9 float-left"></h2>
                 </div>
                 <!-- Light table -->
                 <form role="form" action="{{url("/admin/update-banner/{$banner->__get("id")}")}}" method="post" enctype="multipart/form-data">

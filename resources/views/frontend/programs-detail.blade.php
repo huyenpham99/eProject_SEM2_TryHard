@@ -39,8 +39,8 @@
 											<a href="#">Nutrition Meal</a>, <a href="#">Organic Planting</a>, <a href="#">Recipes</a>
 										</span>
                                 <span class="comment">
-											<i class="ion-chatbubble-working"></i> 0
-										</span>
+                                             View: {{$pd->view_count}}
+                                            </span>
                             </div>
                             <h1 class="entry-title">{{$pd->program_detail_name}}</h1>
                             <div class="entry-content">

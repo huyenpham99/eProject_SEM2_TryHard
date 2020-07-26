@@ -10,16 +10,16 @@
             <div class="card mb-3 widget-content bg-arielle-smile">
                 <div class="widget-content-wrapper text-white">
                     <div class="widget-content-left">
-                        <div class="widget-heading">Total Product: </div>
-                        <div class="widget-heading">Product View Count: </div>
+                        <div class="widget-heading">Tổng Sẩn Phẩm: </div>
+                        <div class="widget-heading">Số Lượt Xem Sản Phẩm: </div>
 
-                        <div class="widget-heading">Complete Order: </div>
-                        <div class="widget-heading">Total Money: </div>
+                        <div class="widget-heading">Hóa Đơn Đã Hoàn Thành: </div>
+                        <div class="widget-heading">Tổng Tiền: </div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-heading">{{$countproduct}} Products</div>
-                        <div class="widget-heading">{{$viewcountproduct}} Views</div>
-                        <div class="widget-heading">{{$completecount}} Complete</div>
+                        <div class="widget-heading">{{$countproduct}} Sản Phẩm</div>
+                        <div class="widget-heading">{{$viewcountproduct}} Lượt Xem</div>
+                        <div class="widget-heading">{{$completecount}} Hoàn Thành</div>
                         <div class="widget-heading">{{$totalmoney}}</div>
                     </div>
                 </div>
@@ -29,12 +29,12 @@
             <div class="card mb-3 widget-content bg-midnight-bloom">
                 <div class="widget-content-wrapper text-white">
                     <div class="widget-content-left">
-                        <div class="widget-heading">Total Blog :</div>
-                        <div class="widget-subheading">Total View : </div>
+                        <div class="widget-heading">Tổng Số Bài Viết: </div>
+                        <div class="widget-subheading">Tổng Số Lượt Xem: </div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-heading"> {{$countblog}} Blog</div>
-                        <div class="widget-heading">{{$viewcountblog}} Views</div>
+                        <div class="widget-heading"> {{$countblog}} Bài Viết</div>
+                        <div class="widget-heading">{{$viewcountblog}} Lượt Xem</div>
                     </div>
                 </div>
             </div>
@@ -43,12 +43,12 @@
             <div class="card mb-3 widget-content bg-grow-early">
                 <div class="widget-content-wrapper text-white">
                     <div class="widget-content-left">
-                        <div class="widget-heading">Total Event: </div>
-                        <div class="widget-subheading">Total People Count: </div>
+                        <div class="widget-heading">Tổng Số Sự Kiện:  </div>
+                        <div class="widget-subheading">Số Lượng Người: </div>
                     </div>
                     <div class="widget-content-right">
-                        <div class="widget-heading">{{$countevent}}</div>
-                        <div class="widget-heading">{{$totalpeople}}</div>
+                        <div class="widget-heading"> {{$countevent}}</div>
+                        <div class="widget-heading"> {{$totalpeople}}</div>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                 <div class="card-header-tab card-header-tab-animation card-header">
                     <div class="card-header-title">
                         <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
-                        Blog Each Category
+                        Mỗi Danh Mục Bài Viết
                     </div>
                 </div>
                 <div class="card-body">
@@ -80,7 +80,7 @@
                 <div class="card-header-tab card-header-tab-animation card-header">
                     <div class="card-header-title">
                         <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
-                        Top 10 Blog View Count
+                        10 Bài Viết Có Lượt Xem Nhiều Nhất
                     </div>
                 </div>
                 <div class="card-body">
@@ -92,7 +92,7 @@
                             </div>
                         </div>
                     </div>
-                    <h6 class="text-muted text-uppercase font-size-md opacity-5 font-weight-normal">Top 10 Blog</h6>
+                    <h6 class="text-muted text-uppercase font-size-md opacity-5 font-weight-normal">10 Bài Viết Có Lượt Xem Nhiều Nhất</h6>
                     <div class="scroll-area-sm">
                         <div class="scrollbar-container ps ps--active-y">
                             <ul class="rm-list-borders rm-list-borders-scroll list-group list-group-flush">
@@ -124,3 +124,5 @@
         </div>
     </div>
 @endsection
+
+{{----}}

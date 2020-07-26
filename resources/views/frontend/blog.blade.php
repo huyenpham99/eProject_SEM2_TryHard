@@ -45,7 +45,7 @@
 														<span>{{$blog->__get("blog_date")}}</span>
 													</span>
                                             <span class="comment">
-                                                <i class="ion-chatbubble-working"></i> 0
+                                             View: {{$blog->__get("view_count")}}
                                             </span>
                                         </div>
                                         <a href="{{$blog->getBlogUrl()}}">

@@ -1,5 +1,5 @@
 @extends("layout")
-@section("title", "Banner List")
+@section("tieude", "Danh Sách")
 @section("contentHeader", "Banner")
 @section("content")
     <div class="row mt-4">
@@ -7,7 +7,7 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left">Danh Sách</h2>
+                    <h2 class="mb-0 col-lg-9 float-left"></h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
                         <a href="{{url("/admin/new-banner")}}" class="btn btn-success"><i class="fas fa-plus"></i></a>
                     </div>
