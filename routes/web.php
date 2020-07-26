@@ -42,19 +42,8 @@ Route::get('/qr-code', function () {
     $qrcode = new Generator;
     $code = "I love you me Min";
     $bcrypt = bcrypt($code);
-    return $qrcode->size(200)->generate($bcrypt);
-});
-
-Route::get('/qr-code', function () {
-    $qrcode = new Generator;
-    $code = "I love you me Min";
-    $bcrypt = md5($code);
-    return $qrcode->size(200)->generate($bcrypt);
-});
-Route::get('/qr-code1', function () {
-    $qrcode = new Generator;
-    $code = '80d4c648c083bca2a51d0aeac5f1bff9';
-    $bcrypt = md5($code);
+    $hash = \Illuminate\Support\Facades\Hash::check($code, $bcrypt);
+    var_dump($hash);
     return $qrcode->size(200)->generate($bcrypt);
 });
 require_once "userwithoutlogin.php";
