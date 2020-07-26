@@ -109,7 +109,7 @@
                             <span class="sep-holder"><span class="sep-line"></span></span>
                         </div>
                         <div class="contact-form-wrapper">
-                            <form class="contact-form" action="{{url("/sendform")}}" method="post">
+                            <form class="contact-form" action="{{url("/send-form")}}" method="post">
                                 @method("POST")
                                 @csrf
                                 <div class="row">
@@ -138,7 +138,7 @@
                                     <div class="col-md-12">
                                         <label>Tin Nhắn</label>
                                         <div class="form-wrap">
-                                            <textarea name="your-message" cols="40" rows="10"></textarea>
+                                            <textarea name="note" cols="40" rows="10"></textarea>
                                         </div>
                                     </div>
                                 </div>

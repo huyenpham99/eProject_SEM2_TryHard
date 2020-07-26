@@ -11,7 +11,6 @@
 
     <!-- CSS Reset : BEGIN -->
     <style>
-
         /* What it does: Remove spaces around the email design added by some email clients. */
         /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
         html,
@@ -22,25 +21,21 @@
             width: 100% !important;
             background: #f1f1f1;
         }
-
         /* What it does: Stops email clients resizing small text. */
         * {
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
         }
-
         /* What it does: Centers email on Android 4.4 */
         div[style*="margin: 16px 0"] {
             margin: 0 !important;
         }
-
         /* What it does: Stops Outlook from adding extra spacing to tables. */
         table,
         td {
             mso-table-lspace: 0pt !important;
             mso-table-rspace: 0pt !important;
         }
-
         /* What it does: Fixes webkit padding issue. */
         table {
             border-spacing: 0 !important;
@@ -48,17 +43,14 @@
             table-layout: fixed !important;
             margin: 0 auto !important;
         }
-
         /* What it does: Uses a better rendering method when resizing images in IE. */
         img {
             -ms-interpolation-mode:bicubic;
         }
-
         /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
         a {
             text-decoration: none;
         }
-
         /* What it does: A work-around for email clients meddling in triggered links. */
         *[x-apple-data-detectors],  /* iOS */
         .unstyle-auto-detected-links *,
@@ -72,26 +64,21 @@
             font-weight: inherit !important;
             line-height: inherit !important;
         }
-
         /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
         .a6S {
             display: none !important;
             opacity: 0.01 !important;
         }
-
         /* What it does: Prevents Gmail from changing the text color in conversation threads. */
         .im {
             color: inherit !important;
         }
-
         /* If the above doesn't work, add a .g-img class to any image in question. */
         img.g-img + div {
             display: none !important;
         }
-
         /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
         /* Create one of these media queries for each additional viewport size you'd like to fix */
-
         /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
         @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
             u ~ div .email-container {
@@ -116,7 +103,6 @@
 
     <!-- Progressive Enhancements : BEGIN -->
     <style>
-
         .primary{
             background: #17bebb;
         }
@@ -135,7 +121,6 @@
         .email-section{
             padding:2.5em;
         }
-
         /*BUTTON*/
         .btn{
             padding: 10px 15px;
@@ -168,14 +153,12 @@
             color: rgba(0,0,0,.3);
             text-decoration: underline;
         }
-
         h1,h2,h3,h4,h5,h6{
             font-family: 'Work Sans', sans-serif;
             color: #000000;
             margin-top: 0;
             font-weight: 400;
         }
-
         body{
             font-family: 'Work Sans', sans-serif;
             font-weight: 400;
@@ -183,31 +166,26 @@
             line-height: 1.8;
             color: rgba(0,0,0,.4);
         }
-
         a{
-            color: #17bebb;
+            color: #8bf551;
         }
-
         table{
         }
         /*LOGO*/
-
         .logo h1{
             margin: 0;
         }
         .logo h1 a{
-            color: #17bebb;
+            color: #8bf551;
             font-size: 24px;
             font-weight: 700;
             font-family: 'Work Sans', sans-serif;
         }
-
         /*HERO*/
         .hero{
             position: relative;
             z-index: 0;
         }
-
         .hero .text{
             color: rgba(0,0,0,.3);
         }
@@ -226,8 +204,6 @@
             font-weight: 600;
             color: #000;
         }
-
-
         /*PRODUCT*/
         .product-entry{
             display: block;
@@ -249,7 +225,6 @@
         .product-entry img, .product-entry .text{
             float: left;
         }
-
         ul.social{
             padding: 0;
         }
@@ -257,9 +232,7 @@
             display: inline-block;
             margin-right: 10px;
         }
-
         /*FOOTER*/
-
         .footer{
             border-top: 1px solid rgba(0,0,0,.05);
             color: rgba(0,0,0,.5);
@@ -279,14 +252,8 @@
         .footer ul li a{
             color: rgba(0,0,0,1);
         }
-
-
         @media screen and (max-width: 500px) {
-
-
         }
-
-
     </style>
 
 
@@ -305,7 +272,7 @@
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
                             <td class="logo" style="text-align: left;">
-                                <h1><a href="#">Phản Hồi Khách Hàng HealthyFood</a></h1>
+                                <h1><a href="#">Thông tin đơn hàng HealthyFoods</a></h1>
                             </td>
                         </tr>
                     </table>
@@ -317,17 +284,64 @@
                         <tr>
                             <td style="padding: 0 2.5em; text-align: left;">
                                 <div class="text d-flex flex-column">
-                                    <h4>Healthy Foods Cảm Ơn và Ghi Nhận Góp Ý Của Khách Hàng</h4>
-                                    <p>Thông tin đóng góp: </p>
+                                    <h4>{{\Illuminate\Support\Facades\Auth::user()->__get("name")}} Thông tin đơn hàng: </h4>
+                                    <p>Thông tin vận chuyển :</p>
+                                    <p>Name: {{$order->__get("username")}}</p>
+                                    <p>Email Address: {{\Illuminate\Support\Facades\Auth::user()->__get("email")}}</p>
+                                    <p>Address: {{$order->__get("address")}}</p>
+                                    <p>Telephone: {{$order->__get("telephone")}}</p>
                                 </div>
-                                <p>Họ và tên : {{$name}}</p>
-                                <p>Địa chỉ email : {{$email}}</p>
-                                <p>Chủ đề đóng góp : {{$subject}}</p>
-                                <p>Nội dung góp ý : {{$note}} </p>
                             </td>
                         </tr>
                     </table>
                 </td>
+            </tr><!-- end tr -->
+            <tr>
+                <table class="bg_white" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr style="border-bottom: 1px solid rgba(0,0,0,.05);">
+                        <th width="25%" style="text-align:left; padding: 0 2.5em; color: #000; padding-bottom: 20px">Item</th>
+                        <th width="25%" style="text-align:left; padding: 0 2.5em; color: #000; padding-bottom: 20px">Name</th>
+                        <th width="25%" style="text-align:left; padding: 0 2.5em; color: #000; padding-bottom: 20px">QTY</th>
+                        <th width="25%" style="text-align:left; padding: 0 2.5em; color: #000; padding-bottom: 20px">Price</th>
+
+                    </tr>
+                    @php $total = 0 @endphp
+                    @foreach($cart as $item)
+                        @php $grandTotal = 0 @endphp
+                        @php $grandTotal += ($item->__get("product_price") * $item->pivot->__get("qty")) @endphp
+                        @php $total += $grandTotal @endphp
+                        <tr style="border-bottom: 1px solid rgba(0,0,0,.05);">
+                            <td valign="middle" width="25%" style="text-align:left; padding: 0 2.5em;">
+                                <img src="{{$item->__get("product_image")}}" width="70px" height="70px"/>
+                            </td>
+                            <td valign="middle" width="25%" style="text-align:left; padding: 0 2.5em;">
+                                <div class="product-entry">
+                                    <div class="text">
+                                        <h3>{{$item->__get("product_name")}}</h3>
+                                    </div>
+                                </div>
+                            </td>
+                            <td valign="middle" width="25%" style="text-align:left; padding: 0 2.5em;">
+                                <span class="price" style="color: #000; font-size: 20px;">{{($item->pivot->__get("qty"))}}</span>
+                            </td>
+                            <td valign="middle" width="25%" style="text-align:left; padding: 0 2.5em;">
+                                <span class="price" style="color: #000; font-size: 20px;">{{"VNĐ".number_format($item->__get("product_price"))}}</span>
+                            </td>
+                        </tr>
+                    @endforeach
+                    <tr>
+                        <td valign="middle" style="text-align:left; padding: 1em 4em;">
+                            <p class="btn btn-primary" style="width: 300px">Total Price :VNĐ{{$total}}</p>
+                        </td>
+                    </tr>
+                </table>
+                <div class="col-md-6">
+                    <p>Thông tin chuyển khoản</p>
+                    <p>Ngân Hàng : VietComBank</p>
+                    <p>STK : 9704198526191432198</p>
+                    <p>Tên Chủ Thẻ : Nguyễn Thanh Tuấn</p>
+                    <p>Chi Nhánh : VietComBank Hà Đông</p>
+                </div>
             </tr><!-- end tr -->
             <!-- 1 Column Text + Button : END -->
         </table>

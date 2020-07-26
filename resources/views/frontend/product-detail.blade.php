@@ -79,6 +79,10 @@
                                         <ins>${{$product->__get("product_price")}}</ins>
                                     </div>
                                     <div class="mb-3">
+                                        <span>Số lượng hàng :</span>
+                                        <span>{{$product->__get("qty")}}</span>
+                                    </div>
+                                    <div class="mb-3">
                                         <p>{{$product->__get("product_desc")}}</p>
                                     </div>
                                     <form method="POST" action="{{url("/cart/add/{$product->__get("id")}")}}">
