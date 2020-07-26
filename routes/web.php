@@ -57,3 +57,7 @@ Route::get('/qr-code1', function () {
     $bcrypt = md5($code);
     return $qrcode->size(200)->generate($bcrypt);
 });
+require_once "userwithoutlogin.php";
+//Route::get('/onepay',"VNPayController@createonepay");
+//Route::get('/thanhtoan',"VNPayController@returnonepay");
+
