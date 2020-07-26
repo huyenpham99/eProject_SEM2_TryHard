@@ -84,5 +84,8 @@ class User extends Authenticatable
 
         return $validator;
     }
+    public function Donate(){
+        $this->hasMany(Donate::class);
+    }
 
 }

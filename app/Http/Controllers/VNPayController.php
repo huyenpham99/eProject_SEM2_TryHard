@@ -20,7 +20,8 @@ class VNPayController extends Controller
             ]);
             return redirect("/home")->with("success")->with('message', 'Complete Order!');
         }
-        session()->forget('url_prev');
+        session()->forget('url_prev')
+        ;
         return redirect($url)->with('errors' ,'Lỗi trong quá trình thanh toán phí dịch vụ');
     }
 }

@@ -8,6 +8,7 @@ use App\BlogCategory;
 use App\Cart;
 use App\Category;
 use App\Comment;
+use App\Donate;
 use App\Event;
 use App\Events\OrderCreated;
 use App\Order;
@@ -52,9 +53,15 @@ class HomeController extends Controller
         $products = Product::all();
         $banner   = Banner::all();
         $event    = Event::all();
+        $donate = Donate::all();
 //         tao slug cho cac truong
         foreach ($category as $p) {
             $slug    = \Illuminate\Support\Str::slug($p->__get("category_name"));
+            $p->slug = $slug . $p->__get("id");// luu lai vao DB
+            $p->save();
+        }
+        foreach ($donate as $p) {
+            $slug    = \Illuminate\Support\Str::slug($p->__get("donate_title"));
             $p->slug = $slug . $p->__get("id");// luu lai vao DB
             $p->save();
         }
@@ -518,6 +525,9 @@ class HomeController extends Controller
                     "count"=>$countProduct,
                 ];
             }
+        }
+        public function donate(){
+            return view("frontend.donate");
         }
 }
 //            die("done");
