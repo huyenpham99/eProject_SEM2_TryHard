@@ -37,7 +37,7 @@ class ChangePasswordController extends Controller
             $validator = $this->admin_credential_rules($request_data);
             if($validator->fails())
             {
-                return response()->json(array('error' => $validator->getMessageBag()->toArray()), 400);
+                return redirect()->back()->with('message', 'Mật khẩu xác nhận không khớp!');
             }
             else
             {
@@ -48,12 +48,11 @@ class ChangePasswordController extends Controller
                     $obj_user = User::find($user_id);
                     $obj_user->password = Hash::make($request_data['password']);
                     $obj_user->save();
-                    return redirect()->to('/home')->with('message', 'Your password has been change successfully!');
+                    return redirect()->to('/')->with('message', 'Thay đổi mật khẩu thành công!');
                 }
                 else
                 {
-                    $error = array('current-password' => 'Please enter correct current password');
-                    return response()->json(array('error' => $error), 400);
+                    return redirect()->back()->with('message', 'Mật khẩu hiện tại không đúng!');
                 }
             }
         }

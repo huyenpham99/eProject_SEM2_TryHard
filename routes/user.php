@@ -24,3 +24,5 @@ Route::post("/cancel-order/{id}","OrderController@cancelOrder")->middleware("aut
 //Route::get("/vn-pay","VNPayController@createPayment")->middleware("auth");
 Route::get("/return-vnpay","VNPayController@return")->middleware("auth");
 Route::get("/return-donate","VNPayController@return1")->middleware("auth");
+Route::post("/create-ticket-buyer", "EventController@createTicketBuyer");
+Route::get("//return-event", "VNPayConTroller@return3");
