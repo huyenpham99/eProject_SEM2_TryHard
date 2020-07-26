@@ -47,7 +47,7 @@
                 _token:"{{@csrf_token()}}"
             },
             success: function (data) {
-                alertify.success("Add to card successfully");
+                alertify.success("Thêm vào giỏ hàng thành công!!!");
             }
         });
     }

@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\BuyTickets;
+use App\Event;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Omnipay\VNPay\Gateway;
 use PHPViet\Laravel\Omnipay\Facades\MoMo\AllInOneGateway;
 use PHPViet\Laravel\Omnipay\Facades\OnePay\DomesticGateway;
@@ -57,24 +60,30 @@ class VNPayController extends Controller
     {
         $url = session('url_prev','/');
         if($request->vnp_ResponseCode == "00") {
-            $buyer_ticket_id = DB::table("buy_tickets")->select("id")->latest("id")->first();
-//            dd($request->vnp_OrderInfo);
+            if (empty($buyer_ticket_id = DB::table("buy_tickets")->select("id")->latest("id")->first())){
+                $buyer_ticket_id = 0;
+            }else{
+                $buyer_ticket_id = DB::table("buy_tickets")->select("id")->latest("id")->first();
+                $buyer_ticket_id = $buyer_ticket_id->id;
+            }
             $array = explode("-", $request->vnp_OrderInfo);
-//            dd($array);
             $event_id = $array[7];
             $event = Event::findOrfail($event_id);
 
             $total_price = $event->__get("total_price") + $array[2];
+            $people = $event->__get("total_people");
+            $people++;
             $event->update([
                 "total_price"=> $total_price,
+                "total_people"=> $people,
             ]);
-            $buyer_ticket_code = $array[3] . "-" . $array[6] . "-" . $buyer_ticket_id->id; //mã code + email + ticket_id
+            $buyer_ticket_code = $array[3] . "-" . $array[6] . "-" . $buyer_ticket_id; //mã code + email + ticket_id
             BuyTickets::create([
                 "buyer_name"=>$array[0],
                 "buyer_number"=>$array[4],
                 "buyer_address"=>$array[5],
                 "buyer_email"=>$array[6],
-                "ticket_id"=>$array[7],
+                "ticket_id"=>$array[1],
                 "buyer_ticket_code"=>$buyer_ticket_code,
             ]);
             return redirect("/event")->with("success")->with('message', 'Mua vé thành công!');

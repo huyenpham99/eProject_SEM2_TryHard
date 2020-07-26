@@ -20,11 +20,11 @@
                             <input type="text" name="product_image" class="form-control @error("product_image") is-invalid @enderror">
                         </div>
                         <div class="form-group">
-                            <label>Ảnh Sản Phẩm 1</label>
+                            <label>Ảnh Sản Phẩm 2</label>
                             <input type="text" name="product_image1" class="form-control @error("product_image1") is-invalid @enderror">
                         </div>
                         <div class="form-group">
-                            <label>Ảnh Sản Phẩm 1</label>
+                            <label>Ảnh Sản Phẩm 3</label>
                             <input type="text" name="product_image2" class="form-control @error("product_image2") is-invalid @enderror">
                         </div>
                         <div class="form-group">
