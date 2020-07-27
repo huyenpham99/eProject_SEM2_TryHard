@@ -21,7 +21,7 @@
             <a href="{{$product->getProductUrl()}}">
                 <h2 class="title">{{$product->__get("product_name")}}</h2>
                 <span class="price">
-                                            <ins>{{$product->__get("product_price")}}</ins>
+                                            <ins>{{number_format($product->__get("product_price"))}} đ</ins>
                                         </span>
             </a>
         </div>

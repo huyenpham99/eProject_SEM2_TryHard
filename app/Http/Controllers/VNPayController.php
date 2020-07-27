@@ -37,7 +37,7 @@ class VNPayController extends Controller
         if($request->vnp_ResponseCode == "00") {
             $ordercuoicung = DB::table("orders")->select("id")->latest("id")->first();
              Order::where("id","=",$ordercuoicung->id)->update([
-                "status" => 2,
+                "status" => 1,
                  "thanhtoan" => 0,
             ]);
             $order = Order::where("user_id", Auth::id())->firstOrFail();

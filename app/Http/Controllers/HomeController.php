@@ -469,7 +469,7 @@ class HomeController extends Controller
                 }
                 $currentUser = Auth::user()->name;
                 Order::where("id","=",$ordercuoicung->id)->update([
-                    "status" => 2,
+                    "status" => 1,
                     "thanhtoan" => 1,
                 ]);
                 Mail::send('mail.checkout-form1',["cart" => $cart->getItems,"user" => $currentUser,"order" => $order],function ($message){

@@ -327,9 +327,11 @@
                                     @php
                                         use SimpleSoftwareIO\QrCode\Generator;
                                             $qrcode = new Generator;
-    $code = $mave;
+                                            $code = $mave;
+                                            $qrcode = $qrcode->size(200)->generate($code);
+
                                         @endphp
-                                    <p>Mã Quét QR : <?php echo $qrcode->size(200)->generate($code);?></p>
+                                    <p>Mã Quét QR : {!! $qrcode !!}</p>
                                 </div>
                             </td>
                         </tr>

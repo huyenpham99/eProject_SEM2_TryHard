@@ -76,7 +76,7 @@
                                         <i>(2 Đánh Giá)</i>
                                     </div>
                                     <div class="product-price">
-                                        <ins>${{$product->__get("product_price")}}</ins>
+                                        <ins>{{number_format($product->__get("product_price"))}} đ</ins>
                                     </div>
                                     <div class="mb-3">
                                         <span>Số lượng hàng :</span>
@@ -258,7 +258,7 @@
                                             <img src="{{$p->__get("product_image")}}" alt="" />
                                             <span class="product-title">{{$p->__get("product_name")}}</span>
                                         </a>
-                                        <ins>${{$p->__get("product_price")}}</ins>
+                                        <ins>{{number_format($p->__get("product_price"))}} đ</ins>
                                     </li>
                                     @endforeach
                                 </ul>
