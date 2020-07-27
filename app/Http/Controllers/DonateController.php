@@ -70,7 +70,7 @@ class DonateController extends Controller
     {
         $donates = Donate::paginate(4);
         $peopleList =ListDonate::leftjoin("donates","listdonate.donate_id","=","donates.id")
-            ->orderByRaw('listdonate.money DESC')
+            ->orderBy('listdonate.money ASC')
             ->limit(10)
             ->get();
         return view("frontend.donate", [
