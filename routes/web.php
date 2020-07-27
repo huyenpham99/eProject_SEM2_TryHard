@@ -36,6 +36,7 @@ Route::get('/404', 'HomeController@Error');
 
 Route::get('/search', 'HomeController@searchHome');
 Route::get('/searchselected', 'HomeController@searchSelected');
+Route::post("/send-form","WebController@contactForm");
 
 Route::get('/qr-code', function () {
     $qrcode = new Generator;

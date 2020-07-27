@@ -45,7 +45,7 @@ class VNPayController extends Controller
                 $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('Đơn Hàng HealthyFoods '.Auth::user()->__get("name"));
             });
             event(new OrderCreated($order));
-            return redirect("/")->with("success")->with('message', 'Mua Hàng Thành Công Thông Tin Vận Chuyển Gửi Qua Email!');
+            return redirect("/")->with("success")->with('message', 'Thanh Toán Thành Công Đơn Hàng Đang Trên Đường Vận Chuyển!');
         }
         session()->forget('url_prev')
         ;
@@ -69,6 +69,9 @@ class VNPayController extends Controller
                 "money" => $money,
                 "donate_id" => $donate_id,
             ]);
+            Mail::send('mail.thankyou', ["name"=>$array[0],"sodienthoai"=>$array[1],"money"=>$money], function ($message) {
+                $message->to(Auth::user()->__get("email"), Auth::user()->__get("name"))->subject('Thư Cảm Ơn ' . Auth::user()->__get("name"));
+            });
             return redirect("/donate")->with("success")->with('message', 'Ủng Hộ Thành Công!');
         }
         session()->forget('url_prev')
