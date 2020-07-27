@@ -57,7 +57,7 @@
                                                         <div class="skillst">
                                                             <span class="color">{{number_format($donate->__get("goalmoney"))."VNĐ"}}</span>
                                                             <span style="color: red">{{number_format($donate->__get("raisermoney"))."VNĐ"}}</span>
-                                                           <span style="font-size: 12px;color: red;text-decoration: line-through">Start:{{$donate->__get("start_at")}} | End: {{$donate->__get("end_at")}}</span>
+                                                           <span style="font-size: 12px;color: red;text-decoration: line-through">End: {{$donate->__get("end_at")}}</span>
                                                             <div class="progressbar1" data-width="{{$donate->__get("raisermoney")}}" data-target="{{$donate->__get("goalmoney")}}"></div>
                                                         </div>
                                                     @else
