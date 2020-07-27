@@ -106,7 +106,7 @@
                                 </tr>
                                 <tr class="order-total">
                                     <th>Tổng Tiền</th>
-                                    <td><strong>{{"$".number_format($grandTotal)}}</strong></td>
+                                    <td><strong>{{number_format($grandTotal)}} đ</strong></td>
                                 </tr>
                             </table>
                         </div>

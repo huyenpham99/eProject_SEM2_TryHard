@@ -49,14 +49,13 @@
                                     </div>
                                 </td>
                                 <td class="product-subtotal">
-                                    <span class="amount"> ${{$p->cart_qty * $p->__get("product_price")}}</span>
+                                    <span class="amount"> {{number_format($p->cart_qty * $p->__get("product_price"))}} đ</span>
                                 </td>
                             </tr>
                             @endforeach
                             <tr>
                                 <td colspan="5" class="actions">
                                     <a class="continue-shopping" href="{{url("/shop")}}"> Tiếp tục mua sắm</a>
-                                    <input type="submit" class="update-cart" name="update_cart" value="Cập nhật giỏ hàng" />
                                 </td>
                             </tr>
                             </tbody>
@@ -68,28 +67,16 @@
                                 <tbody>
                                 <tr class="cart-subtotal">
                                     <th>Tổng</th>
-                                    <td>${{$grandTotal}}</td>
+                                    <td>{{number_format($grandTotal)}} đ</td>
                                 </tr>
                                 <tr class="shipping">
                                     <th>Vận chuyển</th>
                                     <td>Miễn Phí Vận Chuyển</td>
                                 </tr>
-                                <tr class="order-total">
-                                    <th>Total</th>
-                                    <td><strong>${{$grandTotal}}</strong></td>
-                                </tr>
                                 </tbody>
                             </table>
                             <div class="proceed-to-checkout">
                                 <a href="{{url("/checkout")}}">Thanh Toán</a>
-                            </div>
-                        </div>
-                        <div class="coupon-shipping">
-                            <div class="coupon">
-                                <form>
-                                    <input type="text" name="coupon_code" class="coupon-code" id="coupon_code" value="" placeholder="Mã giảm giá" />
-                                    <input type="submit" class="apply-coupon" name="apply_coupon" value="phiếu giảm giá" />
-                                </form>
                             </div>
                         </div>
                     </div>

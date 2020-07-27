@@ -218,9 +218,9 @@
                         <div class="mb-1 section-pretitle default-left">Welcome to</div>
                         <h2 class="section-title mtn-2 mb-3">Healthy Food</h2>
                         <p class="mb-4">
-                            Healthy Food opened its doors in 1990, it was Renée Elliott's dream to offer the best and
-                            widest range of Healthy Food s available, and her mission to promote health in the community
-                            and to bring a sense of discovery and adventure into food shopping.
+                            Healthy Food mở cửa vào năm 1990, ước mơ của Người Nông Dân là mang đến những điều tốt nhất và
+                            phạm vi rộng nhất của Thực phẩm lành mạnh có sẵn và sứ mệnh của cô ấy là Thúc đẩy sức khỏe trong cộng đồng
+                            và để mang lại cảm giác khám phá và phiêu lưu vào mua sắm thực phẩm.
                         </p>
                         <a class="organik-btn arrow" href="#">Our products</a>
                     </div>
@@ -396,7 +396,7 @@
                                     <a href="{{$product->getProductUrl()}}">
                                         <h2 class="title">{{$product->__get("product_name")}}</h2>
                                         <span class="price">
-                                            <ins>{{$product->__get("product_price")}}</ins>
+                                            <ins>{{number_format($product->__get("product_price"))}} đ</ins>
                                         </span>
                                     </a>
                                 </div>
