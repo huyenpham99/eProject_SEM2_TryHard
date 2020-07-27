@@ -173,8 +173,8 @@
                             </div>
                             <div class="widget-shopping-cart-content">
                                 <p class="buttons">
-                                    <a href="{{url("/shopping-cart")}}" class="view-cart">View cart</a>
-                                    <a href="{{url("/checkout")}}" class="checkout">Checkout</a>
+                                    <a href="{{url("/shopping-cart")}}" class="view-cart">Xem giỏ hàng</a>
+                                    <a href="{{url("/checkout")}}" class="checkout">Thanh toán</a>
                                 </p>
                             </div>
                         </div>
